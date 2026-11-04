@@ -3,7 +3,16 @@
 Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The problem is "Hard to know which brands are ethical", from Santa. Shared project context, services and rules live in `../AGENTS.md`.
 
 - **Form factor:** a Chrome extension.
-- **Status:** a bare Manifest V3 scaffold lives in `extension/`. It loads in Chrome but has no behaviour yet. Four Ws are locked in below; the what is still undecided. Don't add product behaviour until the team settles the plan and asks for implementation.
+- **Status:** a bare Manifest V3 scaffold lives in `extension/`. The initial Cloudflare Worker backend lives in `worker/` and checks B Corp status against a small source-checked registry. Extension behaviour is not implemented. Full ethical scoring is deferred to the `scoring & criteria` card on the Superthread `day3` board.
+
+## Backend decisions
+
+- Deploy `naughty-list-api` to the shared `40for40` Cloudflare account. Always use `npm run wrangler -- <args>` with the named auth profile, as required by the shared context.
+- `POST /v1/assessments` accepts exactly one brand name or typed identifier (`b_lab` directory slug or nine-digit DUNS string). Identifier support does not imply an external DUNS resolution service; only verified registry mappings resolve.
+- Return B Corp certification evidence, provenance and check/refresh dates. Do not equate B Corp certification with a product-level ethical judgment.
+- Unmatched, ambiguous and stale records are unknown, never automatically uncertified or naughty. There is no complete B Lab feed or automatic research integration yet.
+- Keep overall score and naughty/nice verdict unset until the scoring task is settled. No new scoring criteria are authorised by the initial backend work.
+- The extension's exact behaviour, supported sites and research pipeline remain undecided.
 
 ## Locked decisions: four Ws
 
