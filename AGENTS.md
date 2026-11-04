@@ -138,7 +138,7 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 The v1 stamp depends on this card. A **draft** method, the Santa Score `santa-v0.3-draft`, was proposed on card 157 on 4 November and is in `worker/scoring.js`, with the rules in `docs/scoring.md`. **It is not signed off.** Until Samira and Ben sign off on card 157, the API keeps `scoring.total` and `scoring.verdict` null, nothing in the Worker imports `worker/scoring.js`, and draft scores (`npm run scores`) stay off the live API, the extension and the page.
 
 - **Values:** the three areas through Santa's eyes: kindness to the elves (staff), honesty and generosity (communities), caring for the North Pole (environment).
-- **Points:** a proven offence is 2 coal, a warning 1 coal and a current B Corp 1 gift. Repeats in the window double: the worst incident's coal times 2 for each further incident. Self-reported CSR, promises, allegations, open investigations, secondary reports and changed practices earn nothing.
+- **Points:** a proven offence is 2 coal (minimum-wage namings under £1,000 earn none), a warning 1 coal and a current B Corp 1 gift. Repeats in the window double: the worst incident's coal times 2 for each further incident. Self-reported CSR, promises, allegations, open investigations, secondary reports and changed practices earn nothing.
 - **Window:** only events from the last 3 years count; older ones are shown as history.
 - **Verdict:** total = gifts − coal. Nice is 0 or more with at least one counted record. Naughty is −2 or below. Everything else, including a single warning, is not enough evidence.
 - **Unknown stays unknown:** no records never means naughty or nice.
