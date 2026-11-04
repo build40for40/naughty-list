@@ -64,7 +64,7 @@ section{padding-block:64px}
 .pill{justify-self:start;font-size:19px;border:1px solid var(--cam-line);color:var(--cam-soft);padding:4px 8px;white-space:nowrap}
 .pill.on{border-color:var(--cam-ph);color:var(--cam-ph)}
 .vote{display:flex;gap:6px;margin-top:2px}
-.vote button{font:800 13px/1 var(--f-body);background:transparent;color:var(--cam-soft);border:1px solid var(--cam-line);border-radius:999px;padding:7px 10px;cursor:not-allowed;opacity:.65}
+.vote button{white-space:nowrap;font:800 13px/1 var(--f-body);background:transparent;color:var(--cam-soft);border:1px solid var(--cam-line);border-radius:999px;padding:7px 10px;cursor:not-allowed;opacity:.65}
 .shop.rest{background:var(--cream);color:var(--ink);font-family:var(--f-body);text-transform:none;border:3px dashed var(--line);box-shadow:none;align-content:center}
 .shop.rest b{font:34px/1 var(--f-display);color:var(--red)}
 .shop.rest small{font-size:14px;color:var(--sub)}
@@ -143,20 +143,20 @@ footer b{display:block;font:24px var(--f-display);margin-bottom:4px}
 <section id="window">
   <div class="w">
     <h2>Check the shops you already use</h2>
-    <p class="scrawl kicker">One from each aisle. 100 on the list.</p>
+    <p class="scrawl kicker">Santa checks the evidence. You're the elf on the shop floor.</p>
     <div class="window">
-      <div class="shop"><span class="aisle">Marketplaces</span><b>Amazon</b><small>amazon.co.uk</small><span class="pill on">On file · score pending</span><div class="vote"><button disabled>👍 Nice</button><button disabled>👎 Naughty</button></div></div>
-      <div class="shop"><span class="aisle">Supermarkets</span><b>Tesco</b><small>tesco.com</small><span class="pill">Elves checking…</span><div class="vote"><button disabled>👍 Nice</button><button disabled>👎 Naughty</button></div></div>
-      <div class="shop"><span class="aisle">Fashion &amp; sport</span><b>Primark</b><small>primark.com</small><span class="pill">Elves checking…</span><div class="vote"><button disabled>👍 Nice</button><button disabled>👎 Naughty</button></div></div>
-      <div class="shop"><span class="aisle">Beauty &amp; health</span><b>Boots</b><small>boots.com</small><span class="pill">Elves checking…</span><div class="vote"><button disabled>👍 Nice</button><button disabled>👎 Naughty</button></div></div>
-      <div class="shop"><span class="aisle">Electricals</span><b>Currys</b><small>currys.co.uk</small><span class="pill">Elves checking…</span><div class="vote"><button disabled>👍 Nice</button><button disabled>👎 Naughty</button></div></div>
-      <div class="shop"><span class="aisle">Toys &amp; gifts</span><b>Smyths Toys</b><small>smythstoys.com</small><span class="pill">Elves checking…</span><div class="vote"><button disabled>👍 Nice</button><button disabled>👎 Naughty</button></div></div>
-      <div class="shop"><span class="aisle">Home &amp; DIY</span><b>IKEA</b><small>ikea.com/gb</small><span class="pill">Elves checking…</span><div class="vote"><button disabled>👍 Nice</button><button disabled>👎 Naughty</button></div></div>
+      <div class="shop"><span class="aisle">Marketplaces</span><b>Amazon</b><small>amazon.co.uk</small><span class="pill on">🎅 On file · score pending</span><div class="vote"><button disabled>🧝 Nice</button><button disabled>🧝 Naughty</button></div></div>
+      <div class="shop"><span class="aisle">Supermarkets</span><b>Tesco</b><small>tesco.com</small><span class="pill">🎅 Santa's checking…</span><div class="vote"><button disabled>🧝 Nice</button><button disabled>🧝 Naughty</button></div></div>
+      <div class="shop"><span class="aisle">Fashion &amp; sport</span><b>Primark</b><small>primark.com</small><span class="pill">🎅 Santa's checking…</span><div class="vote"><button disabled>🧝 Nice</button><button disabled>🧝 Naughty</button></div></div>
+      <div class="shop"><span class="aisle">Beauty &amp; health</span><b>Boots</b><small>boots.com</small><span class="pill">🎅 Santa's checking…</span><div class="vote"><button disabled>🧝 Nice</button><button disabled>🧝 Naughty</button></div></div>
+      <div class="shop"><span class="aisle">Electricals</span><b>Currys</b><small>currys.co.uk</small><span class="pill">🎅 Santa's checking…</span><div class="vote"><button disabled>🧝 Nice</button><button disabled>🧝 Naughty</button></div></div>
+      <div class="shop"><span class="aisle">Toys &amp; gifts</span><b>Smyths Toys</b><small>smythstoys.com</small><span class="pill">🎅 Santa's checking…</span><div class="vote"><button disabled>🧝 Nice</button><button disabled>🧝 Naughty</button></div></div>
+      <div class="shop"><span class="aisle">Home &amp; DIY</span><b>IKEA</b><small>ikea.com/gb</small><span class="pill">🎅 Santa's checking…</span><div class="vote"><button disabled>🧝 Nice</button><button disabled>🧝 Naughty</button></div></div>
       <div class="shop rest"><b>+93 more</b><small>From Argos to Waitrose, the shops you're most likely to buy from this Christmas.</small></div>
     </div>
     <div class="legend">
-      <div><h3>Santa Score</h3><p>Worked out from public evidence, such as B Corp status, minimum-wage naming and regulator cases, with a source and date for each. <span class="hole">Scores appear once our scoring rules are agreed.</span></p></div>
-      <div><h3>Your vote</h3><p>Think a shop has been naughty or nice? Say so. Votes sit next to the Santa Score and never change it. <span class="hole">Voting opens soon.</span></p></div>
+      <div><h3>🎅 Santa Score</h3><p>Santa's verdict, worked out from public evidence, such as B Corp status, minimum-wage naming and regulator cases, with a source and date for each. <span class="hole">Scores appear once our scoring rules are agreed.</span></p></div>
+      <div><h3>🧝 The elves' vote</h3><p>That's you. Think a shop has been naughty or nice? Tell Santa. Elves' votes sit next to the Santa Score and never change it. <span class="hole">Voting opens soon.</span></p></div>
     </div>
     <p class="note">Not enough evidence on a shop? We say so. That never means naughty.</p>
   </div>
@@ -229,10 +229,10 @@ footer b{display:block;font:24px var(--f-display);margin-bottom:4px}
 <section style="padding-top:0">
   <div class="w">
     <h2>Questions</h2>
-    <p class="scrawl kicker">Answered by our most senior elf.</p>
+    <p class="scrawl kicker">Straight from the North Pole.</p>
     <div class="faq">
       <details><summary>How do you decide who's naughty or nice?</summary><p>From public evidence about the company: B Corp certification, minimum-wage naming, regulator cases and more, each with a source and date. We don't show a verdict until our scoring rules are agreed, and it's always about the company, not a single product.</p></details>
-      <details><summary>Does my vote change the Santa Score?</summary><p>No. The Santa Score comes from evidence. Votes are shown next to it so you can see what other shoppers think.</p></details>
+      <details><summary>Does my vote change the Santa Score?</summary><p>No. Santa decides from the evidence 🎅. Your vote is the elves' view 🧝, shown next to it so everyone can see what other shoppers think.</p></details>
       <details><summary>Is it watching me?</summary><p>No. It only runs on the shops on our list, and it only sends that shop's web address to look it up. No browsing history and no account. <a href="https://build40for40.com/privacy">Privacy notice</a>.</p></details>
       <details><summary>Think we've got a shop wrong?</summary><p>Email help@build40for40.com with a source and we'll check it twice.</p></details>
     </div>
