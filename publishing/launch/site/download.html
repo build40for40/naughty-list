@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Naughty List · 40 for 40</title>
+<!-- DRAFT download page for build40for40.com/naughty-list. Standalone so it can be reviewed without touching the site repo.
+     Port into site/src/pages/naughty-list.astro once approved. Square brackets = facts the build must confirm. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{--navy:#002d69;--night:#081633;--panel:#10224a;--line:#1e3260;--lime:#a6e22e;--lime-hover:#bdf05a;--lime-ink:#1a2e05;--yellow:#ffd400;--pink:#ff7fcf;--text:#f2f0ea;--sub:#c9cfe0;--muted:#9aa6c4;--hole:#3a3206;--hole-fg:#ffe57a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--night);color:var(--text);font:15px/1.65 "JetBrains Mono",ui-monospace,Menlo,monospace}
+.w{max-width:960px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
+.hero .w>*{min-width:0}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;line-height:1.08;margin:0;text-wrap:balance}
+a{color:var(--lime)}
+.br{color:var(--yellow)}
+.hole{background:var(--hole);color:var(--hole-fg);padding:0 4px;border-radius:3px}
+nav{padding:20px 0;display:flex;align-items:center;gap:12px}
+nav img{width:56px;height:56px;border-radius:10px}
+nav span{color:var(--muted);font-size:13px}
+.hero{background:var(--navy);padding:56px 0 64px;background-image:radial-gradient(circle,rgba(242,240,234,.13) 1.4px,transparent 1.6px);background-size:46px 46px}
+.hero .w{display:grid;grid-template-columns:1fr 220px;gap:32px;align-items:center}
+.hero h1{font-size:clamp(44px,8vw,80px)}
+.poem{color:var(--sub);margin:18px 0 8px;font-size:16px}
+.lede{font-size:17px;max-width:52ch;margin:0 0 26px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;background:var(--lime);color:var(--lime-ink);font-weight:600;text-decoration:none;padding:13px 22px;border-radius:10px}
+.btn:hover{background:var(--lime-hover)}
+.btn.ghost{background:transparent;color:var(--lime);border:2px solid var(--lime)}
+.small{font-size:12.5px;color:var(--muted);margin-top:12px}
+.hero img.icon{width:220px;height:220px}
+section{padding:56px 0;border-top:1px solid var(--line)}
+section h2{font-size:34px;margin-bottom:20px}
+.video{aspect-ratio:16/9;max-width:100%;background:var(--panel);border:2px dashed var(--line);border-radius:14px;display:flex;align-items:center;justify-content:center;color:var(--muted);text-align:center;padding:20px}
+.cap{font-size:13px;color:var(--muted);margin-top:10px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;list-style:none;padding:0;margin:0;counter-reset:s}
+.steps li{background:var(--panel);border-radius:12px;padding:20px;counter-increment:s;min-width:0}
+.steps li::before{content:counter(s);display:block;font:800 30px "Bricolage Grotesque",sans-serif;color:var(--yellow);margin-bottom:6px}
+.install{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:var(--panel);border-radius:14px;padding:24px;min-width:0}
+.card h3{font-size:24px;margin-bottom:12px}
+.card ol{padding-left:20px;margin:12px 0}
+code{background:var(--line);padding:1px 6px;border-radius:4px}
+.soon{background:var(--navy);border-radius:14px;padding:20px 24px;color:var(--sub)}
+.soon b{color:var(--yellow)}
+dl{margin:0;display:grid;gap:22px}
+dt{font:700 19px "Bricolage Grotesque",sans-serif;margin-bottom:4px}
+dd{margin:0;color:var(--sub);max-width:68ch}
+footer{padding:36px 0 60px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+@media (max-width:720px){.hero .w,.install,.steps{grid-template-columns:1fr}.hero img.icon{width:120px;height:120px;order:-1}}
+</style>
+</head>
+<body>
+
+<nav class="w"><img src="../src/logo-40for40.svg" alt="40 for 40"><span>Day 3 of 40</span></nav>
+
+<header class="hero">
+  <div class="w">
+    <div>
+      <h1>The Naughty List</h1>
+      <p class="poem"><span class="br">(</span>Their billboards all twinkle, their TV ads all glow.<br>But who's been naughty or nice? Now you can know.<span class="br">)</span></p>
+      <p class="lede">Check the company behind the gift before you buy. See if a brand is a Certified B Corp, with the source and the date we checked.</p>
+      <div class="ctas">
+        <a class="btn" href="#install-chrome">Add to Chrome</a>
+        <a class="btn ghost" href="#install-firefox">Add to Firefox</a>
+      </div>
+      <p class="small">Free · no account · works on <span class="hole">[supported shops]</span></p>
+    </div>
+    <img class="icon" src="../src/icon-branded.svg" alt="">
+  </div>
+</header>
+
+<main>
+<section class="w">
+  <div class="video"><span class="hole">[DEMO VIDEO, 16:9, about 40 seconds]</span></div>
+  <p class="cap">Built live on Twitch in one day. Day 3 of 40 for 40.</p>
+</section>
+
+<section class="w">
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li>Shop like normal at <span class="hole">[supported shops]</span>.</li>
+    <li>On a product page, The Naughty List spots the brand.</li>
+    <li>You see if that company is a Certified B Corp, where that came from, and when we last checked.</li>
+  </ol>
+  <p class="small" style="margin-top:18px">Not on our list yet? It says so. That never means naughty. Naughty-or-nice ratings for staff, communities and the environment are coming next.</p>
+</section>
+
+<section class="w">
+  <h2>Install it</h2>
+  <div class="install">
+    <div class="card" id="install-chrome">
+      <h3>Chrome</h3>
+      <p>Until we're in the Chrome Web Store, it takes a minute by hand.</p>
+      <ol>
+        <li><a href="#">Download naughty-list.zip</a> <span class="hole">[link]</span> and unzip it.</li>
+        <li>Paste <code>chrome://extensions</code> into the address bar.</li>
+        <li>Switch on <b>Developer mode</b> (top right).</li>
+        <li>Click <b>Load unpacked</b> and pick the unzipped folder.</li>
+        <li>Click the puzzle piece in the toolbar and pin The Naughty List.</li>
+      </ol>
+      <p class="small">Also works in Edge, Brave and Arc. In Edge, go to <code>edge://extensions</code>. Chrome may remind you that a developer extension is on. That's expected until the store version arrives.</p>
+    </div>
+    <div class="card" id="install-firefox">
+      <h3>Firefox</h3>
+      <ol>
+        <li><a href="#">Add to Firefox</a> <span class="hole">[signed .xpi link]</span>.</li>
+        <li>Firefox asks if you want to add The Naughty List. Click <b>Add</b>.</li>
+      </ol>
+      <p class="small">Safari isn't supported yet.</p>
+    </div>
+  </div>
+  <p class="soon" style="margin-top:20px"><b>One-click install is on its way.</b> We've sent it to the Chrome Web Store for review. Already installed it by hand? You can switch when the store version is live.</p>
+</section>
+
+<section class="w">
+  <h2>Questions</h2>
+  <dl>
+    <div><dt>How do you decide?</dt><dd>Right now we show one thing: whether the company is a Certified B Corp, checked by hand against the B Lab directory, with the date. B Corps are independently assessed on how they treat workers, communities and the environment. It's about the company, not any single product.</dd></div>
+    <div><dt>Which brands are on the list?</dt><dd><span class="hole">[N]</span> to start, each checked by hand. We're adding more before Black Friday.</dd></div>
+    <div><dt>Does it track me?</dt><dd><span class="hole">[Version A or B from copy.md, once the build decides.]</span> There's no account. <a href="https://build40for40.com/privacy">Privacy notice</a>.</dd></div>
+    <div><dt>Think we got a brand wrong?</dt><dd>Email <span class="hole">[support email]</span> with a source and we'll look at it.</dd></div>
+    <div><dt>Who made this?</dt><dd>40 for 40: 40 apps in 40 days, built live on Twitch for people who pay to have their problem solved. This one was Day 3.</dd></div>
+  </dl>
+</section>
+</main>
+
+<footer class="w">40 for 40 · build40for40.com</footer>
+</body>
+</html>
