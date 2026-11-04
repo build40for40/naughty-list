@@ -46,3 +46,12 @@ Captured and visually inspected at 1280×800, DPR 1:
 PNG originals are retained. JPEGs are high-quality format conversions for the store's no-alpha requirement. No UI content was edited. Matching promo and marquee images are copied from the launch-assets branch; they are promotional artwork, not product screenshots.
 
 A real expanded case-file capture remains pending: the H&M homepage loaded but its linked product page returned Access Denied, Patagonia was under maintenance, and Tony's US product offered an external Amazon link rather than the required local purchase control. Do not simulate a live page or force a result for a store screenshot.
+
+## H&M capture completed
+
+The publisher opened the live H&M Slim Fit Supima cotton T-shirt page, allowing the remaining check without reloading or simulating the shop. Chrome 0.0.3 resolved H&M, showed a neutral badge and expanded its case file with “Current B Corp certification is unknown.” Purchase controls remained unobstructed and were not clicked.
+
+- `screenshots/elf-cam-hm-badge-chrome-1280x800.jpg`
+- `screenshots/elf-cam-hm-case-file-chrome-1280x800.jpg`
+
+Both are real, visually inspected 1280×800 captures (DPR 1), with PNG originals retained. These supersede the earlier H&M capture blocker. Proposed gallery order: H&M badge, H&M case file, unknown-shop state, settings. Store upload remains pending idle Chrome access; Firefox is still held.
