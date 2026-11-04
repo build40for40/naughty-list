@@ -2,7 +2,7 @@
 
 Prepared on 4 November 2026 for Superthread card #152, **Publish extension: common steps**.
 
-The current extension is a metadata-only scaffold. The backend is separate and is not called by the extension. These materials prepare publication; they do not establish that the extension is ready to submit.
+Version 0.0.2 implements local shopping detection, hostname-only backend lookup, an evidence stamp and position/enable settings. Scoring is deferred, so the current backend produces neutral states. Store submission and real browser compatibility testing are still pending.
 
 ## Manifest information
 
@@ -11,23 +11,25 @@ The current extension is a metadata-only scaffold. The backend is separate and i
 | Manifest format | `3` | Set |
 | Name | The Naughty List | Set |
 | Short name | Naughty List | Set |
-| Version | `0.0.1` | Current prerelease version |
-| Description | The Naughty List browser extension. Built for Black Friday and Christmas shopping. | Accurate scaffold copy; replace with implemented functionality before submission |
+| Version | `0.0.2` | Shopping overlay prerelease |
+| Description | Source-backed business information on shopping pages | Full description is in the manifest; no promise of universal coverage |
 | Author | 40 for 40 | Project name, not a registered publisher identity |
 | Homepage | Repository URL | Existing project URL |
-| Icons | PNG at 16, 32, 48 and 128 pixels | Draft artwork included; editable source is `publishing/icon.svg` |
+| Icons | Festive PNG at 16, 32, 48 and 128 pixels | Editable source is `publishing/launch/src/icon-festive.svg` |
 | Chrome extension ID | Assigned by the Chrome Web Store | Not yet available; do not invent or change the signing identity |
 | Firefox add-on ID | `{c2591c57-0224-4d4a-bdb4-a3223e58c354}` | Generated stable UUID in the Firefox overlay; uniqueness checked by AMO on first signing |
 | Firefox minimum version | Desktop `140.0`, Android `142.0` | Declaration compatibility floors; Android support has not been selected or tested |
-| Firefox data collection | `required: ["none"]` | True only of this scaffold; must be reviewed before backend/page integration |
-| Permissions / host permissions | None | No functionality currently needs them |
-| Content scripts / background / action | Absent | Follow actual implementation; no speculative site access |
+| Firefox data collection | `required: ["browsingActivity"]` | Shopping hostname sent to the API; no page contents or signal flags transmitted |
+| Permissions / host permissions | `storage`; fixed API origin | Preferences and session cache; background API access |
+| Content scripts | HTTPS sites, top frame only | Product/offer, price and purchase signals evaluated locally |
+| Background | Chrome service worker; Firefox scripts | Sender validation, lookup and session cache |
+| Options | `options.html` | Enable/disable and four corner positions |
 | Update URL | Absent | Store-managed updates; revisit only if self-distribution is chosen |
 | Localisation | Not configured | No locale bundles; no `default_locale` claim |
 
 `extension/manifest.json` is the Chrome source manifest. `publishing/manifest.firefox.json` is an overlay, not a standalone runnable manifest. Packaging merges it into the Firefox archive and leaves it out of the Chrome archive. The Firefox UUID is a technical add-on identifier, not an email address, credential or publisher identity. Preserve it for future updates.
 
-The icon is a simple original vector list on a festive red tile, with transparent outer padding. PNG exports were rendered from the SVG with `@resvg/resvg-js`; they contain no camera or location metadata. This is a draft project asset, not an approved final brand identity. Keep the source outside the runtime package.
+The festive icon and launch materials are included under `publishing/launch/`. The original draft vector remains in `publishing/icon.svg` for history; it is no longer the source of the runtime PNGs. Concept screenshots remain clearly marked and must not be uploaded as real store screenshots.
 
 ## Build the archives
 
@@ -40,23 +42,23 @@ npm run extension:package:firefox
 
 Outputs:
 
-- `dist/naughty-list-chrome-0.0.1.zip`
-- `dist/naughty-list-firefox-0.0.1.zip`
+- `dist/naughty-list-chrome-0.0.2.zip`
+- `dist/naughty-list-firefox-0.0.2.zip`
 
-Both contain only `manifest.json` at the root and `icons/`. The packaging script copies an explicit runtime allowlist into a temporary staging directory and rejects unreviewed root files or symlinks. It does not include the backend, dependencies, environment files or publication drafts. Review the allowlist when extension functionality adds files. `dist/` is ignored by Git.
+Both contain `manifest.json` at the root, four icons, packaged scripts and the options HTML/CSS, plus the root `LICENSE` when present. The packaging script uses an explicit runtime allowlist and rejects unreviewed root files or symlinks. It does not include the backend, dependencies, environment files or publication drafts. `dist/` is ignored by Git. The current repository includes the MIT licence.
 
 Validate an archive before upload:
 
 ```sh
-unzip -l dist/naughty-list-chrome-0.0.1.zip
-unzip -p dist/naughty-list-firefox-0.0.1.zip manifest.json
+unzip -l dist/naughty-list-chrome-0.0.2.zip
+unzip -p dist/naughty-list-firefox-0.0.2.zip manifest.json
 ```
 
 ## Common card progress
 
 | Checklist item | Preparation | Remaining work |
 | --- | --- | --- |
-| Release version | `0.0.1` set | Increase when cutting a later release |
+| Release version | `0.0.2` set | Increase when cutting a later release |
 | Runtime-only package | Chrome and Firefox archives built and inspected | Rebuild after implementation changes |
 | Browser installation and functionality tests | [Test matrix](testing.md) prepared | Run against actual supported browsers and working extension |
 | Metadata, icons, screenshots, support, privacy | [Metadata](store-metadata.md), draft icons and [privacy preparation](privacy.md) prepared | Real UI screenshots, final implemented-feature copy, publisher details, licence and hosted privacy notice |
@@ -64,11 +66,11 @@ unzip -p dist/naughty-list-firefox-0.0.1.zip manifest.json
 
 ## Submission blockers
 
-1. The extension has no useful shopper-facing behaviour yet. Do not submit a metadata-only scaffold as a finished product.
-2. Decide and implement the supported sites, trigger and overlay. Current backend B Corp evidence is not an overall ethical score or a product certification.
+1. Agree the naughty/nice scoring rule if the release promises verdicts. Current evidence remains neutral and B Corp is not a product certification.
+2. Review and deploy the backend relevance changes, and seed the reviewed regional hostname mappings before end-to-end release testing. This PR does not deploy them.
 3. Capture screenshots of the actual implemented extension. No fabricated UI screenshot has been supplied.
-4. Finalise data handling, consent, permissions and privacy disclosures from the implementation and Cloudflare account configuration. The scaffold's `none` declaration must not carry over automatically.
-5. Confirm the store publisher's identity and accounts, the software licence and the public privacy-policy URL. No store account or licence has been invented.
+4. Host the privacy notice after confirming Cloudflare platform logging/retention and the operator details. The Firefox declaration now covers hostname transmission; Chrome disclosures also need to cover local page-content processing.
+5. Complete remaining account/trader and privacy hosting checks in `publishing/submission.md`. Chrome publisher setup and the MIT licence are recorded there; do not invent missing legal/trader details.
 6. Complete browser installation, functionality and update testing. Source checks and backend tests are not browser tests.
 
 ## Official references

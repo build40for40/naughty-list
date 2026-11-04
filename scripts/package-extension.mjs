@@ -17,8 +17,9 @@ if (!/^(0|[1-9][0-9]{0,4})(\.(0|[1-9][0-9]{0,4})){0,3}$/.test(manifest.version)
 
 // Explicit runtime allowlist. Review it when adding extension functionality.
 // Publishing drafts, backend files, dependencies and secrets never enter the ZIP.
-const runtimeFiles = ['icons/icon-16.png', 'icons/icon-32.png', 'icons/icon-48.png', 'icons/icon-128.png'];
-const expectedRootFiles = new Set(['manifest.json', 'icons']);
+const runtimeFiles = ['icons/icon-16.png', 'icons/icon-32.png', 'icons/icon-48.png', 'icons/icon-128.png',
+  'shared.js', 'lookup.js', 'background.js', 'content.js', 'options.html', 'options.css', 'options.js'];
+const expectedRootFiles = new Set(['manifest.json', 'icons', ...runtimeFiles.filter(path => !path.includes('/'))]);
 for (const name of readdirSync(source)) {
   if (!expectedRootFiles.has(name)) throw new Error(`Review the runtime allowlist before packaging ${name}.`);
 }
@@ -43,14 +44,16 @@ const outputDir = join(root, 'dist');
 mkdirSync(outputDir, { recursive: true });
 const output = join(outputDir, `naughty-list-${target}-${manifest.version}.zip`);
 const staging = mkdtempSync(join(tmpdir(), 'naughty-list-extension-'));
+const licenceFiles = existsSync(join(root, 'LICENSE')) ? ['LICENSE'] : [];
 try {
   writeFileSync(join(staging, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`);
   mkdirSync(join(staging, 'icons'));
+  for (const file of licenceFiles) cpSync(join(root, file), join(staging, file));
   for (const file of runtimeFiles) cpSync(join(source, file), join(staging, file));
   // Remove only this generated archive before rebuilding, so zip cannot retain old entries.
   rmSync(output, { force: true });
-  execFileSync('zip', ['-q', '-r', '-X', output, 'manifest.json', ...runtimeFiles], { cwd: staging });
-  console.log(`Prepared dist/naughty-list-${target}-${manifest.version}.zip (scaffold only, not ready for store submission).`);
+  execFileSync('zip', ['-q', '-r', '-X', output, 'manifest.json', ...licenceFiles, ...runtimeFiles], { cwd: staging });
+  console.log(`Prepared dist/naughty-list-${target}-${manifest.version}.zip. Review the publication checklist before store submission.`);
 } finally {
   rmSync(staging, { recursive: true, force: true });
 }
