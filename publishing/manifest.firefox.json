@@ -4,9 +4,17 @@
       "id": "{c2591c57-0224-4d4a-bdb4-a3223e58c354}",
       "strict_min_version": "140.0",
       "data_collection_permissions": {
-        "required": ["browsingActivity"]
+        "required": [
+          "browsingActivity"
+        ]
       }
     }
   },
-  "background": { "scripts": ["shared.js", "lookup.js", "background.js"] }
+  "background": {
+    "scripts": [
+      "shared.js",
+      "lookup.js",
+      "background.js"
+    ]
+  }
 }
