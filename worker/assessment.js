@@ -1,6 +1,6 @@
 import companies from './companies.js';
 
-const normalize = (value) => value.normalize('NFKC').trim().replace(/\s+/g, ' ').toLowerCase();
+export const normalize = (value) => value.normalize('NFKC').trim().replace(/\s+/g, ' ').toLowerCase();
 
 // Accept a hostname only. Do not infer ownership from suffixes or subdomains.
 export function normalizeDomain(value) {

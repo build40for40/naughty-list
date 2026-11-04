@@ -3,7 +3,7 @@
 Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The problem is "Hard to know which brands are ethical", from Santa. Shared project context, services and rules live in `../AGENTS.md`.
 
 - **Form factor:** a Chrome extension.
-- **Status:** a bare Manifest V3 scaffold lives in `extension/`. The initial Cloudflare Worker backend lives in `worker/` and checks B Corp status against a small source-checked registry. Extension behaviour is not implemented. Full ethical scoring is deferred to the `scoring & criteria` card on the Superthread `day3` board.
+- **Status:** a bare Manifest V3 scaffold lives in `extension/`. The Cloudflare Worker backend in `worker/` reads reviewed company evidence from its dedicated `naughty-list` D1 database. Extension behaviour is not implemented. Source integrations are tracked in `Scoring Sources` (#155); the scoring algorithm and criteria are separate in #157 on the Superthread `day3` board.
 
 ## Backend decisions
 
@@ -11,9 +11,21 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 - `POST /v1/assessments` accepts exactly one domain hostname, brand name or typed identifier (`b_lab` directory slug or nine-digit DUNS string). Identifier support does not imply an external DUNS resolution service; only verified registry mappings resolve.
 - Domain lookup uses exact reviewed hostname mappings with source/check dates. Case and a trailing DNS dot are normalised; subdomains and regional domains require explicit mappings. A marketplace domain identifies the marketplace, not a product brand or selected seller. No seller extraction or automatic domain research is implemented.
 - Return B Corp certification evidence, provenance and check/refresh dates. Do not equate B Corp certification with a product-level ethical judgment.
-- Unmatched, ambiguous and stale records are unknown, never automatically uncertified or naughty. There is no complete B Lab feed or automatic research integration yet.
+- Unmatched and ambiguous identities are unknown, never automatically uncertified or naughty. Stale certification becomes unknown; historical enforcement evidence remains visible with freshness and event dates. There is no complete B Lab feed or per-request research integration.
 - Keep overall score and naughty/nice verdict unset until the scoring task is settled. No new scoring criteria are authorised by the initial backend work.
 - The extension's exact behaviour, supported sites and research pipeline remain undecided.
+
+## Locked decisions: evidence backend
+
+- Use the dedicated `naughty-list` D1 database, binding `DB`, in the shared Cloudflare account. This repo owns its migrations. Never write to the site's shared `40for40` database.
+- D1 is the evidence store. Vector search is deferred; semantic similarity must not establish company identity.
+- Public requests read stored evidence only. No scraping, paid lookups or AI research triggered by shopper requests. Database failure is a 503, not an unknown company.
+- Use reviewed exact aliases, identifiers and hostnames. Corporate relationships do not automatically transfer evidence. Regional legal entities, brands and product claims retain their assessed scope.
+- B Lab and EPA snapshots are manually reviewed. Selected minimum-wage, CMA and HSE records refresh daily using source-specific importers. Environment Agency and WBA remain blocked pending specific licence resolution.
+- Wikirate's B Corp connector uses API credentials and reviewed provider company IDs. The audited metric contains only 2022 observations; the current import is Tony's Chocolonely's historical report. Preserve reporting years and secondary-source attribution in `criteria.bCorpReports`; do not silently promote these reports into direct B Lab verification. Patagonia has no answer in that metric, which is not evidence of non-certification.
+- Imports validate all records before writing; scheduled writes use a D1 transaction per source. Retain prior evidence on failed refreshes, track import outcomes, keep evidence history and expose source coverage and freshness.
+- Dates distinguish events, publication, checking and refresh deadlines. Historical findings are not claims of current misconduct. Undertakings, changed practices, guilty pleas, civil settlements and orders remain distinct outcomes.
+- Data, operating commands and limitations are documented in `docs/evidence.md`.
 
 ## Locked decisions: four Ws
 

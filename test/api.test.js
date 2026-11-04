@@ -1,8 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import worker from '../worker/index.js';
+import workerModule from '../worker/index.js';
+import { seededDatabase } from './helpers.js';
 import { assess } from '../worker/assessment.js';
 import companies from '../worker/companies.js';
+
+const db = await seededDatabase();
+const worker = { fetch: request => workerModule.fetch(request, { DB: db }) };
 
 const post = body => worker.fetch(new Request('https://example.test/v1/assessments', {
   method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body)
