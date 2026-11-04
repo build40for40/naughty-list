@@ -1,10 +1,12 @@
 <!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="tiles.css"><style>
-body{display:flex;align-items:center;gap:14px;padding:0 26px 18px}
-.icon{width:124px;height:124px;flex:none;margin-left:-16px;transform:rotate(-6deg)}
-h1{font-size:46px}
-.scrawl{font-size:23px;margin-top:8px;transform:rotate(-2deg)}
-.stripe{bottom:0;height:16px}
-</style></head><body><div class="snow"></div><div class="stripe"></div>
-<img class="icon rel" src="icon-festive.svg">
-<div class="rel"><h1 class="d">The<br>Naughty List</h1><p class="scrawl">Check it twice before you buy!</p></div>
+:root{--cs:26px;--cw:3px;--ci:10px}
+body{display:flex;align-items:center;gap:16px;padding:0 30px}
+.icon{width:112px;height:112px;flex:none;margin-left:-16px}
+h1{font-size:50px}
+p{font-size:24px;margin-top:8px}
+.hud{position:absolute;top:14px;left:44px;font-size:17px}
+</style></head><body><div class="scan"></div><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>
+<div class="hud"><span class="dot"></span>REC · CAM 01</div>
+<img class="icon rel" src="icon-elfcam.svg">
+<div class="rel"><h1 class="d">The<br>Naughty List</h1><p class="soft">Brands on Elf Cam</p></div>
 </body></html>

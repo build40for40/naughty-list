@@ -22,31 +22,29 @@ Every `[square bracket]` is something the build still has to confirm before this
 
 So the honest message today is: *H&M isn't a Certified B Corp, here's the source and date, and that's one fact, not a verdict.* Copy must never turn "not a B Corp" into "naughty" (most companies aren't B Corps).
 
-## What the H&M badge says today
+## What Elf Cam shows on H&M today (Lawrence's PR #6, rendered from his code)
 
-Card 158 (Lawrence, 4 Nov): single-brand shops like H&M get a **brand badge**, not a Nice / Naughty split, because every product shares one company's evidence. The split (Nice, Naughty, Unknown) is for multi-brand shops later. Surface, trigger and placement are still open on card 158.
+Card 158: single-brand shops get a badge. Lawrence built it as **Elf Cam**, a North Pole CCTV parody (black, phosphor green, REC red, VT323). The strings below come from his `verdict.js` and `content.js`, fed with Ben's H&M result.
 
-- **Header:** The Naughty List · *Checked it twice*
-- **Company line:** Everything on this shop is from **H&M**
-- **State:** Certified B Corp? **Not listed**
-- **Detail:** H&M isn't in the B Lab directory of Certified B Corps. Source: B Lab directory · Checked 4 Nov 2026
-- **Note:** Lots of great companies aren't B Corps, so this isn't a naughty mark on its own. Full naughty-or-nice ratings are coming down the chimney.
-- **Where this came from (expanded):** We searched the B Lab directory for "H&M", "H&M Group" and "Hennes & Mauritz" on 4 Nov 2026 and found no listing. We'll check again by 4 Dec 2026.
-- **Footer:** About the company, not this jumper.
+- **Intro (first visit each day, ~4s):** REC · CAM 01 · WWW2.HM.COM · SUBJECT: H&M (BRAND) · **SUBJECT UNIDENTIFIED** · "No current evidence either way. No verdict."
+- **Corner badge:** **UNIDENTIFIED** · No verdict
+- **Case file:** Subject: H&M (the company behind this store) · Evidence: "No current evidence either way. No verdict." · Verdict: "Pending. Santa hasn't agreed his rules yet" · Source: B Lab · Checked: 4 Nov 2026 · Scope: The company, not individual products · "Not being on the list isn't the same as being naughty. The elves just haven't vouched for this one yet."
+
+**⚠️ Wording flag for Lawrence:** `verdict.js` treats "checked, not certified" the same as "no evidence", so H&M's evidence line reads "No current evidence either way" while the same case file shows a B Lab source and a 4 Nov check date. We did check, and H&M isn't in the directory. Suggested evidence line for that case: *"Not in the B Lab directory of Certified B Corps."* It would stay grey and Unidentified, with no verdict. The script and captions avoid quoting the evidence line until this is settled.
 
 ## Voice
 
 Ben's steer (4 Nov): it's Santa's idea, so it should feel like Christmas, not a compliance report. Playful, warm, pun-happy, and no 40 for 40 branding beyond a small "made by" credit. The puns never change the facts: we still only show B Corp status, the source and the date, and never call a brand naughty.
 
-Pun bank (use freely): check it twice · sleigh informed · yule know before you buy · ho ho hold on · elf-explanatory · what's in the sack · coming down the chimney · no coal · Santa's little helper · under the tree · season's readings
+Pun bank (use freely): Elf Cam is rolling · caught on Elf Cam · the brands are on camera, not you · case file · subject unidentified · check it twice · sleigh informed · yule know before you buy · ho ho hold on · elf-explanatory · what's in the sack · coming down the chimney · no coal · Santa's little helper · under the tree · season's readings
 
 ## Chrome Web Store: today's version
 
 **Name:** The Naughty List
 
-**Summary** (Chrome limit 132 characters, this is 126):
+**Summary** (Chrome limit 132 characters, this is 125):
 
-> He's making a list and checking it twice. Now you can too: is the brand behind the gift a Certified B Corp? Starting with H&M.
+> Who's been naughty or nice? Elf Cam puts the company behind the gift on camera: evidence, source and date. Starting with H&M.
 
 **Description:**
 
@@ -54,10 +52,10 @@ Pun bank (use freely): check it twice · sleigh informed · yule know before you
 >
 > At Christmas every brand's ads are merry and bright. But who's actually been nice to their workers, their communities and the planet? The Naughty List is Santa's little helper for your shopping: it checks the company behind the gift so you don't have to.
 >
-> We're starting small (even Santa started with one sleigh). This first version works on H&M's online shop. Open any product page and The Naughty List pops up to show whether H&M is a Certified B Corp: a company independently assessed on how it treats people and the planet. You'll see where that came from (the B Lab directory) and when our elves last checked.
+> We're starting small (even Santa started with one sleigh). This first version works on H&M's online shop. Open a product page and Elf Cam goes live for a few seconds, then shrinks to a badge in the corner. Click it for the case file: what our elves have on the company, where it came from (starting with the B Lab directory of Certified B Corps) and when they last checked. Elf Cam watches brands, not you.
 >
 > What's in the sack
-> • One brand to start, H&M, checked by hand. No elves were overworked.
+> • One shop to start, H&M, checked by hand. No elves were overworked.
 > • The source and check date with every result, so you can check it twice
 > • No account, no sign-up, no coal
 >
@@ -98,7 +96,7 @@ Add as a new section. Use B unless the build calls the API.
 
 **B. Everything happens inside the extension (recommended)**
 
-> **The Naughty List browser extension.** The extension only runs on H&M's online shop. It shows H&M's B Corp status from a list stored inside the extension. Nothing you browse leaves your browser, and there's no account or tracking. (Santa sees you when you're sleeping. We don't.) Questions: help@build40for40.com.
+> **The Naughty List browser extension.** The extension only runs on H&M's online shop. It shows H&M's B Corp status from a list stored inside the extension. Nothing you browse leaves your browser, and there's no account or tracking. Questions: help@build40for40.com.
 
 **A. If the extension calls our API**
 

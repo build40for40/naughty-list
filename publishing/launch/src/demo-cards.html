@@ -1,18 +1,21 @@
 <!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="tiles.css"><style>
 body{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
-.icon{transform:rotate(-6deg)}
-.drift{height:14%}
-.foot{position:absolute;left:0;right:0;text-align:center;color:var(--pine);font-weight:800}
-.url{display:inline-block;background:var(--gold);color:var(--pine);border-radius:999px;font-weight:900;box-shadow:0 6px 0 #b9862a}
-</style></head><body><div class="snow"></div><div class="drift"></div><div id="c" class="rel"></div><div class="foot" id="f"></div>
+.hud{position:absolute;display:flex;justify-content:space-between}
+.foot{position:absolute;left:0;right:0;text-align:center}
+.url{display:inline-block;border:3px solid var(--ph);padding:.25em .7em}
+</style></head><body><div class="scan"></div><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>
+<div class="hud" id="h"></div><div id="c" class="rel"></div><div class="foot soft" id="f"></div>
 <script>
-const k=new URLSearchParams(location.search).get('k'), c=document.getElementById('c'), f=document.getElementById('f');
+const k=new URLSearchParams(location.search).get('k'), $=id=>document.getElementById(id);
 const S={
- hook:{w:1920,h:1080,html:`<h1 class="d" style="font-size:170px">Who's been<br>naughty or nice?</h1><p class="scrawl" style="font-size:70px;margin-top:30px;transform:rotate(-2deg)">Check it twice before you buy.</p>`},
- end:{w:1920,h:1080,html:`<img class="icon" src="icon-festive.svg" style="width:300px"><h1 class="d" style="font-size:150px">The Naughty List</h1><p class="scrawl" style="font-size:64px;margin:16px 0 40px">Check it twice before you buy.</p><span class="url" style="font-size:40px;padding:18px 40px">build40for40.com/naughty-list</span>`,foot:['Free for Chrome &amp; Firefox · made by 40 for 40',26,50]},
- thumb:{w:1280,h:720,html:`<div style="display:flex;align-items:center;gap:40px;text-align:left"><img class="icon" src="icon-festive.svg" style="width:300px"><div><h1 class="d" style="font-size:120px">Naughty<br>or nice?</h1><p class="scrawl" style="font-size:54px;margin-top:14px">We checked H&amp;M 🎁</p></div></div>`},
- shook:{w:1080,h:1920,html:`<img class="icon" src="icon-festive.svg" style="width:340px;margin-bottom:30px"><h1 class="d" style="font-size:150px">Who's been<br>naughty<br>or nice?</h1><p class="scrawl" style="font-size:72px;margin-top:40px">Check it twice 🎄</p>`},
- send:{w:1080,h:1920,html:`<img class="icon" src="icon-festive.svg" style="width:340px"><h1 class="d" style="font-size:140px">The<br>Naughty List</h1><p class="scrawl" style="font-size:64px;margin:20px 0 50px">Free for Chrome &amp; Firefox</p><span class="url" style="font-size:42px;padding:20px 40px">Link in bio</span>`,foot:['made by 40 for 40',30,90]}
+ hook:{cs:70,cw:7,ci:30,hud:[44,120,34],html:`<h1 class="d" style="font-size:190px">Who's been<br>naughty or nice?</h1><p style="font-size:64px;margin-top:40px">Elf Cam is rolling.</p>`},
+ end:{cs:70,cw:7,ci:30,hud:[44,120,34],html:`<img src="icon-elfcam.svg" style="width:280px"><h1 class="d" style="font-size:170px;margin-top:10px">The Naughty List</h1><p style="font-size:56px;margin:18px 0 44px">The brands are on camera. Not you.</p><span class="url" style="font-size:52px">build40for40.com/naughty-list</span>`,foot:['Free for Chrome &amp; Firefox · made by 40 for 40',34,56]},
+ thumb:{cs:46,cw:5,ci:20,hud:[30,80,24],html:`<div style="display:flex;align-items:center;gap:40px;text-align:left"><img src="icon-elfcam.svg" style="width:280px"><div><h1 class="d" style="font-size:150px">Naughty<br>or nice?</h1><p style="font-size:56px;margin-top:14px">H&amp;M on Elf Cam</p></div></div>`},
+ shook:{cs:70,cw:7,ci:30,hud:[60,70,34],html:`<img src="icon-elfcam.svg" style="width:320px;margin-bottom:30px"><h1 class="d" style="font-size:170px">Who's been<br>naughty<br>or nice?</h1><p style="font-size:66px;margin-top:40px">Elf Cam is rolling.</p>`},
+ send:{cs:70,cw:7,ci:30,hud:[60,70,34],html:`<img src="icon-elfcam.svg" style="width:320px"><h1 class="d" style="font-size:160px;margin-top:10px">The Naughty<br>List</h1><p style="font-size:60px;margin:24px 0 50px">Free for Chrome &amp; Firefox</p><span class="url" style="font-size:54px">Link in bio</span>`,foot:['made by 40 for 40',36,100]}
 }[k];
-c.innerHTML=S.html; if(S.foot){f.innerHTML=S.foot[0];f.style.fontSize=S.foot[1]+'px';f.style.bottom=S.foot[2]+'px'}
+const r=document.documentElement.style; r.setProperty('--cs',S.cs+'px'); r.setProperty('--cw',S.cw+'px'); r.setProperty('--ci',S.ci+'px');
+const h=$('h'); h.style.top=S.hud[0]+'px'; h.style.left=h.style.right=S.hud[1]+'px'; h.style.fontSize=S.hud[2]+'px';
+h.innerHTML='<span class="plate"><span class="dot"></span>REC · CAM 01</span><span class="plate">04-11-2026 · NORTH POLE</span>';
+$('c').innerHTML=S.html; if(S.foot){$('f').innerHTML=S.foot[0];$('f').style.fontSize=S.foot[1]+'px';$('f').style.bottom=S.foot[2]+'px'}
 </script></body></html>

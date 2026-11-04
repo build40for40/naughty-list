@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Elf Cam icon: 96px art centred with 16px transparent padding (Chrome store rule) -->
+  <rect x="16" y="16" width="96" height="96" rx="20" fill="#0A0E0B"/>
+  <!-- viewfinder corners -->
+  <g fill="none" stroke="#7DFF9A" stroke-width="6" stroke-linecap="square">
+    <path d="M28 44V28h16"/><path d="M84 28h16v16"/><path d="M28 84v16h16"/><path d="M100 84v16H84"/>
+  </g>
+  <!-- the lens -->
+  <circle cx="64" cy="64" r="22" fill="#123322" stroke="#7DFF9A" stroke-width="5"/>
+  <circle cx="64" cy="64" r="11" fill="#000"/>
+  <circle cx="59" cy="59" r="4" fill="#7DFF9A" opacity=".8"/>
+  <!-- REC light -->
+  <circle cx="90" cy="38" r="7" fill="#FF3B30"/>
+</svg>
