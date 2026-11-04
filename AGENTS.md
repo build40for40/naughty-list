@@ -67,6 +67,13 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 - **Rearranging the page:** reorder or label the shop's own tiles and buttons; never copy tiles or rebuild buttons, so the basket, quantities and Buy now keep working. Never click for the shopper, and never hide or cover purchase controls.
 - How much a single action (such as one donation) counts is a scoring question for card 157, not a design one.
 
+## Elf Cam look (card 158, 4 November)
+
+- **Direction:** Lawrence chose Elf Cam, a North Pole CCTV parody, for the stamp. Jokes target brands, never shoppers. Design reference: https://claude.ai/artifact/2wxJoMkbyGVb71Af4eRZ1d. Single-brand badge mode is the way forward; the multi-brand Elf Cam sorting view is v2 and not built.
+- **Stamp:** the existing stamp (logic, states, settings, dismissal and purchase-control placement unchanged) is styled as a camera feed: black panel, scanlines, a lens and blinking REC in the header, and the bundled VT323 pixel font (SIL OFL, `extension/fonts/`). Neutral is pale grey; nice green and naughty red only when the backend supplies a verdict. Evidence sits under "Case file".
+- **Intro:** once per shop per day, after a successful lookup, corner brackets and a REC/clock readout show for 3.5 seconds, ending early on scroll, key or click. It never takes clicks, and it is skipped if a purchase control sits in the top 90px or bottom 70px of the window. The date is stored locally as `elfCamIntro:<hostname>`.
+- **Still to reconcile:** the launch look above (Santa red, pine green, snow, gold) and the store graphics on `launch-assets` predate Elf Cam.
+
 ## Implemented technical MVP flow
 
 - Shopping detection is local and heuristic: require price evidence plus product/offer metadata and an actionable purchase control. Product markup alone is insufficient. Current purchase-control matching uses English labels.
