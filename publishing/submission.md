@@ -72,9 +72,9 @@ Never upload the CONCEPT screenshots. Capture the actual installed extension. Th
 ## Remaining release gates
 
 - Real Chrome and Firefox installation/functionality checks and real screenshots.
-- Public extension privacy notice. The existing build40for40.com/privacy/ page does not yet describe the extension.
+- Public extension privacy notice is live at https://build40for40.com/privacy/ following site PR #28. Confirm Cloudflare logging/retention settings before making more specific platform retention claims.
 - Review/deploy the backend relevance changes and seed exact hostname mappings before claiming reviewed brand-shop matches. The live Patagonia response checked during preparation had no relevance field.
-- Complete publisher email verification and confirm the correct trader declaration with the account owner.
-- Mozilla publisher sign-in and any required developer agreement acceptance by the account owner.
+- Chrome publisher name is saved as 40 for 40 and help@build40for40.com is verified. The ZIP upload was rejected because the Google account requires 2-Step Verification. The account owner must enable it, then retry the upload. Confirm the correct trader declaration with the account owner.
+- Mozilla sign-in is complete. The profile form is prepared with 40 for 40 and https://build40for40.com; profile creation is awaiting the account owner's confirmation. Any required developer agreement acceptance must also be completed before submission.
 
 No store review submission or signing has been completed by preparing this file.
