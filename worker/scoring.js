@@ -11,6 +11,8 @@ const PROVEN = new Set(['government_naming', 'guilty_plea_and_fine', 'guilty_ple
 // Warnings: the practice was real and a regulator stepped in, but nothing was proven or admitted.
 const WARNING = new Set(['undertaking', 'undertakings', 'revised_undertakings', 'commitments']);
 const COAL = { proven: 2, warning: 1 };
+// Minimum-wage namings under £1,000 in total are shown but earn no coal (card 157, 4 Nov).
+export const MIN_UNDERPAYMENT_GBP = 1000;
 
 const day = value => (typeof value === 'string' ? value.slice(0, 10) : null);
 
@@ -53,6 +55,7 @@ export function santaScore(evidence, { asOf }) {
     const date = day(record.eventDate) ?? day(record.publishedAt);
     const datedByPublication = !day(record.eventDate) && Boolean(day(record.publishedAt));
     if (!kind) history.push({ record, reason: record.outcome === 'practice_changed' ? 'changed_its_ways' : 'not_scored' });
+    else if (record.outcome === 'government_naming' && Number(record.facts?.underpaymentGBP) < MIN_UNDERPAYMENT_GBP) history.push({ record, reason: 'below_threshold' });
     else if (!date || date < start) history.push({ record, reason: date ? 'older_than_window' : 'undated' });
     else counted.push({ record, kind, coal: COAL[kind], date, datedByPublication });
   }
