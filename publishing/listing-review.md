@@ -33,3 +33,16 @@ The launch-assets screenshot 1–3 files render actual code and live API data on
 - Upload 0.0.3 and current screenshots to Chrome; retain manual publication.
 - Replace the Firefox package and listing materials without submitting it; the existing held wizard does not expose a separate homepage metadata field.
 - Do not describe the Firefox held form as a submitted release.
+
+## Live Chrome capture check — 0.0.3
+
+The isolated release was loaded unpacked in Chrome with the older test build disabled. On the live Allbirds Men's Wool Runners page, selecting an available size triggered the neutral Elf Cam badge; the purchase button remained accessible and was not clicked. The badge's Settings button opened the packaged settings page.
+
+Captured and visually inspected at 1280×800, DPR 1:
+
+- `screenshots/elf-cam-unknown-chrome-1280x800.jpg`: actual live shop and current Elf Cam unknown state.
+- `screenshots/elf-cam-settings-chrome-1280x800.jpg`: actual settings opened from that badge.
+
+PNG originals are retained. JPEGs are high-quality format conversions for the store's no-alpha requirement. No UI content was edited. Matching promo and marquee images are copied from the launch-assets branch; they are promotional artwork, not product screenshots.
+
+A real expanded case-file capture remains pending: the H&M homepage loaded but its linked product page returned Access Denied, Patagonia was under maintenance, and Tony's US product offered an external Amazon link rather than the required local purchase control. Do not simulate a live page or force a result for a store screenshot.
