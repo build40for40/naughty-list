@@ -1,0 +1,6 @@
+{
+  "manifest_version": 3,
+  "name": "The Naughty List",
+  "version": "0.0.1",
+  "description": "The Naughty List browser extension."
+}

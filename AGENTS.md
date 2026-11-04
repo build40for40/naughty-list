@@ -3,7 +3,7 @@
 Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The problem is "Hard to know which brands are ethical", from Santa. Shared project context, services and rules live in `../AGENTS.md`.
 
 - **Form factor:** a Chrome extension.
-- **Status:** nothing is built yet. The team hasn't decided what the extension does beyond that, so don't scaffold or write code until they've settled the plan and ask for it.
+- **Status:** a bare Manifest V3 scaffold lives in `extension/`. It loads in Chrome but has no behaviour yet. The team hasn't decided what the extension does beyond that, so don't add product behaviour until they've settled the plan and ask for it.
 
 ## The problem
 
