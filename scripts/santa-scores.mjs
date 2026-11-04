@@ -3,7 +3,7 @@
 //   npm run scores                         markdown table, deployed API, today
 //   npm run scores -- --json               machine-readable output
 //   npm run scores -- --api http://localhost:8787 --as-of 2026-11-04
-// Draft output only: do not publish it until card 157 is signed off.
+// Preview output only: scores reach shoppers through the API, not this script.
 import { parseArgs } from 'node:util';
 import retailers from '../data/santa-retailers.js';
 import { readFileSync } from 'node:fs';
@@ -50,7 +50,7 @@ if (values.json) {
   console.log(JSON.stringify({ method: METHOD_VERSION, draft: true, asOf: values['as-of'], api: values.api, rows }, null, 2));
 } else {
   const cell = text => String(text).replaceAll('|', '\\|');
-  console.log(`DRAFT Santa Scores, method ${METHOD_VERSION}, as of ${values['as-of']}. Not signed off; do not publish.\n`);
+  console.log(`DRAFT Santa Scores, method ${METHOD_VERSION}, as of ${values['as-of']}. Preview only; do not publish from this output.\n`);
   console.log('Incidents come from the registry only. Retailers marked "incidents not in registry" have not had their card 159 research added yet, so their verdict can be too kind.\n');
   console.log('| # | Retailer | Domain | Counted records | Report card | Total | Draft verdict | Note |');
   console.log('| ---: | --- | --- | --- | --- | ---: | --- | --- |');

@@ -1,6 +1,6 @@
-# Santa Score v0.3
+# Santa Score
 
-**Method `santa-v0.4`, approved for release by Samira on card 157 on 4 November 2026, superseding `santa-v0.3`.** The API computes company scores from published evidence plus the gov.uk report card below. Exact entity matching rules still apply; too little evidence is "not enough evidence", never naughty.
+**Method `santa-v0.4`: signed off by Lawrence (team leader) and approved for release by Samira on card 157 on 4 November 2026, superseding `santa-v0.3`.** The API computes company scores from published evidence plus the gov.uk report card below. Exact entity matching rules still apply; too little evidence is "not enough evidence", never naughty.
 
 Santa doesn't judge on rumours. He checks his list twice, believes in second chances, and only proven, recent naughtiness earns coal.
 
@@ -85,13 +85,14 @@ No records never means naughty or nice. A stale B Corp record is not a gift.
 
 Incidents in `npm run scores` come only from the registry. The card 159 research in `data/research/` is not in the registry yet, so those rows say "incidents not in registry" and their verdict can be too kind. The combined v0.4 draft is posted on card 157.
 
-## Remaining coverage work
+## Open after sign-off
+
+These were open when v0.4 was signed off. They are limitations or follow-ups, not blockers to the method.
 
 - v0.4: whether the gender pay gap belongs in the score (it reflects job mix as much as fairness), the quartile thresholds, the new Watch list verdict (needs a card 158 design) and every company-number match in `data/santa-filings.js`.
 - Add the card 159 incident research to the registry so the API reproduces the combined scores for all 100.
 
-- The owner rule conflicts with the backend rule that corporate relationships don't transfer evidence. Update `AGENTS.md` and `docs/evidence.md` on sign-off.
-- Owner links still require individual source review before any evidence can be combined. This release scores the matched entity only.
+- The owner rule conflicts with the backend rule that corporate relationships don't transfer evidence. The backend rule still governs the API; changing it needs its own decision, then updates to `AGENTS.md` and `docs/evidence.md`.
 - Employee voice: Glassdoor has no public API and bans scraping. Proposed: employment tribunal judgments as coal and Living Wage Foundation accreditation as a gift, subject to licence (card 155).
 - Whether Amazon's competition commitments should count the same as misleading shoppers.
 - Whether the window counts by exact day or calendar year.
@@ -108,7 +109,7 @@ Hand-computed from `data/research/`. Not yet in the registry or API.
 | Not enough evidence, warning shown | Wowcher, Asda (George), ASOS, Boohoo, Amazon UK (CMA undertakings from Amazon Europe Core SARL, Jun 2025) |
 | Not enough evidence | Everyone else, including Tesco (£227.84) and Harrods (£775.04), whose namings are under £1,000 |
 
-**Open before sign-off:**
+**Open at sign-off:**
 - **Severity (agreed 4 Nov):** minimum-wage namings under £1,000 in total are shown but earn no coal. Larger ones count in full.
 - **Halfords:** two Halfords companies in the same round are counted as one incident.
 - **Not counted:** regional co-operative societies are not the Co-op Group. Land-agreement letters (Morrisons, Co-op, M&S) are "changed its ways".
