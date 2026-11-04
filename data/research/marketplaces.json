@@ -1,0 +1,498 @@
+[
+ {
+  "n": 1,
+  "retailer": "Amazon",
+  "domain": "amazon.co.uk",
+  "entity": {
+   "legalName": "Amazon EU SARL, UK Branch",
+   "companyNumber": "FC032354",
+   "sourceUrl": "https://www.amazon.co.uk/gp/help/customer/display.html?nodeId=GLSBYFE9MGKKQXXM"
+  },
+  "owner": {
+   "name": "Amazon.com, Inc.",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/03223028/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=amazon&sortBy=companies-production-en-us"
+  },
+  "cma": [
+   {
+    "path": "/cma-cases/online-reviews",
+    "eventDate": "2025-06-06",
+    "outcome": "undertakings",
+    "guard": "Amazon Europe Core SARL has signed undertakings committing to enhance its existing systems for tackling fake reviews and ‘catalogue abuse’.",
+    "summary": "Amazon Europe Core SARL signed undertakings (signed 8 May 2025, accepted 6 June 2025) to enhance systems for tackling fake reviews and catalogue abuse, with sanctions for sellers and users who post fake reviews."
+   },
+   {
+    "path": "/cma-cases/investigation-into-amazons-marketplace",
+    "eventDate": "2023-11-03",
+    "outcome": "commitments",
+    "guard": "The CMA published a non-confidential version of its decision to accept commitments from Amazon in relation to certain practices on its Marketplace platform in the UK.",
+    "summary": "CMA accepted binding commitments from Amazon on third-party seller data use, Buy Box treatment and Prime delivery rate negotiation; investigation closed 3 Nov 2023 (already held)."
+   }
+  ],
+  "hse": [],
+  "notes": "B Lab directory search (browser, 4 Nov 2026) returned no matching company in top results; search is fuzzy so treated as not certified. HSE press WP API (only 255 posts, 2021-01 onward) returned no post naming this company; HSE convictions database host did not resolve, so not exhaustively checked. Conditions of Use: website owned by Amazon Europe Core SARL (Luxembourg RCS B180022); UK branch Amazon EU SARL, UK Branch, FC032354 / BR17427. Amazon UK Services Ltd (03223028) is a separate UK entity whose PSC is Amazon.Com, Inc.; owner link is for that entity only. Amazon/Anthropic and Amazon/Deliveroo merger cases skipped."
+ },
+ {
+  "n": 2,
+  "retailer": "eBay",
+  "domain": "ebay.co.uk",
+  "entity": {
+   "legalName": "eBay (UK) Limited",
+   "companyNumber": "03726028",
+   "sourceUrl": "https://www.ebay.co.uk/help/policies/member-behaviour-policies/user-agreement?id=4259"
+  },
+  "owner": {
+   "name": "eBay Inc.",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/03726028/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=ebay&sortBy=companies-production-en-us"
+  },
+  "cma": [
+   {
+    "path": "/cma-cases/fake-and-misleading-online-reviews",
+    "eventDate": "2020-01-08",
+    "outcome": "practice_changed",
+    "guard": "In response to CMA concerns, Facebook and eBay have taken action to tackle the trade of fake and misleading reviews on their websites.",
+    "summary": "After CMA concerns about the trade in fake and misleading reviews, eBay removed identified content and agreed to put measures in place to prevent it recurring. Entity not named on page beyond \"eBay\"."
+   }
+  ],
+  "hse": [],
+  "notes": "B Lab directory search (browser, 4 Nov 2026) returned no matching company in top results; search is fuzzy so treated as not certified. HSE press WP API (only 255 posts, 2021-01 onward) returned no post naming this company; HSE convictions database host did not resolve, so not exhaustively checked. User Agreement: UK residents contract with eBay (UK) Limited. CMA 8 Jan 2020 outcome page names only \"eBay\", pre-2023 history. eBay/Depop merger (cleared 15 Jul 2026) and Adevinta/eBay are merger cases, skipped."
+ },
+ {
+  "n": 3,
+  "retailer": "Argos",
+  "domain": "argos.co.uk",
+  "entity": {
+   "legalName": "Argos Limited",
+   "companyNumber": "01081551",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/01081551"
+  },
+  "owner": {
+   "name": "J Sainsbury plc",
+   "sourceUrl": "https://www.gov.uk/cma-cases/sainsbury-s-home-retail-group-merger-inquiry"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=argos&sortBy=companies-production-en-us"
+  },
+  "cma": [
+   {
+    "path": "/government/news/cma-secures-over-500k-for-argos-extended-warranty-customers",
+    "eventDate": "2021-03-26",
+    "outcome": "practice_changed",
+    "guard": "Argos will provide over half a million pounds to customers who may have missed out on a cheaper extended warranty deal.",
+    "summary": "Argos breached its 2012 undertakings by not linking to the Compare Extended Warranties site; it will contact affected customers, pay over GBP 500k goodwill and reinstate the link (pre-2023 history)."
+   }
+  ],
+  "hse": [],
+  "notes": "B Lab directory search (browser, 4 Nov 2026) returned no matching company in top results; search is fuzzy so treated as not certified. HSE press WP API (only 255 posts, 2021-01 onward) returned no post naming this company; HSE convictions database host did not resolve, so not exhaustively checked. Argos site terms not reachable (403/denied), so trading entity taken from Companies House only. Owner: J Sainsbury plc (Sainsbury's/Home Retail Group merger case page title only; not read in detail; CH chain via Tumblecrest 2 Ltd -> Home Retail Group (UK) Ltd untraced to the plc; same registered office as J Sainsbury plc 00185647). NOTE: CMA released the 2012 Argos/DSG extended-warranty undertakings on 4 Nov 2026 (/government/publications/argos-limited-and-dsg-retail-limited-undertakings), a release not a finding."
+ },
+ {
+  "n": 4,
+  "retailer": "Temu",
+  "domain": "temu.com",
+  "entity": {
+   "legalName": "Whaleco UK Limited",
+   "companyNumber": "14476358",
+   "sourceUrl": "https://www.temu.com/uk/terms-of-use.html"
+  },
+  "owner": {
+   "name": "PDD Holdings Inc.",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/14476358/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=temu&sortBy=companies-production-en-us"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Lab directory search (browser, 4 Nov 2026) returned no matching company in top results; search is fuzzy so treated as not certified. HSE press WP API (only 255 posts, 2021-01 onward) returned no post naming this company; HSE convictions database host did not resolve, so not exhaustively checked. Terms: contract is with Whaleco UK Limited, a UK company (number from Companies House name match). No CMA case found in gov.uk search."
+ },
+ {
+  "n": 5,
+  "retailer": "Etsy",
+  "domain": "etsy.com",
+  "entity": {
+   "legalName": "Etsy UK Limited",
+   "companyNumber": "07540118",
+   "sourceUrl": "https://www.etsy.com/legal/terms-of-use"
+  },
+  "owner": {
+   "name": "Etsy, Inc",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/07540118/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=etsy&sortBy=companies-production-en-us"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Lab directory search (browser, 4 Nov 2026) returned no matching company in top results; search is fuzzy so treated as not certified. HSE press WP API (only 255 posts, 2021-01 onward) returned no post naming this company; HSE convictions database host did not resolve, so not exhaustively checked. Terms: Etsy UK Limited is merchant of record for UK residents; contract otherwise with Etsy Ireland UC. No CMA case found."
+ },
+ {
+  "n": 6,
+  "retailer": "Shein",
+  "domain": "shein.co.uk",
+  "entity": {
+   "legalName": "Infinite Styles Services Co., Limited",
+   "companyNumber": null,
+   "sourceUrl": "https://www.shein.co.uk/Consumer-Privacy-Notice-s-101.html?channelId=10"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=shein&sortBy=companies-production-en-us"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Lab directory search (browser, 4 Nov 2026) returned no matching company in top results; search is fuzzy so treated as not certified. HSE press WP API (only 255 posts, 2021-01 onward) returned no post naming this company; HSE convictions database host did not resolve, so not exhaustively checked. UNVERIFIED UK trading entity. UK privacy notice says site/app provided by Infinite Styles Services Co., Limited (controller; Hong Kong; no UK company number). Shein Distribution UK Limited 13603594 exists (PSC Roadget Business Pte. Ltd.) but trader role not confirmed from retailer terms. UK T&C page not located. No CMA case found."
+ },
+ {
+  "n": 7,
+  "retailer": "AliExpress",
+  "domain": "aliexpress.com",
+  "entity": {
+   "legalName": "Alibaba.com Singapore E-Commerce Private Limited",
+   "companyNumber": null,
+   "sourceUrl": "https://cdn.contract.alibaba.com/terms/EU_EE_UK_platform_service_agreement/20250514112355975/20250514112355975.html?lng=en"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=aliexpress&sortBy=companies-production-en-us"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Lab directory search (browser, 4 Nov 2026) returned no matching company in top results; search is fuzzy so treated as not certified. HSE press WP API (only 255 posts, 2021-01 onward) returned no post naming this company; HSE convictions database host did not resolve, so not exhaustively checked. EU/EEA/UK consumer terms name Alibaba.com Singapore E-Commerce Private Limited (Singapore Reg. No. 200720572D) as contracting party; no Companies House number. Alibaba E-Commerce (UK) Limited 15030245 exists but role unverified. Ultimate owner not stated in source read. No CMA case found."
+ },
+ {
+  "n": 8,
+  "retailer": "Vinted",
+  "domain": "vinted.co.uk",
+  "entity": {
+   "legalName": "Vinted Platform Limited",
+   "companyNumber": "15015234",
+   "sourceUrl": "https://www.vinted.co.uk/terms_and_conditions"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=vinted&sortBy=companies-production-en-us"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Lab directory search (browser, 4 Nov 2026) returned no matching company in top results; search is fuzzy so treated as not certified. HSE press WP API (only 255 posts, 2021-01 onward) returned no post naming this company; HSE convictions database host did not resolve, so not exhaustively checked. UK terms: Vinted Platform Limited, company number 15015234. Owner not verified (Companies House shows no PSC for Vinted Limited 07874344). Draft price-transparency guidance mention only; no CMA case."
+ },
+ {
+  "n": 9,
+  "retailer": "Depop",
+  "domain": "depop.com",
+  "entity": {
+   "legalName": "Depop Limited",
+   "companyNumber": "08316342",
+   "sourceUrl": "https://depophelp.zendesk.com/hc/en-gb/articles/360001773148-Terms-of-Service"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=depop&sortBy=companies-production-en-us"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Lab directory search (browser, 4 Nov 2026) returned no matching company in top results; search is fuzzy so treated as not certified. HSE press WP API (only 255 posts, 2021-01 onward) returned no post naming this company; HSE convictions database host did not resolve, so not exhaustively checked. Owner UNCLEAR: Companies House PSC register lists both eBay Inc. and Etsy, Inc for Depop Limited; CMA cleared eBay Inc.'s anticipated acquisition of Depop on 15 Jul 2026 (/cma-cases/ebay-slash-depop-merger-inquiry, merger, skipped). Completion not verified. Depop terms page showed two different registered-office addresses (1 More London Place vs Bristol), likely mid-transition."
+ },
+ {
+  "n": 10,
+  "retailer": "Very",
+  "domain": "very.co.uk",
+  "entity": {
+   "legalName": "Shop Direct Home Shopping Limited",
+   "companyNumber": "04663281",
+   "sourceUrl": "https://www.very.co.uk/help/en/terms-and-conditions.page"
+  },
+  "owner": {
+   "name": "The Very Group Limited",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/04663281/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=very%20group&sortBy=companies-production-en-us"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Lab directory search (browser, 4 Nov 2026) returned no matching company in top results; search is fuzzy so treated as not certified. HSE press WP API (only 255 posts, 2021-01 onward) returned no post naming this company; HSE convictions database host did not resolve, so not exhaustively checked. Terms: site owned and operated by Shop Direct Home Shopping Limited (number from site footer). Companies House PSC: Littlewoods Limited, which is under The Very Group Limited 04730752 (footer credit); intermediate link not traced. No CMA case found."
+ },
+ {
+  "n": 11,
+  "retailer": "John Lewis",
+  "domain": "johnlewis.com",
+  "entity": {
+   "legalName": "John Lewis plc",
+   "companyNumber": "00233462",
+   "sourceUrl": "https://www.johnlewis.com/customer-services/terms-and-conditions"
+  },
+  "owner": {
+   "name": "John Lewis Partnership plc",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00233462/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=john%20lewis&sortBy=companies-production-en-us"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Lab directory search (browser, 4 Nov 2026) returned no matching company in top results; search is fuzzy so treated as not certified. HSE press WP API (only 255 posts, 2021-01 onward) returned no post naming this company; HSE convictions database host did not resolve, so not exhaustively checked. Number from site footer text (\"Company Number: 233462\"). Page was a 404 shell, footer only. Only older John Lewis CMA items are mergers (2004), skipped."
+ },
+ {
+  "n": 12,
+  "retailer": "Marks & Spencer",
+  "domain": "marksandspencer.com",
+  "entity": {
+   "legalName": "Marks and Spencer plc",
+   "companyNumber": "00214436",
+   "sourceUrl": "https://www.marksandspencer.com/help-and-support/my-account-and-m-and-s-policies"
+  },
+  "owner": {
+   "name": "Marks and Spencer Group plc",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00214436/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=marks%20and%20spencer&sortBy=companies-production-en-us"
+  },
+  "cma": [
+   {
+    "path": "/government/publications/open-letter-to-ms-about-land-agreements-restricting-competition",
+    "eventDate": "2023-12-06",
+    "outcome": "practice_changed",
+    "guard": "M&S has taken, and continues to take, steps to correct these breaches and the CMA has published a letter sent to M&S following its investigation of these breaches.",
+    "summary": "CMA found 10 M&S land agreements breached the Groceries Market Investigation (Controlled Land) Order 2010; M&S correcting breaches; CMA published a letter to M&S. Competition remedy breach, not a /cma-cases/ page."
+   }
+  ],
+  "hse": [],
+  "notes": "B Lab directory search (browser, 4 Nov 2026) returned no matching company in top results; search is fuzzy so treated as not certified. HSE press WP API (only 255 posts, 2021-01 onward) returned no post naming this company; HSE convictions database host did not resolve, so not exhaustively checked. Site footer: Marks and Spencer plc (UK); CH name MARKS AND SPENCER P.L.C. 00214436. The CMA item is a letter on land agreement breaches under the Groceries Controlled Land Order, not a consumer case."
+ },
+ {
+  "n": 13,
+  "retailer": "Next",
+  "domain": "next.co.uk",
+  "entity": {
+   "legalName": "Next Retail Limited",
+   "companyNumber": "04521150",
+   "sourceUrl": "https://www.next.co.uk/terms"
+  },
+  "owner": {
+   "name": "Next plc",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/04521150/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=next%20retail&sortBy=companies-production-en-us"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Lab directory search (browser, 4 Nov 2026) returned no matching company in top results; search is fuzzy so treated as not certified. HSE press WP API (only 255 posts, 2021-01 onward) returned no post naming this company; HSE convictions database host did not resolve, so not exhaustively checked. Terms: goods supplied by Next Retail Limited, company reg 04521150. Immediate PSC is Next Holdings Limited; Next plc 04412362 assumed top company, chain not traced. No CMA case found."
+ },
+ {
+  "n": 14,
+  "retailer": "Debenhams",
+  "domain": "debenhams.com",
+  "entity": {
+   "legalName": "DBZ Marketplace Online Limited",
+   "companyNumber": "13135555",
+   "sourceUrl": "https://www.debenhams.com/pages/informational/terms-and-conditions"
+  },
+  "owner": {
+   "name": "boohoo group plc (trading as Debenhams Group)",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/13135555/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=debenhams&sortBy=companies-production-en-us"
+  },
+  "cma": [
+   {
+    "path": "/cma-cases/asos-boohoo-and-asda-greenwashing-investigation",
+    "eventDate": "2024-03-27",
+    "outcome": "undertakings",
+    "guard": "ASOS, Boohoo and George at Asda have signed formal agreements to use only accurate and clear green claims.",
+    "summary": "Undertakings from Boohoo (owner group of the Debenhams brand) to make only accurate and clear green claims. Names Boohoo, not Debenhams; counts for Debenhams only under the owner rule."
+   }
+  ],
+  "hse": [],
+  "notes": "B Lab directory search (browser, 4 Nov 2026) returned no matching company in top results; search is fuzzy so treated as not certified. HSE press WP API (only 255 posts, 2021-01 onward) returned no post naming this company; HSE convictions database host did not resolve, so not exhaustively checked. Terms: debenhams.com operated by DBZ Marketplace Online Limited, 13135555. Companies House PSC: Debenhams Holdings Limited and Boohoo Holdings Limited (now Debenhams Group Holdings Limited 11941376). Parent plc named from press reports only (Jersey boohoo group plc, rebrand to Debenhams Group trading name, legal name change reportedly failed 28 Mar 2025); not confirmed on a primary page. CMA 2024 undertakings were given by Boohoo, counted under owner rule."
+ },
+ {
+  "n": 15,
+  "retailer": "Selfridges",
+  "domain": "selfridges.com",
+  "entity": {
+   "legalName": "Selfridges Retail Limited",
+   "companyNumber": "00097117",
+   "sourceUrl": "https://www.selfridges.com/GB/en/info/terms-conditions/"
+  },
+  "owner": {
+   "name": "Selfridges & Co. Limited",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00097117/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=selfridges&sortBy=companies-production-en-us"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Lab directory search (browser, 4 Nov 2026) returned no matching company in top results; search is fuzzy so treated as not certified. HSE press WP API (only 255 posts, 2021-01 onward) returned no post naming this company; HSE convictions database host did not resolve, so not exhaustively checked. Terms confirm Selfridges Retail Limited, company number 97117. Owner given is only the immediate PSC; ultimate owner not verified."
+ },
+ {
+  "n": 16,
+  "retailer": "Harrods",
+  "domain": "harrods.com",
+  "entity": {
+   "legalName": "Harrods Limited",
+   "companyNumber": "00030209",
+   "sourceUrl": "https://www.harrods.com/en-gb/s/legal/terms-and-conditions"
+  },
+  "owner": {
+   "name": "Harrods (UK) Limited",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00030209/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=harrods&sortBy=companies-production-en-us"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Lab directory search (browser, 4 Nov 2026) returned no matching company in top results; search is fuzzy so treated as not certified. HSE press WP API (only 255 posts, 2021-01 onward) returned no post naming this company; HSE convictions database host did not resolve, so not exhaustively checked. Terms confirm Harrods Limited, company number 00030209. Owner given is only the immediate PSC; ultimate owner not verified."
+ },
+ {
+  "n": 17,
+  "retailer": "Liberty",
+  "domain": "libertylondon.com",
+  "entity": {
+   "legalName": "Liberty Retail Limited",
+   "companyNumber": "00042342",
+   "sourceUrl": "https://www.libertylondon.com/uk/terms-and-conditions"
+  },
+  "owner": {
+   "name": "Liberty Limited",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00042342/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=liberty%20london&sortBy=companies-production-en-us"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Lab directory search (browser, 4 Nov 2026) returned no matching company in top results; search is fuzzy so treated as not certified. HSE press WP API (only 255 posts, 2021-01 onward) returned no post naming this company; HSE convictions database host did not resolve, so not exhaustively checked. Site footer: Liberty Retail Ltd, Company No: 42342. Owner is only the immediate PSC. B Corp search results for \"liberty london\" showed no match."
+ },
+ {
+  "n": 18,
+  "retailer": "Fortnum & Mason",
+  "domain": "fortnumandmason.com",
+  "entity": {
+   "legalName": "Fortnum & Mason plc",
+   "companyNumber": "00084909",
+   "sourceUrl": "https://www.fortnumandmason.com/terms-and-conditions"
+  },
+  "owner": {
+   "name": "Wittington Investments Limited",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00084909/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=fortnum%20mason&sortBy=companies-production-en-us"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Lab directory search (browser, 4 Nov 2026) returned no matching company in top results; search is fuzzy so treated as not certified. HSE press WP API (only 255 posts, 2021-01 onward) returned no post naming this company; HSE convictions database host did not resolve, so not exhaustively checked. Terms: goods sold by Fortnum & Mason Plc, registered office 181 Piccadilly (matches CH 00084909). Owner is the CH PSC; ultimate group link not traced."
+ },
+ {
+  "n": 19,
+  "retailer": "Notonthehighstreet",
+  "domain": "notonthehighstreet.com",
+  "entity": {
+   "legalName": "Notonthehighstreet Enterprises Limited",
+   "companyNumber": "05591382",
+   "sourceUrl": "https://www.notonthehighstreet.com/about/shopper-terms"
+  },
+  "owner": {
+   "name": "Upminster Bidco Limited",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/05591382/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=notonthehighstreet&sortBy=companies-production-en-us"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Lab directory search (browser, 4 Nov 2026) returned no matching company in top results; search is fuzzy so treated as not certified. HSE press WP API (only 255 posts, 2021-01 onward) returned no post naming this company; HSE convictions database host did not resolve, so not exhaustively checked. Customer terms confirm company number 05591382. Marketplace: sellers are third parties; the shop record must not apply to them. CH PSC also lists Dr Hubert Burda."
+ },
+ {
+  "n": 20,
+  "retailer": "TK Maxx",
+  "domain": "tkmaxx.com",
+  "entity": {
+   "legalName": "TJX UK",
+   "companyNumber": "03094828",
+   "sourceUrl": "https://www.tkmaxx.com/uk/en/terms-and-conditions"
+  },
+  "owner": {
+   "name": "The TJX Companies, Inc.",
+   "sourceUrl": "https://www.tkmaxx.com/uk/en/terms-and-conditions"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=tk%20maxx&sortBy=companies-production-en-us"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Lab directory search (browser, 4 Nov 2026) returned no matching company in top results; search is fuzzy so treated as not certified. HSE press WP API (only 255 posts, 2021-01 onward) returned no post naming this company; HSE convictions database host did not resolve, so not exhaustively checked. Terms (last updated 14 Jul 2021): TK Maxx and Homesense owned and operated by TJX UK, a subsidiary of The TJX Companies Inc, registration 3094828. TJX search in B Lab returned no match."
+ },
+ {
+  "n": 21,
+  "retailer": "Wowcher",
+  "domain": "wowcher.co.uk",
+  "entity": {
+   "legalName": "Wowcher Limited",
+   "companyNumber": "04264984",
+   "sourceUrl": "https://www.wowcher.co.uk/page/e-commerceterms"
+  },
+  "owner": {
+   "name": "Excalibur Bidco Limited",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/04264984/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=wowcher&sortBy=companies-production-en-us"
+  },
+  "cma": [
+   {
+    "path": "/cma-cases/wowcher-group-consumer-protection-case",
+    "eventDate": "2024-07-15",
+    "outcome": "undertakings",
+    "guard": "Wowcher Limited, LivingSocial Limited and Wowcher West Ltd (together, ‘Wowcher’) have signed undertakings to change their online selling practices.",
+    "summary": "Wowcher signed undertakings to change online selling practices (countdown timers, scarcity/popularity claims, pre-ticked VIP membership boxes with refunds). Already held."
+   }
+  ],
+  "hse": [],
+  "notes": "B Lab directory search (browser, 4 Nov 2026) returned no matching company in top results; search is fuzzy so treated as not certified. HSE press WP API (only 255 posts, 2021-01 onward) returned no post naming this company; HSE convictions database host did not resolve, so not exhaustively checked. E-Commerce Terms (6 Jul 2026): operated by Wowcher Limited, company number 4264984. CMA case also names LivingSocial Limited and Wowcher West Ltd. No other CMA case found."
+ }
+]
