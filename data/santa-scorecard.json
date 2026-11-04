@@ -1,0 +1,1957 @@
+{
+ "draft": true,
+ "method": "santa-v0.4-draft",
+ "asOf": "2026-11-04",
+ "licence": "Open Government Licence v3.0",
+ "sources": {
+  "payGap": "https://gender-pay-gap.service.gov.uk/viewing/download-data",
+  "payments": "https://check-payment-practices.service.gov.uk/export/csv/"
+ },
+ "thresholds": {
+  "payGapAbsMedianPercent": {
+   "best": 1.25,
+   "worst": 6.94
+  },
+  "lateInvoicePercent": {
+   "best": 2,
+   "worst": 20
+  }
+ },
+ "shops": {
+  "1": {
+   "retailer": "Amazon",
+   "payGap": {
+    "employer": "AMAZON UK SERVICES LTD.",
+    "companyNumber": "03223028",
+    "employerId": "1203",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": -0.3,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-02",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/1203"
+   },
+   "payments": {
+    "company": "AMAZON UK SERVICES LTD.",
+    "companyNumber": "03223028",
+    "reportId": "115224",
+    "periodStart": "2026-01-01",
+    "periodEnd": "2026-06-30",
+    "filedAt": "2026-07-30",
+    "lateInvoicePercent": 0,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/115224/"
+   }
+  },
+  "2": {
+   "retailer": "eBay",
+   "payGap": {
+    "employer": "EBAY (UK) LIMITED",
+    "companyNumber": "03726028",
+    "employerId": "4439",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 1.5,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-31",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/4439"
+   },
+   "payments": {
+    "company": "EBAY (UK) LIMITED",
+    "companyNumber": "03726028",
+    "reportId": "112792",
+    "periodStart": "2026-01-01",
+    "periodEnd": "2026-06-30",
+    "filedAt": "2026-07-13",
+    "lateInvoicePercent": 2,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/112792/"
+   }
+  },
+  "3": {
+   "retailer": "Argos",
+   "payGap": {
+    "employer": "ARGOS LIMITED",
+    "companyNumber": "01081551",
+    "employerId": "1399",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 3.9,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-25",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/1399"
+   },
+   "payments": {
+    "company": "ARGOS LIMITED",
+    "companyNumber": "01081551",
+    "reportId": "118386",
+    "periodStart": "2026-03-01",
+    "periodEnd": "2026-09-12",
+    "filedAt": "2026-10-30",
+    "lateInvoicePercent": 3,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/118386/"
+   }
+  },
+  "4": {
+   "retailer": "Temu",
+   "payGap": null,
+   "payments": null
+  },
+  "5": {
+   "retailer": "Etsy",
+   "payGap": null,
+   "payments": null
+  },
+  "6": {
+   "retailer": "Shein",
+   "payGap": null,
+   "payments": null
+  },
+  "7": {
+   "retailer": "AliExpress",
+   "payGap": null,
+   "payments": null
+  },
+  "8": {
+   "retailer": "Vinted",
+   "payGap": null,
+   "payments": null
+  },
+  "9": {
+   "retailer": "Depop",
+   "payGap": {
+    "employer": "DEPOP LIMITED",
+    "companyNumber": "08316342",
+    "employerId": "21008",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 15,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-23",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/21008"
+   },
+   "payments": null
+  },
+  "10": {
+   "retailer": "Very",
+   "payGap": {
+    "employer": "SHOP DIRECT HOME SHOPPING LIMITED",
+    "companyNumber": "04663281",
+    "employerId": "11152",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": -1.3,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-27",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/11152"
+   },
+   "payments": {
+    "company": "SHOP DIRECT HOME SHOPPING LIMITED",
+    "companyNumber": "04663281",
+    "reportId": "116354",
+    "periodStart": "2026-01-01",
+    "periodEnd": "2026-06-30",
+    "filedAt": "2026-08-10",
+    "lateInvoicePercent": 81,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/116354/"
+   }
+  },
+  "11": {
+   "retailer": "John Lewis",
+   "payGap": {
+    "employer": "JOHN LEWIS PLC",
+    "companyNumber": "00233462",
+    "employerId": "13",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 5.8,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-23",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/13"
+   },
+   "payments": {
+    "company": "JOHN LEWIS PLC",
+    "companyNumber": "00233462",
+    "reportId": "116680",
+    "periodStart": "2026-02-01",
+    "periodEnd": "2026-08-01",
+    "filedAt": "2026-08-28",
+    "lateInvoicePercent": 2,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/116680/"
+   }
+  },
+  "12": {
+   "retailer": "Marks & Spencer",
+   "payGap": {
+    "employer": "MARKS AND SPENCER P.L.C.",
+    "companyNumber": "00214436",
+    "employerId": "8118",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 5.5,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-02-19",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/8118"
+   },
+   "payments": {
+    "company": "MARKS AND SPENCER P.L.C.",
+    "companyNumber": "00214436",
+    "reportId": "117989",
+    "periodStart": "2026-03-29",
+    "periodEnd": "2026-09-26",
+    "filedAt": "2026-10-28",
+    "lateInvoicePercent": 2,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/117989/"
+   }
+  },
+  "13": {
+   "retailer": "Next",
+   "payGap": {
+    "employer": "NEXT RETAIL LIMITED",
+    "companyNumber": "04521150",
+    "employerId": "8952",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 10.9,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-31",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/8952"
+   },
+   "payments": {
+    "company": "NEXT RETAIL LIMITED",
+    "companyNumber": "04521150",
+    "reportId": "116668",
+    "periodStart": "2026-02-01",
+    "periodEnd": "2026-08-01",
+    "filedAt": "2026-08-28",
+    "lateInvoicePercent": 16,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/116668/"
+   }
+  },
+  "14": {
+   "retailer": "Debenhams",
+   "payGap": {
+    "employer": "BOOHOO.COM UK LIMITED",
+    "companyNumber": "05723154",
+    "employerId": "2223",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": -5.6,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-27",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/2223"
+   },
+   "payments": null
+  },
+  "15": {
+   "retailer": "Selfridges",
+   "payGap": {
+    "employer": "SELFRIDGES RETAIL LIMITED",
+    "companyNumber": "00097117",
+    "employerId": "11011",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 6,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-31",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/11011"
+   },
+   "payments": {
+    "company": "SELFRIDGES RETAIL LIMITED",
+    "companyNumber": "00097117",
+    "reportId": "115163",
+    "periodStart": "2026-01-04",
+    "periodEnd": "2026-07-04",
+    "filedAt": "2026-07-30",
+    "lateInvoicePercent": 17,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/115163/"
+   }
+  },
+  "16": {
+   "retailer": "Harrods",
+   "payGap": {
+    "employer": "HARRODS LIMITED",
+    "companyNumber": "00030209",
+    "employerId": "5961",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 0.2,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-01",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/5961"
+   },
+   "payments": {
+    "company": "HARRODS LIMITED",
+    "companyNumber": "00030209",
+    "reportId": "116685",
+    "periodStart": "2026-02-01",
+    "periodEnd": "2026-08-01",
+    "filedAt": "2026-08-28",
+    "lateInvoicePercent": 25,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/116685/"
+   }
+  },
+  "17": {
+   "retailer": "Liberty",
+   "payGap": {
+    "employer": "LIBERTY RETAIL LIMITED",
+    "companyNumber": "00042342",
+    "employerId": "7616",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 4.8,
+    "submittedLate": true,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-10",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/7616"
+   },
+   "payments": {
+    "company": "LIBERTY RETAIL LIMITED",
+    "companyNumber": "00042342",
+    "reportId": "116420",
+    "periodStart": "2026-02-01",
+    "periodEnd": "2026-07-31",
+    "filedAt": "2026-08-12",
+    "lateInvoicePercent": 52,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/116420/"
+   }
+  },
+  "18": {
+   "retailer": "Fortnum & Mason",
+   "payGap": {
+    "employer": "FORTNUM & MASON PUBLIC LIMITED COMPANY",
+    "companyNumber": "00084909",
+    "employerId": "5158",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 0.7,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-01",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/5158"
+   },
+   "payments": {
+    "company": "FORTNUM & MASON PUBLIC LIMITED COMPANY",
+    "companyNumber": "00084909",
+    "reportId": "116598",
+    "periodStart": "2026-01-14",
+    "periodEnd": "2026-07-12",
+    "filedAt": "2026-08-25",
+    "lateInvoicePercent": 45,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/116598/"
+   }
+  },
+  "19": {
+   "retailer": "Notonthehighstreet",
+   "payGap": null,
+   "payments": null
+  },
+  "20": {
+   "retailer": "TK Maxx",
+   "payGap": {
+    "employer": "TJX UK",
+    "companyNumber": "03094828",
+    "employerId": "646",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 7.7,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-02",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/646"
+   },
+   "payments": {
+    "company": "TJX UK",
+    "companyNumber": "03094828",
+    "reportId": "116642",
+    "periodStart": "2026-02-01",
+    "periodEnd": "2026-08-01",
+    "filedAt": "2026-08-27",
+    "lateInvoicePercent": 8,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/116642/"
+   }
+  },
+  "21": {
+   "retailer": "Wowcher",
+   "payGap": null,
+   "payments": {
+    "company": "WOWCHER LIMITED",
+    "companyNumber": "04264984",
+    "reportId": "118661",
+    "periodStart": "2026-04-01",
+    "periodEnd": "2026-09-30",
+    "filedAt": "2026-11-04",
+    "lateInvoicePercent": 10,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/118661/"
+   }
+  },
+  "22": {
+   "retailer": "Tesco",
+   "payGap": {
+    "employer": "TESCO STORES LIMITED",
+    "companyNumber": "00519500",
+    "employerId": "12141",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 4.8,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-30",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/12141"
+   },
+   "payments": {
+    "company": "TESCO STORES LIMITED",
+    "companyNumber": "00519500",
+    "reportId": "117091",
+    "periodStart": "2026-03-02",
+    "periodEnd": "2026-08-30",
+    "filedAt": "2026-09-29",
+    "lateInvoicePercent": 1,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/117091/"
+   }
+  },
+  "23": {
+   "retailer": "Sainsbury's",
+   "payGap": {
+    "employer": "SAINSBURY'S SUPERMARKETS LTD",
+    "companyNumber": "03261722",
+    "employerId": "16",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 6.7,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-25",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/16"
+   },
+   "payments": {
+    "company": "SAINSBURY'S SUPERMARKETS LTD",
+    "companyNumber": "03261722",
+    "reportId": "118070",
+    "periodStart": "2026-03-01",
+    "periodEnd": "2026-09-12",
+    "filedAt": "2026-10-29",
+    "lateInvoicePercent": 2,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/118070/"
+   }
+  },
+  "24": {
+   "retailer": "Asda (incl. George)",
+   "payGap": {
+    "employer": "ASDA STORES LIMITED",
+    "companyNumber": "00464777",
+    "employerId": "1479",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 5,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-19",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/1479"
+   },
+   "payments": {
+    "company": "ASDA STORES LIMITED",
+    "companyNumber": "00464777",
+    "reportId": "115827",
+    "periodStart": "2026-01-01",
+    "periodEnd": "2026-06-30",
+    "filedAt": "2026-07-31",
+    "lateInvoicePercent": 5,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/115827/"
+   }
+  },
+  "25": {
+   "retailer": "Morrisons",
+   "payGap": {
+    "employer": "WM MORRISON SUPERMARKETS LIMITED",
+    "companyNumber": "00358949",
+    "employerId": "8643",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 1.3,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-01",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/8643"
+   },
+   "payments": {
+    "company": "WM MORRISON SUPERMARKETS LIMITED",
+    "companyNumber": "00358949",
+    "reportId": "111986",
+    "periodStart": "2025-10-27",
+    "periodEnd": "2026-04-26",
+    "filedAt": "2026-05-26",
+    "lateInvoicePercent": 0,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/111986/"
+   }
+  },
+  "26": {
+   "retailer": "Aldi",
+   "payGap": {
+    "employer": "ALDI STORES LIMITED",
+    "companyNumber": "02321869",
+    "employerId": "1089",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 4.48,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-13",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/1089"
+   },
+   "payments": {
+    "company": "ALDI STORES LIMITED",
+    "companyNumber": "02321869",
+    "reportId": "115660",
+    "periodStart": "2026-01-01",
+    "periodEnd": "2026-06-30",
+    "filedAt": "2026-07-31",
+    "lateInvoicePercent": 6,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/115660/"
+   }
+  },
+  "27": {
+   "retailer": "Lidl",
+   "payGap": {
+    "employer": "LIDL GREAT BRITAIN LIMITED",
+    "companyNumber": "02816429",
+    "employerId": "7623",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 0,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-01",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/7623"
+   },
+   "payments": {
+    "company": "LIDL GREAT BRITAIN LIMITED",
+    "companyNumber": "02816429",
+    "reportId": "116934",
+    "periodStart": "2026-03-01",
+    "periodEnd": "2026-08-31",
+    "filedAt": "2026-09-22",
+    "lateInvoicePercent": 1,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/116934/"
+   }
+  },
+  "28": {
+   "retailer": "Waitrose",
+   "payGap": {
+    "employer": "JOHN LEWIS PLC",
+    "companyNumber": "00233462",
+    "employerId": "13",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 5.8,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-23",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/13"
+   },
+   "payments": {
+    "company": "WAITROSE LIMITED",
+    "companyNumber": "00099405",
+    "reportId": "116681",
+    "periodStart": "2026-02-01",
+    "periodEnd": "2026-08-01",
+    "filedAt": "2026-08-28",
+    "lateInvoicePercent": 2,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/116681/"
+   }
+  },
+  "29": {
+   "retailer": "Co-op",
+   "payGap": {
+    "employer": "CO-OPERATIVE GROUP LIMITED",
+    "companyNumber": "IP00525R",
+    "employerId": "458",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 5.8,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-02",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/458"
+   },
+   "payments": null
+  },
+  "30": {
+   "retailer": "Iceland",
+   "payGap": {
+    "employer": "ICELAND FOODS LIMITED",
+    "companyNumber": "01107406",
+    "employerId": "6470",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 8,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-06",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/6470"
+   },
+   "payments": {
+    "company": "ICELAND FOODS LIMITED",
+    "companyNumber": "01107406",
+    "reportId": "118040",
+    "periodStart": "2026-03-28",
+    "periodEnd": "2026-09-25",
+    "filedAt": "2026-10-28",
+    "lateInvoicePercent": 2,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/118040/"
+   }
+  },
+  "31": {
+   "retailer": "Ocado",
+   "payGap": {
+    "employer": "OCADO RETAIL LIMITED",
+    "companyNumber": "03875000",
+    "employerId": "20391",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 13,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-02",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/20391"
+   },
+   "payments": {
+    "company": "OCADO RETAIL LIMITED",
+    "companyNumber": "03875000",
+    "reportId": "117995",
+    "periodStart": "2026-03-30",
+    "periodEnd": "2026-09-29",
+    "filedAt": "2026-10-28",
+    "lateInvoicePercent": 2,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/117995/"
+   }
+  },
+  "32": {
+   "retailer": "Primark",
+   "payGap": {
+    "employer": "PRIMARK STORES LIMITED",
+    "companyNumber": "00453448",
+    "employerId": "10024",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 1.8,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-02-25",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/10024"
+   },
+   "payments": {
+    "company": "PRIMARK STORES LIMITED",
+    "companyNumber": "00453448",
+    "reportId": "104971",
+    "periodStart": "2025-03-02",
+    "periodEnd": "2025-09-13",
+    "filedAt": "2025-11-13",
+    "lateInvoicePercent": 5,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/104971/"
+   }
+  },
+  "33": {
+   "retailer": "H&M",
+   "payGap": {
+    "employer": "H&M HENNES & MAURITZ UK LIMITED",
+    "companyNumber": "01413450",
+    "employerId": "5821",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 0,
+    "submittedLate": true,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-07",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/5821"
+   },
+   "payments": {
+    "company": "H&M HENNES & MAURITZ UK LIMITED",
+    "companyNumber": "01413450",
+    "reportId": "112432",
+    "periodStart": "2025-12-01",
+    "periodEnd": "2026-05-31",
+    "filedAt": "2026-06-26",
+    "lateInvoicePercent": 33,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/112432/"
+   }
+  },
+  "34": {
+   "retailer": "Zara",
+   "payGap": {
+    "employer": "ITX UK LIMITED",
+    "companyNumber": "02245999",
+    "employerId": "14056",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 1,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-01",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/14056"
+   },
+   "payments": {
+    "company": "ITX UK LIMITED",
+    "companyNumber": "02245999",
+    "reportId": "116524",
+    "periodStart": "2026-02-01",
+    "periodEnd": "2026-07-31",
+    "filedAt": "2026-08-18",
+    "lateInvoicePercent": 12,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/116524/"
+   }
+  },
+  "35": {
+   "retailer": "Uniqlo",
+   "payGap": {
+    "employer": "UNIQLO EUROPE LTD",
+    "companyNumber": "04845064",
+    "employerId": "13118",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": -0.1,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-01",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/13118"
+   },
+   "payments": {
+    "company": "UNIQLO EUROPE LTD",
+    "companyNumber": "04845064",
+    "reportId": "116968",
+    "periodStart": "2026-03-01",
+    "periodEnd": "2026-08-31",
+    "filedAt": "2026-09-24",
+    "lateInvoicePercent": 13,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/116968/"
+   }
+  },
+  "36": {
+   "retailer": "ASOS",
+   "payGap": {
+    "employer": "ASOS.COM LIMITED",
+    "companyNumber": "03584121",
+    "employerId": "1502",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 41,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-26",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/1502"
+   },
+   "payments": {
+    "company": "ASOS.COM LIMITED",
+    "companyNumber": "03584121",
+    "reportId": "117135",
+    "periodStart": "2026-03-02",
+    "periodEnd": "2026-08-30",
+    "filedAt": "2026-09-30",
+    "lateInvoicePercent": 28,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/117135/"
+   }
+  },
+  "37": {
+   "retailer": "Boohoo",
+   "payGap": {
+    "employer": "BOOHOO.COM UK LIMITED",
+    "companyNumber": "05723154",
+    "employerId": "2223",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": -5.6,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-27",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/2223"
+   },
+   "payments": null
+  },
+  "38": {
+   "retailer": "PrettyLittleThing",
+   "payGap": {
+    "employer": "PRETTYLITTLETHING.COM LIMITED",
+    "companyNumber": "07352417",
+    "employerId": "19206",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 36.3,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-27",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/19206"
+   },
+   "payments": null
+  },
+  "39": {
+   "retailer": "River Island",
+   "payGap": {
+    "employer": "RIVER ISLAND CLOTHING CO. LIMITED",
+    "companyNumber": "00636095",
+    "employerId": "10521",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 4.44,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-27",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/10521"
+   },
+   "payments": {
+    "company": "RIVER ISLAND CLOTHING CO. LIMITED",
+    "companyNumber": "00636095",
+    "reportId": "116215",
+    "periodStart": "2025-12-28",
+    "periodEnd": "2026-07-11",
+    "filedAt": "2026-08-05",
+    "lateInvoicePercent": 9,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/116215/"
+   }
+  },
+  "40": {
+   "retailer": "New Look",
+   "payGap": {
+    "employer": "NEW LOOK RETAILERS LIMITED",
+    "companyNumber": "01618428",
+    "employerId": "8894",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 2,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-01-05",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/8894"
+   },
+   "payments": {
+    "company": "NEW LOOK RETAILERS LIMITED",
+    "companyNumber": "01618428",
+    "reportId": "117937",
+    "periodStart": "2026-03-29",
+    "periodEnd": "2026-09-28",
+    "filedAt": "2026-10-27",
+    "lateInvoicePercent": 39,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/117937/"
+   }
+  },
+  "41": {
+   "retailer": "Mango",
+   "payGap": {
+    "employer": "MNG-MANGO U.K. LIMITED",
+    "companyNumber": "03358140",
+    "employerId": "8567",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 2.63,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-24",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/8567"
+   },
+   "payments": null
+  },
+  "42": {
+   "retailer": "JD Sports",
+   "payGap": {
+    "employer": "JD SPORTS FASHION PLC",
+    "companyNumber": "01888425",
+    "employerId": "6945",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 0.33,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-01",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/6945"
+   },
+   "payments": {
+    "company": "JD SPORTS FASHION PLC",
+    "companyNumber": "01888425",
+    "reportId": "116748",
+    "periodStart": "2026-02-01",
+    "periodEnd": "2026-08-01",
+    "filedAt": "2026-09-02",
+    "lateInvoicePercent": 21,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/116748/"
+   }
+  },
+  "43": {
+   "retailer": "Sports Direct",
+   "payGap": {
+    "employer": "SPORTSDIRECT.COM RETAIL LIMITED",
+    "companyNumber": "03406347",
+    "employerId": "11497",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 3.1,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-26",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/11497"
+   },
+   "payments": {
+    "company": "FRASERS GROUP TRADING LIMITED",
+    "companyNumber": "03406347",
+    "reportId": "113242",
+    "periodStart": "2025-10-27",
+    "periodEnd": "2026-04-26",
+    "filedAt": "2026-07-21",
+    "lateInvoicePercent": 0,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/113242/"
+   }
+  },
+  "44": {
+   "retailer": "Nike",
+   "payGap": {
+    "employer": "NIKE RETAIL UK",
+    "companyNumber": "BR003350",
+    "employerId": "16486",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 1.3,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-30",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/16486"
+   },
+   "payments": null
+  },
+  "45": {
+   "retailer": "Adidas",
+   "payGap": {
+    "employer": "ADIDAS (U.K.) LIMITED",
+    "companyNumber": "01075951",
+    "employerId": "904",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": -0.84,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-02",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/904"
+   },
+   "payments": null
+  },
+  "46": {
+   "retailer": "Matalan",
+   "payGap": {
+    "employer": "MATALAN RETAIL LTD.",
+    "companyNumber": "02103564",
+    "employerId": "8179",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 0,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-27",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/8179"
+   },
+   "payments": {
+    "company": "MATALAN RETAIL LTD.",
+    "companyNumber": "02103564",
+    "reportId": "117174",
+    "periodStart": "2026-03-01",
+    "periodEnd": "2026-08-31",
+    "filedAt": "2026-09-30",
+    "lateInvoicePercent": 16,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/117174/"
+   }
+  },
+  "47": {
+   "retailer": "FatFace",
+   "payGap": {
+    "employer": "FAT FACE LIMITED",
+    "companyNumber": "02954734",
+    "employerId": "4925",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 7.17,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-02",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/4925"
+   },
+   "payments": {
+    "company": "FAT FACE LIMITED",
+    "companyNumber": "02954734",
+    "reportId": "116634",
+    "periodStart": "2026-02-01",
+    "periodEnd": "2026-07-31",
+    "filedAt": "2026-08-27",
+    "lateInvoicePercent": 19,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/116634/"
+   }
+  },
+  "48": {
+   "retailer": "White Stuff",
+   "payGap": {
+    "employer": "WHITE STUFF LIMITED",
+    "companyNumber": "02319237",
+    "employerId": "13730",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 12.4,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-25",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/13730"
+   },
+   "payments": {
+    "company": "WHITE STUFF LIMITED",
+    "companyNumber": "02319237",
+    "reportId": "117627",
+    "periodStart": "2026-03-29",
+    "periodEnd": "2026-09-28",
+    "filedAt": "2026-10-22",
+    "lateInvoicePercent": 17,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/117627/"
+   }
+  },
+  "49": {
+   "retailer": "Joules",
+   "payGap": null,
+   "payments": null
+  },
+  "50": {
+   "retailer": "Schuh",
+   "payGap": {
+    "employer": "SCHUH LIMITED",
+    "companyNumber": "SC125327",
+    "employerId": "10909",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": -3.88,
+    "submittedLate": true,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-07-07",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/10909"
+   },
+   "payments": null
+  },
+  "51": {
+   "retailer": "Clarks",
+   "payGap": {
+    "employer": "C. & J. CLARK INTERNATIONAL LIMITED",
+    "companyNumber": "00141015",
+    "employerId": "2639",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 2.31,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-31",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/2639"
+   },
+   "payments": {
+    "company": "C. & J. CLARK INTERNATIONAL LIMITED",
+    "companyNumber": "00141015",
+    "reportId": "114367",
+    "periodStart": "2026-01-01",
+    "periodEnd": "2026-06-30",
+    "filedAt": "2026-07-29",
+    "lateInvoicePercent": 40,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/114367/"
+   }
+  },
+  "52": {
+   "retailer": "Flannels",
+   "payGap": {
+    "employer": "THE FLANNELS GROUP LIMITED",
+    "companyNumber": "02318510",
+    "employerId": "16613",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 1.1,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-26",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/16613"
+   },
+   "payments": {
+    "company": "THE FLANNELS GROUP LIMITED",
+    "companyNumber": "02318510",
+    "reportId": "113245",
+    "periodStart": "2025-10-27",
+    "periodEnd": "2026-04-26",
+    "filedAt": "2026-07-21",
+    "lateInvoicePercent": 0,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/113245/"
+   }
+  },
+  "53": {
+   "retailer": "Zalando",
+   "payGap": null,
+   "payments": null
+  },
+  "54": {
+   "retailer": "Patagonia",
+   "payGap": null,
+   "payments": null
+  },
+  "55": {
+   "retailer": "Boots",
+   "payGap": {
+    "employer": "BOOTS MANAGEMENT SERVICES LIMITED",
+    "companyNumber": "07073438",
+    "employerId": "2231",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 0.7,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-31",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/2231"
+   },
+   "payments": {
+    "company": "BOOTS UK LIMITED",
+    "companyNumber": "00928555",
+    "reportId": "117204",
+    "periodStart": "2026-03-01",
+    "periodEnd": "2026-08-31",
+    "filedAt": "2026-09-30",
+    "lateInvoicePercent": 2,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/117204/"
+   }
+  },
+  "56": {
+   "retailer": "Superdrug",
+   "payGap": {
+    "employer": "SUPERDRUG STORES PLC",
+    "companyNumber": "00807043",
+    "employerId": "11822",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 4.9,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-02",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/11822"
+   },
+   "payments": {
+    "company": "SUPERDRUG STORES PLC",
+    "companyNumber": "00807043",
+    "reportId": "113716",
+    "periodStart": "2025-12-28",
+    "periodEnd": "2026-06-27",
+    "filedAt": "2026-07-24",
+    "lateInvoicePercent": 3,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/113716/"
+   }
+  },
+  "57": {
+   "retailer": "Lookfantastic",
+   "payGap": {
+    "employer": "THG BEAUTY LIMITED",
+    "companyNumber": "13400467",
+    "employerId": "22303",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 20.26,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-02",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/22303"
+   },
+   "payments": {
+    "company": "THG BEAUTY LIMITED",
+    "companyNumber": "13400467",
+    "reportId": "116364",
+    "periodStart": "2026-01-01",
+    "periodEnd": "2026-06-30",
+    "filedAt": "2026-08-11",
+    "lateInvoicePercent": 38,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/116364/"
+   }
+  },
+  "58": {
+   "retailer": "Cult Beauty",
+   "payGap": null,
+   "payments": null
+  },
+  "59": {
+   "retailer": "Space NK",
+   "payGap": {
+    "employer": "SPACE NK LIMITED",
+    "companyNumber": "02773985",
+    "employerId": "578",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": -1.85,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-02",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/578"
+   },
+   "payments": null
+  },
+  "60": {
+   "retailer": "The Body Shop",
+   "payGap": {
+    "employer": "THE BODY SHOP INTERNATIONAL LIMITED",
+    "companyNumber": "15859787",
+    "employerId": "23647",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 28.8,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-02",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/23647"
+   },
+   "payments": null
+  },
+  "61": {
+   "retailer": "Lush",
+   "payGap": {
+    "employer": "LUSH RETAIL LIMITED",
+    "companyNumber": "03084750",
+    "employerId": "58",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 7.4,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-02",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/58"
+   },
+   "payments": null
+  },
+  "62": {
+   "retailer": "Holland & Barrett",
+   "payGap": {
+    "employer": "HOLLAND & BARRETT RETAIL LIMITED",
+    "companyNumber": "02758955",
+    "employerId": "6255",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 2.5,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-05",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/6255"
+   },
+   "payments": {
+    "company": "HOLLAND & BARRETT RETAIL LIMITED",
+    "companyNumber": "02758955",
+    "reportId": "118612",
+    "periodStart": "2026-04-01",
+    "periodEnd": "2026-09-30",
+    "filedAt": "2026-11-02",
+    "lateInvoicePercent": 23,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/118612/"
+   }
+  },
+  "63": {
+   "retailer": "Sephora",
+   "payGap": {
+    "employer": "FEELUNIQUE INTERNATIONAL LIMITED",
+    "companyNumber": "07883226",
+    "employerId": "33177",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 19.3,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-02",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/33177"
+   },
+   "payments": null
+  },
+  "64": {
+   "retailer": "Charlotte Tilbury",
+   "payGap": {
+    "employer": "CHARLOTTE TILBURY BEAUTY LIMITED",
+    "companyNumber": "08037372",
+    "employerId": "17875",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": -0.7,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-31",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/17875"
+   },
+   "payments": {
+    "company": "CHARLOTTE TILBURY BEAUTY LIMITED",
+    "companyNumber": "08037372",
+    "reportId": "116096",
+    "periodStart": "2026-01-01",
+    "periodEnd": "2026-06-30",
+    "filedAt": "2026-08-03",
+    "lateInvoicePercent": 24,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/116096/"
+   }
+  },
+  "65": {
+   "retailer": "Currys",
+   "payGap": {
+    "employer": "CURRYS GROUP LIMITED",
+    "companyNumber": "00504877",
+    "employerId": "4280",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 1.6,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-01-27",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/4280"
+   },
+   "payments": {
+    "company": "CURRYS GROUP LIMITED",
+    "companyNumber": "00504877",
+    "reportId": "112551",
+    "periodStart": "2025-11-02",
+    "periodEnd": "2026-05-02",
+    "filedAt": "2026-06-30",
+    "lateInvoicePercent": 6,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/112551/"
+   }
+  },
+  "66": {
+   "retailer": "AO",
+   "payGap": {
+    "employer": "AO RETAIL LIMITED",
+    "companyNumber": "03914998",
+    "employerId": "1313",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 23,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-01",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/1313"
+   },
+   "payments": {
+    "company": "AO RETAIL LIMITED",
+    "companyNumber": "03914998",
+    "reportId": "118371",
+    "periodStart": "2026-04-01",
+    "periodEnd": "2026-09-30",
+    "filedAt": "2026-10-30",
+    "lateInvoicePercent": 7,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/118371/"
+   }
+  },
+  "67": {
+   "retailer": "Apple",
+   "payGap": {
+    "employer": "APPLE RETAIL UK LIMITED",
+    "companyNumber": "04996702",
+    "employerId": "1340",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 6.6,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-03",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/1340"
+   },
+   "payments": {
+    "company": "APPLE RETAIL UK LIMITED",
+    "companyNumber": "04996702",
+    "reportId": "117561",
+    "periodStart": "2026-03-29",
+    "periodEnd": "2026-09-26",
+    "filedAt": "2026-10-21",
+    "lateInvoicePercent": 0,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/117561/"
+   }
+  },
+  "68": {
+   "retailer": "Samsung",
+   "payGap": {
+    "employer": "SAMSUNG ELECTRONICS (UK) LIMITED",
+    "companyNumber": "03086621",
+    "employerId": "235",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 16.12,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-30",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/235"
+   },
+   "payments": {
+    "company": "SAMSUNG ELECTRONICS (UK) LIMITED",
+    "companyNumber": "03086621",
+    "reportId": "113298",
+    "periodStart": "2026-01-01",
+    "periodEnd": "2026-06-30",
+    "filedAt": "2026-07-22",
+    "lateInvoicePercent": 9,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/113298/"
+   }
+  },
+  "69": {
+   "retailer": "GAME",
+   "payGap": {
+    "employer": "GAME RETAIL LIMITED",
+    "companyNumber": "07837246",
+    "employerId": "5370",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 3.3,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-26",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/5370"
+   },
+   "payments": null
+  },
+  "70": {
+   "retailer": "PlayStation Store (Sony)",
+   "payGap": {
+    "employer": "SONY INTERACTIVE ENTERTAINMENT EUROPE LIMITED",
+    "companyNumber": "03277793",
+    "employerId": "11345",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 10.5,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-18",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/11345"
+   },
+   "payments": {
+    "company": "SONY INTERACTIVE ENTERTAINMENT EUROPE LIMITED",
+    "companyNumber": "03277793",
+    "reportId": "117492",
+    "periodStart": "2026-04-01",
+    "periodEnd": "2026-09-30",
+    "filedAt": "2026-10-19",
+    "lateInvoicePercent": 18,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/117492/"
+   }
+  },
+  "71": {
+   "retailer": "Nintendo",
+   "payGap": null,
+   "payments": null
+  },
+  "72": {
+   "retailer": "Xbox (Microsoft)",
+   "payGap": {
+    "employer": "MICROSOFT LIMITED",
+    "companyNumber": "01624297",
+    "employerId": "8428",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 5.6,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-03",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/8428"
+   },
+   "payments": {
+    "company": "MICROSOFT LIMITED",
+    "companyNumber": "01624297",
+    "reportId": "115733",
+    "periodStart": "2026-01-01",
+    "periodEnd": "2026-06-30",
+    "filedAt": "2026-07-31",
+    "lateInvoicePercent": 8,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/115733/"
+   }
+  },
+  "73": {
+   "retailer": "Smyths Toys",
+   "payGap": {
+    "employer": "SMYTHS TOYS UK LIMITED",
+    "companyNumber": "06051517",
+    "employerId": "11292",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 2,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-31",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/11292"
+   },
+   "payments": {
+    "company": "SMYTHS TOYS UK LIMITED",
+    "companyNumber": "06051517",
+    "reportId": "113796",
+    "periodStart": "2026-01-01",
+    "periodEnd": "2026-06-30",
+    "filedAt": "2026-07-27",
+    "lateInvoicePercent": 9,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/113796/"
+   }
+  },
+  "74": {
+   "retailer": "The Entertainer",
+   "payGap": {
+    "employer": "THE ENTERTAINER (AMERSHAM) LIMITED",
+    "companyNumber": "02057757",
+    "employerId": "12350",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 2.4,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-24",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/12350"
+   },
+   "payments": null
+  },
+  "75": {
+   "retailer": "LEGO",
+   "payGap": {
+    "employer": "LEGO COMPANY LIMITED",
+    "companyNumber": "00368236",
+    "employerId": "7545",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 10.3,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-30",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/7545"
+   },
+   "payments": null
+  },
+  "76": {
+   "retailer": "Waterstones",
+   "payGap": {
+    "employer": "WATERSTONES BOOKSELLERS LIMITED",
+    "companyNumber": "00610095",
+    "employerId": "450",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 5.1,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-31",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/450"
+   },
+   "payments": {
+    "company": "WATERSTONES BOOKSELLERS LIMITED",
+    "companyNumber": "00610095",
+    "reportId": "112001",
+    "periodStart": "2025-11-04",
+    "periodEnd": "2026-05-02",
+    "filedAt": "2026-05-26",
+    "lateInvoicePercent": 8,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/112001/"
+   }
+  },
+  "77": {
+   "retailer": "WHSmith",
+   "payGap": {
+    "employer": "TG JONES RETAIL HOLDINGS LIMITED",
+    "companyNumber": "00471941",
+    "employerId": "13701",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 0,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-27",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/13701"
+   },
+   "payments": null
+  },
+  "78": {
+   "retailer": "The Works",
+   "payGap": {
+    "employer": "THE WORKS STORES LIMITED",
+    "companyNumber": "06557400",
+    "employerId": "12647",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 2.2,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-03",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/12647"
+   },
+   "payments": {
+    "company": "THE WORKS STORES LIMITED",
+    "companyNumber": "06557400",
+    "reportId": "111987",
+    "periodStart": "2025-11-03",
+    "periodEnd": "2026-05-03",
+    "filedAt": "2026-05-26",
+    "lateInvoicePercent": 30,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/111987/"
+   }
+  },
+  "79": {
+   "retailer": "Hobbycraft",
+   "payGap": {
+    "employer": "HOBBYCRAFT TRADING LIMITED",
+    "companyNumber": "00806269",
+    "employerId": "6236",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 5.21,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-01",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/6236"
+   },
+   "payments": {
+    "company": "HOBBYCRAFT TRADING LIMITED",
+    "companyNumber": "00806269",
+    "reportId": "116884",
+    "periodStart": "2026-02-16",
+    "periodEnd": "2026-08-16",
+    "filedAt": "2026-09-15",
+    "lateInvoicePercent": 4,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/116884/"
+   }
+  },
+  "80": {
+   "retailer": "Moonpig",
+   "payGap": {
+    "employer": "MOONPIG.COM LIMITED",
+    "companyNumber": "03852652",
+    "employerId": "21527",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 35.1,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2025-07-10",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/21527"
+   },
+   "payments": {
+    "company": "MOONPIG.COM LIMITED",
+    "companyNumber": "03852652",
+    "reportId": "111994",
+    "periodStart": "2025-11-01",
+    "periodEnd": "2026-04-30",
+    "filedAt": "2026-05-26",
+    "lateInvoicePercent": 25,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/111994/"
+   }
+  },
+  "81": {
+   "retailer": "Card Factory",
+   "payGap": {
+    "employer": "SPORTSWIFT LIMITED",
+    "companyNumber": "03493972",
+    "employerId": "11498",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 3,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-16",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/11498"
+   },
+   "payments": {
+    "company": "SPORTSWIFT LIMITED",
+    "companyNumber": "03493972",
+    "reportId": "116491",
+    "periodStart": "2026-02-01",
+    "periodEnd": "2026-07-31",
+    "filedAt": "2026-08-14",
+    "lateInvoicePercent": 21,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/116491/"
+   }
+  },
+  "82": {
+   "retailer": "Hotel Chocolat",
+   "payGap": {
+    "employer": "HOTEL CHOCOLAT LIMITED",
+    "companyNumber": "02805730",
+    "employerId": "6325",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 12.4,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-27",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/6325"
+   },
+   "payments": null
+  },
+  "83": {
+   "retailer": "Tony's Chocolonely",
+   "payGap": null,
+   "payments": null
+  },
+  "84": {
+   "retailer": "Pandora",
+   "payGap": {
+    "employer": "PANDORA JEWELLERY UK LIMITED",
+    "companyNumber": "06654012",
+    "employerId": "9544",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 16.84,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-29",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/9544"
+   },
+   "payments": null
+  },
+  "85": {
+   "retailer": "Pets at Home",
+   "payGap": {
+    "employer": "PETS AT HOME LTD",
+    "companyNumber": "01822577",
+    "employerId": "9789",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 2.4,
+    "submittedLate": true,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-08-21",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/9789"
+   },
+   "payments": {
+    "company": "PETS AT HOME LTD",
+    "companyNumber": "01822577",
+    "reportId": "117559",
+    "periodStart": "2026-03-27",
+    "periodEnd": "2026-09-10",
+    "filedAt": "2026-10-21",
+    "lateInvoicePercent": 9,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/117559/"
+   }
+  },
+  "86": {
+   "retailer": "IKEA",
+   "payGap": {
+    "employer": "IKEA LIMITED",
+    "companyNumber": "01986283",
+    "employerId": "307",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 1.4,
+    "submittedLate": true,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-23",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/307"
+   },
+   "payments": {
+    "company": "IKEA LIMITED",
+    "companyNumber": "01986283",
+    "reportId": "117194",
+    "periodStart": "2026-03-01",
+    "periodEnd": "2026-08-31",
+    "filedAt": "2026-09-30",
+    "lateInvoicePercent": 24,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/117194/"
+   }
+  },
+  "87": {
+   "retailer": "B&Q",
+   "payGap": {
+    "employer": "B&Q LIMITED",
+    "companyNumber": "00973387",
+    "employerId": "1702",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 0.4,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-27",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/1702"
+   },
+   "payments": {
+    "company": "B&Q LIMITED",
+    "companyNumber": "00973387",
+    "reportId": "116640",
+    "periodStart": "2026-02-01",
+    "periodEnd": "2026-07-31",
+    "filedAt": "2026-08-27",
+    "lateInvoicePercent": 3,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/116640/"
+   }
+  },
+  "88": {
+   "retailer": "Wickes",
+   "payGap": {
+    "employer": "WICKES BUILDING SUPPLIES LIMITED",
+    "companyNumber": "01840419",
+    "employerId": "13755",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 3.23,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2025-12-10",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/13755"
+   },
+   "payments": {
+    "company": "WICKES BUILDING SUPPLIES LIMITED",
+    "companyNumber": "01840419",
+    "reportId": "116044",
+    "periodStart": "2026-01-01",
+    "periodEnd": "2026-06-30",
+    "filedAt": "2026-07-31",
+    "lateInvoicePercent": 5,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/116044/"
+   }
+  },
+  "89": {
+   "retailer": "Screwfix",
+   "payGap": {
+    "employer": "SCREWFIX DIRECT LIMITED",
+    "companyNumber": "03006378",
+    "employerId": "15048",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 1.1,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-27",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/15048"
+   },
+   "payments": {
+    "company": "SCREWFIX DIRECT LIMITED",
+    "companyNumber": "03006378",
+    "reportId": "116639",
+    "periodStart": "2026-02-01",
+    "periodEnd": "2026-07-31",
+    "filedAt": "2026-08-27",
+    "lateInvoicePercent": 2,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/116639/"
+   }
+  },
+  "90": {
+   "retailer": "Dunelm",
+   "payGap": {
+    "employer": "DUNELM (SOFT FURNISHINGS) LTD",
+    "companyNumber": "02129238",
+    "employerId": "4314",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 2.1,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-04-02",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/4314"
+   },
+   "payments": {
+    "company": "DUNELM (SOFT FURNISHINGS) LTD",
+    "companyNumber": "02129238",
+    "reportId": "112683",
+    "periodStart": "2025-12-29",
+    "periodEnd": "2026-06-27",
+    "filedAt": "2026-07-09",
+    "lateInvoicePercent": 1,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/112683/"
+   }
+  },
+  "91": {
+   "retailer": "Wayfair",
+   "payGap": {
+    "employer": "WAYFAIR (UK) LIMITED",
+    "companyNumber": "06776852",
+    "employerId": "20481",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": -3.5,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-19",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/20481"
+   },
+   "payments": null
+  },
+  "92": {
+   "retailer": "The Range",
+   "payGap": {
+    "employer": "CDS (SUPERSTORES INTERNATIONAL) LIMITED",
+    "companyNumber": "02699203",
+    "employerId": "3001",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 0,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-10",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/3001"
+   },
+   "payments": {
+    "company": "CDS (SUPERSTORES INTERNATIONAL) LIMITED",
+    "companyNumber": "02699203",
+    "reportId": "116919",
+    "periodStart": "2026-02-02",
+    "periodEnd": "2026-07-31",
+    "filedAt": "2026-09-18",
+    "lateInvoicePercent": 6,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/116919/"
+   }
+  },
+  "93": {
+   "retailer": "B&M",
+   "payGap": {
+    "employer": "B & M RETAIL LIMITED",
+    "companyNumber": "01357507",
+    "employerId": "1701",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 0,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-25",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/1701"
+   },
+   "payments": {
+    "company": "B & M RETAIL LIMITED",
+    "companyNumber": "01357507",
+    "reportId": "117918",
+    "periodStart": "2026-03-29",
+    "periodEnd": "2026-09-26",
+    "filedAt": "2026-10-27",
+    "lateInvoicePercent": 11,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/117918/"
+   }
+  },
+  "94": {
+   "retailer": "Home Bargains",
+   "payGap": {
+    "employer": "T. J. MORRIS LIMITED",
+    "companyNumber": "01505036",
+    "employerId": "11950",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 0.1,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-23",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/11950"
+   },
+   "payments": {
+    "company": "T. J. MORRIS LIMITED",
+    "companyNumber": "01505036",
+    "reportId": "114006",
+    "periodStart": "2026-01-01",
+    "periodEnd": "2026-06-30",
+    "filedAt": "2026-07-27",
+    "lateInvoicePercent": 14,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/114006/"
+   }
+  },
+  "95": {
+   "retailer": "Homebase",
+   "payGap": null,
+   "payments": null
+  },
+  "96": {
+   "retailer": "Lakeland",
+   "payGap": {
+    "employer": "LAKELAND LIMITED",
+    "companyNumber": "00809688",
+    "employerId": "201",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 7.38,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-02-17",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/201"
+   },
+   "payments": {
+    "company": "LAKELAND LIMITED",
+    "companyNumber": "00809688",
+    "reportId": "113040",
+    "periodStart": "2026-01-01",
+    "periodEnd": "2026-06-30",
+    "filedAt": "2026-07-20",
+    "lateInvoicePercent": 2,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/113040/"
+   }
+  },
+  "97": {
+   "retailer": "Simba",
+   "payGap": null,
+   "payments": null
+  },
+  "98": {
+   "retailer": "Halfords",
+   "payGap": {
+    "employer": "HALFORDS LIMITED",
+    "companyNumber": "00103161",
+    "employerId": "5876",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 0,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-10",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/5876"
+   },
+   "payments": null
+  },
+  "99": {
+   "retailer": "Poundland",
+   "payGap": {
+    "employer": "POUNDLAND LIMITED",
+    "companyNumber": "02495645",
+    "employerId": "9949",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": 4,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-01-26",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/9949"
+   },
+   "payments": {
+    "company": "POUNDLAND LIMITED",
+    "companyNumber": "02495645",
+    "reportId": "117325",
+    "periodStart": "2026-05-01",
+    "periodEnd": "2026-09-30",
+    "filedAt": "2026-10-08",
+    "lateInvoicePercent": 8,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/117325/"
+   }
+  },
+  "100": {
+   "retailer": "Costco",
+   "payGap": {
+    "employer": "COSTCO WHOLESALE UK LIMITED",
+    "companyNumber": "02635489",
+    "employerId": "3611",
+    "snapshotYear": 2025,
+    "medianHourlyGapPercent": -1.2,
+    "submittedLate": false,
+    "dueDate": "2026-04-05",
+    "submittedAt": "2026-03-23",
+    "sourceUrl": "https://gender-pay-gap.service.gov.uk/employers/3611"
+   },
+   "payments": {
+    "company": "COSTCO WHOLESALE UK LIMITED",
+    "companyNumber": "02635489",
+    "reportId": "112173",
+    "periodStart": "2025-09-01",
+    "periodEnd": "2026-02-15",
+    "filedAt": "2026-06-01",
+    "lateInvoicePercent": 6,
+    "sourceUrl": "https://check-payment-practices.service.gov.uk/report/112173/"
+   }
+  }
+ }
+}

@@ -17,7 +17,8 @@
     "extension:package:chrome": "node scripts/package-extension.mjs chrome",
     "extension:package:firefox": "node scripts/package-extension.mjs firefox",
     "deploy": "npm run community:build && npm run wrangler -- deploy",
-    "wrangler": "env -u CLOUDFLARE_API_KEY -u CLOUDFLARE_EMAIL wrangler --profile 40for40"
+    "wrangler": "env -u CLOUDFLARE_API_KEY -u CLOUDFLARE_EMAIL wrangler --profile 40for40",
+    "scorecard": "node scripts/scorecard-import.mjs"
   },
   "devDependencies": {
     "esbuild": "^0.28.2",
