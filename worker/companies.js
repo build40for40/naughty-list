@@ -22,9 +22,9 @@ export default [
     id: 'tonys-chocolonely',
     name: "Tony's Chocolonely",
     aliases: ['Tonys Chocolonely', 'Tony’s Chocolonely'],
-    domains: ['tonyschocolonely.com', 'www.tonyschocolonely.com'],
+    domains: ['tonyschocolonely.com', 'www.tonyschocolonely.com', 'uk.tonyschocolonely.com', 'us.tonyschocolonely.com'],
     domainEvidence: {
-      sourceUrl: 'https://www.bcorporation.net/en-us/find-a-b-corp/company/tonys-chocolonely/',
+      sourceUrl: 'https://tonyschocolonely.com/',
       checkedAt: '2026-11-04'
     },
     identifiers: [{ scheme: 'b_lab', value: 'tonys-chocolonely' }],

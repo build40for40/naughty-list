@@ -3,7 +3,7 @@
 Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The problem is "Hard to know which brands are ethical", from Santa. Shared project context, services and rules live in `../AGENTS.md`.
 
 - **Form factor:** a Chrome extension.
-- **Status:** a bare Manifest V3 scaffold lives in `extension/`. The Cloudflare Worker backend in `worker/` reads reviewed company evidence from its dedicated `naughty-list` D1 database. Extension behaviour is not implemented. Source integrations are tracked in `Scoring Sources` (#155); the scoring algorithm and criteria are separate in #157 on the Superthread `day3` board.
+- **Status:** `extension/` implements the first shopping overlay and settings for Chrome and Firefox. The Cloudflare Worker in `worker/` reads reviewed company evidence from its dedicated `naughty-list` D1 database. Source integrations are tracked in `Scoring Sources` (#155); scoring criteria remain deferred in #157 on the Superthread `day3` board. This MVP returns neutral evidence states until the backend supplies an agreed verdict.
 
 ## Backend decisions
 
@@ -13,7 +13,18 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 - Return B Corp certification evidence, provenance and check/refresh dates. Do not equate B Corp certification with a product-level ethical judgment.
 - Unmatched and ambiguous identities are unknown, never automatically uncertified or naughty. Stale certification becomes unknown; historical enforcement evidence remains visible with freshness and event dates. There is no complete B Lab feed or per-request research integration.
 - Keep overall score and naughty/nice verdict unset until the scoring task is settled. No new scoring criteria are authorised by the initial backend work.
-- The extension's exact behaviour, supported sites and research pipeline remain undecided.
+- Domain requests include a reviewed relevance category and verdict eligibility. Exact brand-shop identity is required; a marketplace/retailer domain must not produce a product-brand verdict. No separate classifier service or per-request research is used.
+
+## Locked decisions: shopping overlay MVP
+
+- Detect shopping locally using product/offer metadata, price evidence and an actionable purchase control. Product markup alone is insufficient. Detection is a heuristic, not a universal guarantee for every shopping site.
+- On candidate HTTPS pages, send only the hostname to `POST /v1/assessments` through the extension background script. Do not transmit full URLs, product text, prices, shopping signals, page HTML or browser history.
+- Resolve exact reviewed domains in the same Worker, with `brand_shop`, `retailer`, `marketplace`, `unrelated` and `unknown` categories. Initial eligible brand shops are Patagonia and Tony's Chocolonely. Reviewed UK/US Tony's hosts are explicit, never inferred from suffixes.
+- Display one fixed information stamp, bottom right by default. Users can choose any corner or disable automatic lookups in extension settings. Handle pending, evidence, unknown and error states, dismissal, page navigation and retries.
+- Cache assessments for five minutes in extension session storage and deduplicate in-flight hostname requests. Keep preferences locally. Background requests validate the sending page's hostname.
+- Render nice/naughty only if the backend explicitly supplies that verdict for an eligible reviewed brand-shop identity. B Corp does not imply nice; missing evidence does not imply naughty. Until a scoring rule is agreed, totals and verdicts stay null and the stamp is neutral.
+- Content scripts need HTTPS site access for local detection; the only API host is `naughty-list-api.40for40.workers.dev`. Firefox declares required `browsingActivity` transmission for hostname lookup. Privacy preparation must reflect actual page reading and host transmission.
+- Backend changes require review before deployment. No new service or automatic AI classifier is part of this MVP.
 
 ## Locked decisions: evidence backend
 
@@ -34,11 +45,9 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 - **Where:** a browser extension that overlays helpful information about a brand or product.
 - **When:** Black Friday and Christmas shopping.
 
-## Proposed direction: not yet decided
+## Beyond this MVP
 
-The what is still open. The current idea is an overlay on a specific product page, on shopping sites such as Amazon or Argos. It would identify the seller and look it up in a precached list. If the seller is missing, a backend would automatically try to research it and use a scoring algorithm to assess whether the product is ethical.
-
-Treat this as a proposal, not an implementation specification. The supported sites, seller/brand/product identity, sources, scoring method, cache/update strategy and handling of unknown results are not yet agreed. Evidence about a seller or brand must not silently become a claim about an individual product.
+Seller/product identity extraction on Amazon, Argos and other retailers is deferred. A website hostname identifies only the corresponding reviewed business, not the selected marketplace seller or product manufacturer. Automatic missing-company research, AI classification, new scoring criteria and universal site coverage are not implemented. Evidence about a seller or brand must not silently become a claim about an individual product.
 
 ## The problem
 
@@ -53,13 +62,12 @@ The Naughty List tells shoppers which brands have been naughty or nice, so they 
 
 - Santa is the locked audience; Black Friday and Christmas shopping are the locked occasion.
 - A brand is judged on three things: how it treats its staff, its communities and the environment.
-- It overlays helpful information about a brand or product in the browser. The existing scaffold targets Chrome; Firefox publishing has also been explored.
+- It overlays helpful business information on likely shopping pages. Chrome and Firefox packages share the implementation with browser-specific background manifests.
 - The tone is festive and playful: Santa's list, naughty or nice, not a compliance report.
 
 ## Still open
 
-- **What the overlay does:** product-page seller lookup is the current proposal; exact triggers, placement and interaction are still open.
-- **What a verdict looks like:** a simple naughty or nice, a score, or the reasons behind it.
+- **Scoring and verdict:** the naughty/nice decision rule and criteria weights remain open. The implemented overlay supports explicit future verdicts and currently shows neutral evidence states.
 - **Where the data comes from:** which sources say how a brand behaves, and how a verdict gets worked out from them.
 - **Which brands:** every brand, or a starter list of the big gift brands.
 - **Getting it to people:** the Chrome Web Store, or a download from the 40 for 40 site.

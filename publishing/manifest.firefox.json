@@ -4,11 +4,12 @@
       "id": "{c2591c57-0224-4d4a-bdb4-a3223e58c354}",
       "strict_min_version": "140.0",
       "data_collection_permissions": {
-        "required": ["none"]
+        "required": ["browsingActivity"]
       }
     },
     "gecko_android": {
       "strict_min_version": "142.0"
     }
-  }
+  },
+  "background": { "scripts": ["shared.js", "lookup.js", "background.js"] }
 }

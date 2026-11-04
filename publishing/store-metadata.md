@@ -1,6 +1,6 @@
 # Store metadata preparation
 
-Internal draft, 4 November 2026. Do not paste planned behaviour into a live listing until it is implemented and tested.
+Internal draft, 4 November 2026. The described functionality is implemented in 0.0.2; complete browser tests and review the final release before submitting.
 
 ## Known details
 
@@ -12,33 +12,35 @@ Internal draft, 4 November 2026. Do not paste planned behaviour into a live list
 | Project website | https://build40for40.com |
 | Support email | hello@40for40.app |
 | Support website | https://github.com/build40for40/naughty-list/issues |
-| Current version | 0.0.1 |
+| Current version | 0.0.2 |
 | Current icon | `extension/icons/icon-128.png` |
 | Language of prepared copy | English |
 
 These are public project details from the shared context. A store publisher's legal/trader identity, account owner and software licence still need to be confirmed. Project author metadata is not a substitute for account verification.
 
-## Copy accurate for today's scaffold
+## Copy for the implemented MVP
 
 Short description:
 
-> The Naughty List browser extension. Built for Black Friday and Christmas shopping.
+> See source-backed business information on shopping pages. Ethical verdicts appear only when a reviewed assessment is available.
 
 Reviewer preparation notes:
 
-> This archive is currently a metadata-only scaffold. It has no page access, interface, background script or backend integration. It is not ready for store submission. A separate backend currently returns source-dated B Corp evidence for a small starter registry. Overall ethical scoring and naughty/nice verdicts are deferred.
+> The extension checks product/offer, price and purchase-control signals locally on HTTPS pages. On a likely shopping page it sends only the hostname to the Cloudflare Worker, which reads reviewed evidence from D1. A fixed stamp displays neutral evidence/unknown states and supports explicit future verdicts for eligible reviewed brand shops. Position and automatic checks are configurable. There is no seller extraction, product-level ethical rating or per-request AI research. Overall scoring and verdicts remain deferred. Backend relevance changes must be reviewed and deployed before release testing.
 
-Do not submit this scaffold as a finished extension.
+Suggested longer description:
 
-## Product copy to finalise after implementation
+> A little context for Black Friday and Christmas shopping. The Naughty List looks for shopping signals on the page and shows reviewed business information, with sources and check dates. Move the information stamp to any corner, dismiss it for the current page, or turn automatic checks off in settings.
+>
+> Coverage is limited. The initial reviewed brand shops are Patagonia and Tony's Chocolonely, including explicitly reviewed Tony's UK and US websites. Unknown websites and multi-brand retailers or marketplaces do not receive product-brand verdicts. Current ethical scoring is still being agreed, so the stamp shows evidence without calling a business naughty or nice. A B Corp record describes a business, not an individual product.
+>
+> Shopping signals stay on your device. On a candidate page only its hostname is sent to our Cloudflare service; product text, prices and page paths are not sent. Results are cached for up to five minutes in this browser session. Your settings stay on this device.
 
-The locked purpose is to overlay helpful information about a brand or product during Black Friday and Christmas shopping. The initial backend returns B Corp status with a source and check date. The following still need to be established before writing the public feature description:
+## Coverage and permission explanations
 
-- Which sites and page types work.
-- Whether checks happen automatically or after the shopper acts.
-- What entity is being assessed: seller, brand, business or product.
-- What the overlay displays and how missing/stale evidence is represented.
-- Which records are covered at the time of release.
+The single purpose is to show reviewed business information during shopping. HTTPS site access is needed to detect the combination of shopping signals and place the stamp. `storage` is used for local preferences and an expiring browser-session result cache. The background script contacts only the fixed Naughty List API origin. No tab-history or cookie permissions are requested.
+
+Detection is heuristic, not a guarantee that every store works. It requires a priced product/offer and an actionable purchase control, rather than Product markup alone. The backend checks exact reviewed hostnames; it does not inspect arbitrary websites or infer marketplace sellers. Stale evidence and unknown identities remain neutral.
 
 Avoid promises of universal site support, automatic research, instant seller resolution, product-level certification, carbon calculations or overall ethical scores while those features are absent. B Corp certification must not be described as proof that an individual product is ethical.
 

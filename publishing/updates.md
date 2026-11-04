@@ -1,6 +1,6 @@
 # Versioning and later releases
 
-The current prerelease version is `0.0.1`. There is no published store listing yet. This procedure prepares future updates; no update has been uploaded.
+The current prerelease version is `0.0.2`. There is no published store listing yet. This procedure prepares future updates; no update has been uploaded.
 
 1. Increase `extension/manifest.json`'s numeric version. Keep Chrome and Firefox on the same release number unless a browser-specific release needs an explicit divergence. Chrome versions use one to four integer components, each from 0 to 65535; avoid leading zeroes and an all-zero version.
 2. Preserve the Firefox add-on ID in `publishing/manifest.firefox.json`. Preserve the Chrome Web Store listing/signing identity. Do not create a new store item just to ship an update.
@@ -12,8 +12,8 @@ The current prerelease version is `0.0.1`. There is no published store listing y
 
 Initial release notes draft:
 
-> 0.0.1 prepares the extension manifest, icons and packaging. It does not yet implement a shopping overlay or company lookup interface.
+> 0.0.2 adds local shopping detection, hostname-only evidence lookup, a configurable information stamp and session caching. The backend requires exact reviewed brand-shop identity for future verdicts. Ethical scoring remains deferred, so current results are neutral. This version adds HTTPS content-script access, storage and hostname transmission; Firefox declares browsing activity.
 
-Replace these release notes when publishing useful functionality. Do not market the scaffold as a completed product.
+Review these notes after real-browser testing and backend deployment. Do not promise universal coverage, product-level ethical certification or verdicts while scoring remains deferred.
 
 References: [Chrome version format](https://developer.chrome.com/docs/extensions/reference/manifest/version), [Firefox update submission](https://extensionworkshop.com/documentation/publish/submitting-an-add-on/).
