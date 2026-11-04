@@ -34,4 +34,4 @@ Once the overlay works, set Chrome DevTools device mode to 1280×800, then use �
 4. The toolbar popup, if there is one
 5. Title card: already made, `store/screenshot-5-title-card-1280x800.png`
 
-`store/concept-mock-overlay-NOT-FOR-STORE.png` shows the target look for shot 1. It is a mock and must not be uploaded as a screenshot.
+`store/screenshot-1-overlay-CONCEPT-…png` and `screenshot-2-sources-CONCEPT-…png` show the current target: a two-column Nice / Naughty overlay (Lawrence is building the real one). They're renders and must not be uploaded; recapture from the real extension in the same framing.

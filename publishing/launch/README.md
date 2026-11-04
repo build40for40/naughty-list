@@ -10,7 +10,7 @@ This adds to Ben's `publishing/` prep on main and doesn't replace it. His icons 
 | `store/promo-small-440x280.png` | Chrome small promo tile | Ready to review |
 | `store/marquee-1400x560.png` | Chrome marquee tile (optional) | Ready to review |
 | `store/screenshot-5-title-card-1280x800.png` | Title-card screenshot. Upload it as the last screenshot, never the first | Ready to review |
-| `store/concept-mock-overlay-NOT-FOR-STORE.png` | How the overlay could look, on a mock H&M product page. **Design target for Ben. Never upload it.** | Restyled for H&M; status left as a [bracket]. Never upload it |
+| `store/screenshot-1-overlay-CONCEPT-1280x800.png`, `store/screenshot-2-sources-CONCEPT-1280x800.png` | Concept renders of the two-column **Nice / Naughty** overlay on an H&M product page (lead screenshot, then one item opened to show its source). Every finding, count and the overall verdict is a [bracket]. Source: `src/overlay-screens.html` (`?v=1`, `?v=2`) | **Not for upload.** Lawrence owns the real overlay UX; replace with real captures once it exists |
 | `copy.md` | Store listing, privacy tab answers, Firefox notes, privacy notice, publisher setup | Decisions applied (H&M only, help@build40for40.com); a few [brackets] left for the build |
 | `site/download.html` | Download page draft for build40for40.com, standalone. Open it in a browser | Port to `site/src/pages/naughty-list.astro` once approved |
 | `video/storyboard.md` | 40s demo shot list and voice-over, the shorts cut, and the real-screenshot list | Record once the overlay works |
