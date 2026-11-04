@@ -2,7 +2,7 @@
 
 A Chrome extension for Day 3 of [40 for 40](https://build40for40.com).
 
-The extension runs **Elf Cam badge mode**: on a reviewed single-brand store (currently patagonia.com and tonyschocolonely.com), it briefly puts the page "on camera", shows whether the company behind the store is nice, then shrinks into a corner badge that opens a case file with the evidence. Companies without current B Corp evidence show as Unidentified, never Naughty. A separate Cloudflare Worker provides the company assessment API. Product decisions are recorded in [AGENTS.md](AGENTS.md).
+The extension runs **Elf Cam badge mode**: on a reviewed single-brand store (currently patagonia.com and tonyschocolonely.com), it briefly puts the page "on camera" and shows the company's B Corp evidence, then shrinks into a corner badge that opens a case file with the source and check date. It shows no Naughty or Nice verdict until the scoring method (card 157) is agreed; companies without current evidence show as Unidentified. A separate Cloudflare Worker provides a D1-backed company evidence API. Product decisions are recorded in [AGENTS.md](AGENTS.md).
 
 Extension files: `content.js` (overlay and badge), `verdict.js` (turns an API response into what the badge shows), `background.js` (API lookup), and `fonts/` (VT323, SIL Open Font License).
 
@@ -37,10 +37,14 @@ Publication preparation and current blockers are recorded in [publishing/README.
 
 Deployed API: https://naughty-list-api.40for40.workers.dev
 
-Requires Node.js 22 or later and npm.
+Requires Node.js 22.13 or later and npm. Initialise the local database before starting:
 
 ```sh
 npm ci
+npm run wrangler -- d1 migrations apply naughty-list --local
+npm run evidence -- seed
+npm run evidence -- import us-epa data/epa-reviewed.json
+npm run evidence -- sync
 npm run dev
 npm run check
 ```
@@ -50,6 +54,8 @@ npm run check
 ### API
 
 `GET /health` returns service health.
+
+`GET /v1/sources` returns source coverage, record counts, freshness, attribution and access limitations. Assessments include published `evidence` and the same `sources` metadata alongside the existing B Corp fields. See [the evidence operating guide](docs/evidence.md) for response semantics, source setup, corrections and scheduling.
 
 `POST /v1/assessments` accepts JSON with exactly one of:
 
@@ -73,7 +79,7 @@ The DUNS example is a placeholder, not a real company mapping. Keep identifiers 
 
 Domain input is a hostname, such as the browser URL's `hostname`, rather than a full URL. It is lowercased and trimmed; a trailing DNS dot is removed. URLs, paths, ports, IP addresses and raw Unicode hostnames are rejected. Browser-normalised ASCII/punycode hostnames are accepted, but only exact reviewed entries match. No submitted domain is fetched by the backend.
 
-The starter mappings cover `patagonia.com`, `www.patagonia.com`, `tonyschocolonely.com` and `www.tonyschocolonely.com`. Subdomains and regional sites need their own reviewed entries: neither `shop.patagonia.com` nor `patagonia.com.example.org` inherits a match. Domain matches include `match.method: "reviewed_domain"`, the normalised `match.domain`, `match.storeType` (`single_brand` for every starter mapping; `null` when unmatched) and source/check dates in `match.evidence`. This identifies the website's company; a marketplace domain cannot identify the selected seller or product brand. Those still need separate extraction and lookups.
+The starter mappings include `patagonia.com`, `www.patagonia.com`, `tonyschocolonely.com`, `www.tonyschocolonely.com` and selected reviewed websites in the seed script. Subdomains and regional sites need their own reviewed entries: neither `shop.patagonia.com` nor `patagonia.com.example.org` inherits a match. Domain matches include `match.method: "reviewed_domain"`, the normalised `match.domain`, `match.storeType` (`single_brand` for Patagonia and Tony's Chocolonely; `null` for other or unmatched websites) and source/check dates in `match.evidence`. This identifies the website's company; a marketplace domain cannot identify the selected seller or product brand. Those still need separate extraction and lookups.
 
 Example request against the local Worker:
 
@@ -83,7 +89,7 @@ curl http://localhost:8787/v1/assessments \
   --data '{"brand":"Patagonia"}'
 ```
 
-Example response while the evidence is fresh:
+Abbreviated response while the certification evidence is fresh (additional `evidence`, `sources` and `coverage` fields omitted):
 
 ```json
 {
@@ -118,15 +124,17 @@ Errors use `{ "error": { "code": "...", "message": "..." } }`: `400` invalid inp
 
 ### Evidence and coverage
 
-[worker/companies.js](worker/companies.js) is a manually maintained starter registry containing **Patagonia and Tony's Chocolonely**, checked against their B Lab directory profiles on 4 November 2026. It is not a complete or live B Corp directory. There is no automatic enrichment or refresh job yet. `verified` means supported by the recorded source at `checkedAt`, not checked live on each request.
+The dedicated D1 database contains a starter set of **20 reviewed entities and 22 records from six sources**: B Lab, UK minimum wage naming, CMA, HSE, US EPA and Wikirate. Selected minimum-wage, CMA, HSE and Wikirate records refresh daily. B Lab and EPA are manually reviewed snapshots. Wikirate adds one explicitly historical 2022 certification report; it is not current B Corp verification. Environment Agency and WBA remain explicitly blocked pending licence resolution. This is partial coverage, not a complete directory, and historical records do not establish present misconduct.
+
+[worker/companies.js](worker/companies.js) retains the original **Patagonia and Tony's Chocolonely** B Lab seed, checked on 4 November 2026. It is not a complete or live B Corp directory. `verified` means supported by the recorded source at `checkedAt`, not checked live on each request. Re-running the seed does not renew those dates.
 
 `validUntil` is our evidence refresh deadline, not the certificate's expiry. At that date the API returns unknown with reason `stale_evidence` until the record is rechecked and updated. Do not extend this deadline without checking the source. Missing records must not be marked uncertified, and certification does not establish whether an individual product is ethical.
 
-To add coverage, review a primary source, add the company and confirmed aliases/identifiers/domains with the source and dates, run checks, then redeploy. Record the source that links each domain to the company in `domainEvidence`; do not infer ownership from page text or a similar name. A supported B Lab feed or licensed provider can replace this registry later. Never invent DUNS numbers or infer corporate ownership from similar names.
+To add coverage, review a primary source, add the exact company mappings and source configuration, then seed and import the database using the [operating guide](docs/evidence.md). Record the source that links each domain to the company in `domainEvidence`; do not infer ownership from similar names. Never invent DUNS numbers or infer corporate ownership. Database failures return 503 instead of pretending no evidence exists. Published historical evidence remains visible with its freshness status; certification past its refresh deadline becomes unknown.
 
 ### Cloudflare deployment
 
-The Worker is named `naughty-list-api`; its account is configured in [wrangler.jsonc](wrangler.jsonc). It uses a separate Worker and does not touch the site's shared D1 database. No database, credentials or paid external service are needed by this first version.
+The Worker is named `naughty-list-api`; its account and dedicated `naughty-list` D1 binding are configured in [wrangler.jsonc](wrangler.jsonc). It does not touch the site's shared D1 database. Public evidence sources need no provider API credentials. Source data and imports belong to this repository's database.
 
 On a new machine, create the account auth profile:
 
@@ -134,9 +142,13 @@ On a new machine, create the account auth profile:
 env -u CLOUDFLARE_API_KEY -u CLOUDFLARE_EMAIL npx wrangler auth create 40for40
 ```
 
-Then deploy using the repo script, which preserves the `40for40` profile:
+Apply migrations and import the starter evidence before deploying. These scripts preserve the `40for40` profile:
 
 ```sh
+npm run wrangler -- d1 migrations apply naughty-list --remote
+npm run evidence -- seed --remote
+npm run evidence -- import us-epa data/epa-reviewed.json --remote
+npm run evidence -- sync --remote
 npm run deploy
 ```
 
