@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Naughty List: check it twice before you buy</title>
+<!-- DRAFT download page for build40for40.com/naughty-list. Standalone so it can be reviewed without touching the site repo.
+     Festive look (Ben's steer, 4 Nov): its own Christmas identity, 40 for 40 only as a small credit.
+     Port into site/src/pages/naughty-list.astro once approved. Gold-highlighted [brackets] = facts the build must confirm. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@500;700;800;900&family=Caveat+Brush&display=swap">
+<style>
+:root{--red:#d42a2a;--red-dk:#a51d1d;--green:#1f6b3f;--pine:#123d26;--snow:#fffaf2;--cream:#f6ecdc;--gold:#f5c04a;--ink:#2a1a14;--sub:#5b4a40;--hole:#fff1c2}
+*{box-sizing:border-box}
+body{margin:0;background:var(--snow);color:var(--ink);font:500 17px/1.6 "Nunito",system-ui,sans-serif}
+.w{max-width:980px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
+h1,h2,h3{font-family:"Lilita One",system-ui,sans-serif;font-weight:400;line-height:1;margin:0;text-wrap:balance}
+.scrawl{font-family:"Caveat Brush",cursive;color:var(--gold)}
+.hole{background:var(--hole);color:#7a5a00;padding:0 5px;border-radius:4px;font-weight:700}
+a{color:var(--red)}
+.snow{background-image:radial-gradient(circle,rgba(255,255,255,.75) 2px,transparent 2.6px),radial-gradient(circle,rgba(255,255,255,.45) 1.4px,transparent 1.9px),radial-gradient(circle,rgba(255,255,255,.3) 3px,transparent 3.6px);background-size:61px 67px,37px 41px,113px 97px;background-position:0 0,19px 23px,40px 11px}
+.stripe{height:14px;background:repeating-linear-gradient(-45deg,var(--snow) 0 12px,var(--red) 12px 24px)}
+
+.hero{background-color:var(--green);color:var(--snow);position:relative;padding:28px 0 120px;overflow:hidden}
+.hero::after{content:"";position:absolute;left:-5%;right:-5%;bottom:-1px;height:80px;background:var(--snow);border-radius:50% 50% 0 0/100% 100% 0 0}
+.top{display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:14px;opacity:.85;margin-bottom:36px}
+.hero .grid{display:grid;grid-template-columns:1fr 240px;gap:32px;align-items:center;position:relative;z-index:1}
+.hero .grid>*{min-width:0}
+.hero h1{font-size:clamp(52px,9vw,96px);text-shadow:0 5px 0 rgba(0,30,15,.4)}
+.hero .scrawl{font-size:clamp(28px,4vw,40px);margin:10px 0 14px;transform:rotate(-2deg);transform-origin:left}
+.poem{font-style:italic;opacity:.9;margin:0 0 22px;max-width:46ch}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;background:var(--red);color:var(--snow);font-weight:900;text-decoration:none;padding:14px 24px;border-radius:999px;box-shadow:0 5px 0 var(--red-dk);transition:transform .1s}
+.btn:hover{transform:translateY(-2px)}
+.btn.gold{background:var(--gold);color:var(--pine);box-shadow:0 5px 0 #b9862a}
+.small{font-size:14px;opacity:.85;margin-top:16px}
+.hero img{width:240px;height:240px;transform:rotate(6deg)}
+
+section{padding:64px 0}
+section h2{font-size:clamp(36px,5vw,48px);color:var(--red);margin-bottom:8px}
+section .kicker{font-size:26px;color:var(--green);margin:0 0 24px;transform:rotate(-1deg);transform-origin:left}
+.video{aspect-ratio:16/9;background:var(--cream);border:3px dashed #e3cfae;border-radius:20px;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px}
+.cap{font-size:14px;color:var(--sub);margin-top:10px;text-align:center}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;list-style:none;padding:0;margin:0;counter-reset:s}
+.steps li{background:var(--cream);border-radius:18px;padding:22px;counter-increment:s;min-width:0;font-weight:700}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--red);color:var(--snow);font:24px "Lilita One",sans-serif;margin-bottom:10px}
+.note{margin-top:18px;font-size:15px;color:var(--sub)}
+.green{background-color:var(--green);color:var(--snow)}
+.green h2{color:var(--snow)}
+.green .kicker{color:var(--gold)}
+.install{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:var(--snow);color:var(--ink);border-radius:20px;padding:26px;min-width:0}
+.card h3{font-size:30px;color:var(--green);margin-bottom:6px}
+.card ol{padding-left:22px;margin:12px 0}
+.card li{margin:4px 0}
+code{background:var(--cream);padding:1px 7px;border-radius:5px;font-size:15px}
+.card .small{color:var(--sub);opacity:1}
+.soon{margin-top:20px;background:var(--gold);color:var(--pine);border-radius:18px;padding:18px 24px;font-weight:700}
+dl{margin:0;display:grid;gap:14px}
+dl>div{background:var(--cream);border-radius:18px;padding:20px 24px}
+dt{font:24px "Lilita One",sans-serif;color:var(--red);margin-bottom:4px}
+dd{margin:0;color:var(--sub);max-width:70ch}
+footer{background:var(--red);color:var(--snow);padding:28px 0 40px;font-size:14px;text-align:center}
+footer b{font-family:"Lilita One",sans-serif;font-weight:400;font-size:20px;display:block;margin-bottom:4px}
+@media (max-width:720px){.hero .grid,.install,.steps{grid-template-columns:1fr}.hero img{width:130px;height:130px;order:-1}}
+</style>
+</head>
+<body>
+
+<header class="hero snow">
+  <div class="w">
+    <div class="top"><span>🎄 The Naughty List</span><span>Free for Chrome &amp; Firefox</span></div>
+    <div class="grid">
+      <div>
+        <h1>The Naughty List</h1>
+        <p class="scrawl">He's making a list. Now you can check it twice.</p>
+        <p class="poem">Their billboards all twinkle, their TV ads all glow.<br>But who's been naughty or nice? Now you can know.</p>
+        <div class="ctas">
+          <a class="btn gold" href="#install">Add to Chrome</a>
+          <a class="btn" href="#install">Add to Firefox</a>
+        </div>
+        <p class="small">Free · no sign-up · no coal · starting with H&amp;M</p>
+      </div>
+      <img src="../src/icon-festive.svg" alt="">
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="w">
+  <div class="video"><span class="hole">[DEMO VIDEO, 16:9, about 40 seconds]</span></div>
+  <p class="cap">Sleigh-ed together live on Twitch, in one day.</p>
+</section>
+
+<section class="w">
+  <h2>How it works</h2>
+  <p class="scrawl kicker">It's elf-explanatory.</p>
+  <ol class="steps">
+    <li>Shop like normal on H&amp;M's website.</li>
+    <li>Open any product page. The Naughty List pops up.</li>
+    <li>See if H&amp;M is a Certified B Corp, where that came from, and when our elves last checked.</li>
+  </ol>
+  <p class="note">Just one brand for now (even Santa started with one sleigh). More shops and brands are coming down the chimney, then full naughty-or-nice ratings for staff, communities and the planet.</p>
+</section>
+
+<div class="stripe"></div>
+<section class="green snow" id="install">
+  <div class="w">
+    <h2>Unwrap it</h2>
+    <p class="scrawl kicker">Takes about a minute. Less than wrapping a bike.</p>
+    <div class="install">
+      <div class="card">
+        <h3>Chrome</h3>
+        <p>Until we're in the Chrome Web Store, it's a little bit of DIY:</p>
+        <ol>
+          <li><a href="#">Download naughty-list.zip</a> <span class="hole">[link]</span> and unzip it.</li>
+          <li>Paste <code>chrome://extensions</code> into the address bar.</li>
+          <li>Switch on <b>Developer mode</b> (top right).</li>
+          <li>Click <b>Load unpacked</b> and pick the unzipped folder.</li>
+          <li>Click the puzzle piece in the toolbar and pin The Naughty List.</li>
+        </ol>
+        <p class="small">Works in Edge, Brave and Arc too (in Edge it's <code>edge://extensions</code>). Chrome might remind you a developer extension is on. That's fine, it's on the nice list.</p>
+      </div>
+      <div class="card">
+        <h3>Firefox</h3>
+        <ol>
+          <li><a href="#">Add to Firefox</a> <span class="hole">[signed .xpi link]</span>.</li>
+          <li>Firefox asks if you want to add The Naughty List. Click <b>Add</b>.</li>
+          <li>That's it. Ho ho ho.</li>
+        </ol>
+        <p class="small">No Safari yet. It's on our list.</p>
+      </div>
+    </div>
+    <p class="soon">🎁 One-click install is on its way. We've posted it to the Chrome Web Store and we're waiting for the elves to approve it. Installed it by hand already? You can switch when it's live.</p>
+  </div>
+</section>
+<div class="stripe"></div>
+
+<section class="w">
+  <h2>Questions</h2>
+  <p class="scrawl kicker">Answered by our most senior elf.</p>
+  <dl>
+    <div><dt>How do you decide who's nice?</dt><dd>Right now we show one thing: whether the company is a Certified B Corp, checked by hand against the B Lab directory, with the date. B Corps are independently assessed on how they treat workers, communities and the environment. It's about the company, not any single jumper.</dd></div>
+    <div><dt>Which brands are on the list?</dt><dd>Just H&amp;M for now, checked by hand. We're adding more before Black Friday. If we haven't checked a brand, we'll say "not on our list yet", which never means naughty.</dd></div>
+    <div><dt>Are you watching me shop?</dt><dd>No. Santa sees you when you're sleeping; we don't. It only runs on H&amp;M's shop, the check happens inside the extension, and nothing you browse leaves your browser. No account either. <span class="hole">[Swap for version A in copy.md if the build calls our API.]</span> <a href="https://build40for40.com/privacy">Privacy notice</a>.</dd></div>
+    <div><dt>Think we've got it wrong?</dt><dd>Send us a letter (well, an email) at <a href="mailto:help@build40for40.com">help@build40for40.com</a> with a source and we'll check it twice.</dd></div>
+    <div><dt>Who made this?</dt><dd>40 for 40: 40 apps in 40 days, built live on Twitch for people who paid to have their problem solved. This one was Day 3, and the problem came from Santa.</dd></div>
+  </dl>
+</section>
+</main>
+
+<footer class="snow"><div class="w"><b>Merry checking!</b>The Naughty List · made by 40 for 40 · build40for40.com</div></footer>
+</body>
+</html>
