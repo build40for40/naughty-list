@@ -3,7 +3,8 @@
 Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The problem is "Hard to know which brands are ethical", from Santa. Work is tracked on the Superthread `day3` board.
 
 - **Form factor:** a browser extension, for Chrome first and Firefox second.
-- **First release scope:** one brand, H&M, on H&M's own shop (decided on card 156).
+- **MVP (v1):** a single-brand shop, starting with H&M on its own shop, with a Naughty or Nice stamp for the brand.
+- **Reach goal (v2):** multi-brand shops such as John Lewis, sorting the brands on the page into Naughty and Nice lists.
 
 ## Status (4 November 2026, afternoon)
 
@@ -43,19 +44,26 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 - **Where:** a browser extension that overlays helpful information about a brand or product.
 - **When:** Black Friday and Christmas shopping.
 
+## Locked decisions: the what (4 November)
+
+- **MVP (v1): single-brand shops get a Naughty or Nice stamp.** Every product on a single-brand shop comes from the same company, so the shop gets one stamp for its brand, not a sorted list. The first shop is H&M.
+- **Reach goal (v2): multi-brand shops get Naughty and Nice lists.** On a shop such as John Lewis, the extension sorts the brands on the page into a Naughty list and a Nice list.
+- **The stamp needs a method.** Which brands are naughty or nice is decided by card 157's scoring method. Until that's agreed, the backend keeps the verdict unset and the stamp must not show one. Today's evidence (such as B Corp status) can explain a verdict but doesn't produce one by itself.
+- **Unknown stays unknown.** A brand with too little evidence gets neither stamp and goes in neither list. It must never be shown as naughty.
+
 ## Launch decisions (card 156, 4 November)
 
 - **Scope:** one brand, H&M, on H&M's own shop. This replaces the earlier idea of seller lookup on marketplaces such as Amazon or Argos for the first release.
-- **What the overlay shows today:** whether H&M is a Certified B Corp, with the source (B Lab directory) and the check date. Nothing else, and never a naughty/nice verdict.
+- **What the overlay shows today:** whether H&M is a Certified B Corp, with the source (B Lab directory) and the check date. The Naughty or Nice stamp only appears once card 157's method is agreed and the backend returns a verdict. The card 156 store copy, which promises B Corp evidence only, needs rewriting when that happens.
 - **Support email:** help@build40for40.com. The `publishing/` docs on `main` still say `hello@40for40.app` and need updating.
 - **Look:** a Christmas identity of its own: Santa red, pine green, snow, gold and candy-cane stripes, with playful puns. 40 for 40 appears only as a small "made by" credit. The festive icon on `launch-assets` replaces the draft icons in `extension/icons/`.
 - **Chrome Web Store:** Ben owns the developer account (fee paid), publishing as 40 for 40 Ltd.
 - **Firefox add-on ID:** `{c2591c57-0224-4d4a-bdb4-a3223e58c354}` in `publishing/manifest.firefox.json`. Never change it; updates depend on it.
 
-## Design rule: badge or split (card 158, 4 November)
+## Design rule: stamp or lists (card 158, 4 November)
 
-- **Single-brand shops (e.g. H&M): a brand badge.** All products share one company's evidence, so a Nice/Naughty split would put the whole shop in one group.
-- **Multi-brand shops (e.g. John Lewis, Argos, Amazon): group products into Nice, Naughty and Unknown.** Later, after the H&M release. Show the shop's record as a badge and group products by their own brand; never let the shop's record apply to other brands it sells. Own-label products take the shop's record. If a tile's brand can't be read reliably, it goes in Unknown. Unknown must look neutral.
+- **v1, single-brand shops (e.g. H&M): a Naughty or Nice stamp.** All products share one company's evidence, so a Nice/Naughty split would put the whole shop in one group.
+- **v2, multi-brand shops (e.g. John Lewis, Argos, Amazon): Naughty and Nice lists, plus Unknown.** Show the shop's record as a badge and group products by their own brand; never let the shop's record apply to other brands it sells. Own-label products take the shop's record. If a tile's brand can't be read reliably, it goes in Unknown. Unknown must look neutral.
 - **Rearranging the page:** reorder or label the shop's own tiles and buttons; never copy tiles or rebuild buttons, so the basket, quantities and Buy now keep working. Never click for the shopper, and never hide or cover purchase controls.
 - How much a single action (such as one donation) counts is a scoring question for card 157, not a design one.
 
@@ -96,7 +104,7 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 
 ## Scoring (card 157)
 
-Keep the overall score and naughty/nice verdict unset until card 157 agrees a method. No scoring criteria, weights or thresholds are agreed. Missing certification or missing records must never mean naughty or nice. Evidence about a seller or brand must not silently become a claim about an individual product.
+The v1 stamp depends on this card. Keep the overall score and naughty/nice verdict unset until card 157 agrees a method. No scoring criteria, weights or thresholds are agreed. Missing certification or missing records must never mean naughty or nice. Evidence about a seller or brand must not silently become a claim about an individual product.
 
 ## The problem
 
@@ -115,8 +123,8 @@ The Naughty List tells shoppers which brands have been naughty or nice, so they 
 
 ## Still open after the first release
 
-- **What a verdict looks like:** a simple naughty or nice, a score, or the reasons behind it (card 157).
-- **More brands and shops:** the Nice/Naughty/Unknown split for multi-brand shops is the agreed design direction (card 158). Marketplace seller lookup, a precached list and automatic research for unknown sellers were proposed but not agreed.
+- **How a verdict is worked out:** the criteria, weights and thresholds behind Naughty or Nice, and whether the reasons are shown alongside the stamp (card 157).
+- **v2 details:** which multi-brand shops after John Lewis, and how brands are read from each product tile. Marketplace seller lookup, a precached list and automatic research for unknown sellers were proposed but not agreed.
 - **Where the data comes from** beyond the current six sources (card 155).
 
 ## The problem as submitted
