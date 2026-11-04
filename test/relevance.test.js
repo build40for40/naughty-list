@@ -48,12 +48,15 @@ test('approved scores use reviewed evidence and keep retailer assessments separa
   await db.batch(evidenceStatements('uk-minimum-wage', records, registry, crypto.randomUUID(), new Date()).map(([sql, values]) => db.prepare(sql).bind(...values)));
   const nice = await post('www.fatface.com');
   assert.equal(nice.scoring.method, 'santa-v0.4');
-  assert.equal(nice.scoring.total, 1);
+  assert.equal(nice.scoring.total, 0);
+  assert.equal(nice.scoring.reportCard.length, 2);
+  assert.equal(nice.scoring.reportCardPoints, -1);
   assert.equal(nice.scoring.verdict, 'nice');
   const naughty = await post('www.riverisland.com');
   assert.equal(naughty.company.id, 'river-island');
   assert.equal(naughty.scoring.total, -2);
   assert.equal(naughty.scoring.verdict, 'naughty');
+  assert.equal(naughty.scoring.reportCard.length, 2);
   assert.equal(naughty.relevance.eligibleForVerdict, false);
   assert.equal(naughty.relevance.eligibleForBusinessVerdict, true);
   assert.equal(naughty.evidence[0].facts.workersAffected, 1007);
