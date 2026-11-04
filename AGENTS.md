@@ -8,15 +8,18 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 ## Status (4 November 2026, afternoon)
 
 - **`extension/`:** a Manifest V3 scaffold at version `0.0.1` with only a manifest and draft icons. It has no content scripts, permissions, UI or backend calls yet.
-- **`worker/`:** the `naughty-list-api` Cloudflare Worker, deployed at https://naughty-list-api.40for40.workers.dev. It checks B Corp status against a hand-checked starter registry in `worker/companies.js` covering **Patagonia and Tony's Chocolonely only. There is no H&M entry yet.**
+- **`worker/`:** the `naughty-list-api` Cloudflare Worker, deployed at https://naughty-list-api.40for40.workers.dev. It reads reviewed evidence from its dedicated `naughty-list` D1 database: 20 reviewed entities and 22 records from six sources (B Lab, UK minimum-wage naming, CMA, HSE, US EPA and Wikirate). Selected records refresh daily at 05:17 UTC. **There is no H&M entry yet.**
 - **`publishing/`:** release preparation for both stores (card 152): Firefox manifest overlay, packaging script, privacy inventory, browser test matrix and update procedure. Nothing is ready to submit.
 - **`launch-assets` branch (card 156, not merged):** festive store graphics, store copy with a pun bank, a download page draft and a demo storyboard, in `publishing/launch/`.
+- **Backend detail:** `docs/evidence.md` (operating guide) and `docs/implementation-status.md` (what is deployed and verified).
 
 ## Commands
 
-- `npm ci`, then `npm run dev` (local Worker), `npm run check` (tests plus a Wrangler dry run) and `npm run deploy` (manual; CI never deploys).
+- Node.js 22.13 or later. `npm ci`, then initialise the local database: `npm run wrangler -- d1 migrations apply naughty-list --local`, `npm run evidence -- seed`, `npm run evidence -- import us-epa data/epa-reviewed.json` and `npm run evidence -- sync`.
+- `npm run dev` (local Worker), `npm run check` (tests plus a Wrangler dry run) and `npm run deploy` (manual; CI never deploys). Remote migrations, seeding and imports come before deploying; see `docs/evidence.md`.
 - `npm run extension:package:chrome` / `npm run extension:package:firefox` build runtime-only ZIPs into `dist/` from an explicit allowlist. Update the allowlist in `scripts/package-extension.mjs` whenever the extension gains files.
 - Always run Wrangler as `npm run wrangler -- <args>`. It uses the `40for40` auth profile and unsets `CLOUDFLARE_API_KEY` and `CLOUDFLARE_EMAIL`. On a new machine, create the profile with `env -u CLOUDFLARE_API_KEY -u CLOUDFLARE_EMAIL npx wrangler auth create 40for40`.
+- Wikirate credentials live in the ignored `.dev.vars` locally and in Cloudflare secrets in production. Never commit them or paste them into chat.
 - CI runs `npm run check` and a `jq` check on `extension/manifest.json`.
 
 ## Superthread `day3` board
@@ -58,24 +61,37 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 
 ## Open before launch
 
-- **H&M registry entry:** hand-check H&M against the B Lab directory, then add it to `worker/companies.js` with a source, check date and explicit mappings for every H&M hostname the extension runs on. Until then every H&M page shows unknown. Copy, screenshots and video must not state H&M's status before the registry entry exists.
+- **H&M entry:** hand-check H&M against the B Lab directory, then add it to the reviewed registry with a source, check date and explicit mappings for every H&M hostname the extension runs on, and seed it into D1 (see `docs/evidence.md`). Until then every H&M page shows unknown. Copy, screenshots and video must not state H&M's status before the entry exists.
 - **Local check or API:** either the extension carries H&M's record itself (recommended: nothing leaves the browser) or it calls the Worker. Ben's call. It decides the privacy notice (version B or A in `copy.md`), the Chrome privacy tab and the Firefox data-collection declaration.
 - **Build the overlay**, then capture real screenshots and the demo recording. The H&M overlay mock is labelled NOT FOR STORE and must never be uploaded.
 - **Publisher setup:** EU trader declaration with company details, ideally a Google Group publisher, verify build40for40.com and choose a licence (MIT if the repo is public).
 
 ## Backend rules
 
-- `POST /v1/assessments` accepts exactly one domain hostname, brand name or typed identifier (`b_lab` directory slug or nine-digit DUNS string). Identifier support does not imply an external DUNS resolution service; only verified registry mappings resolve.
+- `POST /v1/assessments` accepts exactly one domain hostname, brand name or typed identifier (`b_lab` directory slug or nine-digit DUNS string). Identifier support does not imply an external DUNS resolution service; only verified registry mappings resolve. `GET /v1/sources` returns source coverage and freshness.
 - Domain lookup uses exact reviewed hostname mappings with source/check dates. Case and a trailing DNS dot are normalised; subdomains and regional domains require explicit mappings. A marketplace domain identifies the marketplace, not a product brand or selected seller. No seller extraction or automatic domain research is implemented.
 - Return B Corp certification evidence, provenance and check/refresh dates. Do not equate B Corp certification with a product-level ethical judgment.
-- Unmatched, ambiguous and stale records are unknown, never automatically uncertified or naughty. `validUntil` is our evidence refresh deadline, not the certificate's expiry; never extend it without rechecking the source.
+- Unmatched and ambiguous identities are unknown, never automatically uncertified or naughty. Stale certification becomes unknown; historical enforcement evidence remains visible with freshness and event dates. There is no complete B Lab feed or per-request research integration. `validUntil` is our evidence refresh deadline, not the certificate's expiry; never extend it without rechecking the source.
 - Never invent identifiers, DUNS numbers or ownership links. Record the source for every company and domain mapping.
-- The Worker is separate from the site's Worker and does not touch its D1 database. It has no API key, database or paid external service.
+- Keep overall score and naughty/nice verdict unset until the scoring task is settled. No new scoring criteria are authorised by the backend work.
+
+## Locked decisions: evidence backend
+
+- Use the dedicated `naughty-list` D1 database, binding `DB`, in the shared Cloudflare account. This repo owns its migrations. Never write to the site's shared `40for40` database.
+- D1 is the evidence store. Vector search is deferred; semantic similarity must not establish company identity.
+- Public requests read stored evidence only. No scraping, paid lookups or AI research triggered by shopper requests. Database failure is a 503, not an unknown company.
+- Use reviewed exact aliases, identifiers and hostnames. Corporate relationships do not automatically transfer evidence. Regional legal entities, brands and product claims retain their assessed scope.
+- B Lab and EPA snapshots are manually reviewed. Selected minimum-wage, CMA and HSE records refresh daily using source-specific importers. Environment Agency and WBA remain blocked pending specific licence resolution.
+- Wikirate's B Corp connector uses API credentials and reviewed provider company IDs. The audited metric contains only 2022 observations; the current import is Tony's Chocolonely's historical report. Preserve reporting years and secondary-source attribution in `criteria.bCorpReports`; do not silently promote these reports into direct B Lab verification. Patagonia has no answer in that metric, which is not evidence of non-certification.
+- Imports validate all records before writing; scheduled writes use a D1 transaction per source. Retain prior evidence on failed refreshes, track import outcomes, keep evidence history and expose source coverage and freshness.
+- Dates distinguish events, publication, checking and refresh deadlines. Historical findings are not claims of current misconduct. Undertakings, changed practices, guilty pleas, civil settlements and orders remain distinct outcomes.
+- Data, operating commands and limitations are documented in `docs/evidence.md`.
 
 ## Data sources (card 155)
 
-- **B Lab directory** is the only source in use, checked by hand. There is no supported public B Lab API, and its data.world dataset was retired on 13 July 2026.
-- **Shortlist for later, subject to access and display licensing:** Good On You (brand ratings) and Provenance (specific claims). EcoVadis is a negotiated commercial fallback.
+- **In use:** B Lab (hand-checked), UK minimum-wage naming, CMA, HSE, US EPA (reviewed snapshots) and Wikirate (one historical 2022 report). There is no supported public B Lab API, and its data.world dataset was retired on 13 July 2026.
+- **Blocked pending licence:** Environment Agency and WBA.
+- **Commercial shortlist for later, subject to access and display licensing:** Good On You (brand ratings) and Provenance (specific claims). EcoVadis is a negotiated commercial fallback.
 - **Excluded for now:** Ethical Consumer, ClimateChoice, KindBuys, Climatiq, HowGood and TrusTrace.
 
 ## Scoring (card 157)
@@ -101,7 +117,7 @@ The Naughty List tells shoppers which brands have been naughty or nice, so they 
 
 - **What a verdict looks like:** a simple naughty or nice, a score, or the reasons behind it (card 157).
 - **More brands and shops:** the Nice/Naughty/Unknown split for multi-brand shops is the agreed design direction (card 158). Marketplace seller lookup, a precached list and automatic research for unknown sellers were proposed but not agreed.
-- **Where the data comes from** beyond B Corp evidence (card 155).
+- **Where the data comes from** beyond the current six sources (card 155).
 
 ## The problem as submitted
 

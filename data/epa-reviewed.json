@@ -1,0 +1,81 @@
+[
+  {
+    "sourceId": "us-epa",
+    "publicationStatus": "published",
+    "scope": "company",
+    "dimensions": [
+      "environment",
+      "consumer_safety"
+    ],
+    "checkedAt": "2026-11-04",
+    "refreshDueAt": "2026-12-04T00:00:00Z",
+    "id": "us-epa:2020-stop-sale:amazon-services-us",
+    "sourceRecordId": "2020-06-11-stop-sale",
+    "companyId": "amazon-services-us",
+    "assessedEntity": "Amazon Services LLC",
+    "kind": "pesticide_enforcement",
+    "outcome": "stop_sale_order",
+    "title": "EPA stop-sale order concerning certain pesticide products",
+    "sourceUrl": "https://www.epa.gov/newsreleases/epa-orders-amazon-and-ebay-stop-sale-certain-pesticide-products",
+    "summary": "EPA announced a stop-sale order on 11 June 2020 covering specified pesticide products offered on this US marketplace. This historical order does not establish that a current product or an individual seller is in breach.",
+    "eventDate": "2020-06-11",
+    "publishedAt": "2020-06-11",
+    "facts": {
+      "jurisdiction": "United States",
+      "currentComplianceStatus": "unknown"
+    }
+  },
+  {
+    "sourceId": "us-epa",
+    "publicationStatus": "published",
+    "scope": "company",
+    "dimensions": [
+      "environment",
+      "consumer_safety"
+    ],
+    "checkedAt": "2026-11-04",
+    "refreshDueAt": "2026-12-04T00:00:00Z",
+    "id": "us-epa:2020-stop-sale:ebay-us",
+    "sourceRecordId": "2020-06-11-stop-sale",
+    "companyId": "ebay-us",
+    "assessedEntity": "eBay Inc.",
+    "kind": "pesticide_enforcement",
+    "outcome": "stop_sale_order",
+    "title": "EPA stop-sale order concerning certain pesticide products",
+    "sourceUrl": "https://www.epa.gov/newsreleases/epa-orders-amazon-and-ebay-stop-sale-certain-pesticide-products",
+    "summary": "EPA announced a stop-sale order on 11 June 2020 covering specified pesticide products offered on this US marketplace. This historical order does not establish that a current product or an individual seller is in breach.",
+    "eventDate": "2020-06-11",
+    "publishedAt": "2020-06-11",
+    "facts": {
+      "jurisdiction": "United States",
+      "currentComplianceStatus": "unknown"
+    }
+  },
+  {
+    "sourceId": "us-epa",
+    "publicationStatus": "published",
+    "scope": "company",
+    "dimensions": [
+      "environment",
+      "consumer_safety"
+    ],
+    "checkedAt": "2026-11-04",
+    "refreshDueAt": "2026-12-04T00:00:00Z",
+    "id": "us-epa:amazon-2018-settlement",
+    "sourceRecordId": "amazon-services-llc-fifra-settlement-2018",
+    "companyId": "amazon-services-us",
+    "assessedEntity": "Amazon Services LLC",
+    "kind": "pesticide_enforcement",
+    "outcome": "civil_settlement",
+    "title": "EPA pesticide settlement with Amazon Services LLC",
+    "sourceUrl": "https://www.epa.gov/enforcement/amazon-services-llc-fifra-settlement",
+    "summary": "EPA announced a settlement of pesticide distribution allegations with Amazon Services LLC, including an administrative penalty and seller training programme. This historical civil settlement is not a criminal conviction or a claim about a current product.",
+    "eventDate": "2018-02-14",
+    "publishedAt": "2018-02-15",
+    "facts": {
+      "jurisdiction": "United States",
+      "penaltyUSD": 1215700,
+      "remediation": "Seller training and marketplace compliance measures reported by EPA."
+    }
+  }
+]
