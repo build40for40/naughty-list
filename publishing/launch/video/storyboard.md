@@ -1,37 +1,60 @@
-# Demo video storyboard (draft)
+# Demo video: script and shot list
 
-About 40 seconds. Record once in OBS at 1920×1080 on a clean Chrome profile. Use that cut for the download page and YouTube (unlisted, for the Chrome store's promo video link). Then cut a 9:16 version for shorts with burned-in captions.
+Final draft, 4 Nov 15:45. About 42 seconds. It shows only what version 1 does: the H&M **brand badge** (card 158) with H&M's B Corp result, the source and the date. Never say or show a naughty/nice verdict.
 
-Show only what the extension does on camera. Today that means B Corp status, the source and the date. Don't say or show "naughty" or "nice" verdicts until the scoring card (157) is agreed.
+**Record:** OBS, 1920×1080, 30fps, on a clean Chrome profile with only The Naughty List installed. Use the 16:9 cut for the download page and for YouTube (unlisted, as the Chrome store promo video). Then cut a 9:16 version for shorts.
 
-| Time | On screen | Voice-over / caption |
-| --- | --- | --- |
-| 0–4s | A shop homepage full of Christmas gift ads | "Every brand looks lovely at Christmas." |
-| 4–9s | Open an H&M product page (a Christmas jumper works) | "But who's been naughty or nice?" |
-| 9–17s | The Naughty List badge appears beside the product: H&M, "Certified B Corp? Not listed" | "The Naughty List checks the company behind the gift. H&M isn't a Certified B Corp." |
-| 17–24s | Hover or point at the source and date | "Here's where that came from, and when we checked. One fact, not a verdict: full naughty-or-nice ratings are on the way." |
-| 24–31s | A second H&M product, same result | "It works on every H&M product page. More shops are coming." |
-| 31–36s | Quick cut of the team on stream (Twitch VOD) | "We built it live, in one day." |
-| 36–42s | End card: `store/screenshot-5-title-card-1280x800.png`, plus the download link | "The Naughty List. Free for Chrome and Firefox. Day 3 of 40 for 40." |
+**Needs before filming:** Ben merges `hm-registry` (fixed so his new evidence store accepts it), and Lawrence's badge runs on www2.hm.com.
 
-## Brand to film
+## 16:9 cut (≈42s)
 
-H&M, on H&M's own shop. Ben's assessment returns **not a Certified B Corp** (B Lab directory, checked 4 Nov 2026) once branch `hm-registry` is merged. Say it exactly like that, with the source and date on screen. Don't call it naughty, H&M gets the brand badge (card 158); the Nice / Naughty split is for multi-brand shops later.
+| # | Time | On screen | Voice-over | Burned-in caption |
+| --- | --- | --- | --- | --- |
+| 1 | 0–4s | `cards/hook-1920x1080.png` for 1s, then the H&M homepage full of Christmas gifts, scrolling slowly | "Every brand's ads are merry and bright at Christmas." | Every brand looks merry and bright at Christmas… |
+| 2 | 4–9s | Click into a Christmas jumper product page | "But who's been naughty or nice?" | But who's been naughty or nice? |
+| 3 | 9–17s | The Naughty List badge appears beside the product. Hold on it. Slow push-in in the edit. | "The Naughty List checks the company behind the gift. H&M? Not a Certified B Corp." | H&M: not a Certified B Corp |
+| 4 | 17–24s | Click "Where's this from?". The badge expands to show the source and date. | "Here's where that came from, and when we checked. One fact, not a verdict." | Source: B Lab directory · checked 4 Nov 2026 |
+| 5 | 24–31s | Back, open a second H&M product. Same badge. | "Same badge on every H&M page. More shops are coming down the chimney." | More shops coming soon 🎁 |
+| 6 | 31–36s | Twitch VOD: the team building it on stream, 2–3 quick cuts | "We built it live, in one day." | Built live on Twitch, in one day |
+| 7 | 36–42s | `cards/end-1920x1080.png` | "The Naughty List. Check it twice before you buy." | (on the card) |
 
-## Shorts cut (9:16)
+Captions: `captions-16x9.srt`.
 
-- Open on the overlay appearing (the 9–17s beat), then the hook line as a caption: "Who's been naughty or nice?"
-- Keep it under 30 seconds, captions burned in, end on the 40(40) logo with the download link.
-- Inputs and outputs go in the content cloud: `Day 03/Inputs` and `Day 03/Outputs`, named `Day03_short_v1.mp4` (same scheme as the intern brief).
+**Music:** something light and jingly, ducked under the voice. Use royalty-free or YouTube Audio Library only, not a commercial Christmas song.
 
-## Screenshots (from the same session)
+## 9:16 shorts cut (≈25s)
 
-Once the overlay works, set Chrome DevTools device mode to 1280×800, then use ⋮ → Capture screenshot:
+| # | Time | On screen | Caption |
+| --- | --- | --- | --- |
+| 1 | 0–2s | `cards/shorts-hook-1080x1920.png` | Who's been naughty or nice? 🎄 |
+| 2 | 2–9s | Screen recording, cropped to the badge and product (the badge appearing) | We checked the company behind your Christmas jumper |
+| 3 | 9–15s | The badge, with "Not listed" visible | H&M: not a Certified B Corp |
+| 4 | 15–20s | The badge expanded to show the source and date | Source + date, every time. One fact, not a verdict. |
+| 5 | 20–25s | `cards/shorts-end-1080x1920.png` | Free for Chrome & Firefox · link in bio |
 
-1. The overlay on a product page (lead screenshot)
-2. The source and date visible
-3. A second H&M product page, or the overlay closed/collapsed
+Captions: `captions-9x16.srt`. File naming follows the content-cloud scheme: inputs in `Day 03/Inputs`, outputs in `Day 03/Outputs` as `Day03_demo_16x9_v1.mp4` and `Day03_short_v1.mp4`.
+
+## YouTube upload
+
+- **File:** the 16:9 cut · **Visibility:** Unlisted · **Thumbnail:** `cards/youtube-thumb-1280x720.png`
+- **Title:** The Naughty List: check it twice before you buy (H&M demo)
+- **Description:** The Naughty List is a free Chrome and Firefox extension that checks the company behind the gift. Version 1 works on H&M's online shop and shows whether H&M is a Certified B Corp, with the source and the date we checked. Built live in one day on Twitch by 40 for 40. Download: build40for40.com/naughty-list · Questions: help@build40for40.com
+- Paste the video link into the Chrome dashboard → Store listing → Promo video.
+
+## Store screenshots (from the same session)
+
+Once the badge works, set Chrome DevTools device mode to 1280×800, then use ⋮ → Capture screenshot:
+
+1. The badge on a product page (lead screenshot), framed like `store/screenshot-1-overlay-CONCEPT-…png`
+2. The badge expanded to show the source and date, framed like `store/screenshot-2-sources-CONCEPT-…png`
+3. A second H&M product page, or the badge collapsed
 4. The toolbar popup, if there is one
 5. Title card: already made, `store/screenshot-5-title-card-1280x800.png`
 
-`store/screenshot-1-overlay-CONCEPT-…png` and `screenshot-2-sources-CONCEPT-…png` show the current target: the H&M brand badge from card 158 (Lawrence is building the real one). They're renders and must not be uploaded; recapture from the real extension in the same framing.
+The CONCEPT renders are design targets only and must never be uploaded.
+
+## Never say
+
+- "H&M is naughty", or anything that puts H&M on the naughty side
+- "ethical rating", "score" or "verdict" (none exist yet)
+- Anything about a specific product: B Corp status is about the company
