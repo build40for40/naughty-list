@@ -3,42 +3,43 @@ body{background:#f4f4f2;color:#1b1a17;font-family:-apple-system,"Helvetica Neue"
 .bar{height:58px;background:#2b2f36;display:flex;align-items:center;gap:18px;padding:0 28px;color:#fff;font-weight:700;font-size:20px}
 .search{flex:1;height:34px;background:#fff;border-radius:6px;opacity:.9}
 .page{display:grid;grid-template-columns:400px 1fr;gap:36px;padding:40px 450px 40px 40px}
-.img{height:400px;border-radius:10px;background:linear-gradient(135deg,#e85d4a,#c2372a);display:flex;align-items:center;justify-content:center;color:#fff;font:800 40px/1.1 "Bricolage Grotesque",sans-serif;text-align:center;padding:30px}
+.img{height:400px;border-radius:10px;background:linear-gradient(135deg,#2a7a4b,#123d26);display:flex;align-items:center;justify-content:center;color:#fff;font:44px/1.1 "Lilita One",sans-serif;text-align:center;padding:30px}
 .crumb{font-size:13px;color:#777;margin-bottom:10px}
 h2{font-size:26px;font-weight:600;margin-bottom:6px}
 .by{color:#007185;font-size:15px;margin-bottom:16px}
 .price{font-size:30px;margin:16px 0}
 .btn{width:280px;height:44px;border-radius:22px;background:#ffd814;margin-bottom:10px}
 .btn.o{background:#ffa41c}
-.ol{position:absolute;right:36px;top:92px;width:380px;background:var(--navy);color:var(--cream);border-radius:14px;box-shadow:0 18px 50px rgba(0,20,60,.35);padding:22px;font-family:"JetBrains Mono",monospace}
-.ol .h{display:flex;align-items:center;gap:10px;font:800 21px "Bricolage Grotesque",sans-serif}
-.ol .h img{width:42px;height:42px;margin:-6px}
-.ol .brand{margin-top:16px;font-size:13px;color:var(--muted)}
-.ol .brand b{display:block;color:var(--cream);font:700 22px "Bricolage Grotesque",sans-serif;margin-top:2px}
-.pill{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:var(--lime);color:#1a2e05;font-weight:600;font-size:14px;padding:7px 12px;border-radius:99px}
-.src{margin-top:12px;font-size:12px;color:var(--sub);line-height:1.6}
-.src u{color:var(--lime)}
-.later{margin-top:16px;padding-top:14px;border-top:1px dashed #2e4170;font-size:12.5px;color:var(--muted);line-height:1.55}
-.later span{color:var(--yellow)}
-.stamp{position:absolute;left:0;right:0;bottom:0;background:#d23b2c;color:#fff;text-align:center;font:600 15px "JetBrains Mono",monospace;padding:9px;letter-spacing:.06em}
+.ol{position:absolute;right:36px;top:92px;width:380px;background:var(--red);color:var(--snow);border-radius:18px;box-shadow:0 18px 50px rgba(80,0,0,.35);padding:22px 22px 28px;font-family:"Nunito",sans-serif;font-weight:700;overflow:hidden}
+.ol::after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;background:repeating-linear-gradient(-45deg,var(--snow) 0 9px,var(--red) 9px 18px)}
+.ol .h{display:flex;align-items:center;gap:10px;font:26px "Lilita One",sans-serif}
+.ol .h img{width:46px;height:46px;margin:-6px}
+.ol .brand{margin-top:14px;font-size:13px;color:var(--sub)}
+.ol .brand b{display:block;color:var(--snow);font:28px "Lilita One",sans-serif;margin-top:2px}
+.pill{display:inline-flex;align-items:center;gap:8px;margin-top:12px;background:var(--gold);color:var(--pine);font-weight:900;font-size:15px;padding:7px 14px;border-radius:99px}
+.src{margin-top:12px;font-size:12.5px;color:var(--sub);line-height:1.6}
+.src u{color:var(--snow)}
+.later{margin-top:14px;padding-top:12px;border-top:2px dashed rgba(255,255,255,.35);font-size:13px;color:var(--sub);line-height:1.5}
+.later span{font:22px "Caveat Brush",cursive;color:var(--gold)}
+.stamp{position:absolute;left:0;right:0;bottom:0;background:#d23b2c;color:#fff;text-align:center;font:800 15px "Nunito",sans-serif;padding:9px;letter-spacing:.06em}
 </style></head><body>
-<div class="bar">Example Shop <div class="search"></div></div>
+<div class="bar">H&amp;M (mock shop page) <div class="search"></div></div>
 <div class="page">
-  <div class="img">Chocolate<br>gift box</div>
+  <div class="img">Festive<br>knit jumper</div>
   <div>
-    <div class="crumb">Food › Chocolate › Gifts</div>
-    <h2>Milk chocolate gift box, 180g</h2>
-    <div class="by">Brand: Tony's Chocolonely</div>
-    <div class="price">£8.99</div>
+    <div class="crumb">Men › Jumpers › Christmas</div>
+    <h2>Festive knit jumper</h2>
+    <div class="by">Brand: H&amp;M</div>
+    <div class="price">£[price]</div>
     <div class="btn"></div><div class="btn o"></div>
   </div>
 </div>
 <div class="ol">
-  <div class="h"><img src="icon-branded.svg"> The Naughty List</div>
-  <div class="brand">Brand on this page<b>Tony's Chocolonely</b></div>
-  <div class="pill">✓ Certified B Corp</div>
-  <div class="src">Source: <u>B Lab directory</u><br>Checked 4 Nov 2026</div>
-  <div class="later"><span>Naughty or nice?</span> Staff, communities and environment ratings are coming. B Corp status is about the company, not this product.</div>
+  <div class="h"><img src="icon-festive.svg"> The Naughty List</div>
+  <div class="brand">Checking it twice for<b>H&amp;M</b></div>
+  <div class="pill">[B Corp status, from the registry]</div>
+  <div class="src">Source: <u>B Lab directory</u><br>Checked [date]</div>
+  <div class="later"><span>Naughty or nice?</span><br>Full ratings for staff, communities and the planet are coming down the chimney. B Corp status is about the company, not this jumper.</div>
 </div>
 <div class="stamp">CONCEPT MOCK · NOT A SCREENSHOT · DESIGN TARGET FOR THE OVERLAY</div>
 </body></html>

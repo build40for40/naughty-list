@@ -6,7 +6,7 @@ Drafted 4 November 2026 for Superthread card 156. For Samira to review. Nothing 
 
 **Decided by Samira, 4 Nov afternoon:**
 - Support email: **help@build40for40.com**
-- Icon: the 40(40) branded icon in `store/` (navy tile, list, lime tick, yellow star)
+- Icon: the festive icon in `store/` (red tile, Santa's scroll, gold "checked" badge). Replaced the 40(40) navy one after Ben's steer to go more Christmassy
 - Scope: **one brand, H&M**, on H&M's own shop (hm.com)
 - Chrome developer account: **Ben owns it**, published as 40 for 40 (the company)
 
@@ -16,32 +16,40 @@ Every `[square bracket]` is something the build still has to confirm before this
 
 ---
 
+## Voice
+
+Ben's steer (4 Nov): it's Santa's idea, so it should feel like Christmas, not a compliance report. Playful, warm, pun-happy, and no 40 for 40 branding beyond a small "made by" credit. The puns never change the facts: we still only show B Corp status, the source and the date, and never call a brand naughty.
+
+Pun bank (use freely): check it twice · sleigh informed · yule know before you buy · ho ho hold on · elf-explanatory · what's in the sack · coming down the chimney · no coal · Santa's little helper · under the tree · season's readings
+
 ## Chrome Web Store: today's version
 
 **Name:** The Naughty List
 
-**Summary** (Chrome limit 132 characters, this is 128):
+**Summary** (Chrome limit 132 characters, this is 126):
 
-> Who's been naughty or nice? Check if the brand behind a gift is a Certified B Corp, with the source and date. Starting with H&M.
+> He's making a list and checking it twice. Now you can too: is the brand behind the gift a Certified B Corp? Starting with H&M.
 
 **Description:**
 
-> Every brand looks lovely at Christmas. The Naughty List helps you check the company behind the gift.
+> Ho ho hold on a sec, before you buy.
 >
-> This first version works on H&M's online shop. Open a product page and The Naughty List shows whether H&M is a Certified B Corp: a company independently assessed on how it treats its workers, communities and the environment. You see the source (the B Lab directory) and the date we last checked.
+> At Christmas every brand's ads are merry and bright. But who's actually been nice to their workers, their communities and the planet? The Naughty List is Santa's little helper for your shopping: it checks the company behind the gift so you don't have to.
 >
-> What's in this first version
-> • One brand, H&M, checked by hand against the B Lab directory
-> • The source and check date shown with every result
-> • No account and no sign-up
+> We're starting small (even Santa started with one sleigh). This first version works on H&M's online shop. Open any product page and The Naughty List pops up to show whether H&M is a Certified B Corp: a company independently assessed on how it treats people and the planet. You'll see where that came from (the B Lab directory) and when our elves last checked.
 >
-> Coming next: more shops and brands, then naughty-or-nice ratings across staff, communities and the environment, with the reasons shown.
+> What's in the sack
+> • One brand to start, H&M, checked by hand. No elves were overworked.
+> • The source and check date with every result, so you can check it twice
+> • No account, no sign-up, no coal
 >
-> B Corp certification is about a company, not any single product.
+> Coming down the chimney next: more shops, more brands, then full naughty-or-nice ratings for staff, communities and the environment, with the reasons shown.
 >
-> Built live in one day on Twitch by 40 for 40: 40 apps in 40 days, each for someone who paid to have their problem solved. Watch the build: [link]
+> The small print from the North Pole: B Corp certification is about a company, not any single product.
 >
-> Questions or corrections: help@build40for40.com
+> Wrapped up live in one day on Twitch by 40 for 40. Watch the build: [link]
+>
+> Questions, corrections or letters to Santa: help@build40for40.com
 
 **Category:** Shopping · **Language:** English (UK)
 
@@ -72,7 +80,7 @@ Add as a new section. Use B unless the build calls the API.
 
 **B. Everything happens inside the extension (recommended)**
 
-> **The Naughty List browser extension.** The extension only runs on H&M's online shop. It shows H&M's B Corp status from a list stored inside the extension. Nothing you browse leaves your browser, and there's no account or tracking. Questions: help@build40for40.com.
+> **The Naughty List browser extension.** The extension only runs on H&M's online shop. It shows H&M's B Corp status from a list stored inside the extension. Nothing you browse leaves your browser, and there's no account or tracking. (Santa sees you when you're sleeping. We don't.) Questions: help@build40for40.com.
 
 **A. If the extension calls our API**
 
