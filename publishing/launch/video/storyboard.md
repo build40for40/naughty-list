@@ -7,16 +7,16 @@ Show only what the extension does on camera. Today that means B Corp status, the
 | Time | On screen | Voice-over / caption |
 | --- | --- | --- |
 | 0–4s | A shop homepage full of Christmas gift ads | "Every brand looks lovely at Christmas." |
-| 4–9s | Open a product page for a brand on our list, e.g. Tony's Chocolonely | "But who's been naughty or nice?" |
-| 9–17s | The Naughty List overlay appears: brand name, "Certified B Corp" | "The Naughty List checks the company behind the gift." |
+| 4–9s | Open an H&M product page (a Christmas jumper works) | "But who's been naughty or nice?" |
+| 9–17s | The Naughty List overlay appears: H&M and its B Corp status, exactly as the registry entry says | "The Naughty List checks the company behind the gift." |
 | 17–24s | Hover or point at the source and date | "Here's where that came from, and when we checked." |
-| 24–31s | A brand that isn't on the list yet: the overlay says "not on our list yet" | "If we haven't checked a brand, we say so. That's not the same as naughty." |
+| 24–31s | A second H&M product, same result | "It works on every H&M product page. More shops are coming." |
 | 31–36s | Quick cut of the team on stream (Twitch VOD) | "We built it live, in one day." |
 | 36–42s | End card: `store/screenshot-5-title-card-1280x800.png`, plus the download link | "The Naughty List. Free for Chrome and Firefox. Day 3 of 40 for 40." |
 
-## Which brands to film
+## Brand to film
 
-The registry in `worker/companies.js` has two brands checked by hand: **Patagonia** and **Tony's Chocolonely**, both certified, with dates. Film those. For the "not on our list" shot, use a brand that simply isn't in the registry and say only that. Don't imply anything about that brand.
+Scope is one brand, H&M, on H&M's own shop. `worker/companies.js` has no H&M entry yet, so it has to be hand-checked against the B Lab directory and added (with hostname mappings for the H&M domains) before filming. Film whatever the overlay shows, and keep the 9–17s voice-over neutral so it fits either result. Don't script or caption H&M's status before the registry entry exists.
 
 ## Shorts cut (9:16)
 
@@ -30,7 +30,7 @@ Once the overlay works, set Chrome DevTools device mode to 1280×800, then use �
 
 1. The overlay on a product page (lead screenshot)
 2. The source and date visible
-3. The "not on our list yet" state
+3. A second H&M product page, or the overlay closed/collapsed
 4. The toolbar popup, if there is one
 5. Title card: already made, `store/screenshot-5-title-card-1280x800.png`
 
