@@ -18,7 +18,7 @@ const bCorp = (extra = {}) => ({
 });
 const proven = date => record('government_naming', null, { sourceId: 'uk-minimum-wage', publishedAt: `${date}T08:00:00Z` });
 
-test('the method is labelled as a draft', () => {
+test('the approved method has a stable version', () => {
   assert.equal(METHOD_VERSION, 'santa-v0.4');
   assert.equal(santaScore([], { asOf }).method, METHOD_VERSION);
 });

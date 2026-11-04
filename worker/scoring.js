@@ -1,5 +1,5 @@
-// Santa Score method from card 157 (see docs/scoring.md), signed off by
-// Lawrence on 4 November 2026, enabled by the reviewed API release.
+// Santa Score v0.4: signed off by Lawrence (team leader) and approved for release by Samira on
+// card 157 (4 Nov 2026), superseding v0.3. Scores assess the matched business, never a product.
 export const METHOD_VERSION = 'santa-v0.4';
 export const WINDOW_YEARS = 3;
 // Report card (v0.4): statutory gov.uk filings that every large UK employer makes.

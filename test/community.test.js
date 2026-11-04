@@ -35,8 +35,9 @@ test('percentage is null at 0 and 19 decisive votes, appears at exactly 20, and 
   assert.equal(summary.nicePercentage, 95);
   const assessment = await assessStored({ domain: 'patagonia.com' }, db, now);
   assert.equal(assessment.community.nicePercentage, 95);
-  assert.equal(assessment.scoring.verdict, 'nice');
-  assert.equal(assessment.scoring.total, 1);
+  // Votes never feed the evidence score: Patagonia's v0.4 score comes from its B Corp gift and report card only.
+  assert.equal(assessment.scoring.method, 'santa-v0.4');
+  assert.equal(JSON.stringify(assessment.scoring).includes('nicePercentage'), false);
   db.close();
 });
 

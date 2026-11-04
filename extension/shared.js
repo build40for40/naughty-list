@@ -66,7 +66,6 @@
     const verdict = allowed && ['nice', 'naughty'].includes(assessment?.scoring?.verdict) ? assessment.scoring.verdict : null;
     const category = relevance?.category ?? 'unknown';
     if (verdict) return { tone: verdict, title: verdict === 'nice' ? 'On the nice list' : 'On the naughty list', message: relevance.category === 'retailer' ? `Shop assessment for ${company.name}. Not a rating of this product or its brand.` : `Business assessment for ${company.name}. Not a product rating.` };
-    if (allowed && assessment?.scoring?.verdict === 'watch_list') return { tone: 'neutral', title: 'Watch list', message: `Reviewed concerns for ${company.name}. This is a business assessment, not a product rating.` };
     if (category === 'marketplace' || category === 'retailer') return {
       tone: 'neutral', title: category === 'marketplace' ? 'Marketplace' : 'Retailer',
       message: 'This website does not identify the brand or seller of this product. No product verdict is available.'

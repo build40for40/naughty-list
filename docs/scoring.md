@@ -1,6 +1,6 @@
 # Santa Score
 
-**Method `santa-v0.4`, signed off by Lawrence (team leader) on card 157 on 4 November 2026**, as it stands on `main` at commit 709556f. The API now imports `worker/scoring.js` and computes scores from published evidence and explicitly mapped statutory filings. The extension labels company/shop scope and never transfers a retailer assessment to product brands.
+**Method `santa-v0.4`: signed off by Lawrence (team leader) and approved for release by Samira on card 157 on 4 November 2026, superseding `santa-v0.3`.** The API computes company scores from published evidence plus the gov.uk report card below. Exact entity matching rules still apply; too little evidence is "not enough evidence", never naughty.
 
 Santa doesn't judge on rumours. He checks his list twice, believes in second chances, and only proven, recent naughtiness earns coal.
 
@@ -90,7 +90,7 @@ Incidents in `npm run scores` come only from the registry. The card 159 research
 These were open when v0.4 was signed off. They are limitations or follow-ups, not blockers to the method.
 
 - v0.4: whether the gender pay gap belongs in the score (it reflects job mix as much as fairness), the quartile thresholds, the new Watch list verdict (needs a card 158 design) and every company-number match in `data/santa-filings.js`.
-- Add the card 159 incident research to the registry so `npm run scores` reproduces the combined draft.
+- Add the card 159 incident research to the registry so the API reproduces the combined scores for all 100.
 
 - The owner rule conflicts with the backend rule that corporate relationships don't transfer evidence. The backend rule still governs the API; changing it needs its own decision, then updates to `AGENTS.md` and `docs/evidence.md`.
 - Employee voice: Glassdoor has no public API and bans scraping. Proposed: employment tribunal judgments as coal and Living Wage Foundation accreditation as a gift, subject to licence (card 155).
