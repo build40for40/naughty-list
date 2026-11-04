@@ -17,7 +17,7 @@ Internal draft, 4 November 2026. The described functionality is implemented in 0
 | Current icon | `extension/icons/icon-128.png` |
 | Language of prepared copy | English |
 
-These are project details from the current shared context. Ben's Chrome developer account is registered as 40 for 40 Ltd. Trader details, domain verification and software licence still need the release checks; project author metadata is not a substitute for account verification.
+These are project details from the current shared context. Ben's Chrome developer account is registered as 40 for 40 Ltd. The repository now includes an MIT licence. See `publishing/submission.md` for verified setup and remaining trader/domain checks; project author metadata is not a substitute for account verification.
 
 ## Copy for the implemented MVP
 
@@ -47,7 +47,7 @@ Avoid promises of universal site support, automatic research, instant seller res
 
 ## Images
 
-Draft manifest icons are included at 16, 32, 48 and 128 pixels. The 128-pixel image includes transparent padding around 96-pixel square artwork and is PNG, matching the Chrome store format requirement. Inspect the icon in both light and dark browser themes before release.
+Festive manifest icons are included at 16, 32, 48 and 128 pixels. Their editable source and launch exports live under `publishing/launch/`. Inspect the icon in both light and dark browser themes before release. The concept overlay images in the launch kit are not real extension screenshots and must not be submitted as such.
 
 Chrome requires a store icon and at least one real screenshot. Capture the finished extension at 1280×800 or 640×400, using a clean test profile with no personal information. Take a second screenshot of the unknown/evidence-missing state if that is part of the final product. Review current Firefox upload requirements in AMO when preparing its screenshots; do not assume every Chrome asset is accepted unchanged.
 
@@ -58,7 +58,7 @@ Optional promotional images can be deferred. Chrome's small promotional image is
 - Publisher name, legal/trader status and contact details.
 - Chrome category and Firefox category/categories.
 - Distribution regions, visibility and supported platforms.
-- Licence for the extension and all bundled assets/dependencies.
+- Confirm MIT licence notices and any bundled asset/dependency obligations.
 - Publicly hosted privacy-policy URL.
 - Final single-purpose description, permission justifications and data-use declarations.
 - Test instructions and any test credentials, only if the implemented product needs them.
