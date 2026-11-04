@@ -35,8 +35,9 @@ test('percentage is null at 0 and 19 decisive votes, appears at exactly 20, and 
   assert.equal(summary.nicePercentage, 95);
   const assessment = await assessStored({ domain: 'patagonia.com' }, db, now);
   assert.equal(assessment.community.nicePercentage, 95);
-  assert.equal(assessment.scoring.verdict, null);
-  assert.equal(assessment.scoring.total, null);
+  // Votes never feed the evidence score: Patagonia's v0.4 score comes from its B Corp gift and report card only.
+  assert.equal(assessment.scoring.method, 'santa-v0.4');
+  assert.equal(JSON.stringify(assessment.scoring).includes('nicePercentage'), false);
   db.close();
 });
 
@@ -69,7 +70,7 @@ test('only explicitly enrolled, reviewed brand shops have community scores', asy
   for (const id of ['hm', 'not-a-brand', 'tonys-chocolonely', 'amazon']) assert.equal((await communitySummary(db, id, now)).status, 'unavailable');
   await db.prepare("INSERT INTO community_brands(company_id) VALUES('amazon')").run();
   assert.equal((await communitySummary(db, 'amazon', now)).status, 'unavailable');
-  assert.equal((await assessStored({ domain: 'www.hm.com' }, db, now)).community, null);
+  assert.equal((await assessStored({ domain: 'www.hm.com' }, db, now)).community.status, 'unavailable');
   db.close();
 });
 

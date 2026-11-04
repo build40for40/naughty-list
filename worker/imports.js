@@ -44,7 +44,7 @@ export function parseMinimumWage(document, path, registry, now) {
   if (!document.details?.body || !document.public_updated_at) throw new Error('Minimum wage source schema changed');
   const matches = [...document.details.body.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)]
     .map(match => plainText(match[1]))
-    .map(text => text.match(/^\d+\.\s*(.+?),\s*.+?,\s*failed to pay £([\d,.]+) to ([\d,]+) workers?\./))
+    .map(text => text.match(/^(?:\d+\.\s*)?(.+?),\s*.+?,\s*failed to pay £([\d,.]+) to ([\d,]+) workers?\./))
     .filter(Boolean);
   if (!matches.length) throw new Error('Minimum wage source has no recognisable naming entries');
   const records = [];
