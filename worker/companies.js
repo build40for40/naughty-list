@@ -34,5 +34,24 @@ export default [
       checkedAt: '2026-11-04',
       validUntil: '2026-12-04'
     }
+  },
+  {
+    // Hand-checked absence: searched the B Lab directory for "H&M", "H&M Group"
+    // and "Hennes & Mauritz" on 2026-11-04; no H&M listing. No b_lab identifier exists.
+    id: 'hm',
+    name: 'H&M',
+    aliases: ['H & M', 'H&M Group', 'H & M Hennes & Mauritz AB', 'Hennes & Mauritz'],
+    domains: ['www2.hm.com', 'www.hm.com'],
+    domainEvidence: {
+      sourceUrl: 'https://hmgroup.com/brands/',
+      checkedAt: '2026-11-04'
+    },
+    identifiers: [],
+    bCorp: {
+      certified: false,
+      sourceUrl: 'https://www.bcorporation.net/en-us/find-a-b-corp/?query=H%26M',
+      checkedAt: '2026-11-04',
+      validUntil: '2026-12-04'
+    }
   }
 ];
