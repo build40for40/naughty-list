@@ -1,0 +1,516 @@
+[
+ {
+  "n": 32,
+  "retailer": "Primark",
+  "domain": "primark.com",
+  "entity": {
+   "legalName": "Primark Stores Limited",
+   "companyNumber": "00453448",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00453448"
+  },
+  "owner": {
+   "name": "Associated British Foods plc",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00453448/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "PSC is ABF Investments (No.2) Limited; ABF plc was previous PSC. CMA search: only a 2005 ABF merger case. Entity chosen from Companies House name match; not confirmed as the shop operator from site terms (retailer pages blocked/404). HSE: press.hse.gov.uk API (all ~258 posts 2021-2026 fetched and searched locally) has no post naming this company; HSE convictions database unreachable (resources.hse.gov.uk did not resolve), so HSE is not exhaustively checked. B Corp directory unchecked (bcorporation.net blocks curl with 403; browser search was unreliable) unless stated."
+ },
+ {
+  "n": 33,
+  "retailer": "H&M",
+  "domain": "www2.hm.com",
+  "entity": {
+   "legalName": "H&M Hennes & Mauritz UK Limited",
+   "companyNumber": "01413450",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/01413450"
+  },
+  "owner": {
+   "name": "H&M Hennes & Mauritz AB",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/01413450/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "Entity chosen from Companies House name match; not confirmed as the shop operator from site terms (retailer pages blocked/404). No CMA case found. HSE: press.hse.gov.uk API (all ~258 posts 2021-2026 fetched and searched locally) has no post naming this company; HSE convictions database unreachable (resources.hse.gov.uk did not resolve), so HSE is not exhaustively checked. B Corp directory unchecked (bcorporation.net blocks curl with 403; browser search was unreliable) unless stated."
+ },
+ {
+  "n": 34,
+  "retailer": "Zara",
+  "domain": "zara.com",
+  "entity": {
+   "legalName": "ITX UK Limited",
+   "companyNumber": "02245999",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/02245999"
+  },
+  "owner": {
+   "name": "Inditex S.A.",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/02245999/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "ITX UK Limited is the Inditex UK company; operator of zara.com UK not confirmed. No CMA case found. HSE keyword 'Zara' hits were only an HSE paralegal's name. HSE: press.hse.gov.uk API (all ~258 posts 2021-2026 fetched and searched locally) has no post naming this company; HSE convictions database unreachable (resources.hse.gov.uk did not resolve), so HSE is not exhaustively checked. B Corp directory unchecked (bcorporation.net blocks curl with 403; browser search was unreliable) unless stated."
+ },
+ {
+  "n": 35,
+  "retailer": "Uniqlo",
+  "domain": "uniqlo.com",
+  "entity": {
+   "legalName": "UNIQLO EUROPE LTD",
+   "companyNumber": "04845064",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/04845064"
+  },
+  "owner": {
+   "name": "Fast Retailing Co., Ltd.",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/04845064/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "Current PSC Fast Retailing Europe Ltd (since 20 May 2025); Fast Retailing Co., Ltd. was prior PSC. Entity chosen from Companies House name match; not confirmed as the shop operator from site terms (retailer pages blocked/404). HSE: press.hse.gov.uk API (all ~258 posts 2021-2026 fetched and searched locally) has no post naming this company; HSE convictions database unreachable (resources.hse.gov.uk did not resolve), so HSE is not exhaustively checked. B Corp directory unchecked (bcorporation.net blocks curl with 403; browser search was unreliable) unless stated."
+ },
+ {
+  "n": 36,
+  "retailer": "ASOS",
+  "domain": "asos.com",
+  "entity": {
+   "legalName": "ASOS.COM LIMITED",
+   "companyNumber": "03584121",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/03584121"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [
+   {
+    "path": "/cma-cases/asos-boohoo-and-asda-greenwashing-investigation",
+    "eventDate": "2024-03-27",
+    "outcome": "undertakings",
+    "guard": "ASOS, Boohoo and George at Asda have signed formal agreements to use only accurate and clear green claims.",
+    "summary": "CMA accepted undertakings from ASOS, Boohoo and George at Asda on fashion green claims."
+   }
+  ],
+  "hse": [],
+  "notes": "PSC is ASOS Intermediate Holdings; ultimate parent (ASOS Plc 04006623 exists) not confirmed so owner null. Nothing else found at CMA beyond the 2024 undertaking. Entity chosen from Companies House name match; not confirmed as the shop operator from site terms (retailer pages blocked/404). HSE: press.hse.gov.uk API (all ~258 posts 2021-2026 fetched and searched locally) has no post naming this company; HSE convictions database unreachable (resources.hse.gov.uk did not resolve), so HSE is not exhaustively checked. B Corp directory unchecked (bcorporation.net blocks curl with 403; browser search was unreliable) unless stated."
+ },
+ {
+  "n": 37,
+  "retailer": "Boohoo",
+  "domain": "boohoo.com",
+  "entity": {
+   "legalName": "Boohoo.com UK Limited",
+   "companyNumber": "05723154",
+   "sourceUrl": "https://www.boohoo.com/page/terms-and-conditions.html"
+  },
+  "owner": {
+   "name": "Debenhams Group Holdings 2 Limited (current PSC; previously Boohoo Holdings Limited / Boohoo Group)",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/05723154/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [
+   {
+    "path": "/cma-cases/asos-boohoo-and-asda-greenwashing-investigation",
+    "eventDate": "2024-03-27",
+    "outcome": "undertakings",
+    "guard": "ASOS, Boohoo and George at Asda have signed formal agreements to use only accurate and clear green claims.",
+    "summary": "CMA accepted undertakings from ASOS, Boohoo and George at Asda on fashion green claims."
+   }
+  ],
+  "hse": [],
+  "notes": "Entity confirmed verbatim from boohoo T&Cs ('Our site is operated by Boohoo.com UK Limited ... company number 05723154'). Group appears rebranded/restructured Oct 2024; ultimate parent name not confirmed. Nothing else found at CMA. HSE: press.hse.gov.uk API (all ~258 posts 2021-2026 fetched and searched locally) has no post naming this company; HSE convictions database unreachable (resources.hse.gov.uk did not resolve), so HSE is not exhaustively checked. B Corp directory unchecked (bcorporation.net blocks curl with 403; browser search was unreliable) unless stated."
+ },
+ {
+  "n": 38,
+  "retailer": "PrettyLittleThing",
+  "domain": "prettylittlething.com",
+  "entity": {
+   "legalName": "PRETTYLITTLETHING.COM LIMITED",
+   "companyNumber": "07352417",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/07352417"
+  },
+  "owner": {
+   "name": "Boohoo Group (PSC since 14 Oct 2024 Debenhams Group Holdings 2 Limited)",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/07352417/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "Boohoo Group plc was PSC until 14 Oct 2024. No CMA case found (not a party to the 2024 ASOS/Boohoo undertakings). Entity chosen from Companies House name match; not confirmed as the shop operator from site terms (retailer pages blocked/404). HSE: press.hse.gov.uk API (all ~258 posts 2021-2026 fetched and searched locally) has no post naming this company; HSE convictions database unreachable (resources.hse.gov.uk did not resolve), so HSE is not exhaustively checked. B Corp directory unchecked (bcorporation.net blocks curl with 403; browser search was unreliable) unless stated."
+ },
+ {
+  "n": 39,
+  "retailer": "River Island",
+  "domain": "riverisland.com",
+  "entity": {
+   "legalName": "RIVER ISLAND CLOTHING CO. LIMITED",
+   "companyNumber": "00636095",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00636095"
+  },
+  "owner": {
+   "name": "River Island Holdings Limited",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00636095/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "Entity chosen from Companies House name match; not confirmed as the shop operator from site terms (retailer pages blocked/404). No CMA case found. HSE: press.hse.gov.uk API (all ~258 posts 2021-2026 fetched and searched locally) has no post naming this company; HSE convictions database unreachable (resources.hse.gov.uk did not resolve), so HSE is not exhaustively checked. B Corp directory unchecked (bcorporation.net blocks curl with 403; browser search was unreliable) unless stated."
+ },
+ {
+  "n": 40,
+  "retailer": "New Look",
+  "domain": "newlook.com",
+  "entity": {
+   "legalName": "NEW LOOK RETAILERS LIMITED",
+   "companyNumber": "01618428",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/01618428"
+  },
+  "owner": {
+   "name": "New Look Limited",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/01618428/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "PSC New Look Limited is an intermediate holding company. Entity chosen from Companies House name match; not confirmed as the shop operator from site terms (retailer pages blocked/404). HSE: press.hse.gov.uk API (all ~258 posts 2021-2026 fetched and searched locally) has no post naming this company; HSE convictions database unreachable (resources.hse.gov.uk did not resolve), so HSE is not exhaustively checked. B Corp directory unchecked (bcorporation.net blocks curl with 403; browser search was unreliable) unless stated."
+ },
+ {
+  "n": 41,
+  "retailer": "Mango",
+  "domain": "mango.com",
+  "entity": {
+   "legalName": "MNG-MANGO U.K. LIMITED",
+   "companyNumber": "03358140",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/03358140"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "Name match only, unverified operator; no ownership evidence gathered. No CMA case found. HSE: press.hse.gov.uk API (all ~258 posts 2021-2026 fetched and searched locally) has no post naming this company; HSE convictions database unreachable (resources.hse.gov.uk did not resolve), so HSE is not exhaustively checked. B Corp directory unchecked (bcorporation.net blocks curl with 403; browser search was unreliable) unless stated."
+ },
+ {
+  "n": 42,
+  "retailer": "JD Sports",
+  "domain": "jdsports.co.uk",
+  "entity": {
+   "legalName": "JD SPORTS FASHION PLC",
+   "companyNumber": "01888425",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/01888425"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [
+   {
+    "path": "/cma-cases/suspected-anti-competitive-behaviour-in-relation-to-the-pricing-of-rangers-fc-branded-replica-football-kit",
+    "eventDate": "2022-09-27",
+    "outcome": "fine",
+    "guard": "On 27 September 2022, the CMA issued a decision finding that Elite Sports, JD Sports and Rangers broke competition law by fixing the retail prices of certain Rangers-branded clothing products.",
+    "summary": "CMA Chapter I infringement decision: JD Sports fined (with Elite Sports and Rangers; total over 2 million GBP) for fixing retail prices of Rangers-branded clothing. JD amount not stated on case page."
+   },
+   {
+    "path": "/cma-cases/suspected-anti-competitive-behaviour-in-relation-to-the-sale-of-leicester-city-fc-branded-products-and-merchandise",
+    "eventDate": "2023-07-31",
+    "outcome": "order",
+    "guard": "On 31 July 2023, the CMA issued a decision finding that JD Sports Fashion Plc and Leicester City Football Club Limited broke competition law by colluding to restrict competition in the sales of Leicester City-branded clothing, including replica kit, in the UK.",
+    "summary": "Infringement decision (Chapter I) against JD Sports and Leicester City FC; JD Sports reported it and got leniency immunity from any fine; Leicester fined 880,000 GBP. Outcome type 'order' is a best fit, not a fine on JD."
+   }
+  ],
+  "hse": [],
+  "notes": "Plc is the listed group parent. CMA JD Sports/Footasylum and Go Outdoors merger cases excluded. Operator of jdsports.co.uk assumed to be the plc, unconfirmed. HSE: press.hse.gov.uk API (all ~258 posts 2021-2026 fetched and searched locally) has no post naming this company; HSE convictions database unreachable (resources.hse.gov.uk did not resolve), so HSE is not exhaustively checked. B Corp directory unchecked (bcorporation.net blocks curl with 403; browser search was unreliable) unless stated."
+ },
+ {
+  "n": 43,
+  "retailer": "Sports Direct",
+  "domain": "sportsdirect.com",
+  "entity": {
+   "legalName": null,
+   "companyNumber": null,
+   "sourceUrl": null
+  },
+  "owner": {
+   "name": "Frasers Group plc",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/03406347/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "Legal entity not determined. Candidates: Frasers Group Trading Limited 03406347 (PSC Frasers Group Plc) or SPORTSDIRECT.COM RETAIL LIMITED 17116442 (incorporated 25 Mar 2026). Owner from PSC page of the Frasers Group Trading Ltd. Only old (2009-2012) JJB merger cases at CMA; Rangers case parties did not include Sports Direct. HSE: press.hse.gov.uk API (all ~258 posts 2021-2026 fetched and searched locally) has no post naming this company; HSE convictions database unreachable (resources.hse.gov.uk did not resolve), so HSE is not exhaustively checked. B Corp directory unchecked (bcorporation.net blocks curl with 403; browser search was unreliable) unless stated."
+ },
+ {
+  "n": 44,
+  "retailer": "Nike",
+  "domain": "nike.com",
+  "entity": {
+   "legalName": null,
+   "companyNumber": null,
+   "sourceUrl": null
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "Not determined. Candidate: NIKE RETAIL B.V. UK establishment BR003350. No UK CMA conduct case found naming Nike (only 2008 Umbro merger). HSE: press.hse.gov.uk API (all ~258 posts 2021-2026 fetched and searched locally) has no post naming this company; HSE convictions database unreachable (resources.hse.gov.uk did not resolve), so HSE is not exhaustively checked. B Corp directory unchecked (bcorporation.net blocks curl with 403; browser search was unreliable) unless stated."
+ },
+ {
+  "n": 45,
+  "retailer": "Adidas",
+  "domain": "adidas.co.uk",
+  "entity": {
+   "legalName": "ADIDAS (U.K.) LIMITED",
+   "companyNumber": "01075951",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/01075951"
+  },
+  "owner": {
+   "name": "adidas AG",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/01075951/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "Entity chosen from Companies House name match; not confirmed as the shop operator from site terms (retailer pages blocked/404). No CMA case found. HSE: press.hse.gov.uk API (all ~258 posts 2021-2026 fetched and searched locally) has no post naming this company; HSE convictions database unreachable (resources.hse.gov.uk did not resolve), so HSE is not exhaustively checked. B Corp directory unchecked (bcorporation.net blocks curl with 403; browser search was unreliable) unless stated."
+ },
+ {
+  "n": 46,
+  "retailer": "Matalan",
+  "domain": "matalan.co.uk",
+  "entity": {
+   "legalName": "MATALAN RETAIL LTD.",
+   "companyNumber": "02103564",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/02103564"
+  },
+  "owner": {
+   "name": "Matalan Limited",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/02103564/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "PSC Matalan Limited is intermediate. Entity chosen from Companies House name match; not confirmed as the shop operator from site terms (retailer pages blocked/404). HSE: press.hse.gov.uk API (all ~258 posts 2021-2026 fetched and searched locally) has no post naming this company; HSE convictions database unreachable (resources.hse.gov.uk did not resolve), so HSE is not exhaustively checked. B Corp directory unchecked (bcorporation.net blocks curl with 403; browser search was unreliable) unless stated."
+ },
+ {
+  "n": 47,
+  "retailer": "FatFace",
+  "domain": "fatface.com",
+  "entity": {
+   "legalName": "FAT FACE LIMITED",
+   "companyNumber": "02954734",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/02954734"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "Entity chosen from Companies House name match; not confirmed as the shop operator from site terms (retailer pages blocked/404). Owner not established (FatFace Group Limited dissolved Aug 2025). Not verified as B Corp. HSE: press.hse.gov.uk API (all ~258 posts 2021-2026 fetched and searched locally) has no post naming this company; HSE convictions database unreachable (resources.hse.gov.uk did not resolve), so HSE is not exhaustively checked. B Corp directory unchecked (bcorporation.net blocks curl with 403; browser search was unreliable) unless stated."
+ },
+ {
+  "n": 48,
+  "retailer": "White Stuff",
+  "domain": "whitestuff.com",
+  "entity": {
+   "legalName": "WHITE STUFF LIMITED",
+   "companyNumber": "02319237",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/02319237"
+  },
+  "owner": {
+   "name": "White Stuff Group Limited",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/02319237/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "Entity chosen from Companies House name match; not confirmed as the shop operator from site terms (retailer pages blocked/404). B Corp status UNVERIFIED: guessed directory slugs 404 but that does not prove non-certification. HSE: press.hse.gov.uk API (all ~258 posts 2021-2026 fetched and searched locally) has no post naming this company; HSE convictions database unreachable (resources.hse.gov.uk did not resolve), so HSE is not exhaustively checked. B Corp directory unchecked (bcorporation.net blocks curl with 403; browser search was unreliable) unless stated."
+ },
+ {
+  "n": 49,
+  "retailer": "Joules",
+  "domain": "joules.com",
+  "entity": {
+   "legalName": "JOULES LIMITED",
+   "companyNumber": "02934327",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/02934327"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "Company is in liquidation per Companies House. Owner (Next) NOT verified from a primary source, so null. Entity chosen from Companies House name match; not confirmed as the shop operator from site terms (retailer pages blocked/404). HSE: press.hse.gov.uk API (all ~258 posts 2021-2026 fetched and searched locally) has no post naming this company; HSE convictions database unreachable (resources.hse.gov.uk did not resolve), so HSE is not exhaustively checked. B Corp directory unchecked (bcorporation.net blocks curl with 403; browser search was unreliable) unless stated."
+ },
+ {
+  "n": 50,
+  "retailer": "Schuh",
+  "domain": "schuh.co.uk",
+  "entity": {
+   "legalName": "SCHUH LIMITED",
+   "companyNumber": "SC125327",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/SC125327"
+  },
+  "owner": {
+   "name": "Genesco UK Limited / Schuh Holdings Limited (PSCs)",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/SC125327/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "Companies House PSCs are Genesco UK Limited and Schuh Holdings Limited, NOT JD Sports as the brief suggested; ultimate owner not verified (Genesco Inc. unverified). Entity chosen from Companies House name match; not confirmed as the shop operator from site terms (retailer pages blocked/404). HSE: press.hse.gov.uk API (all ~258 posts 2021-2026 fetched and searched locally) has no post naming this company; HSE convictions database unreachable (resources.hse.gov.uk did not resolve), so HSE is not exhaustively checked. B Corp directory unchecked (bcorporation.net blocks curl with 403; browser search was unreliable) unless stated."
+ },
+ {
+  "n": 51,
+  "retailer": "Clarks",
+  "domain": "clarks.com",
+  "entity": {
+   "legalName": "C. & J. CLARK INTERNATIONAL LIMITED",
+   "companyNumber": "00141015",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00141015"
+  },
+  "owner": {
+   "name": "C&J Clark (Holdings) Limited",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00141015/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "PSC is intermediate holding. Entity chosen from Companies House name match; not confirmed as the shop operator from site terms (retailer pages blocked/404). HSE: press.hse.gov.uk API (all ~258 posts 2021-2026 fetched and searched locally) has no post naming this company; HSE convictions database unreachable (resources.hse.gov.uk did not resolve), so HSE is not exhaustively checked. B Corp directory unchecked (bcorporation.net blocks curl with 403; browser search was unreliable) unless stated."
+ },
+ {
+  "n": 52,
+  "retailer": "Flannels",
+  "domain": "flannels.com",
+  "entity": {
+   "legalName": "THE FLANNELS GROUP LIMITED",
+   "companyNumber": "02318510",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/02318510"
+  },
+  "owner": {
+   "name": "Frasers Group Trading Limited (PSC; Frasers Group plc is its parent per its own PSC page)",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/02318510/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "Entity chosen from Companies House name match; not confirmed as the shop operator from site terms (retailer pages blocked/404). No CMA case found. HSE: press.hse.gov.uk API (all ~258 posts 2021-2026 fetched and searched locally) has no post naming this company; HSE convictions database unreachable (resources.hse.gov.uk did not resolve), so HSE is not exhaustively checked. B Corp directory unchecked (bcorporation.net blocks curl with 403; browser search was unreliable) unless stated."
+ },
+ {
+  "n": 53,
+  "retailer": "Zalando",
+  "domain": "zalando.co.uk",
+  "entity": {
+   "legalName": "ZALANDO UK LTD.",
+   "companyNumber": "13916747",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/13916747"
+  },
+  "owner": {
+   "name": "Zalando SE",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/13916747/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "Entity chosen from Companies House name match; not confirmed as the shop operator from site terms (retailer pages blocked/404). No CMA case found. HSE: press.hse.gov.uk API (all ~258 posts 2021-2026 fetched and searched locally) has no post naming this company; HSE convictions database unreachable (resources.hse.gov.uk did not resolve), so HSE is not exhaustively checked. B Corp directory unchecked (bcorporation.net blocks curl with 403; browser search was unreliable) unless stated."
+ },
+ {
+  "n": 54,
+  "retailer": "Patagonia",
+  "domain": "eu.patagonia.com",
+  "entity": {
+   "legalName": null,
+   "companyNumber": null,
+   "sourceUrl": null
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": true,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/company/patagonia-inc/"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "Certified B Corp: the B Lab directory page /company/patagonia-inc/ loads in a browser with title 'Patagonia - Certified B Corporation - B Lab' (checked 2026-11-04; matches repo registry). Legal entity not determined (candidate PATAGONIA EUROPE COOPERATIEF U.A. BR016715). Note: UK 'PATAGONIA LTD' 14450890 is an unrelated individual-owned company. No CMA case found. HSE: press.hse.gov.uk API (all ~258 posts 2021-2026 fetched and searched locally) has no post naming this company; HSE convictions database unreachable (resources.hse.gov.uk did not resolve), so HSE is not exhaustively checked. B Corp directory unchecked (bcorporation.net blocks curl with 403; browser search was unreliable) unless stated."
+ }
+]
