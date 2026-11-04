@@ -1,6 +1,10 @@
 import { assess, normalizeDomain, normalize } from './assessment.js';
 import { domainRelevance } from './relevance.js';
 import { santaScore } from './scoring.js';
+import scorecards from '../data/santa-scorecard.json' with { type: 'json' };
+const filingIds = { fatface: 47, 'river-island': 39 }; // Reviewed exact legal-entity mappings, data/santa-filings.js.
+
+import { communitySummary } from './community.js';
 
 export function selector(input) {
   if (input.domain !== undefined) return ['domain', normalizeDomain(input.domain)];
@@ -67,9 +71,10 @@ export async function assessStored(input, db, now = new Date()) {
       reason: 'dated_secondary_source_not_live_verification'
     }));
   }
-  const score = santaScore(evidence, { asOf: now.toISOString().slice(0, 10) });
-  const scoring = { ...score, status: 'computed', scope: 'company', verdict: ['nice', 'naughty'].includes(score.verdict) ? score.verdict : null };
+  const score = santaScore(evidence, { asOf: now.toISOString().slice(0, 10), scorecard: scorecards.shops[filingIds[assessment.company?.id]], thresholds: scorecards.thresholds });
+  const scoring = { ...score, status: 'computed', scope: 'company', verdict: ['nice', 'naughty', 'watch_list'].includes(score.verdict) ? score.verdict : null };
   return { ...assessment, scoring,
     ...(input.domain !== undefined ? { relevance: domainRelevance(input.domain, assessment) } : {}),
+    community: assessment.company ? await communitySummary(db, assessment.company.id, now) : null,
     evidence, sources, coverage: { status: 'partial', scope: 'reviewed_entities_and_selected_records', noRecordsMeans: 'unknown' } };
 }

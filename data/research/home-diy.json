@@ -1,0 +1,340 @@
+[
+ {
+  "n": 86,
+  "retailer": "IKEA",
+  "domain": "ikea.com/gb",
+  "entity": {
+   "legalName": "IKEA Limited",
+   "companyNumber": "01986283",
+   "sourceUrl": "https://www.ikea.com/gb/en/customer-service/terms-conditions/"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp unchecked: bcorporation.net directory returned HTTP 403 to automated access. HSE press API search (press.hse.gov.uk/wp-json/wp/v2/posts?search=) returned no posts naming this company; the search is weak so absence is not conclusive. Site terms say IKEA Limited is licensed to sell under the IKEA brand by Inter IKEA Systems B.V. (Netherlands). Ultimate retail owner (Ingka) not verified from a primary source. CMA search found nothing 2019+ naming IKEA."
+ },
+ {
+  "n": 87,
+  "retailer": "B&Q",
+  "domain": "diy.com",
+  "entity": {
+   "legalName": "B&Q Limited",
+   "companyNumber": "00973387",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00973387"
+  },
+  "owner": {
+   "name": "Kingfisher plc",
+   "sourceUrl": "https://www.kingfisher.com/"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp unchecked: bcorporation.net directory returned HTTP 403 to automated access. HSE press API search (press.hse.gov.uk/wp-json/wp/v2/posts?search=) returned no posts naming this company; the search is weak so absence is not conclusive. Entity from Companies House name search (active); not confirmed from diy.com terms (pages 404/empty to curl). Kingfisher plc is CH 01664812, kingfisher.com footer lists company number 01664812 and homepage lists B&Q and Screwfix as banners. Only CMA hit for Kingfisher is a 2011 merger (excluded)."
+ },
+ {
+  "n": 88,
+  "retailer": "Wickes",
+  "domain": "wickes.co.uk",
+  "entity": {
+   "legalName": "Wickes Building Supplies Limited",
+   "companyNumber": "01840419",
+   "sourceUrl": "https://www.wickes.co.uk/"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp unchecked: bcorporation.net directory returned HTTP 403 to automated access. HSE press API search (press.hse.gov.uk/wp-json/wp/v2/posts?search=) returned no posts naming this company; the search is weak so absence is not conclusive. Footer of wickes.co.uk names the entity and Company Registration No. 1840419. Parent (Wickes Group plc) not verified. CMA hits only 2005 Travis Perkins merger (excluded)."
+ },
+ {
+  "n": 89,
+  "retailer": "Screwfix",
+  "domain": "screwfix.com",
+  "entity": {
+   "legalName": "Screwfix Direct Limited",
+   "companyNumber": "03006378",
+   "sourceUrl": "https://www.screwfix.com/help/terms-and-conditions"
+  },
+  "owner": {
+   "name": "Kingfisher plc",
+   "sourceUrl": "https://www.kingfisher.com/"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp unchecked: bcorporation.net directory returned HTTP 403 to automated access. HSE press API search (press.hse.gov.uk/wp-json/wp/v2/posts?search=) returned no posts naming this company; the search is weak so absence is not conclusive. Footer: Screwfix Direct Ltd, Company Registration no 3006378. Kingfisher homepage lists Screwfix as a banner."
+ },
+ {
+  "n": 90,
+  "retailer": "Dunelm",
+  "domain": "dunelm.com",
+  "entity": {
+   "legalName": "Dunelm (Soft Furnishings) Ltd",
+   "companyNumber": "02129238",
+   "sourceUrl": "https://www.dunelm.com/contact-us"
+  },
+  "owner": {
+   "name": "Dunelm Group plc",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/04708277"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp unchecked: bcorporation.net directory returned HTTP 403 to automated access. HSE press API search (press.hse.gov.uk/wp-json/wp/v2/posts?search=) returned no posts naming this company; the search is weak so absence is not conclusive. Contact page names Dunelm (Soft Furnishings) Ltd, registration no 2129238. Dunelm Group plc (CH 04708277) is listed as an active company but the ownership link is not verified from a primary source. CMA 2020 hit is a merger story (excluded)."
+ },
+ {
+  "n": 91,
+  "retailer": "Wayfair",
+  "domain": "wayfair.co.uk",
+  "entity": {
+   "legalName": null,
+   "companyNumber": null,
+   "sourceUrl": null
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [
+   {
+    "path": "/cma-cases/wayfair-consumer-protection-enforcement-case",
+    "eventDate": "2026-10-12",
+    "outcome": "fine",
+    "guard": "The CMA has given a Final Infringement Notice to Wayfair and has imposed a financial penalty of \u00a34,800,000 for infringing consumer protection law.",
+    "summary": "CMA fined Wayfair \u00a34.8m (after 40% settlement reduction) for false time-limited offers (Daily Deals/Flash Deals with countdown timers) under consumer law. Notice given 12 Oct 2026, announced 14 Oct 2026. Case state field still reads 'open'."
+   }
+  ],
+  "hse": [],
+  "notes": "B Corp unchecked: bcorporation.net directory returned HTTP 403 to automated access. HSE press API search (press.hse.gov.uk/wp-json/wp/v2/posts?search=) returned no posts naming this company; the search is weak so absence is not conclusive. UK legal entity NOT verified: wayfair.co.uk terms returned HTTP 429 and a retry was blocked, and the CMA case page names only 'Wayfair'. Companies House has WAYFAIR (UK) LIMITED 06776852 (and WAYFAIR TRADING UK LIMITED 13121448), but which one trades the site is unconfirmed. Do not assume the name 'Wayfair Stores Limited'."
+ },
+ {
+  "n": 92,
+  "retailer": "The Range",
+  "domain": "therange.co.uk",
+  "entity": {
+   "legalName": "CDS (Superstores International) Limited",
+   "companyNumber": "02699203",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/02699203"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp unchecked: bcorporation.net directory returned HTTP 403 to automated access. HSE press API search (press.hse.gov.uk/wp-json/wp/v2/posts?search=) returned no posts naming this company; the search is weak so absence is not conclusive. Per search summary of therange.co.uk/terms-and-conditions and FAQ: 'CDS (Superstores International) Limited trading as The Range', registered no 02699203; CH confirms active, Plymouth. I did not read the terms page directly. 'The Range Home and Leisure Limited' (CH 05203674) is NOT the confirmed trading entity. No CMA hits."
+ },
+ {
+  "n": 93,
+  "retailer": "B&M",
+  "domain": "bmstores.co.uk",
+  "entity": {
+   "legalName": "B&M Retail Limited",
+   "companyNumber": "01357507",
+   "sourceUrl": "https://www.bmstores.co.uk/terms-of-use"
+  },
+  "owner": {
+   "name": "B&M European Value Retail S.A.",
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp unchecked: bcorporation.net directory returned HTTP 403 to automated access. HSE press API search (press.hse.gov.uk/wp-json/wp/v2/posts?search=) returned no posts naming this company; the search is weak so absence is not conclusive. Terms: 'We are B&M Retail Limited (trading as B&M Stores)... company number 01357507'. Owner B&M European Value Retail S.A. (Luxembourg) is from memory and a search summary, no primary URL checked; set owner source null. CMA: 2018 GSCOP designation of B&M European Value Retail S.A. is a supplier-treatment designation, not an infringement outcome (not recorded)."
+ },
+ {
+  "n": 94,
+  "retailer": "Home Bargains",
+  "domain": "homebargains.co.uk (redirects to home.bargains)",
+  "entity": {
+   "legalName": "T. J. Morris Limited",
+   "companyNumber": "01505036",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/01505036"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp unchecked: bcorporation.net directory returned HTTP 403 to automated access. HSE press API search (press.hse.gov.uk/wp-json/wp/v2/posts?search=) returned no posts naming this company; the search is weak so absence is not conclusive. Companies House lists T. J. Morris Limited (active, Liverpool); trading name Home Bargains from a council premises licence summary found via search, not from the site's own terms (not fetchable). CMA: 2019 GSCOP designation of TJ Morris Ltd (Home Bargains) is a designation, not an infringement outcome (not recorded). T J Morris Limited is itself the operating company; no owner link verified."
+ },
+ {
+  "n": 95,
+  "retailer": "Homebase",
+  "domain": "homebase.co.uk",
+  "entity": {
+   "legalName": "Homebase Limited",
+   "companyNumber": "16777483",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/16777483"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp unchecked: bcorporation.net directory returned HTTP 403 to automated access. HSE press API search (press.hse.gov.uk/wp-json/wp/v2/posts?search=) returned no posts naming this company; the search is weak so absence is not conclusive. Companies House shows Homebase Limited 16777483 (active) at same address as CDS (Superstores International) Limited (15 William Prance Road, Plymouth). Press says CDS (The Range's owner) bought the Homebase brand after HHGL Limited's Nov 2024 administration; these are news summaries, not primary, so owner left null. Homebase.co.uk terms not fetched. Any historic findings may attach to HHGL Limited (00533033), a different entity. No CMA hits."
+ },
+ {
+  "n": 96,
+  "retailer": "Lakeland",
+  "domain": "lakeland.co.uk",
+  "entity": {
+   "legalName": "Lakeland Limited",
+   "companyNumber": "00809688",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00809688"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp unchecked: bcorporation.net directory returned HTTP 403 to automated access. HSE press API search (press.hse.gov.uk/wp-json/wp/v2/posts?search=) returned no posts naming this company; the search is weak so absence is not conclusive. Companies House (active, London) only; the site terms could not be read. 'Lakeland Dairies' and 'Lakeland Forum' CMA hits are unrelated. No CMA hits."
+ },
+ {
+  "n": 97,
+  "retailer": "Simba",
+  "domain": "simbasleep.com",
+  "entity": {
+   "legalName": "Simba Sleep Limited",
+   "companyNumber": "09703422",
+   "sourceUrl": "https://www.simbasleep.com/terms-and-conditions"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [
+   {
+    "path": "/cma-cases/simba-sleep-limited-consumer-protection-case",
+    "eventDate": "2024-07-25",
+    "outcome": "undertakings",
+    "guard": "Simba Sleep Limited (Simba) has signed undertakings in relation to its online selling practices.",
+    "summary": "Undertakings on discount (was-price) claims and countdown-timer urgency claims, signed 25 July 2024 (published 1 Aug 2024)."
+   },
+   {
+    "path": "/cma-cases/simba-sleep-limited-consumer-protection-case",
+    "eventDate": "2026-09-22",
+    "outcome": "revised_undertakings",
+    "guard": "On 22 September 2026, the CMA accepted minor revisions to the undertakings from Simba Sleep.",
+    "summary": "CMA accepted minor revisions to the undertakings; published 5 Oct 2026."
+   }
+  ],
+  "hse": [],
+  "notes": "B Corp unchecked: bcorporation.net directory returned HTTP 403 to automated access. HSE press API search (press.hse.gov.uk/wp-json/wp/v2/posts?search=) returned no posts naming this company; the search is weak so absence is not conclusive. Footer names Simba Sleep Limited, Company No 9703422. B Corp: a search snippet of bcorporation.net/en-us/find-a-b-corp/company/simba-sleep/ shows Simba Sleep Ltd 'Certified Since February 2023' (score 97.5), but the directory returned 403 and certification runs three years, so current status must be hand-checked. No other CMA matter found beyond the undertakings."
+ },
+ {
+  "n": 98,
+  "retailer": "Halfords",
+  "domain": "halfords.com",
+  "entity": {
+   "legalName": "Halfords Limited",
+   "companyNumber": "00103161",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00103161"
+  },
+  "owner": {
+   "name": "Halfords Group plc",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/04457314"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp unchecked: bcorporation.net directory returned HTTP 403 to automated access. HSE press API search (press.hse.gov.uk/wp-json/wp/v2/posts?search=) returned no posts naming this company; the search is weak so absence is not conclusive. Companies House entities (active, Redditch) only; halfords.com terms could not be read. Halfords Group plc owning Halfords Limited is not verified from a primary source. No CMA hits 2019+."
+ },
+ {
+  "n": 99,
+  "retailer": "Poundland",
+  "domain": "poundland.co.uk",
+  "entity": {
+   "legalName": "Poundland Limited",
+   "companyNumber": "02495645",
+   "sourceUrl": "https://www.poundland.co.uk/privacy-policy"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp unchecked: bcorporation.net directory returned HTTP 403 to automated access. HSE press API search (press.hse.gov.uk/wp-json/wp/v2/posts?search=) returned no posts naming this company; the search is weak so absence is not conclusive. Privacy policy: company registration number 02495645. Owner (Pepco Group) not verified here. CMA hits only 2015 Poundland/99p merger (excluded)."
+ },
+ {
+  "n": 100,
+  "retailer": "Costco",
+  "domain": "costco.co.uk",
+  "entity": {
+   "legalName": "Costco Online UK Limited",
+   "companyNumber": "08055444",
+   "sourceUrl": "https://www.costco.co.uk/"
+  },
+  "owner": {
+   "name": "Costco Wholesale Corporation",
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp unchecked: bcorporation.net directory returned HTTP 403 to automated access. HSE press API search (press.hse.gov.uk/wp-json/wp/v2/posts?search=) returned no posts naming this company; the search is weak so absence is not conclusive. costco.co.uk footer: 'Costco Online UK Limited ... Registered in England and Wales No. 8055444'. The warehouse operator is Costco Wholesale UK Limited 02635489 (CH active); the shop (online) is the former. US parent not verified from a primary source. No CMA hits 2019+ (only 2013 Booker/Makro merger)."
+ }
+]

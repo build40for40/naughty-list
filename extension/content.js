@@ -161,8 +161,17 @@ b{position:absolute;top:28px;font-weight:400;background:#0a0e0b;color:#7dff9a;pa
     section.dataset.tone = model.tone;
     element('h2', model.title, status);
     element('p', model.message, status);
+    const community = lib.communityModel(assessment);
+    if (state === 'ready' && community) {
+      element('p', `Community: ${community.text}`, section);
+      element('small', 'Community opinion. Claims have not been verified.', section);
+      const votes = element('button', 'View or cast a vote', section);
+      votes.addEventListener('click', () => {
+        api.runtime.sendMessage({ type: 'open-community', domain: location.hostname }).catch(() => {});
+      });
+    }
     if (assessment?.scoring?.status === 'computed' && assessment.scoring.total !== null) {
-      element('small', `Santa Score ${assessment.scoring.total > 0 ? '+' : ''}${assessment.scoring.total} · v0.3 · ${assessment.scoring.asOf}`, status);
+      element('small', `Santa Score ${assessment.scoring.total > 0 ? '+' : ''}${assessment.scoring.total} · ${assessment.scoring.method.replace('santa-', '')} · ${assessment.scoring.asOf}`, status);
     }
     if (assessment?.company) {
       const detail = element('details', null, section);
@@ -180,6 +189,11 @@ b{position:absolute;top:28px;font-weight:400;background:#0a0e0b;color:#7dff9a;pa
         if (evidence.summary) element('p', evidence.summary, detail);
         if (evidence.publishedAt) element('small', `Published ${evidence.publishedAt.slice(0, 10)}${!evidence.eventDate ? ' · publication date, not event date' : ''}.`, detail);
         addLink(detail, 'Source', evidence.sourceUrl);
+      }
+      for (const item of assessment.scoring?.reportCard ?? []) {
+        element('p', `${item.measure === 'pay_gap' ? 'Median hourly pay gap' : 'Invoices paid late'}: ${item.value}% (${item.points > 0 ? '+' : ''}${item.points} points).`, detail);
+        element('small', item.filing.snapshotYear ? `Snapshot ${item.filing.snapshotYear}.` : `Period ended ${item.filing.periodEnd}.`, detail);
+        addLink(detail, 'Official filing', item.filing.sourceUrl);
       }
       element('p', 'This describes the business, not the ethics of this individual product.', detail);
     }

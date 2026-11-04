@@ -7,18 +7,26 @@
     "node": ">=22.13"
   },
   "scripts": {
-    "dev": "npm run wrangler -- dev",
+    "dev": "npm run community:build && npm run wrangler -- dev",
+    "community:build": "node scripts/build-community.mjs",
+    "community:moderate": "node scripts/community-moderate.mjs",
     "test": "node --test",
     "evidence": "node scripts/evidence.mjs",
     "scores": "node scripts/santa-scores.mjs",
-    "check": "npm test && npm run wrangler -- deploy --dry-run",
+    "check": "npm test && npm run community:build && npm run wrangler -- deploy --dry-run",
     "extension:package:chrome": "node scripts/package-extension.mjs chrome",
     "extension:package:firefox": "node scripts/package-extension.mjs firefox",
-    "deploy": "npm run wrangler -- deploy",
-    "wrangler": "env -u CLOUDFLARE_API_KEY -u CLOUDFLARE_EMAIL wrangler --profile 40for40"
+    "deploy": "npm run community:build && npm run wrangler -- deploy",
+    "wrangler": "env -u CLOUDFLARE_API_KEY -u CLOUDFLARE_EMAIL wrangler --profile 40for40",
+    "scorecard": "node scripts/scorecard-import.mjs"
   },
   "devDependencies": {
+    "esbuild": "^0.28.2",
     "happy-dom": "^21.0.4",
     "wrangler": "4.157.0"
+  },
+  "dependencies": {
+    "@workos-inc/authkit-js": "^0.20.5",
+    "jose": "^6.2.15"
   }
 }

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Community vote · The Naughty List</title>
+  <link rel="stylesheet" href="/community/community.css">
+  <script type="module" src="/community/community.js"></script>
+</head>
+<body>
+  <main>
+    <header><p class="eyebrow">North Pole public opinion desk</p><h1>The community list</h1>
+      <p>Your say on how brands treat people and the planet.</p></header>
+    <p id="message" role="status" aria-live="polite">Checking the list…</p>
+    <label for="brand">Brand</label><select id="brand" disabled><option>Loading brands…</option></select>
+    <section aria-labelledby="assessment-heading"><h2 id="assessment-heading">Our assessment</h2>
+      <p id="assessment">Awaiting assessment</p><p>Our evidence and criteria decide our verdict. Community votes do not change it.</p>
+    </section>
+    <section aria-labelledby="community-heading"><h2 id="community-heading">Community vote</h2>
+      <p id="score" class="score">No community score yet</p>
+      <details id="breakdown"><summary>Vote counts and dates</summary><p id="counts"></p><p id="dates"></p></details>
+      <p class="note">Community opinion. Claims have not been verified. This is a self-selected vote, not a representative poll or an ethical certification.</p>
+    </section>
+    <section aria-labelledby="vote-heading"><h2 id="vote-heading">Your place on Santa’s list</h2>
+      <p>Based on how this brand treats people and the planet, does it belong on Santa’s Naughty or Nice list?</p>
+      <button id="sign-in" type="button" disabled>Sign in to vote</button>
+      <button id="sign-out" type="button" hidden>Sign out</button>
+      <form id="vote-form" hidden>
+        <fieldset id="vote-fields" disabled>
+          <legend>Your vote</legend>
+          <div class="choices">
+            <label><input type="radio" name="choice" value="naughty" required> Naughty</label>
+            <label><input type="radio" name="choice" value="nice"> Nice</label>
+            <label><input type="radio" name="choice" value="unsure"> Not sure</label>
+          </div>
+          <fieldset><legend>What influenced you? (optional)</legend>
+            <label><input type="checkbox" name="reasons" value="staff"> Staff</label>
+            <label><input type="checkbox" name="reasons" value="communities"> Communities</label>
+            <label><input type="checkbox" name="reasons" value="environment"> Environment</label>
+          </fieldset>
+          <button type="submit">Save my vote</button>
+          <button id="withdraw" type="button" hidden>Withdraw my vote</button>
+        </fieldset>
+        <p id="own-vote"></p>
+      </form>
+    </section>
+    <details><summary>How voting works</summary>
+      <ul>
+        <li>One current vote per email-verified account per brand. Change or withdraw yours at any time.</li>
+        <li>We show a percentage only after 20 active Naughty or Nice votes. Not sure does not count towards that minimum.</li>
+        <li>The percentage is Nice votes divided by all Naughty and Nice votes. Votes expire after 12 months. Vote again to renew yours.</li>
+        <li>Email verification checks access to an email account. It does not prove a unique person or verify their claims. No purchase is required.</li>
+        <li>We exclude spam, automated votes and coordinated manipulation after review. Negative votes or a sudden surge alone are not grounds for exclusion.</li>
+        <li>Suspected abuse? Email help@build40for40.com with the brand and approximate time. Public comments and evidence submissions are not part of this version.</li>
+      </ul>
+    </details>
+    <details><summary>Voting privacy</summary>
+      <p>Signing in uses WorkOS AuthKit. WorkOS processes your email and sign-in information. Our voting database stores your WorkOS account ID, your vote, optional reasons and dates, not your email or name. Public results contain totals only.</p>
+      <p>As in Joyo, AuthKit keeps refresh tokens in this page’s local storage so sign-in survives a reload. Tokens are never shared with shop pages or the extension.</p>
+      <p>Expired votes and inactive rate-limit records are deleted during daily maintenance. Excluded accounts keep a marker to prevent bypassing moderation; moderation decisions are recorded for review. Withdrawal removes your active vote, although an exclusion marker and moderation record may remain. Contact help@build40for40.com for account-data requests.</p>
+    </details>
+    <footer>Made by 40 for 40 · <a href="mailto:help@build40for40.com">Help</a></footer>
+  </main>
+</body>
+</html>

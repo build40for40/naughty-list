@@ -1,0 +1,275 @@
+[
+ {
+  "n": 73,
+  "retailer": "Smyths Toys",
+  "domain": "smythstoys.com",
+  "entity": {
+   "legalName": "SMYTHS TOYS UK LIMITED",
+   "companyNumber": "06051517",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/06051517"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "CMA: gov.uk search API filtered to CMA returned no company-specific consumer/competition case. HSE: press.hse.gov.uk WP API (earliest post 2021-01-28) searched by name variants; no post names this company. Press releases only, not the full HSE conviction register (which was unreachable), so absence is not proof of no conviction. B Corp: bcorporation.net directory search UI not usable; only direct company-slug guesses tried (404) so recorded unchecked (null). Entity is a Companies House best match only: smythstoys.com terms blocked by bot protection so not confirmed as operator. CH also lists overseas company SMYTHS TOYS LIMITED NF003659. CH 06051517 has no PSC (statement of no registrable person)."
+ },
+ {
+  "n": 74,
+  "retailer": "The Entertainer",
+  "domain": "thetoyshop.com",
+  "entity": {
+   "legalName": "The Entertainer (Amersham) Limited",
+   "companyNumber": "02057757",
+   "sourceUrl": "https://www.thetoyshop.com/terms"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "CMA: gov.uk search API filtered to CMA returned no company-specific consumer/competition case. HSE: press.hse.gov.uk WP API (earliest post 2021-01-28) searched by name variants; no post names this company. Press releases only, not the full HSE conviction register (which was unreachable), so absence is not proof of no conviction. B Corp: bcorporation.net directory search UI not usable; only direct company-slug guesses tried (404) so recorded unchecked (null). Terms say websites operated by The Entertainer (Amersham) Limited, Registered Company Number 02057757. Same-named THE ENTERTAINER LIMITED 09877843 is dormant. PSC is an individual (Gary Peter Grant), no corporate owner."
+ },
+ {
+  "n": 75,
+  "retailer": "LEGO",
+  "domain": "lego.com",
+  "entity": {
+   "legalName": "LEGO System A/S",
+   "companyNumber": null,
+   "sourceUrl": "https://www.lego.com/en-gb/legal/notices-and-policies/terms-and-code-of-conduct/"
+  },
+  "owner": {
+   "name": "KIRKBI A/S",
+   "sourceUrl": "https://www.lego.com/en-gb/legal/notices-and-policies/terms-and-code-of-conduct/"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "CMA: gov.uk search API filtered to CMA returned no company-specific consumer/competition case. HSE: press.hse.gov.uk WP API (earliest post 2021-01-28) searched by name variants; no post names this company. Press releases only, not the full HSE conviction register (which was unreachable), so absence is not proof of no conviction. B Corp: bcorporation.net directory search UI not usable; only direct company-slug guesses tried (404) so recorded unchecked (null). lego.com footer: LEGO System A/S, DK-7190 Billund; Danish company number not verified so null. Owner KIRKBI A/S comes only from the page's own schema.org parentOrganization JSON-LD; treat as low confidence (ownership is via LEGO A/S/KIRKBI, not confirmed from an annual report). UK subsidiary LEGO COMPANY LIMITED 00368236 is a wholesaler, not the web shop operator as far as seen."
+ },
+ {
+  "n": 76,
+  "retailer": "Waterstones",
+  "domain": "waterstones.com",
+  "entity": {
+   "legalName": "Waterstones Booksellers Limited",
+   "companyNumber": "00610095",
+   "sourceUrl": "https://www.waterstones.com/help/website-terms-&-conditions/7341"
+  },
+  "owner": {
+   "name": "Elliott Management (Paul Elliott Singer, PSC of Waterstones Booksellers Limited via Book Retail Bidco Limited)",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00610095/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "CMA: gov.uk search API filtered to CMA returned no company-specific consumer/competition case. HSE: press.hse.gov.uk WP API (earliest post 2021-01-28) searched by name variants; no post names this company. Press releases only, not the full HSE conviction register (which was unreachable), so absence is not proof of no conviction. B Corp: bcorporation.net directory search UI not usable; only direct company-slug guesses tried (404) so recorded unchecked (null). Terms confirm company no. 610095. Owner from Companies House PSC register only (Book Retail Bidco Limited 11284041 and Paul Elliott Singer, Elliott Management Corporation address)."
+ },
+ {
+  "n": 77,
+  "retailer": "WHSmith",
+  "domain": "whsmith.co.uk",
+  "entity": {
+   "legalName": "TG JONES HIGH STREET LIMITED",
+   "companyNumber": "06560339",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/06560339"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "CMA: gov.uk search API filtered to CMA returned no company-specific consumer/competition case. HSE: press.hse.gov.uk WP API (earliest post 2021-01-28) searched by name variants; no post names this company. Press releases only, not the full HSE conviction register (which was unreachable), so absence is not proof of no conviction. B Corp: bcorporation.net directory search UI not usable; only direct company-slug guesses tried (404) so recorded unchecked (null). UNVERIFIED trading entity. whsmith.co.uk and tgjones.com did not load, so no terms page read. CH shows 06560339 renamed from WH SMITH HIGH STREET LIMITED to TG JONES HIGH STREET LIMITED on 30 Jun 2025 (UK high street arm sold by WH Smith PLC to Modella Capital; sale not confirmed from primary source here). Group is now TGJones, separate from WH Smith PLC (travel). Owner left null."
+ },
+ {
+  "n": 78,
+  "retailer": "The Works",
+  "domain": "theworks.co.uk",
+  "entity": {
+   "legalName": "The Works Stores Ltd",
+   "companyNumber": "06557400",
+   "sourceUrl": "https://www.theworks.co.uk/page/terms-conditions.html"
+  },
+  "owner": {
+   "name": "Theworks.Co.Uk Plc (company 11325534)",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/09073458/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "CMA: gov.uk search API filtered to CMA returned no company-specific consumer/competition case. HSE: press.hse.gov.uk WP API (earliest post 2021-01-28) searched by name variants; no post names this company. Press releases only, not the full HSE conviction register (which was unreachable), so absence is not proof of no conviction. B Corp: bcorporation.net directory search UI not usable; only direct company-slug guesses tried (404) so recorded unchecked (null). Terms confirm company registration number 06557400. Owner chain from CH PSC: The Works Stores Limited <- The Works Investments Limited 09073458 <- Theworks.Co.Uk Plc 11325534 (PSC of the Investments company)."
+ },
+ {
+  "n": 79,
+  "retailer": "Hobbycraft",
+  "domain": "hobbycraft.co.uk",
+  "entity": {
+   "legalName": "Hobbycraft Trading Limited",
+   "companyNumber": "00806269",
+   "sourceUrl": "https://www.hobbycraft.co.uk/terms-and-conditions.html"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "CMA: gov.uk search API filtered to CMA returned no company-specific consumer/competition case. HSE: press.hse.gov.uk WP API (earliest post 2021-01-28) searched by name variants; no post names this company. Press releases only, not the full HSE conviction register (which was unreachable), so absence is not proof of no conviction. B Corp: bcorporation.net directory search UI not usable; only direct company-slug guesses tried (404) so recorded unchecked (null). Site page lists Hobbycraft Trading Limited, Registration number 806269. PSC chain: Stitch Bidco Limited 07068903 <- Stitch 3 Limited 07217283; ultimate owner not established."
+ },
+ {
+  "n": 80,
+  "retailer": "Moonpig",
+  "domain": "moonpig.com",
+  "entity": {
+   "legalName": "Moonpig.com Limited",
+   "companyNumber": "03852652",
+   "sourceUrl": "https://www.moonpig.com/uk/terms-and-conditions"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "CMA: gov.uk search API filtered to CMA returned no company-specific consumer/competition case. HSE: press.hse.gov.uk WP API (earliest post 2021-01-28) searched by name variants; no post names this company. Press releases only, not the full HSE conviction register (which was unreachable), so absence is not proof of no conviction. B Corp: bcorporation.net directory search UI not usable; only direct company-slug guesses tried (404) so recorded unchecked (null). Terms confirm Moonpig.com Limited, England & Wales no. 03852652. PSC chain: Cards Holdco Limited 12170467 <- Titan Midco Limited 13014525. Moonpig Group PLC 13096622 exists at CH but link to it not verified, so owner null."
+ },
+ {
+  "n": 81,
+  "retailer": "Card Factory",
+  "domain": "cardfactory.co.uk",
+  "entity": {
+   "legalName": "Sportswift Limited (trading as cardfactory)",
+   "companyNumber": "03493972",
+   "sourceUrl": "https://www.cardfactory.co.uk/terms.html"
+  },
+  "owner": {
+   "name": "Card Factory plc (company 09002747)",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/07210394/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "CMA: gov.uk search API filtered to CMA returned no company-specific consumer/competition case. HSE: press.hse.gov.uk WP API (earliest post 2021-01-28) searched by name variants; no post names this company. Press releases only, not the full HSE conviction register (which was unreachable), so absence is not proof of no conviction. B Corp: bcorporation.net directory search UI not usable; only direct company-slug guesses tried (404) so recorded unchecked (null). Terms (updated 3 April 2023) say website operated by Sportswift Limited t/a cardfactory, no. 03493972. Owner from CH PSC chain: Sportswift <- CF Bidco Limited 07210394 <- Card Factory Plc 09002747."
+ },
+ {
+  "n": 82,
+  "retailer": "Hotel Chocolat",
+  "domain": "hotelchocolat.com",
+  "entity": {
+   "legalName": "HOTEL CHOCOLAT LIMITED",
+   "companyNumber": "02805730",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/02805730"
+  },
+  "owner": {
+   "name": "Mars, Incorporated",
+   "sourceUrl": "https://www.hotelchocolat.com/uk/i/terms-and-conditions.html"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "CMA: gov.uk search API filtered to CMA returned no company-specific consumer/competition case. HSE: press.hse.gov.uk WP API (earliest post 2021-01-28) searched by name variants; no post names this company. Press releases only, not the full HSE conviction register (which was unreachable), so absence is not proof of no conviction. B Corp: bcorporation.net directory search UI not usable; only direct company-slug guesses tried (404) so recorded unchecked (null). DISCREPANCY: site terms (https://www.hotelchocolat.com/uk/i/terms-and-conditions.html) name 'Hotel Chocolat Group Limited ... company number 2805730', but Companies House 02805730 is HOTEL CHOCOLAT LIMITED (HOTEL CHOCOLAT GROUP LIMITED is 08612206, its PSC). Using number 02805730, CH name. Owner: site footer says 'An Affiliate of Mars, Incorporated' and links mars.com/legal; CH PSC history shows John Franklyn Mars notified 25 Jan 2024, ceased 6 Jun 2025 on the Group company. Mars buying a company is a merger, not a CMA outcome."
+ },
+ {
+  "n": 83,
+  "retailer": "Tony's Chocolonely",
+  "domain": "tonyschocolonely.com",
+  "entity": {
+   "legalName": null,
+   "companyNumber": null,
+   "sourceUrl": null
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": true,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/company/tonys-chocolonely/"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "CMA: gov.uk search API filtered to CMA returned no company-specific consumer/competition case. HSE: press.hse.gov.uk WP API (earliest post 2021-01-28) searched by name variants; no post names this company. Press releases only, not the full HSE conviction register (which was unreachable), so absence is not proof of no conviction. B Corp page at that URL loaded (title 'Tony's Chocolonely - Certified B Corporation'); loaded via browser fetch in session, certification date not read. Legal entity not researched (brief: CMA/HSE only)."
+ },
+ {
+  "n": 84,
+  "retailer": "Pandora",
+  "domain": "uk.pandora.net",
+  "entity": {
+   "legalName": "PANDORA JEWELLERY UK LIMITED",
+   "companyNumber": "06654012",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/06654012"
+  },
+  "owner": {
+   "name": "Pandora A/S (Danish reg 28505116)",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/06654012/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "CMA: gov.uk search API filtered to CMA returned no company-specific consumer/competition case. HSE: press.hse.gov.uk WP API (earliest post 2021-01-28) searched by name variants; no post names this company. Press releases only, not the full HSE conviction register (which was unreachable), so absence is not proof of no conviction. B Corp: bcorporation.net directory search UI not usable; only direct company-slug guesses tried (404) so recorded unchecked (null). UNVERIFIED as site operator: uk.pandora.net terms not readable; Companies House best match. Owner from CH PSC (Pandora A/S, 75%+)."
+ },
+ {
+  "n": 85,
+  "retailer": "Pets at Home",
+  "domain": "petsathome.com",
+  "entity": {
+   "legalName": "Pets at Home Ltd",
+   "companyNumber": "01822577",
+   "sourceUrl": "https://www.petsathome.com/terms-and-conditions"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": null,
+   "sourceUrl": null
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "CMA: gov.uk search API filtered to CMA returned no company-specific consumer/competition case. HSE: press.hse.gov.uk WP API (earliest post 2021-01-28) searched by name variants; no post names this company. Press releases only, not the full HSE conviction register (which was unreachable), so absence is not proof of no conviction. B Corp: bcorporation.net directory search UI not usable; only direct company-slug guesses tried (404) so recorded unchecked (null). Terms confirm Pets at Home Ltd company number 01822577. PSC chain: Pets At Home Superstores Limited 03119594 <- Pets At Home Holdings Limited 03864149 <- Pets At Home No.1 Limited 08887355; Pets at Home Group Plc 08885072 exists at CH but link not verified. CMA vets market investigation (https://www.gov.uk/cma-cases/veterinary-services-market-for-pets-review): final report 24 Mar 2026, Veterinary Services Market Investigation Order 2026 made 22 Sep 2026 requiring all large vet businesses (15+ practices) to comply. Pets at Home is a party to the investigation (submissions/hearings) but the Order is sector-wide, not company-specific, so not recorded as a cma entry. I did not verify Pets at Home is named in the Order text."
+ }
+]

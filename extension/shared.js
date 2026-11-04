@@ -66,6 +66,7 @@
     const verdict = allowed && ['nice', 'naughty'].includes(assessment?.scoring?.verdict) ? assessment.scoring.verdict : null;
     const category = relevance?.category ?? 'unknown';
     if (verdict) return { tone: verdict, title: verdict === 'nice' ? 'On the nice list' : 'On the naughty list', message: relevance.category === 'retailer' ? `Shop assessment for ${company.name}. Not a rating of this product or its brand.` : `Business assessment for ${company.name}. Not a product rating.` };
+    if (allowed && assessment?.scoring?.verdict === 'watch_list') return { tone: 'neutral', title: 'Watch list', message: `Reviewed concerns for ${company.name}. This is a business assessment, not a product rating.` };
     if (category === 'marketplace' || category === 'retailer') return {
       tone: 'neutral', title: category === 'marketplace' ? 'Marketplace' : 'Retailer',
       message: 'This website does not identify the brand or seller of this product. No product verdict is available.'
@@ -75,5 +76,16 @@
     return { tone: 'neutral', title: 'Not enough evidence', message: 'We could not safely match this website to a reviewed brand shop. Unknown does not mean naughty.' };
   }
 
-  globalThis.NaughtyList = { positions, normalizePosition, settings, hostname, purchaseControls, shoppingSignals, viewModel };
+  function communityModel(assessment) {
+    if (assessment?.relevance?.category !== 'brand_shop' || assessment.relevance.eligibleForVerdict !== true || !assessment.company) return null;
+    const summary = assessment.community;
+    if (!summary || !['ready', 'early'].includes(summary.status) || !Number.isInteger(summary.total) || summary.total < 0) return null;
+    // The API and every display independently enforce the 20 decisive-vote floor.
+    const minimum = Math.max(20, Number.isInteger(summary.minimumVotes) ? summary.minimumVotes : 20);
+    const ready = summary.status === 'ready' && summary.total >= minimum && Number.isFinite(summary.nicePercentage) && summary.nicePercentage >= 0 && summary.nicePercentage <= 100;
+    return { text: ready ? `${summary.nicePercentage}% voted Nice · ${summary.total} votes` : `Early voting · ${summary.total} votes · ${minimum} needed for a percentage`,
+      companyId: assessment.company.id };
+  }
+
+  globalThis.NaughtyList = { positions, normalizePosition, settings, hostname, purchaseControls, shoppingSignals, viewModel, communityModel };
 })();
