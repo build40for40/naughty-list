@@ -259,3 +259,10 @@ test('background voting links use the resolved sender brand on a fixed origin', 
   assert.equal(opened.length, 1);
   assert.equal(opened[0].url, 'https://naughty-list-api.40for40.workers.dev/community/?brand=patagonia');
 });
+
+test('a reviewed retailer business verdict explicitly excludes product and brand ratings', () => {
+  const model = lib.viewModel({ ...assessment, company: { name: 'River Island' }, relevance: { category: 'retailer', eligibleForVerdict: false, eligibleForBusinessVerdict: true }, scoring: { verdict: 'naughty' } });
+  assert.equal(model.tone, 'naughty');
+  assert.match(model.message, /Shop assessment/);
+  assert.match(model.message, /Not a rating of this product or its brand/);
+});

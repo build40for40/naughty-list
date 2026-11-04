@@ -45,7 +45,9 @@ test('imports are idempotent and assessments expose provenance, stale data and c
   assert.equal(assessment.evidence.length, 1);
   assert.equal(assessment.evidence[0].freshness, 'fresh');
   assert.equal(assessment.criteria.bCorp.certified, null);
-  assert.equal(assessment.scoring.verdict, null);
+  // v0.4: minimum-wage namings under £1,000 are shown but earn no coal.
+  assert.ok(assessment.scoring.history.some(item => item.reason === 'below_threshold'));
+  assert.notEqual(assessment.scoring.verdict, 'naughty');
   assert.equal((await assessStored({ brand: 'B&Q' }, db, new Date('2026-11-12'))).evidence[0].freshness, 'stale');
   const expired = await assessStored({ brand: 'Patagonia' }, db, new Date('2026-12-04'));
   assert.equal(expired.criteria.bCorp.certified, null);

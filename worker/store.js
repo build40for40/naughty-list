@@ -1,6 +1,16 @@
 import { assess, normalizeDomain, normalize } from './assessment.js';
 import { domainRelevance } from './relevance.js';
 import { communitySummary } from './community.js';
+import { santaScore } from './scoring.js';
+import scorecardData from '../data/santa-scorecard.json' with { type: 'json' };
+import retailers from '../data/santa-retailers.js';
+
+// Report card (v0.4): the card 159 retailer whose reviewed brand lookups include the matched company.
+const reportCardFor = company => {
+  if (!company) return null;
+  const retailer = retailers.find(item => item.lookups.includes(company.name));
+  return retailer ? scorecardData.shops[retailer.n] ?? null : null;
+};
 
 export function selector(input) {
   if (input.domain !== undefined) return ['domain', normalizeDomain(input.domain)];
@@ -67,8 +77,13 @@ export async function assessStored(input, db, now = new Date()) {
       reason: 'dated_secondary_source_not_live_verification'
     }));
   }
-  return { ...assessment,
-    ...(input.domain !== undefined ? { relevance: domainRelevance(input.domain, assessment) } : {}),
+  const score = santaScore(evidence, { asOf: now.toISOString().slice(0, 10), scorecard: reportCardFor(assessment.company), thresholds: scorecardData.thresholds });
+  const relevance = input.domain !== undefined ? domainRelevance(input.domain, assessment) : null;
+  // Domain lookups only carry a verdict where the shop is eligible for one (brand shop, or a reviewed retailer's business verdict).
+  const eligible = !relevance || relevance.eligibleForVerdict === true || relevance.eligibleForBusinessVerdict === true;
+  const scoring = { ...score, status: 'computed', scope: 'company', verdict: eligible && ['nice', 'naughty'].includes(score.verdict) ? score.verdict : null };
+  return { ...assessment, scoring,
+    ...(relevance ? { relevance } : {}),
     community: assessment.company ? await communitySummary(db, assessment.company.id, now) : null,
     evidence, sources, coverage: { status: 'partial', scope: 'reviewed_entities_and_selected_records', noRecordsMeans: 'unknown' } };
 }

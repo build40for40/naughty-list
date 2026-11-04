@@ -1,6 +1,6 @@
-# Santa Score (draft)
+# Santa Score v0.3
 
-**Method `santa-v0.4-draft`, proposed on card 157 on 4 November 2026. Not signed off.** Samira signed off v0.3; v0.4 adds the report card below and needs Samira and Ben's sign-off. Until Samira and Ben sign off on card 157, the API keeps `scoring.total` and `scoring.verdict` null and draft scores stay off the live API, the extension and the Santa Score page. The code is `worker/scoring.js`; nothing in the Worker imports it yet.
+**Method `santa-v0.4`, approved for release by Samira on card 157 on 4 November 2026, superseding `santa-v0.3`.** The API computes company scores from published evidence plus the gov.uk report card below. Exact entity matching rules still apply; too little evidence is "not enough evidence", never naughty.
 
 Santa doesn't judge on rumours. He checks his list twice, believes in second chances, and only proven, recent naughtiness earns coal.
 
@@ -85,12 +85,13 @@ No records never means naughty or nice. A stale B Corp record is not a gift.
 
 Incidents in `npm run scores` come only from the registry. The card 159 research in `data/research/` is not in the registry yet, so those rows say "incidents not in registry" and their verdict can be too kind. The combined v0.4 draft is posted on card 157.
 
-## Open before sign-off
+## Remaining coverage work
 
 - v0.4: whether the gender pay gap belongs in the score (it reflects job mix as much as fairness), the quartile thresholds, the new Watch list verdict (needs a card 158 design) and every company-number match in `data/santa-filings.js`.
-- Add the card 159 incident research to the registry so `npm run scores` reproduces the combined draft.
+- Add the card 159 incident research to the registry so the API reproduces the combined scores for all 100.
 
 - The owner rule conflicts with the backend rule that corporate relationships don't transfer evidence. Update `AGENTS.md` and `docs/evidence.md` on sign-off.
+- Owner links still require individual source review before any evidence can be combined. This release scores the matched entity only.
 - Employee voice: Glassdoor has no public API and bans scraping. Proposed: employment tribunal judgments as coal and Living Wage Foundation accreditation as a gift, subject to licence (card 155).
 - Whether Amazon's competition commitments should count the same as misleading shoppers.
 - Whether the window counts by exact day or calendar year.

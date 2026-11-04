@@ -34,5 +34,33 @@ export default [
       checkedAt: '2026-11-04',
       validUntil: '2026-12-04'
     }
+  },
+  {
+    "id": "fatface",
+    "name": "FatFace",
+    "aliases": [
+      "FatFace Limited",
+      "Fat Face Limited"
+    ],
+    "domains": [
+      "fatface.com",
+      "www.fatface.com"
+    ],
+    "domainEvidence": {
+      "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/company/fat-face-limited/",
+      "checkedAt": "2026-11-04"
+    },
+    "identifiers": [
+      {
+        "scheme": "b_lab",
+        "value": "fat-face-limited"
+      }
+    ],
+    "bCorp": {
+      "certified": true,
+      "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/company/fat-face-limited/",
+      "checkedAt": "2026-11-04",
+      "validUntil": "2026-12-04"
+    }
   }
 ];

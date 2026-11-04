@@ -18,8 +18,8 @@ const bCorp = (extra = {}) => ({
 });
 const proven = date => record('government_naming', null, { sourceId: 'uk-minimum-wage', publishedAt: `${date}T08:00:00Z` });
 
-test('the method is labelled as a draft', () => {
-  assert.equal(METHOD_VERSION, 'santa-v0.4-draft');
+test('the approved method has a stable version', () => {
+  assert.equal(METHOD_VERSION, 'santa-v0.4');
   assert.equal(santaScore([], { asOf }).method, METHOD_VERSION);
 });
 
@@ -158,4 +158,10 @@ test('every card 159 retailer has a filings entry and the scorecard data matches
     if (shop.payGap) assert.equal(shop.payGap.companyNumber, filings[r.n].payGap);
     if (shop.payments) assert.equal(shop.payments.companyNumber, filings[r.n].payments);
   }
+});
+
+test('future-dated incidents do not change today’s score', () => {
+  const score = santaScore([proven('2027-01-01')], { asOf });
+  assert.equal(score.total, null);
+  assert.equal(score.history[0].reason, 'future_dated');
 });

@@ -33,6 +33,7 @@ export const sources = [
 ];
 
 export const minimumWagePages = [
+  '/government/news/over-500-companies-named-for-not-paying-minimum-wage',
   '/government/news/short-changing-staff-isnt-a-shortcut-to-success-nearly-660-employers-announced-as-failing-to-pay-the-minimum-wage'
 ];
 

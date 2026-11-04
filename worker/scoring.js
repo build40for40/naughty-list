@@ -1,9 +1,6 @@
-// Santa Score: DRAFT method from card 157 (see docs/scoring.md).
-// Not signed off. The public API must keep scoring.total and scoring.verdict
-// null until Samira and Ben agree the method on card 157, so nothing in
-// worker/index.js or worker/store.js imports this module yet.
-
-export const METHOD_VERSION = 'santa-v0.4-draft';
+// Santa Score v0.4, approved for release by Samira on card 157 (4 Nov 2026), superseding v0.3.
+// Scores assess the matched business, never a product. See docs/scoring.md.
+export const METHOD_VERSION = 'santa-v0.4';
 export const WINDOW_YEARS = 3;
 // Report card (v0.4): statutory gov.uk filings that every large UK employer makes.
 export const PAYMENTS_MAX_AGE_MONTHS = 18;
@@ -100,7 +97,7 @@ export function santaScore(evidence, { asOf, scorecard = null, thresholds = null
     const datedByPublication = !day(record.eventDate) && Boolean(day(record.publishedAt));
     if (!kind) history.push({ record, reason: record.outcome === 'practice_changed' ? 'changed_its_ways' : 'not_scored' });
     else if (record.outcome === 'government_naming' && Number(record.facts?.underpaymentGBP) < MIN_UNDERPAYMENT_GBP) history.push({ record, reason: 'below_threshold' });
-    else if (!date || date < start) history.push({ record, reason: date ? 'older_than_window' : 'undated' });
+    else if (!date || date < start || date > asOf) history.push({ record, reason: !date ? 'undated' : date > asOf ? 'future_dated' : 'older_than_window' });
     else counted.push({ record, kind, coal: COAL[kind], date, datedByPublication });
   }
   // Repeats double: the worst incident's coal, doubled for each further
