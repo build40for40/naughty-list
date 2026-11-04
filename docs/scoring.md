@@ -1,6 +1,6 @@
-# Santa Score (draft)
+# Santa Score v0.3
 
-**Method `santa-v0.3-draft`, proposed on card 157 on 4 November 2026. Not signed off.** Until Samira and Ben sign off on card 157, the API keeps `scoring.total` and `scoring.verdict` null and draft scores stay off the live API, the extension and the Santa Score page. The code is `worker/scoring.js`; nothing in the Worker imports it yet.
+**Method `santa-v0.3`, approved by Samira on card 157 and by Ben in the release chat on 4 November 2026, subject to source validation.** The API computes company scores from published evidence. Exact entity matching remains required; no automatic owner inheritance is introduced.
 
 Santa doesn't judge on rumours. He checks his list twice, believes in second chances, and only proven, recent naughtiness earns coal.
 
@@ -58,9 +58,9 @@ No records never means naughty or nice. A stale B Corp record is not a gift.
 
 `npm run scores` reads published evidence from the deployed API for every retailer in `data/santa-retailers.js` and prints a markdown table. Use `-- --json` for machine-readable output, `-- --api http://localhost:8787` for a local Worker and `-- --as-of YYYY-MM-DD` to fix the date. To add a retailer, add a reviewed identity (source and check date) to the registry, seed it, then list its exact brand names under `lookups`.
 
-## Open before sign-off
+## Remaining coverage work
 
-- The owner rule conflicts with the backend rule that corporate relationships don't transfer evidence. Update `AGENTS.md` and `docs/evidence.md` on sign-off.
+- Owner links still require individual source review before any evidence can be combined. This release scores the matched entity only.
 - Employee voice: Glassdoor has no public API and bans scraping. Proposed: employment tribunal judgments as coal and Living Wage Foundation accreditation as a gift, subject to licence (card 155).
 - Whether Amazon's competition commitments should count the same as misleading shoppers.
 - Whether the window counts by exact day or calendar year.

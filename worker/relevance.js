@@ -4,6 +4,9 @@ import { normalizeDomain } from './assessment.js';
 // Entries describe exact hosts only. Shopping-page signals are evaluated locally
 // by the extension; a category is not proof that every page sells something.
 export const reviewedDomains = [
+  { domains: ['hm.com', 'www.hm.com', 'www2.hm.com'], category: 'brand_shop', companyId: 'hm', sourceUrl: 'https://hmgroup.com/brands/hm/', checkedAt: '2026-11-04' },
+  { domains: ['fatface.com', 'www.fatface.com'], category: 'brand_shop', companyId: 'fatface', sourceUrl: 'https://www.bcorporation.net/en-us/find-a-b-corp/company/fat-face-limited/', checkedAt: '2026-11-04' },
+  { domains: ['riverisland.com', 'www.riverisland.com'], category: 'retailer', companyId: 'river-island', sourceUrl: 'https://www.riverisland.com/useful-information/terms-and-conditions', checkedAt: '2026-11-04' },
   {
     domains: ['patagonia.com', 'www.patagonia.com'], category: 'brand_shop', companyId: 'patagonia',
     sourceUrl: 'https://www.patagonia.com/home/', checkedAt: '2026-11-04'
@@ -39,6 +42,7 @@ export function domainRelevance(domain, assessment, registry = reviewedDomains) 
     assessment.match.method === 'reviewed_domain' && assessment.company?.id === record.companyId;
   return {
     category: record.category, status: 'reviewed', eligibleForVerdict: Boolean(eligible),
+    eligibleForBusinessVerdict: ['brand_shop', 'retailer'].includes(record.category) && assessment?.match?.status === 'matched' && assessment.match.method === 'reviewed_domain' && assessment.company?.id === record.companyId,
     reason: eligible ? 'reviewed_brand_shop' : record.category === 'brand_shop' ? 'business_identity_unresolved' : 'not_a_reviewed_brand_shop',
     evidence: { sourceUrl: record.sourceUrl, checkedAt: record.checkedAt }
   };

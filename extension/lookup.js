@@ -26,7 +26,7 @@
           schemaVersion: data.schemaVersion, match: data.match, company: data.company,
           relevance: data.relevance ?? { category: 'unknown', eligibleForVerdict: false },
           criteria: { bCorp: data.criteria.bCorp }, scoring: data.scoring,
-          evidence: (data.evidence ?? []).slice(0, 3).map(item => ({ title: item.title, sourceUrl: item.sourceUrl, checkedAt: item.checkedAt, freshness: item.freshness }))
+          evidence: (data.evidence ?? []).slice(0, 3).map(item => ({ title: item.title, sourceUrl: item.sourceUrl, checkedAt: item.checkedAt, freshness: item.freshness, summary: item.summary, publishedAt: item.publishedAt, eventDate: item.eventDate }))
         };
         memory[domain] = { assessment, expiresAt: now() + TTL };
         memory = Object.fromEntries(Object.entries(memory).filter(([, value]) => value.expiresAt > now()).sort((a, b) => b[1].expiresAt - a[1].expiresAt).slice(0, 50));

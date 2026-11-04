@@ -16,8 +16,8 @@ const bCorp = (extra = {}) => ({
 });
 const proven = date => record('government_naming', null, { sourceId: 'uk-minimum-wage', publishedAt: `${date}T08:00:00Z` });
 
-test('the method is labelled as a draft', () => {
-  assert.equal(METHOD_VERSION, 'santa-v0.3-draft');
+test('the approved method has a stable version', () => {
+  assert.equal(METHOD_VERSION, 'santa-v0.3');
   assert.equal(santaScore([], { asOf }).method, METHOD_VERSION);
 });
 
@@ -92,4 +92,10 @@ test('the card 159 list has 100 retailers and only reviewed registry lookups', (
   // H&M waits on the hm-registry branch; every other lookup must already be reviewed.
   const missing = retailers.flatMap(retailer => retailer.lookups).filter(name => !names.has(normalize(name)) && name !== 'H&M');
   assert.deepEqual(missing, []);
+});
+
+test('future-dated incidents do not change today’s score', () => {
+  const score = santaScore([proven('2027-01-01')], { asOf });
+  assert.equal(score.total, null);
+  assert.equal(score.history[0].reason, 'future_dated');
 });

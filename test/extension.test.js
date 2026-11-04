@@ -227,3 +227,10 @@ test('error state offers an explicit retry and settings form persists validated 
   assert.match(options.document.querySelector('#status').textContent, /Settings saved/);
   await options.happyDOM.abort();
 });
+
+test('a reviewed retailer business verdict explicitly excludes product and brand ratings', () => {
+  const model = lib.viewModel({ ...assessment, company: { name: 'River Island' }, relevance: { category: 'retailer', eligibleForVerdict: false, eligibleForBusinessVerdict: true }, scoring: { verdict: 'naughty' } });
+  assert.equal(model.tone, 'naughty');
+  assert.match(model.message, /Shop assessment/);
+  assert.match(model.message, /Not a rating of this product or its brand/);
+});

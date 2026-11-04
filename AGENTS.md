@@ -84,7 +84,7 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 - Patagonia and Tony's Chocolonely are source-checked technical coverage examples, including explicitly reviewed Tony's UK/US hosts. They do not replace H&M as the first launch target. H&M has no reviewed entry and must remain unknown until one is added.
 - One fixed stamp prefers bottom right. Settings allow all four corners and disabling automatic checks; dismissal lasts for the current page. If purchase controls overlap, try another corner or hide until there is room. Never duplicate, move or cover purchase controls. Navigation, pending responses, retries and unknown evidence are handled.
 - Deduplicate hostname requests and cache assessments for five minutes in browser-session storage, with a maximum of 50 entries. Store preferences locally. Validate that messages come from the sending top-frame hostname.
-- Nice/naughty is rendered only when explicitly supplied by the backend for an eligible reviewed brand shop. Until card 157 agrees a rule, the current backend keeps total/verdict null and the stamp is neutral. B Corp never implies nice and missing evidence never implies naughty.
+- Nice/naughty is rendered only when explicitly supplied by the backend for an eligible reviewed brand shop. The approved v0.3 method converts fresh direct B Corp evidence to one gift; missing evidence never implies naughty. Reviewed retailers can show a separately labelled shop assessment, never a product or third-party brand rating.
 - HTTPS content-script access is required for local detection; background requests use only the fixed API host. Firefox declares required `browsingActivity` transmission. Chrome disclosures must also cover local page-content processing.
 - This MVP branch does not deploy the backend. After review, seed the reviewed regional hostname selectors and deploy before release checks. Older backends without relevance information fail closed to a neutral unknown state.
 
@@ -102,7 +102,7 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 - Return B Corp certification evidence, provenance and check/refresh dates. Do not equate B Corp certification with a product-level ethical judgment.
 - Unmatched and ambiguous identities are unknown, never automatically uncertified or naughty. Stale certification becomes unknown; historical enforcement evidence remains visible with freshness and event dates. There is no complete B Lab feed or per-request research integration. `validUntil` is our evidence refresh deadline, not the certificate's expiry; never extend it without rechecking the source.
 - Never invent identifiers, DUNS numbers or ownership links. Record the source for every company and domain mapping.
-- Keep overall score and naughty/nice verdict unset until the scoring task is settled. No new scoring criteria are authorised by the backend work.
+- Use only the approved v0.3 scoring criteria. Do not invent additional weights, sources or thresholds.
 
 ## Locked decisions: evidence backend
 
@@ -125,7 +125,7 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 
 ## Scoring (card 157)
 
-The v1 stamp depends on this card. A **draft** method, the Santa Score `santa-v0.3-draft`, was proposed on card 157 on 4 November and is in `worker/scoring.js`, with the rules in `docs/scoring.md`. **It is not signed off.** Until Samira and Ben sign off on card 157, the API keeps `scoring.total` and `scoring.verdict` null, nothing in the Worker imports `worker/scoring.js`, and draft scores (`npm run scores`) stay off the live API, the extension and the page.
+Santa Score `santa-v0.3` is approved by Samira on card 157 and Ben in the release chat on 4 November 2026, subject to validation. The API scores published records using `worker/scoring.js`; see `docs/scoring.md`. Unknown evidence stays unknown. Exact reviewed identity is required. No automatic ownership transfer is enabled.
 
 - **Values:** the three areas through Santa's eyes: kindness to the elves (staff), honesty and generosity (communities), caring for the North Pole (environment).
 - **Points:** a proven offence is 2 coal, a warning 1 coal and a current B Corp 1 gift. Repeats in the window double: the worst incident's coal times 2 for each further incident. Self-reported CSR, promises, allegations, open investigations, secondary reports and changed practices earn nothing.

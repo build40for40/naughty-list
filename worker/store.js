@@ -1,5 +1,6 @@
 import { assess, normalizeDomain, normalize } from './assessment.js';
 import { domainRelevance } from './relevance.js';
+import { santaScore } from './scoring.js';
 
 export function selector(input) {
   if (input.domain !== undefined) return ['domain', normalizeDomain(input.domain)];
@@ -66,7 +67,9 @@ export async function assessStored(input, db, now = new Date()) {
       reason: 'dated_secondary_source_not_live_verification'
     }));
   }
-  return { ...assessment,
+  const score = santaScore(evidence, { asOf: now.toISOString().slice(0, 10) });
+  const scoring = { ...score, status: 'computed', scope: 'company', verdict: ['nice', 'naughty'].includes(score.verdict) ? score.verdict : null };
+  return { ...assessment, scoring,
     ...(input.domain !== undefined ? { relevance: domainRelevance(input.domain, assessment) } : {}),
     evidence, sources, coverage: { status: 'partial', scope: 'reviewed_entities_and_selected_records', noRecordsMeans: 'unknown' } };
 }
