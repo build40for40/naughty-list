@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@600;800;900&family=Caveat+Brush&display=block");
+:root{--red:#d42a2a;--red-dk:#a51d1d;--green:#1f6b3f;--pine:#123d26;--snow:#fffaf2;--gold:#f5c04a;--sub:#e3f2e8}
+*{box-sizing:border-box;margin:0}
+html,body{width:100%;height:100%;overflow:hidden}
+body{background:radial-gradient(ellipse at 30% 20%,#25804b 0%,var(--green) 45%,var(--pine) 100%);color:var(--snow);font-family:"Nunito",sans-serif;font-weight:800;position:relative}
+.d{font-family:"Lilita One",sans-serif;font-weight:400;letter-spacing:.01em;line-height:.95;text-shadow:0 4px 0 rgba(0,30,15,.45)}
+.scrawl{font-family:"Caveat Brush",cursive;color:var(--gold)}
+.snow{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.75) 2px,transparent 2.6px),radial-gradient(circle,rgba(255,255,255,.45) 1.4px,transparent 1.9px),radial-gradient(circle,rgba(255,255,255,.3) 3px,transparent 3.6px);background-size:61px 67px,37px 41px,113px 97px;background-position:0 0,19px 23px,40px 11px}
+.drift{position:absolute;left:-5%;right:-5%;bottom:-1px;background:var(--snow);border-radius:50% 50% 0 0/100% 100% 0 0}
+.stripe{position:absolute;left:0;right:0;background:repeating-linear-gradient(-45deg,var(--snow) 0 14px,var(--red) 14px 28px)}
+.rel{position:relative}

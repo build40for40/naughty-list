@@ -8,9 +8,9 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 
 ## Status (4 November 2026, afternoon)
 
-- **`extension/`:** Manifest V3, version `0.0.1`. Elf Cam badge mode runs on the reviewed single-brand shops (Patagonia and Tony's Chocolonely; no H&M entry yet). See "Extension: Elf Cam badge mode" below.
+- **`extension/`:** the version `0.0.2` shopping overlay MVP is implemented for Chrome and Firefox. Local shopping signals trigger hostname-only API requests; one neutral evidence stamp supports settings, dismissal, pending/unknown/error states and explicit future verdicts. Real browser visual/end-to-end release checks remain pending.
 - **`worker/`:** the `naughty-list-api` Cloudflare Worker, deployed at https://naughty-list-api.40for40.workers.dev. It reads reviewed evidence from its dedicated `naughty-list` D1 database: 20 reviewed entities and 22 records from six sources (B Lab, UK minimum-wage naming, CMA, HSE, US EPA and Wikirate). Selected records refresh daily at 05:17 UTC. **There is no H&M entry yet.**
-- **`publishing/`:** release preparation for both stores (card 152): Firefox manifest overlay, packaging script, privacy inventory, browser test matrix and update procedure. Nothing is ready to submit.
+- **`publishing/`:** release preparation for both stores (card 152): browser-specific backgrounds and runtime ZIPs, actual hostname-transmission disclosures, privacy inventory, browser test matrix and update procedure. Store submission is still pending.
 - **`launch-assets` branch (card 156, not merged):** festive store graphics, store copy with a pun bank, a download page draft and a demo storyboard, in `publishing/launch/`.
 - **Backend detail:** `docs/evidence.md` (operating guide) and `docs/implementation-status.md` (what is deployed and verified).
 
@@ -21,7 +21,7 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 - `npm run extension:package:chrome` / `npm run extension:package:firefox` build runtime-only ZIPs into `dist/` from an explicit allowlist. Update the allowlist in `scripts/package-extension.mjs` whenever the extension gains files.
 - Always run Wrangler as `npm run wrangler -- <args>`. It uses the `40for40` auth profile and unsets `CLOUDFLARE_API_KEY` and `CLOUDFLARE_EMAIL`. On a new machine, create the profile with `env -u CLOUDFLARE_API_KEY -u CLOUDFLARE_EMAIL npx wrangler auth create 40for40`.
 - Wikirate credentials live in the ignored `.dev.vars` locally and in Cloudflare secrets in production. Never commit them or paste them into chat.
-- CI runs `npm run check` and a `jq` check on `extension/manifest.json`.
+- CI runs `npm run check`, both extension package builds and a `jq` check on `extension/manifest.json`.
 
 ## Superthread `day3` board
 
@@ -55,7 +55,7 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 
 - **Scope:** one brand, H&M, on H&M's own shop. This replaces the earlier idea of seller lookup on marketplaces such as Amazon or Argos for the first release.
 - **What the overlay shows today:** whether H&M is a Certified B Corp, with the source (B Lab directory) and the check date. The Naughty or Nice stamp only appears once card 157's method is agreed and the backend returns a verdict. The card 156 store copy, which promises B Corp evidence only, needs rewriting when that happens.
-- **Support email:** help@build40for40.com. The `publishing/` docs on `main` still say `hello@40for40.app` and need updating.
+- **Support email:** help@build40for40.com. Use this in publication materials and the final public privacy notice.
 - **Look:** a Christmas identity of its own: Santa red, pine green, snow, gold and candy-cane stripes, with playful puns. 40 for 40 appears only as a small "made by" credit. The festive icon on `launch-assets` replaces the draft icons in `extension/icons/`.
 - **Chrome Web Store:** Ben owns the developer account (fee paid), publishing as 40 for 40 Ltd.
 - **Firefox add-on ID:** `{c2591c57-0224-4d4a-bdb4-a3223e58c354}` in `publishing/manifest.firefox.json`. Never change it; updates depend on it.
@@ -67,20 +67,30 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 - **Rearranging the page:** reorder or label the shop's own tiles and buttons; never copy tiles or rebuild buttons, so the basket, quantities and Buy now keep working. Never click for the shopper, and never hide or cover purchase controls.
 - How much a single action (such as one donation) counts is a scoring question for card 157, not a design one.
 
-## Extension: Elf Cam badge mode (card 158)
+## Elf Cam look (card 158, 4 November)
 
-- **Visual direction:** Elf Cam, a North Pole CCTV parody chosen by Lawrence. Jokes target brands, never shoppers. Design reference: https://claude.ai/artifact/2wxJoMkbyGVb71Af4eRZ1d. It differs from the launch look above (Santa red, pine green, snow, gold); reconcile the two before store assets are final.
-- **The store decides the mode.** Single-brand shops get **badge mode** (the v1 stamp); multi-brand shops will get **sorting mode** (v2 lists, designed as Cleared and Flagged for Coal feeds, not built). Reviewed domains record `storeType` in `domainEvidence`, returned as `match.storeType`; only `single_brand` turns badge mode on.
-- **Badge mode:** on the first visit to a shop each day, a viewfinder overlay shows the evidence for about four seconds at the top of the page, then collapses on timeout or any scroll, click or key into a corner badge. The badge opens a case file with evidence, source, check date and scope. Nothing is clickable except Elf Cam's own controls.
-- **No verdict yet:** the badge shows **Certified B Corp, verdict pending** for current B Corp evidence, and **Unidentified** for everything else (not listed, ambiguous, stale, not certified, offline). It never shows Naughty or Nice until card 157 agrees a method and the backend returns a verdict.
-- **Site access:** content scripts run only on reviewed single-brand domains; `test/extension.test.js` keeps `extension/manifest.json` in sync with the registry. The extension calls the Worker with the current tab's hostname only. That is one answer to the open "local check or API" question, and Ben can still switch it to a bundled record.
-- **H&M:** add H&M's reviewed entry with `storeType: 'single_brand'` and its hostnames, then add the same hostnames to the manifest matches.
+- **Direction:** Lawrence chose Elf Cam, a North Pole CCTV parody, for the stamp. Jokes target brands, never shoppers. Design reference: https://claude.ai/artifact/2wxJoMkbyGVb71Af4eRZ1d. Single-brand badge mode is the way forward; the multi-brand Elf Cam sorting view is v2 and not built.
+- **Stamp:** the existing stamp (logic, states, settings, dismissal and purchase-control placement unchanged) is styled as a camera feed: black panel, scanlines, a lens and blinking REC in the header, and the bundled VT323 pixel font (SIL OFL, `extension/fonts/`). Neutral is pale grey; nice green and naughty red only when the backend supplies a verdict. Evidence sits under "Case file".
+- **Intro:** once per shop per day, after a successful lookup, corner brackets and a REC/clock readout show for 3.5 seconds, ending early on scroll, key or click. It never takes clicks, and it is skipped if a purchase control sits in the top 90px or bottom 70px of the window. The date is stored locally as `elfCamIntro:<hostname>`.
+- **Still to reconcile:** the launch look above (Santa red, pine green, snow, gold) and the store graphics on `launch-assets` predate Elf Cam.
+
+## Implemented technical MVP flow
+
+- Shopping detection is local and heuristic: require price evidence plus product/offer metadata and an actionable purchase control. Product markup alone is insufficient. Current purchase-control matching uses English labels.
+- Send only the candidate hostname to `POST /v1/assessments` through the background script. Product details, prices, page paths, HTML and signal flags stay local. No separately deployed service or per-request AI classifier is used.
+- The same Worker returns exact reviewed `brand_shop`, `retailer`, `marketplace`, `unrelated` or `unknown` domain categories. An exact resolved brand-shop identity is required for verdict eligibility. Marketplaces/retailers cannot pass the shop's evidence onto product brands.
+- Patagonia and Tony's Chocolonely are source-checked technical coverage examples, including explicitly reviewed Tony's UK/US hosts. They do not replace H&M as the first launch target. H&M has no reviewed entry and must remain unknown until one is added.
+- One fixed stamp prefers bottom right. Settings allow all four corners and disabling automatic checks; dismissal lasts for the current page. If purchase controls overlap, try another corner or hide until there is room. Never duplicate, move or cover purchase controls. Navigation, pending responses, retries and unknown evidence are handled.
+- Deduplicate hostname requests and cache assessments for five minutes in browser-session storage, with a maximum of 50 entries. Store preferences locally. Validate that messages come from the sending top-frame hostname.
+- Nice/naughty is rendered only when explicitly supplied by the backend for an eligible reviewed brand shop. Until card 157 agrees a rule, the current backend keeps total/verdict null and the stamp is neutral. B Corp never implies nice and missing evidence never implies naughty.
+- HTTPS content-script access is required for local detection; background requests use only the fixed API host. Firefox declares required `browsingActivity` transmission. Chrome disclosures must also cover local page-content processing.
+- This MVP branch does not deploy the backend. After review, seed the reviewed regional hostname selectors and deploy before release checks. Older backends without relevance information fail closed to a neutral unknown state.
 
 ## Open before launch
 
 - **H&M entry:** hand-check H&M against the B Lab directory, then add it to the reviewed registry with a source, check date and explicit mappings for every H&M hostname the extension runs on, and seed it into D1 (see `docs/evidence.md`). Until then every H&M page shows unknown. Copy, screenshots and video must not state H&M's status before the entry exists.
-- **Local check or API:** either the extension carries H&M's record itself (recommended: nothing leaves the browser) or it calls the Worker. Ben's call. It decides the privacy notice (version B or A in `copy.md`), the Chrome privacy tab and the Firefox data-collection declaration.
-- **Build the overlay**, then capture real screenshots and the demo recording. The H&M overlay mock is labelled NOT FOR STORE and must never be uploaded.
+- **API and privacy:** the implemented MVP uses hostname-only Worker calls. Use the networked privacy copy (version A in the launch draft), complete the Chrome privacy tab and keep Firefox's `browsingActivity` declaration. Confirm Cloudflare logging/retention and host the final notice before store submission.
+- **Verify the overlay**, then capture real screenshots and the demo recording. The H&M overlay mock is labelled NOT FOR STORE and must never be uploaded.
 - **Publisher setup:** EU trader declaration with company details, ideally a Google Group publisher, verify build40for40.com and choose a licence (MIT if the repo is public).
 
 ## Backend rules
@@ -89,7 +99,6 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 - Domain lookup uses exact reviewed hostname mappings with source/check dates. Case and a trailing DNS dot are normalised; subdomains and regional domains require explicit mappings. A marketplace domain identifies the marketplace, not a product brand or selected seller. No seller extraction or automatic domain research is implemented.
 - Return B Corp certification evidence, provenance and check/refresh dates. Do not equate B Corp certification with a product-level ethical judgment.
 - Unmatched and ambiguous identities are unknown, never automatically uncertified or naughty. Stale certification becomes unknown; historical enforcement evidence remains visible with freshness and event dates. There is no complete B Lab feed or per-request research integration. `validUntil` is our evidence refresh deadline, not the certificate's expiry; never extend it without rechecking the source.
-- Each reviewed domain may record `storeType` (`single_brand` or `multi_brand`) in `domainEvidence`; domain lookups return it as `match.storeType`, `null` when unrecorded.
 - Never invent identifiers, DUNS numbers or ownership links. Record the source for every company and domain mapping.
 - Keep overall score and naughty/nice verdict unset until the scoring task is settled. No new scoring criteria are authorised by the backend work.
 

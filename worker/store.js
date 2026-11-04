@@ -1,4 +1,5 @@
 import { assess, normalizeDomain, normalize } from './assessment.js';
+import { domainRelevance } from './relevance.js';
 
 export function selector(input) {
   if (input.domain !== undefined) return ['domain', normalizeDomain(input.domain)];
@@ -65,5 +66,7 @@ export async function assessStored(input, db, now = new Date()) {
       reason: 'dated_secondary_source_not_live_verification'
     }));
   }
-  return { ...assessment, evidence, sources, coverage: { status: 'partial', scope: 'reviewed_entities_and_selected_records', noRecordsMeans: 'unknown' } };
+  return { ...assessment,
+    ...(input.domain !== undefined ? { relevance: domainRelevance(input.domain, assessment) } : {}),
+    evidence, sources, coverage: { status: 'partial', scope: 'reviewed_entities_and_selected_records', noRecordsMeans: 'unknown' } };
 }

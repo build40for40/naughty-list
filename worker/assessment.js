@@ -48,11 +48,7 @@ export function assess(input, { registry = companies, now = new Date() } = {}) {
     match: {
       status,
       method: input.domain !== undefined ? 'reviewed_domain' : input.brand !== undefined ? 'brand_name' : 'identifier',
-      ...(input.domain !== undefined ? {
-        domain,
-        storeType: company?.domainEvidence?.storeType ?? null,
-        evidence: company?.domainEvidence ?? null
-      } : {})
+      ...(input.domain !== undefined ? { domain, evidence: company?.domainEvidence ?? null } : {})
     },
     company: company ? { id: company.id, name: company.name, identifiers: company.identifiers } : null,
     criteria: {

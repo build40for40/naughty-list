@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   backend:
-    name: Check backend
+    name: Check backend and extension
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,6 +20,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run check
+      - run: npm run extension:package:chrome
+      - run: npm run extension:package:firefox
   manifest:
     name: Validate extension manifest
     runs-on: ubuntu-latest

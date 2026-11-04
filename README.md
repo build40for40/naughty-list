@@ -2,9 +2,7 @@
 
 A Chrome extension for Day 3 of [40 for 40](https://build40for40.com).
 
-The extension runs **Elf Cam badge mode**: on a reviewed single-brand store (currently patagonia.com and tonyschocolonely.com), it briefly puts the page "on camera" and shows the company's B Corp evidence, then shrinks into a corner badge that opens a case file with the source and check date. It shows no Naughty or Nice verdict until the scoring method (card 157) is agreed; companies without current evidence show as Unidentified. A separate Cloudflare Worker provides a D1-backed company evidence API. Product decisions are recorded in [AGENTS.md](AGENTS.md).
-
-Extension files: `content.js` (overlay and badge), `verdict.js` (turns an API response into what the badge shows), `background.js` (API lookup), and `fonts/` (VT323, SIL Open Font License).
+The extension detects likely shopping pages locally and overlays source-backed information about reviewed businesses. A Cloudflare Worker provides a D1-backed evidence API. Ethical scoring remains deferred, so the current stamp is neutral rather than assigning naughty or nice. Product decisions are recorded in [AGENTS.md](AGENTS.md).
 
 ## Load locally
 
@@ -15,7 +13,13 @@ Extension files: `content.js` (overlay and badge), `verdict.js` (turns an API re
 
 No dependencies or build step are required. After changing extension files, click **Reload** on its card in `chrome://extensions`.
 
-To see the intro again on a store the same day, clear the extension's storage or reload the extension.
+For Firefox, build the Firefox ZIP below, extract it, and load its `manifest.json` through `about:debugging#/runtime/this-firefox` → **Load Temporary Add-on**. The source manifest uses Chrome's service worker; Firefox packaging replaces that with background scripts.
+
+The stamp prefers the bottom right. Open the extension's **Options/Preferences**, or use **Settings** on the stamp, to choose another corner or disable automatic lookups. It tries other corners if it would cover a purchase control, and stays hidden while none is clear. Dismissal applies to the current page. Only candidate HTTPS pages trigger a lookup; a product review with Product metadata alone does not.
+
+H&M is the first launch target, but there is no reviewed H&M identity/evidence entry yet, so it stays unknown. Patagonia and Tony's Chocolonely are the current technical coverage examples. These do not replace the agreed launch scope. No scoring rule has been inferred from certification.
+
+Only the hostname is sent to the fixed API endpoint. Product information, prices and page paths remain local. Assessments are cached for five minutes in this browser session. See [privacy preparation](publishing/privacy.md) for storage and network metadata details.
 
 ## Check the manifest
 
@@ -31,7 +35,7 @@ jq -e '
 
 The check validates JSON syntax and basic required manifest fields. Chrome validates the full manifest when loading the extension.
 
-Publication preparation and current blockers are recorded in [publishing/README.md](publishing/README.md). Build draft Chrome/Firefox ZIPs with `npm run extension:package:chrome` / `npm run extension:package:firefox`. These archives currently contain only the scaffold and are not ready for store submission.
+Publication preparation and current blockers are recorded in [publishing/README.md](publishing/README.md). Build Chrome/Firefox ZIPs with `npm run extension:package:chrome` / `npm run extension:package:firefox`. Store submission and real browser compatibility testing remain separate release steps.
 
 ## Backend
 
@@ -79,7 +83,11 @@ The DUNS example is a placeholder, not a real company mapping. Keep identifiers 
 
 Domain input is a hostname, such as the browser URL's `hostname`, rather than a full URL. It is lowercased and trimmed; a trailing DNS dot is removed. URLs, paths, ports, IP addresses and raw Unicode hostnames are rejected. Browser-normalised ASCII/punycode hostnames are accepted, but only exact reviewed entries match. No submitted domain is fetched by the backend.
 
-The starter mappings include `patagonia.com`, `www.patagonia.com`, `tonyschocolonely.com`, `www.tonyschocolonely.com` and selected reviewed websites in the seed script. Subdomains and regional sites need their own reviewed entries: neither `shop.patagonia.com` nor `patagonia.com.example.org` inherits a match. Domain matches include `match.method: "reviewed_domain"`, the normalised `match.domain`, `match.storeType` (`single_brand` for Patagonia and Tony's Chocolonely; `null` for other or unmatched websites) and source/check dates in `match.evidence`. This identifies the website's company; a marketplace domain cannot identify the selected seller or product brand. Those still need separate extraction and lookups.
+The starter mappings include `patagonia.com`, `www.patagonia.com`, `tonyschocolonely.com`, `www.tonyschocolonely.com`, `uk.tonyschocolonely.com`, `us.tonyschocolonely.com` and selected reviewed websites in the seed script. Subdomains and regional sites need their own reviewed entries: neither `shop.patagonia.com` nor `patagonia.com.example.org` inherits a match. Domain matches include `match.method: "reviewed_domain"`, the normalised `match.domain` and source/check dates in `match.evidence`. This identifies the website's company; a marketplace domain cannot identify the selected seller or product brand. Those still need separate extraction and lookups.
+
+Domain responses also include `relevance: { category, status, eligibleForVerdict, reason, evidence }`. Categories are exact reviewed `brand_shop`, `retailer`, `marketplace`, `unrelated`, or `unknown`. Only an exact resolved identity for a reviewed brand shop is eligible for a brand verdict. This is separate from the extension's local shopping-page signal and does not manufacture a score. `scoring.total` and `scoring.verdict` remain null. Brand and identifier clients retain their existing response shape.
+
+`worker/relevance.js` is the reviewed category registry. No shopper domain is fetched or sent to a separate classifier. Before deploying this change, re-run `npm run evidence -- seed --remote` to add the reviewed Tony's regional hostname selectors to the dedicated database. Deploy the Worker only after review. An older deployed API without relevance information causes the extension to show a neutral unknown state.
 
 Example request against the local Worker:
 
