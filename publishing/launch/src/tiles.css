@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&display=block");
+:root{--navy:#002d69;--night:#081633;--lime:#a6e22e;--yellow:#ffd400;--pink:#ff7fcf;--cream:#f2f0ea;--sub:#c9cfe0;--muted:#9aa6c4}
+*{box-sizing:border-box;margin:0}
+html,body{width:100%;height:100%;overflow:hidden}
+body{background:var(--navy);color:var(--cream);font-family:"JetBrains Mono",monospace;position:relative}
+.d{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;letter-spacing:-.01em;line-height:1}
+.br{color:var(--yellow)}
+.snow{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(242,240,234,.16) 1.4px,transparent 1.6px),radial-gradient(circle,rgba(242,240,234,.09) 1px,transparent 1.2px);background-size:46px 46px,29px 29px;background-position:0 0,13px 17px}
+.logo{display:block}
