@@ -1,7 +1,7 @@
 <!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="tiles.css">
 <!-- Concept render of the two-column Nice / Naughty overlay (Samira, 4 Nov). Lawrence owns the real UX; replace these with real captures once it exists.
      Variants: ?v=1 overlay open (lead screenshot) · ?v=2 one item opened to show its source.
-     Every [bracket] is deliberately unfilled: no finding about H&M is stated until the registry/scoring (card 157) supplies it. -->
+     B Corp strip uses the real registry result (branch hm-registry, 4 Nov). Columns show empty states until scoring card 157 supplies findings. -->
 <style>
 html,body{overflow:hidden}
 body{background:#f4f3f0;color:#1b1a17;font-family:"Nunito",sans-serif;font-weight:600}
@@ -29,8 +29,14 @@ h2{font:600 24px "Nunito",sans-serif;margin-bottom:6px}
 .hd::after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;background:repeating-linear-gradient(-45deg,var(--snow) 0 8px,var(--red) 8px 16px)}
 .brand{padding:12px 20px 0;font-size:13px;color:#6b5a50}
 .brand b{font:24px "Lilita One",sans-serif;color:#2a1a14;margin-left:6px}
+.bc{margin:10px 16px 0;background:#fff;border:2px solid #eadfce;border-radius:14px;padding:10px 14px;display:grid;grid-template-columns:auto 1fr;gap:2px 12px;align-items:center}
+.bc .q{font:20px "Lilita One",sans-serif;color:#2a1a14}
+.bc .a{font-weight:900;font-size:15px;color:#2a1a14}
+.bc .m{grid-column:1/-1;font-size:11.5px;color:#8a7a70}
+.empty{background:rgba(255,255,255,.6);border:2px dashed rgba(0,0,0,.08);border-radius:12px;padding:14px;font-size:13px;color:#5b4a40;line-height:1.45}
+.empty b{display:block;font:20px "Caveat Brush",cursive;color:inherit;margin-bottom:2px}
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px 16px 4px}
-.col{border-radius:16px;padding:12px;min-height:250px}
+.col{border-radius:16px;padding:12px;min-height:170px}
 .nice{background:#e7f3ea}
 .naughty{background:#ece6e3}
 .ch{display:flex;align-items:center;gap:8px;font:26px "Lilita One",sans-serif;margin-bottom:10px}
@@ -59,25 +65,24 @@ h2{font:600 24px "Nunito",sans-serif;margin-bottom:6px}
 <div class="ol">
   <div class="hd"><img src="icon-festive.svg"><div><div class="t">The Naughty List</div><div class="s">Checking it twice…</div></div><div class="x">×</div></div>
   <div class="brand">The company behind this gift:<b>H&amp;M</b></div>
+  <div class="bc" id="bc"><span class="q">Certified B Corp?</span><span class="a">Not listed. H&amp;M isn’t in the B Lab directory.</span><span class="m">Checked 4 Nov 2026 · Source: B Lab directory · Lots of great companies aren’t B Corps, so this isn’t a naughty mark on its own.</span></div>
   <div class="cols">
     <div class="col nice">
-      <div class="ch">✨ Nice <span class="n">[n]</span></div>
-      <div class="it" id="a"><div class="k">[Staff / Communities / Planet]</div><div class="f"><span class="ph">[nice finding]</span></div><div class="src">[source] · checked [date]</div></div>
-      <div class="it"><div class="k">[Staff / Communities / Planet]</div><div class="f"><span class="ph">[nice finding]</span></div><div class="src">[source] · checked [date]</div></div>
+      <div class="ch">✨ Nice <span class="n">0</span></div>
+      <div class="empty"><b>Our elves are still checking.</b>Ratings for staff, communities and the planet are coming down the chimney.</div>
     </div>
     <div class="col naughty">
-      <div class="ch">🪨 Naughty <span class="n">[n]</span></div>
-      <div class="it"><div class="k">[Staff / Communities / Planet]</div><div class="f"><span class="ph">[naughty finding]</span></div><div class="src">[source] · checked [date]</div></div>
-      <div class="it"><div class="k">[Staff / Communities / Planet]</div><div class="f"><span class="ph">[naughty finding]</span></div><div class="src">[source] · checked [date]</div></div>
+      <div class="ch">🪨 Naughty <span class="n">0</span></div>
+      <div class="empty"><b>Nothing on the list yet.</b>We only add things here with a source and a date.</div>
     </div>
   </div>
-  <div class="ft"><span>About the company, not this jumper.</span><span class="v">Overall: [from scoring card 157]</span></div>
+  <div class="ft"><span>About the company, not this jumper.</span><span class="v">Overall rating: coming soon</span></div>
 </div>
 <div class="tag">CONCEPT RENDER · REPLACE WITH A REAL CAPTURE BEFORE UPLOAD</div>
 <script>
 if(new URLSearchParams(location.search).get('v')==='2'){
-  const a=document.getElementById('a');a.classList.add('open');
-  a.insertAdjacentHTML('beforeend','<div class="more"><b>Where this came from</b><br><u>[source name and link]</u><br>Published [date] · checked by our elves [date]<br>Applies to: H&amp;M (the company)</div>');
+  const b=document.getElementById('bc');b.style.outline='3px solid var(--gold)';
+  b.insertAdjacentHTML('beforeend','<div class="m" style="border-top:1px dashed #e3d8cc;padding-top:8px;margin-top:6px;color:#5b4a40;font-size:12.5px;line-height:1.55"><b>Where this came from</b><br>We searched the B Lab directory for “H&amp;M”, “H&amp;M Group” and “Hennes &amp; Mauritz” on 4 Nov 2026: no listing.<br><u style="color:var(--red)">bcorporation.net/find-a-b-corp</u> · We’ll check again by 4 Dec 2026.</div>');
   document.querySelector('.s').textContent='Here’s where that came from';
 }
 </script>

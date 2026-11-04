@@ -12,7 +12,27 @@ Drafted 4 November 2026 for Superthread card 156. For Samira to review. Nothing 
 
 Every `[square bracket]` is something the build still has to confirm before this goes live.
 
-**Build check before any of this is used:** `worker/companies.js` has no H&M entry yet. Someone has to hand-check H&M against the B Lab directory and add it with a source and date, plus explicit hostname mappings for the H&M domains the extension runs on (the Worker doesn't match subdomains or regional domains automatically). Until then the extension would show "unknown" on every H&M page. This copy deliberately doesn't say what H&M's status is: the registry entry decides that, not the copy.
+**H&M result (from Ben's assessment code, 4 Nov 15:10).** H&M is now in the registry on branch `hm-registry` (commit 8aee2d1, waiting for Ben to review and merge). I searched the B Lab directory for "H&M", "H&M Group" and "Hennes & Mauritz" and found no H&M listing, so it's recorded as a hand-checked *not certified*. Ben's `assess()` returns, for `{brand: "H&M"}`, `www2.hm.com` and `www.hm.com`:
+
+- match: **matched** (H&M)
+- B Corp: **status verified · certified: false**
+- source: B Lab directory search · checked 2026-11-04 · recheck by 2026-12-04
+- scoring: **deferred** (no total, no verdict) until card 157
+
+So the honest message today is: *H&M isn't a Certified B Corp, here's the source and date, and that's one fact, not a verdict.* Copy must never turn "not a B Corp" into "naughty" (most companies aren't B Corps).
+
+## What the overlay says on H&M today
+
+For Lawrence's Nice / Naughty overlay. The B Corp result sits above the two columns as a neutral fact, not inside either column.
+
+- **Header:** The Naughty List · *Checking it twice…*
+- **Company line:** The company behind this gift: **H&M**
+- **B Corp strip:** **Certified B Corp?** Not listed. H&M isn't in the B Lab directory of Certified B Corps. *Checked 4 Nov 2026 · Source: B Lab directory*
+- **Strip helper text (small):** Lots of great companies aren't B Corps, so this isn't a naughty mark on its own.
+- **Nice column, empty state:** *Our elves are still checking.* Ratings for staff, communities and the planet are coming down the chimney.
+- **Naughty column, empty state:** *Nothing on the list yet.* We only add things here with a source and a date.
+- **Footer:** About the company, not this jumper.
+
 
 ---
 

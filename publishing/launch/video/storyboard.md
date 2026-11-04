@@ -8,15 +8,15 @@ Show only what the extension does on camera. Today that means B Corp status, the
 | --- | --- | --- |
 | 0–4s | A shop homepage full of Christmas gift ads | "Every brand looks lovely at Christmas." |
 | 4–9s | Open an H&M product page (a Christmas jumper works) | "But who's been naughty or nice?" |
-| 9–17s | The Naughty List overlay appears: H&M and its B Corp status, exactly as the registry entry says | "The Naughty List checks the company behind the gift." |
-| 17–24s | Hover or point at the source and date | "Here's where that came from, and when we checked." |
+| 9–17s | The Naughty List overlay appears: H&M, "Certified B Corp? Not listed" | "The Naughty List checks the company behind the gift. H&M isn't a Certified B Corp." |
+| 17–24s | Hover or point at the source and date | "Here's where that came from, and when we checked. One fact, not a verdict: full naughty-or-nice ratings are on the way." |
 | 24–31s | A second H&M product, same result | "It works on every H&M product page. More shops are coming." |
 | 31–36s | Quick cut of the team on stream (Twitch VOD) | "We built it live, in one day." |
 | 36–42s | End card: `store/screenshot-5-title-card-1280x800.png`, plus the download link | "The Naughty List. Free for Chrome and Firefox. Day 3 of 40 for 40." |
 
 ## Brand to film
 
-Scope is one brand, H&M, on H&M's own shop. `worker/companies.js` has no H&M entry yet, so it has to be hand-checked against the B Lab directory and added (with hostname mappings for the H&M domains) before filming. Film whatever the overlay shows, and keep the 9–17s voice-over neutral so it fits either result. Don't script or caption H&M's status before the registry entry exists.
+H&M, on H&M's own shop. Ben's assessment returns **not a Certified B Corp** (B Lab directory, checked 4 Nov 2026) once branch `hm-registry` is merged. Say it exactly like that, with the source and date on screen. Don't call it naughty, and keep the Nice / Naughty columns showing their empty states until card 157 gives them content.
 
 ## Shorts cut (9:16)
 
