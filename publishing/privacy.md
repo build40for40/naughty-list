@@ -22,6 +22,10 @@ The voting page contains a voting-specific explanation and support contact. Add 
 
 ## Separate backend
 
+### Configuration checked on 4 November 2026
+
+The deployed Worker's settings API returned `observability: null`, `logpush: false` and no tail consumers. No application request-persistence code is configured. This confirms the inspected Worker configuration only; it does not establish that Cloudflare retains no operational/security data or establish a provider-wide retention period. The public notice at `https://build40for40.com/privacy/` describes hostname transmission, connection metadata and session caching without promising a specific Cloudflare retention duration. Its extension section was checked against the current implementation.
+
 The backend is a public Cloudflare Worker at `naughty-list-api.40for40.workers.dev`. It receives the hostname, uses exact reviewed identity selectors in D1 and returns stored evidence. Its domain relevance module uses reviewed categories, not a live classifier or arbitrary URL fetch. Shopper requests do not initiate external research. Separate scheduled importers refresh selected public evidence sources without receiving shopper hostnames.
 
 The request handler does not write shopper lookup inputs to the evidence database or log them in application code. Do not infer from this that there are no server or network logs. Cloudflare may process connection information, and the account's observability, security and retention settings have not been audited for this release preparation. Confirm those settings before publishing retention, deletion, IP-address or third-party processing claims.

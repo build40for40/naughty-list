@@ -9,9 +9,9 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 ## Status (4 November 2026, afternoon)
 
 - **`extension/`:** the version `0.0.2` shopping overlay MVP is implemented for Chrome and Firefox. Local shopping signals trigger hostname-only API requests; one neutral evidence stamp supports settings, dismissal, pending/unknown/error states and explicit future verdicts. Real browser visual/end-to-end release checks remain pending.
-- **`worker/`:** the `naughty-list-api` Cloudflare Worker, deployed at https://naughty-list-api.40for40.workers.dev. It reads reviewed evidence from its dedicated `naughty-list` D1 database: 20 reviewed entities and 22 records from six sources (B Lab, UK minimum-wage naming, CMA, HSE, US EPA and Wikirate). Selected records refresh daily at 05:17 UTC. **There is no H&M entry yet.**
+- **`worker/`:** the `naughty-list-api` Cloudflare Worker, deployed at https://naughty-list-api.40for40.workers.dev. It reads reviewed evidence from its dedicated `naughty-list` D1 database: 21 reviewed entities and 22 records from six sources (B Lab, UK minimum-wage naming, CMA, HSE, US EPA and Wikirate). Selected records refresh daily at 05:17 UTC. **H&M has reviewed brand/domain identity; its B Corp certification remains unknown.**
 - **`publishing/`:** release preparation for both stores (card 152): browser-specific backgrounds and runtime ZIPs, actual hostname-transmission disclosures, privacy inventory, browser test matrix and update procedure. Store submission is still pending.
-- **`launch-assets` branch (card 156, not merged):** festive store graphics, store copy with a pun bank, a download page draft and a demo storyboard, in `publishing/launch/`.
+- **Launch assets (card 156, merged in PR #5):** festive store graphics, store copy with a pun bank, a download page draft and a demo storyboard, in `publishing/launch/`.
 - **Backend detail:** `docs/evidence.md` (operating guide) and `docs/implementation-status.md` (what is deployed and verified).
 
 ## Commands
@@ -60,7 +60,7 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 - **Scope:** one brand, H&M, on H&M's own shop. This replaces the earlier idea of seller lookup on marketplaces such as Amazon or Argos for the first release.
 - **What the overlay shows today:** whether H&M is a Certified B Corp, with the source (B Lab directory) and the check date. The Naughty or Nice stamp only appears once card 157's method is agreed and the backend returns a verdict. The card 156 store copy, which promises B Corp evidence only, needs rewriting when that happens.
 - **Support email:** help@build40for40.com. Use this in publication materials and the final public privacy notice.
-- **Look:** a Christmas identity of its own: Santa red, pine green, snow, gold and candy-cane stripes, with playful puns. 40 for 40 appears only as a small "made by" credit. The festive icon on `launch-assets` replaces the draft icons in `extension/icons/`.
+- **Look:** Lawrence's Elf Cam integration (PR #6) is the approved launch overlay: black camera-feed panel, phosphor green details, neutral grey evidence states and a bundled pixel font. Preserve the existing shopping logic, settings and purchase-control avoidance. Festive icons remain installed in `extension/icons/`; earlier red/green overlay concepts must not replace the approved Elf Cam design.
 - **Chrome Web Store:** Ben owns the developer account (fee paid), publishing as 40 for 40 Ltd.
 - **Firefox add-on ID:** `{c2591c57-0224-4d4a-bdb4-a3223e58c354}` in `publishing/manifest.firefox.json`. Never change it; updates depend on it.
 
@@ -83,19 +83,19 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 - Shopping detection is local and heuristic: require price evidence plus product/offer metadata and an actionable purchase control. Product markup alone is insufficient. Current purchase-control matching uses English labels.
 - Send only the candidate hostname to `POST /v1/assessments` through the background script. Product details, prices, page paths, HTML and signal flags stay local. No separately deployed service or per-request AI classifier is used.
 - The same Worker returns exact reviewed `brand_shop`, `retailer`, `marketplace`, `unrelated` or `unknown` domain categories. An exact resolved brand-shop identity is required for verdict eligibility. Marketplaces/retailers cannot pass the shop's evidence onto product brands.
-- Patagonia and Tony's Chocolonely are source-checked technical coverage examples, including explicitly reviewed Tony's UK/US hosts. They do not replace H&M as the first launch target. H&M has no reviewed entry and must remain unknown until one is added.
+- Patagonia and Tony's Chocolonely are source-checked technical coverage examples, including explicitly reviewed Tony's UK/US hosts. They do not replace H&M as the first launch target. H&M has reviewed identity mappings for `hm.com`, `www.hm.com` and `www2.hm.com`; certification remains unknown without direct evidence. The website operator record is not proof of the brand of every item sold.
 - One fixed stamp prefers bottom right. Settings allow all four corners and disabling automatic checks; dismissal lasts for the current page. If purchase controls overlap, try another corner or hide until there is room. Never duplicate, move or cover purchase controls. Navigation, pending responses, retries and unknown evidence are handled.
 - Deduplicate hostname requests and cache assessments for five minutes in browser-session storage, with a maximum of 50 entries. Store preferences locally. Validate that messages come from the sending top-frame hostname.
 - Nice/naughty is rendered only when explicitly supplied by the backend for an eligible reviewed brand shop. The approved v0.3 method converts fresh direct B Corp evidence to one gift; missing evidence never implies naughty. Reviewed retailers can show a separately labelled shop assessment, never a product or third-party brand rating.
 - HTTPS content-script access is required for local detection; background requests use only the fixed API host. Firefox declares required `browsingActivity` transmission. Chrome disclosures must also cover local page-content processing.
-- This MVP branch does not deploy the backend. After review, seed the reviewed regional hostname selectors and deploy before release checks. Older backends without relevance information fail closed to a neutral unknown state.
+- Deploy reviewed code with seeded domain selectors before release checks. Older backends without relevance information fail closed to a neutral unknown state.
 
 ## Open before launch
 
-- **H&M entry:** hand-check H&M against the B Lab directory, then add it to the reviewed registry with a source, check date and explicit mappings for every H&M hostname the extension runs on, and seed it into D1 (see `docs/evidence.md`). Until then every H&M page shows unknown. Copy, screenshots and video must not state H&M's status before the entry exists.
+- **H&M certification:** identity and shopping hostnames are reviewed using H&M's corporate brand page. No authoritative certification conclusion is established; keep `certified: null` and do not infer false from search absence. Copy, screenshots and video must say unknown until direct evidence exists.
 - **API and privacy:** the implemented MVP uses hostname-only Worker calls. Use the networked privacy copy (version A in the launch draft), complete the Chrome privacy tab and keep Firefox's `browsingActivity` declaration. Confirm Cloudflare logging/retention and host the final notice before store submission.
 - **Verify the overlay**, then capture real screenshots and the demo recording. The H&M overlay mock is labelled NOT FOR STORE and must never be uploaded.
-- **Publisher setup:** EU trader declaration with company details, ideally a Google Group publisher, verify build40for40.com and choose a licence (MIT if the repo is public).
+- **Publisher setup:** EU trader declaration with company details, ideally a Google Group publisher, verify build40for40.com. The repo and packaged extension use the approved MIT licence.
 
 ## Backend rules
 

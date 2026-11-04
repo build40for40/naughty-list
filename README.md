@@ -17,7 +17,7 @@ For Firefox, build the Firefox ZIP below, extract it, and load its `manifest.jso
 
 The stamp prefers the bottom right. Open the extension's **Options/Preferences**, or use **Settings** on the stamp, to choose another corner or disable automatic lookups. It tries other corners if it would cover a purchase control, and stays hidden while none is clear. Dismissal applies to the current page. Only candidate HTTPS pages trigger a lookup; a product review with Product metadata alone does not.
 
-H&M is the first launch target, but there is no reviewed H&M identity/evidence entry yet, so it stays unknown. Patagonia and Tony's Chocolonely are the current technical coverage examples. These do not replace the agreed launch scope. No scoring rule has been inferred from certification.
+H&M is the first launch target. Its shopping domains are now matched to the reviewed H&M brand identity, but its B Corp certification stays unknown because no direct certification evidence is recorded. Patagonia and Tony's Chocolonely are the current technical coverage examples. These do not replace the agreed launch scope. No scoring rule has been inferred from certification.
 
 Only the hostname is sent to the fixed API endpoint. Product information, prices and page paths remain local. Assessments are cached for five minutes in this browser session. See [privacy preparation](publishing/privacy.md) for storage and network metadata details.
 
@@ -138,7 +138,7 @@ Errors use `{ "error": { "code": "...", "message": "..." } }`: `400` invalid inp
 
 ### Evidence and coverage
 
-The dedicated D1 database contains a starter set of **20 reviewed entities and 22 records from six sources**: B Lab, UK minimum wage naming, CMA, HSE, US EPA and Wikirate. Selected minimum-wage, CMA, HSE and Wikirate records refresh daily. B Lab and EPA are manually reviewed snapshots. Wikirate adds one explicitly historical 2022 certification report; it is not current B Corp verification. Environment Agency and WBA remain explicitly blocked pending licence resolution. This is partial coverage, not a complete directory, and historical records do not establish present misconduct.
+The dedicated D1 database contains a starter set of **21 reviewed entities and 22 records from six sources**: B Lab, UK minimum wage naming, CMA, HSE, US EPA and Wikirate. Selected minimum-wage, CMA, HSE and Wikirate records refresh daily. B Lab and EPA are manually reviewed snapshots. Wikirate adds one explicitly historical 2022 certification report; it is not current B Corp verification. Environment Agency and WBA remain explicitly blocked pending licence resolution. This is partial coverage, not a complete directory, and historical records do not establish present misconduct.
 
 [worker/companies.js](worker/companies.js) retains the original **Patagonia and Tony's Chocolonely** B Lab seed, checked on 4 November 2026. It is not a complete or live B Corp directory. `verified` means supported by the recorded source at `checkedAt`, not checked live on each request. Re-running the seed does not renew those dates.
 

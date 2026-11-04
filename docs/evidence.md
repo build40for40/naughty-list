@@ -4,7 +4,7 @@ The API uses the dedicated Cloudflare D1 database `naughty-list` through the `DB
 
 ## Coverage at launch
 
-20 reviewed entities and 22 evidence records, including one historical Wikirate report:
+21 reviewed entities and 22 evidence records, including one historical Wikirate report:
 
 | Source | Records | Maintenance |
 | --- | ---: | --- |

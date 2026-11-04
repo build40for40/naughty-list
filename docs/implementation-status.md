@@ -39,3 +39,11 @@ Live health and source catalogue checks passed. The database exposes 22 publishe
 The authenticated B Corp metric audit found 4,712 companies, all observation year 2022: 3,611 Certified and 1,101 De-certified. All records declared CC BY 4.0. This is historical coverage, not current certification. Tony's Chocolonely is the only reviewed match against the existing registry (provider company 975185). Patagonia exists as a provider company but has no answer in this metric, so it was not mapped.
 
 One historical Tony's report was imported, giving 22 records across six populated sources and 20 reviewed entities. API credentials are configured as Cloudflare secrets. Daily refreshes query the approved company ID only. Production checks passed: the source catalogue reports one Wikirate record and successful import; Tony's response labels the observation historical and 2022; Patagonia has no Wikirate report; both existing direct B Lab records remain intact and overall scoring stays unset. All 26 tests and the deployment dry run passed.
+
+## Launch readiness pass, 4 November 2026
+
+The merged relevance API and reviewed H&M identity are deployed as Worker version `5ae63b3b-b6f5-46dc-8ff8-187d53a481cf`. The dedicated database was re-seeded with 21 identities; the 22 existing evidence records and original evidence dates were retained. H&M has no published certification record. Live `www2.hm.com` resolves to H&M with unknown certification, and Tony's UK shop resolves with reviewed brand-shop eligibility. Overall score/verdict remain null.
+
+The updated suite passes 41 checks and a Worker dry run. Both target ZIP builds pass. Chrome-for-Testing 156 installed the unpacked extension in a new temporary profile; controlled-fixture shopping detection, purchase-button avoidance, persistent position/disable settings, dismissal/reload and hostname-only live requests passed. H&M denied the automated browser, so a live H&M visual flow and Firefox visual flow remain manual release gates. See `publishing/browser-checks-20261104.md`.
+
+The Worker settings API returned no observability configuration, Logpush disabled and no tail consumers. This is not a claim of zero Cloudflare operational/security retention. The published privacy section describes actual hostname transmission and caching without an invented retention period.
