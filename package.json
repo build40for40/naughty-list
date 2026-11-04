@@ -12,6 +12,7 @@
     "community:moderate": "node scripts/community-moderate.mjs",
     "test": "node --test",
     "evidence": "node scripts/evidence.mjs",
+    "scores": "node scripts/santa-scores.mjs",
     "check": "npm test && npm run community:build && npm run wrangler -- deploy --dry-run",
     "extension:package:chrome": "node scripts/package-extension.mjs chrome",
     "extension:package:firefox": "node scripts/package-extension.mjs firefox",
