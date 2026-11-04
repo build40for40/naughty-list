@@ -10,13 +10,14 @@ Internal draft, 4 November 2026. The described functionality is implemented in 0
 | Project | 40 for 40 |
 | Homepage | https://github.com/build40for40/naughty-list |
 | Project website | https://build40for40.com |
-| Support email | hello@40for40.app |
+| Support email | help@build40for40.com |
+| Chrome publisher | 40 for 40 Ltd |
 | Support website | https://github.com/build40for40/naughty-list/issues |
 | Current version | 0.0.2 |
 | Current icon | `extension/icons/icon-128.png` |
 | Language of prepared copy | English |
 
-These are public project details from the shared context. A store publisher's legal/trader identity, account owner and software licence still need to be confirmed. Project author metadata is not a substitute for account verification.
+These are project details from the current shared context. Ben's Chrome developer account is registered as 40 for 40 Ltd. Trader details, domain verification and software licence still need the release checks; project author metadata is not a substitute for account verification.
 
 ## Copy for the implemented MVP
 
@@ -32,7 +33,7 @@ Suggested longer description:
 
 > A little context for Black Friday and Christmas shopping. The Naughty List looks for shopping signals on the page and shows reviewed business information, with sources and check dates. Move the information stamp to any corner, dismiss it for the current page, or turn automatic checks off in settings.
 >
-> Coverage is limited. The initial reviewed brand shops are Patagonia and Tony's Chocolonely, including explicitly reviewed Tony's UK and US websites. Unknown websites and multi-brand retailers or marketplaces do not receive product-brand verdicts. Current ethical scoring is still being agreed, so the stamp shows evidence without calling a business naughty or nice. A B Corp record describes a business, not an individual product.
+> Coverage is limited. H&M is the first launch target, but its reviewed identity/evidence entry is not present yet and must remain unknown. Patagonia and Tony's Chocolonely are technical coverage examples, including explicitly reviewed Tony's UK and US websites. Unknown websites and multi-brand retailers or marketplaces do not receive product-brand verdicts. Current ethical scoring is still being agreed, so the stamp shows evidence without calling a business naughty or nice. A B Corp record describes a business, not an individual product.
 >
 > Shopping signals stay on your device. On a candidate page only its hostname is sent to our Cloudflare service; product text, prices and page paths are not sent. Results are cached for up to five minutes in this browser session. Your settings stay on this device.
 

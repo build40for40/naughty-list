@@ -17,6 +17,8 @@ For Firefox, build the Firefox ZIP below, extract it, and load its `manifest.jso
 
 The stamp defaults to the bottom right. Open the extension's **Options/Preferences**, or use **Settings** on the stamp, to move it to another corner or disable automatic lookups. Dismissal applies to the current page. Only candidate HTTPS pages trigger a lookup; a product review with Product metadata alone does not.
 
+H&M is the first launch target, but there is no reviewed H&M identity/evidence entry yet, so it stays unknown. Patagonia and Tony's Chocolonely are the current technical coverage examples. These do not replace the agreed launch scope. No scoring rule has been inferred from certification.
+
 Only the hostname is sent to the fixed API endpoint. Product information, prices and page paths remain local. Assessments are cached for five minutes in this browser session. See [privacy preparation](publishing/privacy.md) for storage and network metadata details.
 
 ## Check the manifest

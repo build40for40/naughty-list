@@ -28,7 +28,7 @@ Record and verify:
 - Whether a consent prompt or Firefox data-collection declaration must change before transmission.
 - Whether analytics, error tracking or other telemetry is introduced. The shared project's use of PostHog does not establish that this extension has analytics.
 
-Then prepare a public notice that names the operator and support contact, explains data categories and purpose, identifies recipients, states confirmed retention/deletion practices, and explains any user controls. Use `hello@40for40.app` as the existing project support contact. Hosting URL and operator details remain to be confirmed.
+Then prepare a public notice that names the operator and support contact, explains data categories and purpose, identifies recipients, states confirmed retention/deletion practices, and explains any user controls. The current Chrome publisher is 40 for 40 Ltd and support is `help@build40for40.com`. Confirm the final notice's operator details and hosting URL before submission.
 
 Do not claim “we collect no data”, “we never log IP addresses”, “all processing stays on-device”, or a fixed retention period for a connected release without verifying those statements.
 

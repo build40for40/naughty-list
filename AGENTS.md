@@ -1,30 +1,99 @@
 # The Naughty List
 
-Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The problem is "Hard to know which brands are ethical", from Santa. Shared project context, services and rules live in `../AGENTS.md`.
+Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The problem is "Hard to know which brands are ethical", from Santa. Work is tracked on the Superthread `day3` board.
 
-- **Form factor:** a Chrome extension.
-- **Status:** `extension/` implements the first shopping overlay and settings for Chrome and Firefox. The Cloudflare Worker in `worker/` reads reviewed company evidence from its dedicated `naughty-list` D1 database. Source integrations are tracked in `Scoring Sources` (#155); scoring criteria remain deferred in #157 on the Superthread `day3` board. This MVP returns neutral evidence states until the backend supplies an agreed verdict.
+- **Form factor:** a browser extension, for Chrome first and Firefox second.
+- **MVP (v1):** a single-brand shop, starting with H&M on its own shop, with a Naughty or Nice stamp for the brand.
+- **Reach goal (v2):** multi-brand shops such as John Lewis, sorting the brands on the page into Naughty and Nice lists.
 
-## Backend decisions
+## Status (4 November 2026, afternoon)
 
-- Deploy `naughty-list-api` to the shared `40for40` Cloudflare account. Always use `npm run wrangler -- <args>` with the named auth profile, as required by the shared context.
-- `POST /v1/assessments` accepts exactly one domain hostname, brand name or typed identifier (`b_lab` directory slug or nine-digit DUNS string). Identifier support does not imply an external DUNS resolution service; only verified registry mappings resolve.
+- **`extension/`:** the version `0.0.2` shopping overlay MVP is implemented for Chrome and Firefox. Local shopping signals trigger hostname-only API requests; one neutral evidence stamp supports settings, dismissal, pending/unknown/error states and explicit future verdicts. Real browser visual/end-to-end release checks remain pending.
+- **`worker/`:** the `naughty-list-api` Cloudflare Worker, deployed at https://naughty-list-api.40for40.workers.dev. It reads reviewed evidence from its dedicated `naughty-list` D1 database: 20 reviewed entities and 22 records from six sources (B Lab, UK minimum-wage naming, CMA, HSE, US EPA and Wikirate). Selected records refresh daily at 05:17 UTC. **There is no H&M entry yet.**
+- **`publishing/`:** release preparation for both stores (card 152): browser-specific backgrounds and runtime ZIPs, actual hostname-transmission disclosures, privacy inventory, browser test matrix and update procedure. Store submission is still pending.
+- **`launch-assets` branch (card 156, not merged):** festive store graphics, store copy with a pun bank, a download page draft and a demo storyboard, in `publishing/launch/`.
+- **Backend detail:** `docs/evidence.md` (operating guide) and `docs/implementation-status.md` (what is deployed and verified).
+
+## Commands
+
+- Node.js 22.13 or later. `npm ci`, then initialise the local database: `npm run wrangler -- d1 migrations apply naughty-list --local`, `npm run evidence -- seed`, `npm run evidence -- import us-epa data/epa-reviewed.json` and `npm run evidence -- sync`.
+- `npm run dev` (local Worker), `npm run check` (tests plus a Wrangler dry run) and `npm run deploy` (manual; CI never deploys). Remote migrations, seeding and imports come before deploying; see `docs/evidence.md`.
+- `npm run extension:package:chrome` / `npm run extension:package:firefox` build runtime-only ZIPs into `dist/` from an explicit allowlist. Update the allowlist in `scripts/package-extension.mjs` whenever the extension gains files.
+- Always run Wrangler as `npm run wrangler -- <args>`. It uses the `40for40` auth profile and unsets `CLOUDFLARE_API_KEY` and `CLOUDFLARE_EMAIL`. On a new machine, create the profile with `env -u CLOUDFLARE_API_KEY -u CLOUDFLARE_EMAIL npx wrangler auth create 40for40`.
+- Wikirate credentials live in the ignored `.dev.vars` locally and in Cloudflare secrets in production. Never commit them or paste them into chat.
+- CI runs `npm run check`, both extension package builds and a `jq` check on `extension/manifest.json`.
+
+## Superthread `day3` board
+
+| Card | Title | State |
+| --- | --- | --- |
+| 150 | Define the 5 W's | Done |
+| 151 | Where are we on content progress? | To do |
+| 152 | Publish extension: common steps | Doing |
+| 153 | Publish Chrome extension | To do |
+| 154 | Publish Firefox add-on | To do |
+| 155 | Scoring Sources | To do |
+| 156 | Launch kit: store assets + download page | Doing |
+| 157 | Scoring Algorithm and Criteria | To do |
+| 158 | Extension UI and design (Lawrence) | Doing |
+
+## Locked decisions: four Ws
+
+- **Who:** Santa.
+- **Why:** Don't choose evil.
+- **Where:** a browser extension that overlays helpful information about a brand or product.
+- **When:** Black Friday and Christmas shopping.
+
+## Locked decisions: the what (4 November)
+
+- **MVP (v1): single-brand shops get a Naughty or Nice stamp.** Every product on a single-brand shop comes from the same company, so the shop gets one stamp for its brand, not a sorted list. The first shop is H&M.
+- **Reach goal (v2): multi-brand shops get Naughty and Nice lists.** On a shop such as John Lewis, the extension sorts the brands on the page into a Naughty list and a Nice list.
+- **The stamp needs a method.** Which brands are naughty or nice is decided by card 157's scoring method. Until that's agreed, the backend keeps the verdict unset and the stamp must not show one. Today's evidence (such as B Corp status) can explain a verdict but doesn't produce one by itself.
+- **Unknown stays unknown.** A brand with too little evidence gets neither stamp and goes in neither list. It must never be shown as naughty.
+
+## Launch decisions (card 156, 4 November)
+
+- **Scope:** one brand, H&M, on H&M's own shop. This replaces the earlier idea of seller lookup on marketplaces such as Amazon or Argos for the first release.
+- **What the overlay shows today:** whether H&M is a Certified B Corp, with the source (B Lab directory) and the check date. The Naughty or Nice stamp only appears once card 157's method is agreed and the backend returns a verdict. The card 156 store copy, which promises B Corp evidence only, needs rewriting when that happens.
+- **Support email:** help@build40for40.com. Use this in publication materials and the final public privacy notice.
+- **Look:** a Christmas identity of its own: Santa red, pine green, snow, gold and candy-cane stripes, with playful puns. 40 for 40 appears only as a small "made by" credit. The festive icon on `launch-assets` replaces the draft icons in `extension/icons/`.
+- **Chrome Web Store:** Ben owns the developer account (fee paid), publishing as 40 for 40 Ltd.
+- **Firefox add-on ID:** `{c2591c57-0224-4d4a-bdb4-a3223e58c354}` in `publishing/manifest.firefox.json`. Never change it; updates depend on it.
+
+## Design rule: stamp or lists (card 158, 4 November)
+
+- **v1, single-brand shops (e.g. H&M): a Naughty or Nice stamp.** All products share one company's evidence, so a Nice/Naughty split would put the whole shop in one group.
+- **v2, multi-brand shops (e.g. John Lewis, Argos, Amazon): Naughty and Nice lists, plus Unknown.** Show the shop's record as a badge and group products by their own brand; never let the shop's record apply to other brands it sells. Own-label products take the shop's record. If a tile's brand can't be read reliably, it goes in Unknown. Unknown must look neutral.
+- **Rearranging the page:** reorder or label the shop's own tiles and buttons; never copy tiles or rebuild buttons, so the basket, quantities and Buy now keep working. Never click for the shopper, and never hide or cover purchase controls.
+- How much a single action (such as one donation) counts is a scoring question for card 157, not a design one.
+
+## Implemented technical MVP flow
+
+- Shopping detection is local and heuristic: require price evidence plus product/offer metadata and an actionable purchase control. Product markup alone is insufficient. Current purchase-control matching uses English labels.
+- Send only the candidate hostname to `POST /v1/assessments` through the background script. Product details, prices, page paths, HTML and signal flags stay local. No separately deployed service or per-request AI classifier is used.
+- The same Worker returns exact reviewed `brand_shop`, `retailer`, `marketplace`, `unrelated` or `unknown` domain categories. An exact resolved brand-shop identity is required for verdict eligibility. Marketplaces/retailers cannot pass the shop's evidence onto product brands.
+- Patagonia and Tony's Chocolonely are source-checked technical coverage examples, including explicitly reviewed Tony's UK/US hosts. They do not replace H&M as the first launch target. H&M has no reviewed entry and must remain unknown until one is added.
+- One fixed stamp defaults to bottom right. Settings allow all four corners and disabling automatic checks; dismissal lasts for the current page. Navigation, pending responses, retries and unknown evidence are handled.
+- Deduplicate hostname requests and cache assessments for five minutes in browser-session storage, with a maximum of 50 entries. Store preferences locally. Validate that messages come from the sending top-frame hostname.
+- Nice/naughty is rendered only when explicitly supplied by the backend for an eligible reviewed brand shop. Until card 157 agrees a rule, the current backend keeps total/verdict null and the stamp is neutral. B Corp never implies nice and missing evidence never implies naughty.
+- HTTPS content-script access is required for local detection; background requests use only the fixed API host. Firefox declares required `browsingActivity` transmission. Chrome disclosures must also cover local page-content processing.
+- This MVP branch does not deploy the backend. After review, seed the reviewed regional hostname selectors and deploy before release checks. Older backends without relevance information fail closed to a neutral unknown state.
+
+## Open before launch
+
+- **H&M entry:** hand-check H&M against the B Lab directory, then add it to the reviewed registry with a source, check date and explicit mappings for every H&M hostname the extension runs on, and seed it into D1 (see `docs/evidence.md`). Until then every H&M page shows unknown. Copy, screenshots and video must not state H&M's status before the entry exists.
+- **API and privacy:** the implemented MVP uses hostname-only Worker calls. Use the networked privacy copy (version A in the launch draft), complete the Chrome privacy tab and keep Firefox's `browsingActivity` declaration. Confirm Cloudflare logging/retention and host the final notice before store submission.
+- **Verify the overlay**, then capture real screenshots and the demo recording. The H&M overlay mock is labelled NOT FOR STORE and must never be uploaded.
+- **Publisher setup:** EU trader declaration with company details, ideally a Google Group publisher, verify build40for40.com and choose a licence (MIT if the repo is public).
+
+## Backend rules
+
+- `POST /v1/assessments` accepts exactly one domain hostname, brand name or typed identifier (`b_lab` directory slug or nine-digit DUNS string). Identifier support does not imply an external DUNS resolution service; only verified registry mappings resolve. `GET /v1/sources` returns source coverage and freshness.
 - Domain lookup uses exact reviewed hostname mappings with source/check dates. Case and a trailing DNS dot are normalised; subdomains and regional domains require explicit mappings. A marketplace domain identifies the marketplace, not a product brand or selected seller. No seller extraction or automatic domain research is implemented.
 - Return B Corp certification evidence, provenance and check/refresh dates. Do not equate B Corp certification with a product-level ethical judgment.
-- Unmatched and ambiguous identities are unknown, never automatically uncertified or naughty. Stale certification becomes unknown; historical enforcement evidence remains visible with freshness and event dates. There is no complete B Lab feed or per-request research integration.
-- Keep overall score and naughty/nice verdict unset until the scoring task is settled. No new scoring criteria are authorised by the initial backend work.
-- Domain requests include a reviewed relevance category and verdict eligibility. Exact brand-shop identity is required; a marketplace/retailer domain must not produce a product-brand verdict. No separate classifier service or per-request research is used.
-
-## Locked decisions: shopping overlay MVP
-
-- Detect shopping locally using product/offer metadata, price evidence and an actionable purchase control. Product markup alone is insufficient. Detection is a heuristic, not a universal guarantee for every shopping site.
-- On candidate HTTPS pages, send only the hostname to `POST /v1/assessments` through the extension background script. Do not transmit full URLs, product text, prices, shopping signals, page HTML or browser history.
-- Resolve exact reviewed domains in the same Worker, with `brand_shop`, `retailer`, `marketplace`, `unrelated` and `unknown` categories. Initial eligible brand shops are Patagonia and Tony's Chocolonely. Reviewed UK/US Tony's hosts are explicit, never inferred from suffixes.
-- Display one fixed information stamp, bottom right by default. Users can choose any corner or disable automatic lookups in extension settings. Handle pending, evidence, unknown and error states, dismissal, page navigation and retries.
-- Cache assessments for five minutes in extension session storage and deduplicate in-flight hostname requests. Keep preferences locally. Background requests validate the sending page's hostname.
-- Render nice/naughty only if the backend explicitly supplies that verdict for an eligible reviewed brand-shop identity. B Corp does not imply nice; missing evidence does not imply naughty. Until a scoring rule is agreed, totals and verdicts stay null and the stamp is neutral.
-- Content scripts need HTTPS site access for local detection; the only API host is `naughty-list-api.40for40.workers.dev`. Firefox declares required `browsingActivity` transmission for hostname lookup. Privacy preparation must reflect actual page reading and host transmission.
-- Backend changes require review before deployment. No new service or automatic AI classifier is part of this MVP.
+- Unmatched and ambiguous identities are unknown, never automatically uncertified or naughty. Stale certification becomes unknown; historical enforcement evidence remains visible with freshness and event dates. There is no complete B Lab feed or per-request research integration. `validUntil` is our evidence refresh deadline, not the certificate's expiry; never extend it without rechecking the source.
+- Never invent identifiers, DUNS numbers or ownership links. Record the source for every company and domain mapping.
+- Keep overall score and naughty/nice verdict unset until the scoring task is settled. No new scoring criteria are authorised by the backend work.
 
 ## Locked decisions: evidence backend
 
@@ -38,16 +107,16 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 - Dates distinguish events, publication, checking and refresh deadlines. Historical findings are not claims of current misconduct. Undertakings, changed practices, guilty pleas, civil settlements and orders remain distinct outcomes.
 - Data, operating commands and limitations are documented in `docs/evidence.md`.
 
-## Locked decisions: four Ws
+## Data sources (card 155)
 
-- **Who:** Santa.
-- **Why:** Don't choose evil.
-- **Where:** a browser extension that overlays helpful information about a brand or product.
-- **When:** Black Friday and Christmas shopping.
+- **In use:** B Lab (hand-checked), UK minimum-wage naming, CMA, HSE, US EPA (reviewed snapshots) and Wikirate (one historical 2022 report). There is no supported public B Lab API, and its data.world dataset was retired on 13 July 2026.
+- **Blocked pending licence:** Environment Agency and WBA.
+- **Commercial shortlist for later, subject to access and display licensing:** Good On You (brand ratings) and Provenance (specific claims). EcoVadis is a negotiated commercial fallback.
+- **Excluded for now:** Ethical Consumer, ClimateChoice, KindBuys, Climatiq, HowGood and TrusTrace.
 
-## Beyond this MVP
+## Scoring (card 157)
 
-Seller/product identity extraction on Amazon, Argos and other retailers is deferred. A website hostname identifies only the corresponding reviewed business, not the selected marketplace seller or product manufacturer. Automatic missing-company research, AI classification, new scoring criteria and universal site coverage are not implemented. Evidence about a seller or brand must not silently become a claim about an individual product.
+The v1 stamp depends on this card. Keep the overall score and naughty/nice verdict unset until card 157 agrees a method. No scoring criteria, weights or thresholds are agreed. Missing certification or missing records must never mean naughty or nice. Evidence about a seller or brand must not silently become a claim about an individual product.
 
 ## The problem
 
@@ -60,17 +129,15 @@ The Naughty List tells shoppers which brands have been naughty or nice, so they 
 
 ## What we know
 
-- Santa is the locked audience; Black Friday and Christmas shopping are the locked occasion.
 - A brand is judged on three things: how it treats its staff, its communities and the environment.
-- It overlays helpful business information on likely shopping pages. Chrome and Firefox packages share the implementation with browser-specific background manifests.
-- The tone is festive and playful: Santa's list, naughty or nice, not a compliance report.
+- The tone is festive and playful: Santa's list, naughty or nice, not a compliance report. Puns never change the facts.
+- Distribution is through the Chrome Web Store and Firefox Add-ons, with a download page drafted for the 40 for 40 site.
 
-## Still open
+## Still open after the first release
 
-- **Scoring and verdict:** the naughty/nice decision rule and criteria weights remain open. The implemented overlay supports explicit future verdicts and currently shows neutral evidence states.
-- **Where the data comes from:** which sources say how a brand behaves, and how a verdict gets worked out from them.
-- **Which brands:** every brand, or a starter list of the big gift brands.
-- **Getting it to people:** the Chrome Web Store, or a download from the 40 for 40 site.
+- **How a verdict is worked out:** the criteria, weights and thresholds behind Naughty or Nice, and whether the reasons are shown alongside the stamp (card 157).
+- **v2 details:** which multi-brand shops after John Lewis, and how brands are read from each product tile. Marketplace seller lookup, a precached list and automatic research for unknown sellers were proposed but not agreed.
+- **Where the data comes from** beyond the current six sources (card 155).
 
 ## The problem as submitted
 
