@@ -1,0 +1,1161 @@
+{
+ "method": "santa-v0.3-draft",
+ "scored": "2026-11-04",
+ "shops": [
+  {
+   "n": 47,
+   "name": "FatFace",
+   "site": "fatface.com",
+   "aisle": "Fashion & sport",
+   "total": 1,
+   "verdict": "Nice",
+   "why": [
+    {
+     "type": "gift",
+     "why": "Certified B Corp (B Lab directory)",
+     "url": "https://www.bcorporation.net/en-us/find-a-b-corp/company/fat-face-limited/"
+    }
+   ],
+   "rank": 1
+  },
+  {
+   "n": 54,
+   "name": "Patagonia",
+   "site": "eu.patagonia.com",
+   "aisle": "Fashion & sport",
+   "total": 1,
+   "verdict": "Nice",
+   "why": [
+    {
+     "type": "gift",
+     "why": "Certified B Corp, checked 4 Nov 2026",
+     "url": "https://www.bcorporation.net/en-us/find-a-b-corp/company/patagonia-inc/"
+    }
+   ],
+   "rank": 2
+  },
+  {
+   "n": 83,
+   "name": "Tony's Chocolonely",
+   "site": "tonyschocolonely.com",
+   "aisle": "Toys, books & gifts",
+   "total": 1,
+   "verdict": "Nice",
+   "why": [
+    {
+     "type": "gift",
+     "why": "Certified B Corp, checked 4 Nov 2026",
+     "url": "https://www.bcorporation.net/en-us/find-a-b-corp/company/tonys-chocolonely/"
+    }
+   ],
+   "rank": 3
+  },
+  {
+   "n": 45,
+   "name": "Adidas",
+   "site": "adidas.co.uk",
+   "aisle": "Fashion & sport",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 4
+  },
+  {
+   "n": 7,
+   "name": "AliExpress",
+   "site": "aliexpress.com",
+   "aisle": "Marketplaces & department stores",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 5
+  },
+  {
+   "n": 1,
+   "name": "Amazon",
+   "site": "amazon.co.uk",
+   "aisle": "Marketplaces & department stores",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 6
+  },
+  {
+   "n": 66,
+   "name": "AO",
+   "site": "ao.com",
+   "aisle": "Electricals, tech & games",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 7
+  },
+  {
+   "n": 67,
+   "name": "Apple",
+   "site": "apple.com/uk",
+   "aisle": "Electricals, tech & games",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 8
+  },
+  {
+   "n": 3,
+   "name": "Argos",
+   "site": "argos.co.uk",
+   "aisle": "Marketplaces & department stores",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 9
+  },
+  {
+   "n": 93,
+   "name": "B&M",
+   "site": "bmstores.co.uk",
+   "aisle": "Home & DIY",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 10
+  },
+  {
+   "n": 55,
+   "name": "Boots",
+   "site": "boots.com",
+   "aisle": "Beauty & health",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 11
+  },
+  {
+   "n": 81,
+   "name": "Card Factory",
+   "site": "cardfactory.co.uk",
+   "aisle": "Toys, books & gifts",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 12
+  },
+  {
+   "n": 64,
+   "name": "Charlotte Tilbury",
+   "site": "charlottetilbury.com",
+   "aisle": "Beauty & health",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 13
+  },
+  {
+   "n": 51,
+   "name": "Clarks",
+   "site": "clarks.com",
+   "aisle": "Fashion & sport",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 14
+  },
+  {
+   "n": 29,
+   "name": "Co-op",
+   "site": "coop.co.uk",
+   "aisle": "Supermarkets",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 15
+  },
+  {
+   "n": 100,
+   "name": "Costco",
+   "site": "costco.co.uk",
+   "aisle": "Home & DIY",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 16
+  },
+  {
+   "n": 58,
+   "name": "Cult Beauty",
+   "site": "cultbeauty.co.uk",
+   "aisle": "Beauty & health",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 17
+  },
+  {
+   "n": 9,
+   "name": "Depop",
+   "site": "depop.com",
+   "aisle": "Marketplaces & department stores",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 18
+  },
+  {
+   "n": 90,
+   "name": "Dunelm",
+   "site": "dunelm.com",
+   "aisle": "Home & DIY",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 19
+  },
+  {
+   "n": 2,
+   "name": "eBay",
+   "site": "ebay.co.uk",
+   "aisle": "Marketplaces & department stores",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 20
+  },
+  {
+   "n": 5,
+   "name": "Etsy",
+   "site": "etsy.com",
+   "aisle": "Marketplaces & department stores",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 21
+  },
+  {
+   "n": 52,
+   "name": "Flannels",
+   "site": "flannels.com",
+   "aisle": "Fashion & sport",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 22
+  },
+  {
+   "n": 18,
+   "name": "Fortnum & Mason",
+   "site": "fortnumandmason.com",
+   "aisle": "Marketplaces & department stores",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 23
+  },
+  {
+   "n": 33,
+   "name": "H&M",
+   "site": "www2.hm.com",
+   "aisle": "Fashion & sport",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 24
+  },
+  {
+   "n": 79,
+   "name": "Hobbycraft",
+   "site": "hobbycraft.co.uk",
+   "aisle": "Toys, books & gifts",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 25
+  },
+  {
+   "n": 94,
+   "name": "Home Bargains",
+   "site": "homebargains.co.uk",
+   "aisle": "Home & DIY",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 26
+  },
+  {
+   "n": 82,
+   "name": "Hotel Chocolat",
+   "site": "hotelchocolat.com",
+   "aisle": "Toys, books & gifts",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 27
+  },
+  {
+   "n": 86,
+   "name": "IKEA",
+   "site": "ikea.com/gb",
+   "aisle": "Home & DIY",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 28
+  },
+  {
+   "n": 42,
+   "name": "JD Sports",
+   "site": "jdsports.co.uk",
+   "aisle": "Fashion & sport",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 29
+  },
+  {
+   "n": 11,
+   "name": "John Lewis",
+   "site": "johnlewis.com",
+   "aisle": "Marketplaces & department stores",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 30
+  },
+  {
+   "n": 49,
+   "name": "Joules",
+   "site": "joules.com",
+   "aisle": "Fashion & sport",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 31
+  },
+  {
+   "n": 96,
+   "name": "Lakeland",
+   "site": "lakeland.co.uk",
+   "aisle": "Home & DIY",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 32
+  },
+  {
+   "n": 75,
+   "name": "LEGO",
+   "site": "lego.com",
+   "aisle": "Toys, books & gifts",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 33
+  },
+  {
+   "n": 17,
+   "name": "Liberty",
+   "site": "libertylondon.com",
+   "aisle": "Marketplaces & department stores",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 34
+  },
+  {
+   "n": 57,
+   "name": "Lookfantastic",
+   "site": "lookfantastic.com",
+   "aisle": "Beauty & health",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 35
+  },
+  {
+   "n": 61,
+   "name": "Lush",
+   "site": "lush.com",
+   "aisle": "Beauty & health",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 36
+  },
+  {
+   "n": 41,
+   "name": "Mango",
+   "site": "mango.com",
+   "aisle": "Fashion & sport",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 37
+  },
+  {
+   "n": 12,
+   "name": "Marks & Spencer",
+   "site": "marksandspencer.com",
+   "aisle": "Marketplaces & department stores",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 38
+  },
+  {
+   "n": 46,
+   "name": "Matalan",
+   "site": "matalan.co.uk",
+   "aisle": "Fashion & sport",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 39
+  },
+  {
+   "n": 80,
+   "name": "Moonpig",
+   "site": "moonpig.com",
+   "aisle": "Toys, books & gifts",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 40
+  },
+  {
+   "n": 40,
+   "name": "New Look",
+   "site": "newlook.com",
+   "aisle": "Fashion & sport",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 41
+  },
+  {
+   "n": 13,
+   "name": "Next",
+   "site": "next.co.uk",
+   "aisle": "Marketplaces & department stores",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 42
+  },
+  {
+   "n": 44,
+   "name": "Nike",
+   "site": "nike.com",
+   "aisle": "Fashion & sport",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 43
+  },
+  {
+   "n": 71,
+   "name": "Nintendo",
+   "site": "nintendo.com/en-gb",
+   "aisle": "Electricals, tech & games",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 44
+  },
+  {
+   "n": 19,
+   "name": "Notonthehighstreet",
+   "site": "notonthehighstreet.com",
+   "aisle": "Marketplaces & department stores",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 45
+  },
+  {
+   "n": 31,
+   "name": "Ocado",
+   "site": "ocado.com",
+   "aisle": "Supermarkets",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 46
+  },
+  {
+   "n": 84,
+   "name": "Pandora",
+   "site": "uk.pandora.net",
+   "aisle": "Toys, books & gifts",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 47
+  },
+  {
+   "n": 85,
+   "name": "Pets at Home",
+   "site": "petsathome.com",
+   "aisle": "Toys, books & gifts",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 48
+  },
+  {
+   "n": 70,
+   "name": "PlayStation Store",
+   "site": "store.playstation.com",
+   "aisle": "Electricals, tech & games",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 49
+  },
+  {
+   "n": 99,
+   "name": "Poundland",
+   "site": "poundland.co.uk",
+   "aisle": "Home & DIY",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 50
+  },
+  {
+   "n": 38,
+   "name": "PrettyLittleThing",
+   "site": "prettylittlething.com",
+   "aisle": "Fashion & sport",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 51
+  },
+  {
+   "n": 32,
+   "name": "Primark",
+   "site": "primark.com",
+   "aisle": "Fashion & sport",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 52
+  },
+  {
+   "n": 23,
+   "name": "Sainsbury's",
+   "site": "sainsburys.co.uk",
+   "aisle": "Supermarkets",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 53
+  },
+  {
+   "n": 68,
+   "name": "Samsung",
+   "site": "samsung.com/uk",
+   "aisle": "Electricals, tech & games",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 54
+  },
+  {
+   "n": 50,
+   "name": "Schuh",
+   "site": "schuh.co.uk",
+   "aisle": "Fashion & sport",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 55
+  },
+  {
+   "n": 89,
+   "name": "Screwfix",
+   "site": "screwfix.com",
+   "aisle": "Home & DIY",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 56
+  },
+  {
+   "n": 15,
+   "name": "Selfridges",
+   "site": "selfridges.com",
+   "aisle": "Marketplaces & department stores",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 57
+  },
+  {
+   "n": 63,
+   "name": "Sephora",
+   "site": "sephora.co.uk",
+   "aisle": "Beauty & health",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 58
+  },
+  {
+   "n": 6,
+   "name": "Shein",
+   "site": "shein.co.uk",
+   "aisle": "Marketplaces & department stores",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 59
+  },
+  {
+   "n": 73,
+   "name": "Smyths Toys",
+   "site": "smythstoys.com",
+   "aisle": "Toys, books & gifts",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 60
+  },
+  {
+   "n": 59,
+   "name": "Space NK",
+   "site": "spacenk.com",
+   "aisle": "Beauty & health",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 61
+  },
+  {
+   "n": 43,
+   "name": "Sports Direct",
+   "site": "sportsdirect.com",
+   "aisle": "Fashion & sport",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 62
+  },
+  {
+   "n": 56,
+   "name": "Superdrug",
+   "site": "superdrug.com",
+   "aisle": "Beauty & health",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 63
+  },
+  {
+   "n": 4,
+   "name": "Temu",
+   "site": "temu.com",
+   "aisle": "Marketplaces & department stores",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 64
+  },
+  {
+   "n": 60,
+   "name": "The Body Shop",
+   "site": "thebodyshop.com",
+   "aisle": "Beauty & health",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 65
+  },
+  {
+   "n": 74,
+   "name": "The Entertainer",
+   "site": "thetoyshop.com",
+   "aisle": "Toys, books & gifts",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 66
+  },
+  {
+   "n": 78,
+   "name": "The Works",
+   "site": "theworks.co.uk",
+   "aisle": "Toys, books & gifts",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 67
+  },
+  {
+   "n": 20,
+   "name": "TK Maxx",
+   "site": "tkmaxx.com",
+   "aisle": "Marketplaces & department stores",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 68
+  },
+  {
+   "n": 35,
+   "name": "Uniqlo",
+   "site": "uniqlo.com",
+   "aisle": "Fashion & sport",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 69
+  },
+  {
+   "n": 10,
+   "name": "Very",
+   "site": "very.co.uk",
+   "aisle": "Marketplaces & department stores",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 70
+  },
+  {
+   "n": 8,
+   "name": "Vinted",
+   "site": "vinted.co.uk",
+   "aisle": "Marketplaces & department stores",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 71
+  },
+  {
+   "n": 28,
+   "name": "Waitrose",
+   "site": "waitrose.com",
+   "aisle": "Supermarkets",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 72
+  },
+  {
+   "n": 76,
+   "name": "Waterstones",
+   "site": "waterstones.com",
+   "aisle": "Toys, books & gifts",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 73
+  },
+  {
+   "n": 48,
+   "name": "White Stuff",
+   "site": "whitestuff.com",
+   "aisle": "Fashion & sport",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 74
+  },
+  {
+   "n": 77,
+   "name": "WHSmith",
+   "site": "whsmith.co.uk",
+   "aisle": "Toys, books & gifts",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 75
+  },
+  {
+   "n": 72,
+   "name": "Xbox",
+   "site": "xbox.com",
+   "aisle": "Electricals, tech & games",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 76
+  },
+  {
+   "n": 53,
+   "name": "Zalando",
+   "site": "zalando.co.uk",
+   "aisle": "Fashion & sport",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 77
+  },
+  {
+   "n": 34,
+   "name": "Zara",
+   "site": "zara.com",
+   "aisle": "Fashion & sport",
+   "total": null,
+   "verdict": "Not enough evidence",
+   "why": [],
+   "rank": 78
+  },
+  {
+   "n": 24,
+   "name": "Asda (incl. George)",
+   "site": "asda.com",
+   "aisle": "Supermarkets",
+   "total": -1,
+   "verdict": "Not enough evidence",
+   "why": [
+    {
+     "type": "warning",
+     "why": "Promised the CMA to change green claims (George), Mar 2024",
+     "url": "https://www.gov.uk/cma-cases/asos-boohoo-and-asda-greenwashing-investigation"
+    }
+   ],
+   "rank": 79
+  },
+  {
+   "n": 36,
+   "name": "ASOS",
+   "site": "asos.com",
+   "aisle": "Fashion & sport",
+   "total": -1,
+   "verdict": "Not enough evidence",
+   "why": [
+    {
+     "type": "warning",
+     "why": "Promised the CMA to change green claims, Mar 2024",
+     "url": "https://www.gov.uk/cma-cases/asos-boohoo-and-asda-greenwashing-investigation"
+    }
+   ],
+   "rank": 80
+  },
+  {
+   "n": 37,
+   "name": "Boohoo",
+   "site": "boohoo.com",
+   "aisle": "Fashion & sport",
+   "total": -1,
+   "verdict": "Not enough evidence",
+   "why": [
+    {
+     "type": "warning",
+     "why": "Promised the CMA to change green claims, Mar 2024",
+     "url": "https://www.gov.uk/cma-cases/asos-boohoo-and-asda-greenwashing-investigation"
+    }
+   ],
+   "rank": 81
+  },
+  {
+   "n": 14,
+   "name": "Debenhams",
+   "site": "debenhams.com",
+   "aisle": "Marketplaces & department stores",
+   "total": -1,
+   "verdict": "Not enough evidence",
+   "why": [
+    {
+     "type": "warning",
+     "why": "Covered by Boohoo's promise to the CMA on green claims, Mar 2024",
+     "url": "https://www.gov.uk/cma-cases/asos-boohoo-and-asda-greenwashing-investigation"
+    }
+   ],
+   "rank": 82
+  },
+  {
+   "n": 97,
+   "name": "Simba",
+   "site": "simbasleep.com",
+   "aisle": "Home & DIY",
+   "total": -1,
+   "verdict": "Not enough evidence",
+   "why": [
+    {
+     "type": "warning",
+     "why": "Promised the CMA to change discount claims, Sep 2026",
+     "url": "https://www.gov.uk/cma-cases/simba-sleep-limited-consumer-protection-case"
+    }
+   ],
+   "rank": 83
+  },
+  {
+   "n": 21,
+   "name": "Wowcher",
+   "site": "wowcher.co.uk",
+   "aisle": "Marketplaces & department stores",
+   "total": -1,
+   "verdict": "Not enough evidence",
+   "why": [
+    {
+     "type": "warning",
+     "why": "Promised the CMA to change urgency claims, Jul 2024",
+     "url": "https://www.gov.uk/cma-cases/wowcher-group-consumer-protection-case"
+    }
+   ],
+   "rank": 84
+  },
+  {
+   "n": 26,
+   "name": "Aldi",
+   "site": "aldi.co.uk",
+   "aisle": "Supermarkets",
+   "total": -2,
+   "verdict": "Naughty",
+   "why": [
+    {
+     "type": "coal",
+     "why": "Pleaded guilty to a pest-control hygiene breach, fined, Nov 2024",
+     "url": "https://www.walthamforest.gov.uk/stories/aldi-pleads-guilty-hygiene-breach-following-waltham-forest-investigation"
+    }
+   ],
+   "rank": 85
+  },
+  {
+   "n": 87,
+   "name": "B&Q",
+   "site": "diy.com",
+   "aisle": "Home & DIY",
+   "total": -2,
+   "verdict": "Naughty",
+   "why": [
+    {
+     "type": "coal",
+     "why": "Named for underpaying the minimum wage, Sep 2026",
+     "url": "https://www.gov.uk/government/news/short-changing-staff-isnt-a-shortcut-to-success-nearly-660-employers-announced-as-failing-to-pay-the-minimum-wage"
+    }
+   ],
+   "rank": 86
+  },
+  {
+   "n": 65,
+   "name": "Currys",
+   "site": "currys.co.uk",
+   "aisle": "Electricals, tech & games",
+   "total": -2,
+   "verdict": "Naughty",
+   "why": [
+    {
+     "type": "coal",
+     "why": "Named for underpaying the minimum wage, Feb 2024",
+     "url": "https://www.gov.uk/government/news/over-500-companies-named-for-not-paying-minimum-wage"
+    }
+   ],
+   "rank": 87
+  },
+  {
+   "n": 69,
+   "name": "GAME",
+   "site": "game.co.uk",
+   "aisle": "Electricals, tech & games",
+   "total": -2,
+   "verdict": "Naughty",
+   "why": [
+    {
+     "type": "coal",
+     "why": "Named for underpaying the minimum wage, Feb 2024",
+     "url": "https://www.gov.uk/government/news/over-500-companies-named-for-not-paying-minimum-wage"
+    }
+   ],
+   "rank": 88
+  },
+  {
+   "n": 98,
+   "name": "Halfords",
+   "site": "halfords.com",
+   "aisle": "Home & DIY",
+   "total": -2,
+   "verdict": "Naughty",
+   "why": [
+    {
+     "type": "coal",
+     "why": "Named for underpaying the minimum wage, May 2025",
+     "url": "https://www.gov.uk/government/news/over-74-million-put-back-in-working-peoples-pockets-by-employers"
+    }
+   ],
+   "rank": 89
+  },
+  {
+   "n": 16,
+   "name": "Harrods",
+   "site": "harrods.com",
+   "aisle": "Marketplaces & department stores",
+   "total": -2,
+   "verdict": "Naughty",
+   "why": [
+    {
+     "type": "coal",
+     "why": "Named for underpaying the minimum wage, Feb 2024",
+     "url": "https://www.gov.uk/government/news/over-500-companies-named-for-not-paying-minimum-wage"
+    }
+   ],
+   "rank": 90
+  },
+  {
+   "n": 62,
+   "name": "Holland & Barrett",
+   "site": "hollandandbarrett.com",
+   "aisle": "Beauty & health",
+   "total": -2,
+   "verdict": "Naughty",
+   "why": [
+    {
+     "type": "coal",
+     "why": "Named for underpaying the minimum wage, Oct 2025",
+     "url": "https://www.gov.uk/government/news/6-million-repaid-to-workers-as-government-cracks-down-on-employers-underpaying-their-staff"
+    }
+   ],
+   "rank": 91
+  },
+  {
+   "n": 95,
+   "name": "Homebase",
+   "site": "homebase.co.uk",
+   "aisle": "Home & DIY",
+   "total": -2,
+   "verdict": "Naughty",
+   "why": [
+    {
+     "type": "coal",
+     "why": "Named for underpaying the minimum wage, Feb 2024",
+     "url": "https://www.gov.uk/government/news/over-500-companies-named-for-not-paying-minimum-wage"
+    }
+   ],
+   "rank": 92
+  },
+  {
+   "n": 30,
+   "name": "Iceland",
+   "site": "iceland.co.uk",
+   "aisle": "Supermarkets",
+   "total": -2,
+   "verdict": "Naughty",
+   "why": [
+    {
+     "type": "coal",
+     "why": "Named for underpaying the minimum wage, Oct 2025",
+     "url": "https://www.gov.uk/government/news/6-million-repaid-to-workers-as-government-cracks-down-on-employers-underpaying-their-staff"
+    }
+   ],
+   "rank": 93
+  },
+  {
+   "n": 27,
+   "name": "Lidl",
+   "site": "lidl.co.uk",
+   "aisle": "Supermarkets",
+   "total": -2,
+   "verdict": "Naughty",
+   "why": [
+    {
+     "type": "coal",
+     "why": "Named for underpaying the minimum wage, May 2025",
+     "url": "https://www.gov.uk/government/news/over-74-million-put-back-in-working-peoples-pockets-by-employers"
+    }
+   ],
+   "rank": 94
+  },
+  {
+   "n": 39,
+   "name": "River Island",
+   "site": "riverisland.com",
+   "aisle": "Fashion & sport",
+   "total": -2,
+   "verdict": "Naughty",
+   "why": [
+    {
+     "type": "coal",
+     "why": "Named for underpaying the minimum wage, Feb 2024",
+     "url": "https://www.gov.uk/government/news/over-500-companies-named-for-not-paying-minimum-wage"
+    }
+   ],
+   "rank": 95
+  },
+  {
+   "n": 22,
+   "name": "Tesco",
+   "site": "tesco.com",
+   "aisle": "Supermarkets",
+   "total": -2,
+   "verdict": "Naughty",
+   "why": [
+    {
+     "type": "coal",
+     "why": "Named for underpaying the minimum wage, Sep 2026",
+     "url": "https://www.gov.uk/government/news/short-changing-staff-isnt-a-shortcut-to-success-nearly-660-employers-announced-as-failing-to-pay-the-minimum-wage"
+    }
+   ],
+   "rank": 96
+  },
+  {
+   "n": 92,
+   "name": "The Range",
+   "site": "therange.co.uk",
+   "aisle": "Home & DIY",
+   "total": -2,
+   "verdict": "Naughty",
+   "why": [
+    {
+     "type": "coal",
+     "why": "Named for underpaying the minimum wage, May 2025",
+     "url": "https://www.gov.uk/government/news/over-74-million-put-back-in-working-peoples-pockets-by-employers"
+    }
+   ],
+   "rank": 97
+  },
+  {
+   "n": 91,
+   "name": "Wayfair",
+   "site": "wayfair.co.uk",
+   "aisle": "Home & DIY",
+   "total": -2,
+   "verdict": "Naughty",
+   "why": [
+    {
+     "type": "coal",
+     "why": "Fined £4.8m by the CMA over misleading sales countdowns, Oct 2026",
+     "url": "https://www.gov.uk/cma-cases/wayfair-consumer-protection-enforcement-case"
+    }
+   ],
+   "rank": 98
+  },
+  {
+   "n": 88,
+   "name": "Wickes",
+   "site": "wickes.co.uk",
+   "aisle": "Home & DIY",
+   "total": -2,
+   "verdict": "Naughty",
+   "why": [
+    {
+     "type": "coal",
+     "why": "Named for underpaying the minimum wage, Feb 2024",
+     "url": "https://www.gov.uk/government/news/over-500-companies-named-for-not-paying-minimum-wage"
+    }
+   ],
+   "rank": 99
+  },
+  {
+   "n": 25,
+   "name": "Morrisons",
+   "site": "morrisons.com",
+   "aisle": "Supermarkets",
+   "total": -8,
+   "verdict": "Naughty",
+   "why": [
+    {
+     "type": "coal",
+     "why": "Named for underpaying the minimum wage, Feb 2024",
+     "url": "https://www.gov.uk/government/news/over-500-companies-named-for-not-paying-minimum-wage"
+    },
+    {
+     "type": "coal",
+     "why": "Fined £737,000 for food hygiene offences, May 2026",
+     "url": "https://www.torfaen.gov.uk/en/news/morrisons-fined-750000-over-hygiene-failings"
+    }
+   ],
+   "rank": 100
+  }
+ ]
+}
