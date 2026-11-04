@@ -52,6 +52,14 @@ test('one proven offence is Naughty, dated by publication when no event date exi
   assert.equal(score.counted[0].datedByPublication, true);
 });
 
+test('minimum-wage namings under £1,000 earn no coal', () => {
+  const small = proven('2026-09-03'); small.facts = { underpaymentGBP: 227.84 };
+  const large = proven('2026-09-03'); large.facts = { underpaymentGBP: 1709.93 };
+  assert.equal(santaScore([small], { asOf }).verdict, 'not_enough_evidence');
+  assert.equal(santaScore([small], { asOf }).history[0].reason, 'below_threshold');
+  assert.equal(santaScore([large], { asOf }).verdict, 'naughty');
+});
+
 test('repeat incidents within the window double the total', () => {
   const twoWarnings = santaScore([record('undertaking', '2025-01-01'), record('commitments', '2026-01-01')], { asOf });
   assert.deepEqual([twoWarnings.coal, twoWarnings.verdict], [2, 'naughty']);

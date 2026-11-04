@@ -42,7 +42,7 @@ Under v0.3, 81 of the 100 retailers came out "not enough evidence" even after ev
 
 | Evidence | Points | Examples |
 | --- | ---: | --- |
-| Proven offence | 2 coal | Guilty plea or conviction, fine, minimum-wage naming, regulator's order or settlement |
+| Proven offence | 2 coal | Guilty plea or conviction, fine, minimum-wage naming of £1,000 or more, regulator's order or settlement |
 | Warning | 1 coal | CMA undertakings or commitments: the practice was real and the regulator stepped in, but nothing was proven or admitted |
 | Gift | 1 | Current Certified B Corp, checked directly in the B Lab directory |
 | Nothing | 0 | Self-reported CSR, policies, promises, allegations, open investigations, secondary or historical reports (Wikirate 2022), practices changed before any formal action |
@@ -103,12 +103,12 @@ Hand-computed from `data/research/`. Not yet in the registry or API.
 | Verdict | Retailers |
 | --- | --- |
 | Nice | Patagonia, Tony's Chocolonely, FatFace (B Corp), Simba (B Corp +1 balances its CMA undertaking −1) |
-| Naughty | B&Q (named twice: −4); Wayfair (CMA £4.8m fine, Oct 2026); minimum-wage naming (−2): Currys, Morrisons (Wm Morrison Produce), GAME, River Island, Wickes, Harrods, Lidl, Halfords, The Range (CDS), Holland & Barrett, Iceland, B&M, Tesco |
+| Naughty | B&Q (named twice: −4); Wayfair (CMA £4.8m fine, Oct 2026); minimum-wage naming (−2): Currys, Morrisons (Wm Morrison Produce), GAME, River Island, Wickes, Lidl, Halfords, The Range (CDS), Holland & Barrett, Iceland, B&M |
 | Not enough evidence, warning shown | Wowcher, Asda (George), ASOS, Boohoo, Amazon UK (CMA undertakings from Amazon Europe Core SARL, Jun 2025) |
-| Not enough evidence | Everyone else |
+| Not enough evidence | Everyone else, including Tesco (£227.84) and Harrods (£775.04), whose namings are under £1,000 |
 
 **Open before sign-off:**
-- **Severity:** Tesco (£227.84, 1 worker), Harrods (£775.04, 1 worker), B&M (£3,304.80, 1 worker) and Iceland (£1,709.93, 6 workers) count the same as B&Q's £456,934. A minimum amount or number of workers may be needed.
+- **Severity (agreed 4 Nov):** minimum-wage namings under £1,000 in total are shown but earn no coal. Larger ones count in full.
 - **Halfords:** two Halfords companies in the same round are counted as one incident.
 - **Not counted:** regional co-operative societies are not the Co-op Group. Land-agreement letters (Morrisons, Co-op, M&S) are "changed its ways".
 - **Unverified links:** owner links and some legal entities are unverified (see the notes in each JSON).
