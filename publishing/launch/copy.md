@@ -9,7 +9,7 @@ Drafted 4 November 2026 for Superthread card 156. For Samira to review. Nothing 
 - Icon: the festive icon in `store/` (red tile, Santa's scroll, gold "checked" badge). Replaced the 40(40) navy one after Ben's steer to go more Christmassy
 - Scope: **one brand, H&M**, on H&M's own shop (hm.com)
 - Chrome developer account: **Ben owns it**, published as 40 for 40 (the company)
-- **Ship with B Corp only** (Samira, 4 Nov 15:10): launch now with H&M's B Corp result and empty Nice / Naughty columns; don't wait for scoring card 157
+- **Ship with B Corp only** (Samira, 4 Nov 15:10): launch now with H&M's B Corp result on the brand badge; don't wait for scoring card 157
 
 Every `[square bracket]` is something the build still has to confirm before this goes live.
 
@@ -22,20 +22,17 @@ Every `[square bracket]` is something the build still has to confirm before this
 
 So the honest message today is: *H&M isn't a Certified B Corp, here's the source and date, and that's one fact, not a verdict.* Copy must never turn "not a B Corp" into "naughty" (most companies aren't B Corps).
 
-## What the overlay says on H&M today
+## What the H&M badge says today
 
-For Lawrence's Nice / Naughty overlay. The B Corp result sits above the two columns as a neutral fact, not inside either column.
+Card 158 (Lawrence, 4 Nov): single-brand shops like H&M get a **brand badge**, not a Nice / Naughty split, because every product shares one company's evidence. The split (Nice, Naughty, Unknown) is for multi-brand shops later. Surface, trigger and placement are still open on card 158.
 
-- **Header:** The Naughty List · *Checking it twice…*
-- **Company line:** The company behind this gift: **H&M**
-- **B Corp strip:** **Certified B Corp?** Not listed. H&M isn't in the B Lab directory of Certified B Corps. *Checked 4 Nov 2026 · Source: B Lab directory*
-- **Strip helper text (small):** Lots of great companies aren't B Corps, so this isn't a naughty mark on its own.
-- **Nice column, empty state:** *Our elves are still checking.* Ratings for staff, communities and the planet are coming down the chimney.
-- **Naughty column, empty state:** *Nothing on the list yet.* We only add things here with a source and a date.
+- **Header:** The Naughty List · *Checked it twice*
+- **Company line:** Everything on this shop is from **H&M**
+- **State:** Certified B Corp? **Not listed**
+- **Detail:** H&M isn't in the B Lab directory of Certified B Corps. Source: B Lab directory · Checked 4 Nov 2026
+- **Note:** Lots of great companies aren't B Corps, so this isn't a naughty mark on its own. Full naughty-or-nice ratings are coming down the chimney.
+- **Where this came from (expanded):** We searched the B Lab directory for "H&M", "H&M Group" and "Hennes & Mauritz" on 4 Nov 2026 and found no listing. We'll check again by 4 Dec 2026.
 - **Footer:** About the company, not this jumper.
-
-
----
 
 ## Voice
 

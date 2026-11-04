@@ -1,7 +1,9 @@
 <!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="tiles.css">
-<!-- Concept render of the two-column Nice / Naughty overlay (Samira, 4 Nov). Lawrence owns the real UX; replace these with real captures once it exists.
-     Variants: ?v=1 overlay open (lead screenshot) · ?v=2 one item opened to show its source.
-     B Corp strip uses the real registry result (branch hm-registry, 4 Nov). Columns show empty states until scoring card 157 supplies findings. -->
+<!-- Concept render of the H&M brand badge. Card 158 (Lawrence, 4 Nov): single-brand shops like H&M get a brand badge, not a Nice/Naughty split,
+     because every product shares one company's evidence. The split is for multi-brand shops, later.
+     Lawrence owns the real UX; surface, trigger and placement are still open on card 158. Replace with real captures once it exists.
+     Variants: ?v=1 badge on the product page (lead screenshot) · ?v=2 badge opened to show where the result came from.
+     B Corp result is real: H&M not in the B Lab directory, checked 4 Nov 2026 (registry entry on branch hm-registry). -->
 <style>
 html,body{overflow:hidden}
 body{background:#f4f3f0;color:#1b1a17;font-family:"Nunito",sans-serif;font-weight:600}
@@ -11,48 +13,40 @@ body{background:#f4f3f0;color:#1b1a17;font-family:"Nunito",sans-serif;font-weigh
 .ext{width:28px;height:28px}
 .bar{height:56px;background:#fff;border-bottom:1px solid #e5e3de;display:flex;align-items:center;padding:0 32px;gap:28px;font-size:14px;color:#444}
 .bar b{font-size:22px;color:#111;margin-right:16px}
-.page{display:grid;grid-template-columns:360px 1fr;gap:32px;padding:32px}
-.img{height:440px;border-radius:6px;background:linear-gradient(160deg,#b8322c,#7c1d1a);display:flex;align-items:flex-end;padding:18px;color:#fff;font-size:13px;opacity:.95}
+.page{display:grid;grid-template-columns:360px 340px;gap:32px;padding:32px}
+.img{height:440px;border-radius:6px;background:linear-gradient(160deg,#b8322c,#7c1d1a);display:flex;align-items:flex-end;padding:18px;color:#fff;font-size:13px}
 .crumb{font-size:12px;color:#777;margin-bottom:8px}
 h2{font:600 24px "Nunito",sans-serif;margin-bottom:6px}
 .price{font-size:22px;margin:10px 0 18px}
 .sz{display:flex;gap:8px;margin-bottom:18px}.sz span{width:44px;height:36px;border:1px solid #ccc;border-radius:4px}
 .add{width:260px;height:46px;background:#222;border-radius:4px}
-.dim{position:absolute;inset:100px 0 0 0;background:rgba(20,10,5,.28)}
 
-.ol{position:absolute;top:118px;right:28px;width:640px;background:var(--snow);border-radius:22px;box-shadow:0 24px 60px rgba(40,0,0,.4);overflow:hidden}
-.hd{background:var(--red);color:var(--snow);padding:16px 20px 18px;display:flex;align-items:center;gap:12px;position:relative}
-.hd img{width:54px;height:54px;margin:-8px}
-.hd .t{font:30px "Lilita One",sans-serif;line-height:1}
-.hd .s{font:22px "Caveat Brush",cursive;color:var(--gold)}
-.hd .x{margin-left:auto;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center;font-weight:900}
+/* the badge sits in the empty space beside the product details: it never covers price, sizes or add-to-bag */
+.badge{position:absolute;top:132px;left:820px;width:420px;background:var(--snow);border-radius:22px;box-shadow:0 18px 44px rgba(40,0,0,.28);overflow:hidden}
+.hd{background:var(--red);color:var(--snow);padding:14px 18px 18px;display:flex;align-items:center;gap:12px;position:relative}
+.hd img{width:50px;height:50px;margin:-8px}
+.hd .t{font:26px "Lilita One",sans-serif;line-height:1}
+.hd .s{font:20px "Caveat Brush",cursive;color:var(--gold)}
+.hd .x{margin-left:auto;display:flex;gap:6px}
+.hd .x i{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center;font-style:normal;font-weight:900;font-size:14px}
 .hd::after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;background:repeating-linear-gradient(-45deg,var(--snow) 0 8px,var(--red) 8px 16px)}
-.brand{padding:12px 20px 0;font-size:13px;color:#6b5a50}
-.brand b{font:24px "Lilita One",sans-serif;color:#2a1a14;margin-left:6px}
-.bc{margin:10px 16px 0;background:#fff;border:2px solid #eadfce;border-radius:14px;padding:10px 14px;display:grid;grid-template-columns:auto 1fr;gap:2px 12px;align-items:center}
-.bc .q{font:20px "Lilita One",sans-serif;color:#2a1a14}
-.bc .a{font-weight:900;font-size:15px;color:#2a1a14}
-.bc .m{grid-column:1/-1;font-size:11.5px;color:#8a7a70}
-.empty{background:rgba(255,255,255,.6);border:2px dashed rgba(0,0,0,.08);border-radius:12px;padding:14px;font-size:13px;color:#5b4a40;line-height:1.45}
-.empty b{display:block;font:20px "Caveat Brush",cursive;color:inherit;margin-bottom:2px}
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px 16px 4px}
-.col{border-radius:16px;padding:12px;min-height:170px}
-.nice{background:#e7f3ea}
-.naughty{background:#ece6e3}
-.ch{display:flex;align-items:center;gap:8px;font:26px "Lilita One",sans-serif;margin-bottom:10px}
-.nice .ch{color:var(--green)} .naughty .ch{color:#3b2a24}
-.ch .n{margin-left:auto;font:900 13px "Nunito",sans-serif;background:#fff;border-radius:99px;padding:2px 10px;color:#6b5a50}
-.it{background:#fff;border-radius:12px;padding:10px 12px;margin-bottom:8px;box-shadow:0 1px 0 rgba(0,0,0,.05)}
-.it .k{font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#8a7a70}
-.it .f{font-size:14px;font-weight:800;margin:2px 0}
-.it .src{font-size:11.5px;color:#8a7a70}
-.ph{background:#fff1c2;color:#7a5a00;border-radius:4px;padding:0 4px}
-.it.open{outline:3px solid var(--gold)}
-.it .more{margin-top:8px;padding-top:8px;border-top:1px dashed #e3d8cc;font-size:12px;color:#5b4a40;line-height:1.5}
-.it .more u{color:var(--red)}
-.ft{display:flex;justify-content:space-between;align-items:center;padding:10px 20px 14px;font-size:12px;color:#8a7a70}
-.ft .v{background:var(--cream,#f6ecdc);border-radius:99px;padding:5px 12px;color:#5b4a40;font-weight:800}
+.body{padding:16px 20px 6px}
+.co{font-size:13px;color:#6b5a50}
+.co b{display:block;font:34px "Lilita One",sans-serif;color:#2a1a14;line-height:1.05;margin-top:2px}
+.state{margin-top:14px;display:flex;align-items:center;gap:12px;background:#fff;border:2px solid #eadfce;border-radius:16px;padding:12px 14px}
+.state .ic{flex:none;width:42px;height:42px;border-radius:50%;background:#efe7dc;display:grid;place-items:center;font:22px "Lilita One",sans-serif;color:#6b5a50}
+.state .q{font-size:12px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#8a7a70}
+.state .a{font:21px "Lilita One",sans-serif;color:#2a1a14;line-height:1.1}
+.meta{margin-top:10px;font-size:12.5px;color:#6b5a50;line-height:1.55}
+.meta u{color:var(--red)}
+.note{margin:12px 0 0;padding:10px 12px;background:#fff6dc;border-radius:12px;font-size:12.5px;color:#5b4a40;line-height:1.45}
+.more{margin-top:12px;padding-top:12px;border-top:2px dashed #eadfce;font-size:12.5px;color:#5b4a40;line-height:1.55;display:none}
+.more b{font:20px "Caveat Brush",cursive;color:var(--green);display:block}
+.ft{display:flex;justify-content:space-between;align-items:center;padding:12px 20px 16px;font-size:12px;color:#8a7a70}
+.ft a{color:var(--green);font-weight:900;text-decoration:none}
 .tag{position:absolute;left:14px;bottom:12px;font:800 11px "Nunito",sans-serif;color:#fff;background:rgba(0,0,0,.45);padding:4px 9px;border-radius:6px;letter-spacing:.04em}
+body.v2 .more{display:block}
+body.v2 .badge{top:118px}
 </style></head><body>
 <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><div class="url">www2.hm.com/en_gb/productpage.[id].html</div><img class="ext" src="icon-festive.svg"></div>
 <div class="bar"><b>H&amp;M</b> Women · Men · Kids · Home · Christmas gifts</div>
@@ -60,30 +54,18 @@ h2{font:600 24px "Nunito",sans-serif;margin-bottom:6px}
   <div class="img">Product photo</div>
   <div><div class="crumb">Men › Jumpers › Christmas</div><h2>Christmas jumper</h2><div class="price">£[price]</div><div class="sz"><span></span><span></span><span></span><span></span></div><div class="add"></div></div>
 </div>
-<div class="dim"></div>
 
-<div class="ol">
-  <div class="hd"><img src="icon-festive.svg"><div><div class="t">The Naughty List</div><div class="s">Checking it twice…</div></div><div class="x">×</div></div>
-  <div class="brand">The company behind this gift:<b>H&amp;M</b></div>
-  <div class="bc" id="bc"><span class="q">Certified B Corp?</span><span class="a">Not listed. H&amp;M isn’t in the B Lab directory.</span><span class="m">Checked 4 Nov 2026 · Source: B Lab directory · Lots of great companies aren’t B Corps, so this isn’t a naughty mark on its own.</span></div>
-  <div class="cols">
-    <div class="col nice">
-      <div class="ch">✨ Nice <span class="n">0</span></div>
-      <div class="empty"><b>Our elves are still checking.</b>Ratings for staff, communities and the planet are coming down the chimney.</div>
-    </div>
-    <div class="col naughty">
-      <div class="ch">🪨 Naughty <span class="n">0</span></div>
-      <div class="empty"><b>Nothing on the list yet.</b>We only add things here with a source and a date.</div>
-    </div>
+<div class="badge">
+  <div class="hd"><img src="icon-festive.svg"><div><div class="t">The Naughty List</div><div class="s">Checked it twice</div></div><div class="x"><i>–</i><i>×</i></div></div>
+  <div class="body">
+    <div class="co">Everything on this shop is from<b>H&amp;M</b></div>
+    <div class="state"><div class="ic">B</div><div><div class="q">Certified B Corp?</div><div class="a">Not listed</div></div></div>
+    <div class="meta">H&amp;M isn’t in the B Lab directory of Certified B Corps.<br>Source: <u>B Lab directory</u> · Checked 4 Nov 2026</div>
+    <div class="note">Lots of great companies aren’t B Corps, so this isn’t a naughty mark on its own. Full naughty-or-nice ratings are coming down the chimney.</div>
+    <div class="more"><b>Where this came from</b>We searched the B Lab directory for “H&amp;M”, “H&amp;M Group” and “Hennes &amp; Mauritz” on 4 Nov 2026 and found no listing. We’ll check again by 4 Dec 2026.<br><u style="color:var(--red)">bcorporation.net/find-a-b-corp</u></div>
   </div>
-  <div class="ft"><span>About the company, not this jumper.</span><span class="v">Overall rating: coming soon</span></div>
+  <div class="ft"><span>About the company, not this jumper.</span><a>Where’s this from? ›</a></div>
 </div>
 <div class="tag">CONCEPT RENDER · REPLACE WITH A REAL CAPTURE BEFORE UPLOAD</div>
-<script>
-if(new URLSearchParams(location.search).get('v')==='2'){
-  const b=document.getElementById('bc');b.style.outline='3px solid var(--gold)';
-  b.insertAdjacentHTML('beforeend','<div class="m" style="border-top:1px dashed #e3d8cc;padding-top:8px;margin-top:6px;color:#5b4a40;font-size:12.5px;line-height:1.55"><b>Where this came from</b><br>We searched the B Lab directory for “H&amp;M”, “H&amp;M Group” and “Hennes &amp; Mauritz” on 4 Nov 2026: no listing.<br><u style="color:var(--red)">bcorporation.net/find-a-b-corp</u> · We’ll check again by 4 Dec 2026.</div>');
-  document.querySelector('.s').textContent='Here’s where that came from';
-}
-</script>
+<script>if(new URLSearchParams(location.search).get('v')==='2'){document.body.classList.add('v2');document.querySelector('.ft a').textContent='Hide details ‹'}</script>
 </body></html>

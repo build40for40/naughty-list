@@ -8,7 +8,7 @@ Show only what the extension does on camera. Today that means B Corp status, the
 | --- | --- | --- |
 | 0–4s | A shop homepage full of Christmas gift ads | "Every brand looks lovely at Christmas." |
 | 4–9s | Open an H&M product page (a Christmas jumper works) | "But who's been naughty or nice?" |
-| 9–17s | The Naughty List overlay appears: H&M, "Certified B Corp? Not listed" | "The Naughty List checks the company behind the gift. H&M isn't a Certified B Corp." |
+| 9–17s | The Naughty List badge appears beside the product: H&M, "Certified B Corp? Not listed" | "The Naughty List checks the company behind the gift. H&M isn't a Certified B Corp." |
 | 17–24s | Hover or point at the source and date | "Here's where that came from, and when we checked. One fact, not a verdict: full naughty-or-nice ratings are on the way." |
 | 24–31s | A second H&M product, same result | "It works on every H&M product page. More shops are coming." |
 | 31–36s | Quick cut of the team on stream (Twitch VOD) | "We built it live, in one day." |
@@ -16,7 +16,7 @@ Show only what the extension does on camera. Today that means B Corp status, the
 
 ## Brand to film
 
-H&M, on H&M's own shop. Ben's assessment returns **not a Certified B Corp** (B Lab directory, checked 4 Nov 2026) once branch `hm-registry` is merged. Say it exactly like that, with the source and date on screen. Don't call it naughty, and keep the Nice / Naughty columns showing their empty states until card 157 gives them content.
+H&M, on H&M's own shop. Ben's assessment returns **not a Certified B Corp** (B Lab directory, checked 4 Nov 2026) once branch `hm-registry` is merged. Say it exactly like that, with the source and date on screen. Don't call it naughty, H&M gets the brand badge (card 158); the Nice / Naughty split is for multi-brand shops later.
 
 ## Shorts cut (9:16)
 
@@ -34,4 +34,4 @@ Once the overlay works, set Chrome DevTools device mode to 1280×800, then use �
 4. The toolbar popup, if there is one
 5. Title card: already made, `store/screenshot-5-title-card-1280x800.png`
 
-`store/screenshot-1-overlay-CONCEPT-…png` and `screenshot-2-sources-CONCEPT-…png` show the current target: a two-column Nice / Naughty overlay (Lawrence is building the real one). They're renders and must not be uploaded; recapture from the real extension in the same framing.
+`store/screenshot-1-overlay-CONCEPT-…png` and `screenshot-2-sources-CONCEPT-…png` show the current target: the H&M brand badge from card 158 (Lawrence is building the real one). They're renders and must not be uploaded; recapture from the real extension in the same framing.
