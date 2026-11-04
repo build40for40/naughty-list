@@ -75,5 +75,16 @@
     return { tone: 'neutral', title: 'Not enough evidence', message: 'We could not safely match this website to a reviewed brand shop. Unknown does not mean naughty.' };
   }
 
-  globalThis.NaughtyList = { positions, normalizePosition, settings, hostname, purchaseControls, shoppingSignals, viewModel };
+  function communityModel(assessment) {
+    if (assessment?.relevance?.category !== 'brand_shop' || assessment.relevance.eligibleForVerdict !== true || !assessment.company) return null;
+    const summary = assessment.community;
+    if (!summary || !['ready', 'early'].includes(summary.status) || !Number.isInteger(summary.total) || summary.total < 0) return null;
+    // The API and every display independently enforce the 20 decisive-vote floor.
+    const minimum = Math.max(20, Number.isInteger(summary.minimumVotes) ? summary.minimumVotes : 20);
+    const ready = summary.status === 'ready' && summary.total >= minimum && Number.isFinite(summary.nicePercentage) && summary.nicePercentage >= 0 && summary.nicePercentage <= 100;
+    return { text: ready ? `${summary.nicePercentage}% voted Nice · ${summary.total} votes` : `Early voting · ${summary.total} votes · ${minimum} needed for a percentage`,
+      companyId: assessment.company.id };
+  }
+
+  globalThis.NaughtyList = { positions, normalizePosition, settings, hostname, purchaseControls, shoppingSignals, viewModel, communityModel };
 })();

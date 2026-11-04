@@ -26,6 +26,7 @@
           schemaVersion: data.schemaVersion, match: data.match, company: data.company,
           relevance: data.relevance ?? { category: 'unknown', eligibleForVerdict: false },
           criteria: { bCorp: data.criteria.bCorp }, scoring: data.scoring,
+          community: data.community ?? null,
           evidence: (data.evidence ?? []).slice(0, 3).map(item => ({ title: item.title, sourceUrl: item.sourceUrl, checkedAt: item.checkedAt, freshness: item.freshness }))
         };
         memory[domain] = { assessment, expiresAt: now() + TTL };
