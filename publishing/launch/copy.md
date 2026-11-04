@@ -9,6 +9,7 @@ Drafted 4 November 2026 for Superthread card 156. For Samira to review. Nothing 
 - Icon: the festive icon in `store/` (red tile, Santa's scroll, gold "checked" badge). Replaced the 40(40) navy one after Ben's steer to go more Christmassy
 - Scope: **one brand, H&M**, on H&M's own shop (hm.com)
 - Chrome developer account: **Ben owns it**, published as 40 for 40 (the company)
+- **Ship with B Corp only** (Samira, 4 Nov 15:10): launch now with H&M's B Corp result and empty Nice / Naughty columns; don't wait for scoring card 157
 
 Every `[square bracket]` is something the build still has to confirm before this goes live.
 

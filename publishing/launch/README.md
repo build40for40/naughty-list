@@ -18,7 +18,7 @@ This adds to Ben's `publishing/` prep on main and doesn't replace it. His icons 
 
 **Look and voice (4 Nov, Ben's steer):** Christmassy and pun-happy with its own identity: Santa red, pine green, snow, gold, candy-cane stripes; Lilita One, Nunito and Caveat Brush. 40 for 40 is only a small "made by" credit. See the pun bank in `copy.md`.
 
-**Decisions (4 Nov):** support email help@build40for40.com · festive icon · one brand, H&M, on hm.com · Ben owns the Chrome developer account, published as 40 for 40. **Blocker:** H&M isn't in `worker/companies.js` yet.
+**Decisions (4 Nov):** ship with B Corp only (no waiting for scoring) · support email help@build40for40.com · festive icon · one brand, H&M, on hm.com · Ben owns the Chrome developer account, published as 40 for 40. **Blocker:** H&M isn't in `worker/companies.js` yet.
 
 All copy follows the repo rule: today we only show **B Corp evidence with a source and date**, "not on our list" never means naughty, and naughty/nice verdicts wait for the scoring card (157).
 
