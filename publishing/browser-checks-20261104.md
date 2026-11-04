@@ -4,6 +4,8 @@
 
 Installed the actual unpacked extension in Chrome for Testing 156.0.8078.4, using a new temporary profile. No existing browser profile was modified.
 
+The six checks below were repeated successfully after merging Lawrence's Elf Cam implementation from PR #6 into this readiness branch. Elf Cam is the approved launch design; this work does not replace its styling with the earlier festive overlay.
+
 A labelled fictional shopping page on the reserved `shop.example.test` hostname exercised real extension scripts and the live Cloudflare API. Verified:
 
 - Product/offer and purchase-control detection displays a neutral unknown stamp.

@@ -18,7 +18,7 @@ This adds to Ben's `publishing/` prep on main and doesn't replace it. The festiv
 | `video/storyboard.md` | 40s demo shot list and voice-over, the shorts cut, and the real-screenshot list | Record once the overlay works |
 | `src/` | Editable HTML/SVG sources and `render.sh` (headless Chrome to PNG) | |
 
-**Look and voice (4 Nov, Ben's steer):** Christmassy and pun-happy with its own identity: Santa red, pine green, snow, gold, candy-cane stripes; Lilita One, Nunito and Caveat Brush. 40 for 40 is only a small "made by" credit. See the pun bank in `copy.md`.
+**Launch overlay decision (4 Nov):** Ben confirmed Lawrence's Elf Cam integration is the version to keep. PR #6 is merged. Its black/phosphor camera-feed overlay replaces the older red/green overlay concepts. Festive icons can remain; promotional captures must show the actual Elf Cam implementation. Keep the playful voice and small made-by credit. See the pun bank in `copy.md`.
 
 **Decisions (4 Nov):** ship with B Corp only (no waiting for scoring) · support email help@build40for40.com · festive icon · one brand, H&M, on hm.com · Ben owns the Chrome developer account, published as 40 for 40. **Certification limitation:** H&M identity is reviewed in `data/companies.js`, but certification remains unknown. Use the current submission copy instead of old not-certified mock claims.
 

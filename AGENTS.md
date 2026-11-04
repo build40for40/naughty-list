@@ -56,7 +56,7 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 - **Scope:** one brand, H&M, on H&M's own shop. This replaces the earlier idea of seller lookup on marketplaces such as Amazon or Argos for the first release.
 - **What the overlay shows today:** whether H&M is a Certified B Corp, with the source (B Lab directory) and the check date. The Naughty or Nice stamp only appears once card 157's method is agreed and the backend returns a verdict. The card 156 store copy, which promises B Corp evidence only, needs rewriting when that happens.
 - **Support email:** help@build40for40.com. Use this in publication materials and the final public privacy notice.
-- **Look:** a Christmas identity of its own: Santa red, pine green, snow, gold and candy-cane stripes, with playful puns. 40 for 40 appears only as a small "made by" credit. The festive icons are installed in `extension/icons/`.
+- **Look:** Lawrence's Elf Cam integration (PR #6) is the approved launch overlay: black camera-feed panel, phosphor green details, neutral grey evidence states and a bundled pixel font. Preserve the existing shopping logic, settings and purchase-control avoidance. Festive icons remain installed in `extension/icons/`; earlier red/green overlay concepts must not replace the approved Elf Cam design.
 - **Chrome Web Store:** Ben owns the developer account (fee paid), publishing as 40 for 40 Ltd.
 - **Firefox add-on ID:** `{c2591c57-0224-4d4a-bdb4-a3223e58c354}` in `publishing/manifest.firefox.json`. Never change it; updates depend on it.
 

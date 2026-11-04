@@ -24,7 +24,7 @@ Do not say that every product on the site is made by H&M, that H&M is not certif
 
 ## Voice and assets
 
-Christmas identity: Santa red, pine green, snow, gold and candy-cane stripes. Playful language must not change the facts. 40 for 40 appears as a small made-by credit.
+The approved overlay is Lawrence's Elf Cam from PR #6, with its black camera-feed panel, phosphor details and neutral grey unknown states. Earlier festive overlay concepts must not replace it. Festive icons remain. Playful language must not change the facts; 40 for 40 appears as a small made-by credit.
 
 Pun bank: check it twice · sleigh informed · yule know before you buy · ho ho hold on · elf-explanatory · what's in the sack · coming down the chimney · Santa's little helper · season's readings.
 
