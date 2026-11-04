@@ -27,7 +27,7 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 
 | Card | Title | State |
 | --- | --- | --- |
-| 150 | Define the 5 W's | Doing |
+| 150 | Define the 5 W's | Done |
 | 151 | Where are we on content progress? | To do |
 | 152 | Publish extension: common steps | Doing |
 | 153 | Publish Chrome extension | To do |
