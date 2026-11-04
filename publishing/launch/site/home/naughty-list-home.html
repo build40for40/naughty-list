@@ -68,6 +68,10 @@ section{padding-block:64px}
 .shop.rest{background:var(--cream);color:var(--ink);font-family:var(--f-body);text-transform:none;border:3px dashed var(--line);box-shadow:none;align-content:center}
 .shop.rest b{font:34px/1 var(--f-display);color:var(--red)}
 .shop.rest small{font-size:14px;color:var(--sub)}
+.elf{width:20px;height:20px;flex:none}
+.vote button{display:inline-flex;align-items:center;gap:5px}
+h3.elves{display:flex;align-items:center;gap:6px}
+h3.elves .elf{width:30px;height:30px}
 .legend{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
 .legend div{background:var(--cream);border-radius:18px;padding:18px 22px}
 .legend p{color:var(--sub);font-size:15px;margin-top:6px}
@@ -115,6 +119,37 @@ footer b{display:block;font:24px var(--f-display);margin-bottom:4px}
 @media (prefers-reduced-motion:reduce){.btn:active{transform:none}}
 </style>
 
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Nice elf: green-and-white hat on straight, rosy cheeks, happy smile -->
+    <symbol id="elf-nice" viewBox="0 -3 40 43">
+      <path d="M9.5 23 L2.5 17.5 L10.5 20 Z M30.5 23 L37.5 17.5 L29.5 20 Z" fill="#eab48d"/>
+      <circle cx="20" cy="25" r="11" fill="#f3c6a0"/>
+      <path d="M8 19 C9 10 15 4 25 2.5 C22.5 7 23.5 12 32 19 Z" fill="#1f6b3f"/>
+      <rect x="6.5" y="16.5" width="27" height="5.5" rx="2.75" fill="#fffaf2"/>
+      <circle cx="25.5" cy="3" r="3" fill="#fffaf2"/>
+      <circle cx="13" cy="28" r="2.3" fill="#f08a8a" opacity=".7"/>
+      <circle cx="27" cy="28" r="2.3" fill="#f08a8a" opacity=".7"/>
+      <circle cx="16" cy="25" r="1.5" fill="#2a1a14"/>
+      <circle cx="24" cy="25" r="1.5" fill="#2a1a14"/>
+      <path d="M15.5 29 Q20 33.5 24.5 29" fill="none" stroke="#2a1a14" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <!-- Naughty elf: red-and-white hat tipped sideways, a wink, a raised brow and a wry smile -->
+    <symbol id="elf-naughty" viewBox="0 -3 40 43">
+      <path d="M9.5 23 L2.5 17.5 L10.5 20 Z M30.5 23 L37.5 17.5 L29.5 20 Z" fill="#eab48d"/>
+      <circle cx="20" cy="25" r="11" fill="#f3c6a0"/>
+      <g transform="rotate(-14 20 18)">
+        <path d="M8 19 C9 10 15 4 25 2.5 C22.5 7 23.5 12 32 19 Z" fill="#d42a2a"/>
+        <rect x="6.5" y="16.5" width="27" height="5.5" rx="2.75" fill="#fffaf2"/>
+        <circle cx="25.5" cy="3" r="3" fill="#fffaf2"/>
+      </g>
+      <g transform="translate(0 1.5)"><path d="M13.8 25.3 Q16 23.6 18.2 25.3" fill="none" stroke="#2a1a14" stroke-width="1.6" stroke-linecap="round"/>
+      <circle cx="24" cy="25" r="1.5" fill="#2a1a14"/>
+      <path d="M21.8 21.6 L26.6 20.3" stroke="#2a1a14" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M15.5 30 Q20.5 31.5 25.5 27.5" fill="none" stroke="#2a1a14" stroke-width="1.6" stroke-linecap="round"/></g>
+    </symbol>
+  </defs>
+</svg>
 <header class="hero snowfall">
   <div class="w">
     <div class="top">
@@ -142,21 +177,21 @@ footer b{display:block;font:24px var(--f-display);margin-bottom:4px}
 
 <section id="window">
   <div class="w">
-    <h2>Check the shops you already use</h2>
-    <p class="scrawl kicker">Santa checks the evidence. You're the elf on the shop floor.</p>
+    <h2>Check the shops you already use. Then be Santa's informer.</h2>
+    <p class="scrawl kicker">Santa checks the evidence. You're his elf on the shop floor: tell him who's been naughty or nice.</p>
     <div class="window">
-      <div class="shop"><span class="aisle">Marketplaces</span><b>Amazon</b><small>amazon.co.uk</small><span class="pill on">🎅 On file · score pending</span><div class="vote"><button disabled>🧝 Nice</button><button disabled>🧝 Naughty</button></div></div>
-      <div class="shop"><span class="aisle">Supermarkets</span><b>Tesco</b><small>tesco.com</small><span class="pill">🎅 Santa's checking…</span><div class="vote"><button disabled>🧝 Nice</button><button disabled>🧝 Naughty</button></div></div>
-      <div class="shop"><span class="aisle">Fashion &amp; sport</span><b>Primark</b><small>primark.com</small><span class="pill">🎅 Santa's checking…</span><div class="vote"><button disabled>🧝 Nice</button><button disabled>🧝 Naughty</button></div></div>
-      <div class="shop"><span class="aisle">Beauty &amp; health</span><b>Boots</b><small>boots.com</small><span class="pill">🎅 Santa's checking…</span><div class="vote"><button disabled>🧝 Nice</button><button disabled>🧝 Naughty</button></div></div>
-      <div class="shop"><span class="aisle">Electricals</span><b>Currys</b><small>currys.co.uk</small><span class="pill">🎅 Santa's checking…</span><div class="vote"><button disabled>🧝 Nice</button><button disabled>🧝 Naughty</button></div></div>
-      <div class="shop"><span class="aisle">Toys &amp; gifts</span><b>Smyths Toys</b><small>smythstoys.com</small><span class="pill">🎅 Santa's checking…</span><div class="vote"><button disabled>🧝 Nice</button><button disabled>🧝 Naughty</button></div></div>
-      <div class="shop"><span class="aisle">Home &amp; DIY</span><b>IKEA</b><small>ikea.com/gb</small><span class="pill">🎅 Santa's checking…</span><div class="vote"><button disabled>🧝 Nice</button><button disabled>🧝 Naughty</button></div></div>
+      <div class="shop"><span class="aisle">Marketplaces</span><b>Amazon</b><small>amazon.co.uk</small><span class="pill on">🎅 On file · score pending</span><div class="vote"><button disabled><svg class="elf" aria-hidden="true"><use href="#elf-nice"/></svg>Nice</button><button disabled><svg class="elf" aria-hidden="true"><use href="#elf-naughty"/></svg>Naughty</button></div></div>
+      <div class="shop"><span class="aisle">Supermarkets</span><b>Tesco</b><small>tesco.com</small><span class="pill">🎅 Santa's checking…</span><div class="vote"><button disabled><svg class="elf" aria-hidden="true"><use href="#elf-nice"/></svg>Nice</button><button disabled><svg class="elf" aria-hidden="true"><use href="#elf-naughty"/></svg>Naughty</button></div></div>
+      <div class="shop"><span class="aisle">Fashion &amp; sport</span><b>Primark</b><small>primark.com</small><span class="pill">🎅 Santa's checking…</span><div class="vote"><button disabled><svg class="elf" aria-hidden="true"><use href="#elf-nice"/></svg>Nice</button><button disabled><svg class="elf" aria-hidden="true"><use href="#elf-naughty"/></svg>Naughty</button></div></div>
+      <div class="shop"><span class="aisle">Beauty &amp; health</span><b>Boots</b><small>boots.com</small><span class="pill">🎅 Santa's checking…</span><div class="vote"><button disabled><svg class="elf" aria-hidden="true"><use href="#elf-nice"/></svg>Nice</button><button disabled><svg class="elf" aria-hidden="true"><use href="#elf-naughty"/></svg>Naughty</button></div></div>
+      <div class="shop"><span class="aisle">Electricals</span><b>Currys</b><small>currys.co.uk</small><span class="pill">🎅 Santa's checking…</span><div class="vote"><button disabled><svg class="elf" aria-hidden="true"><use href="#elf-nice"/></svg>Nice</button><button disabled><svg class="elf" aria-hidden="true"><use href="#elf-naughty"/></svg>Naughty</button></div></div>
+      <div class="shop"><span class="aisle">Toys &amp; gifts</span><b>Smyths Toys</b><small>smythstoys.com</small><span class="pill">🎅 Santa's checking…</span><div class="vote"><button disabled><svg class="elf" aria-hidden="true"><use href="#elf-nice"/></svg>Nice</button><button disabled><svg class="elf" aria-hidden="true"><use href="#elf-naughty"/></svg>Naughty</button></div></div>
+      <div class="shop"><span class="aisle">Home &amp; DIY</span><b>IKEA</b><small>ikea.com/gb</small><span class="pill">🎅 Santa's checking…</span><div class="vote"><button disabled><svg class="elf" aria-hidden="true"><use href="#elf-nice"/></svg>Nice</button><button disabled><svg class="elf" aria-hidden="true"><use href="#elf-naughty"/></svg>Naughty</button></div></div>
       <div class="shop rest"><b>+93 more</b><small>From Argos to Waitrose, the shops you're most likely to buy from this Christmas.</small></div>
     </div>
     <div class="legend">
       <div><h3>🎅 Santa Score</h3><p>Santa's verdict, worked out from public evidence, such as B Corp status, minimum-wage naming and regulator cases, with a source and date for each. <span class="hole">Scores appear once our scoring rules are agreed.</span></p></div>
-      <div><h3>🧝 The elves' vote</h3><p>That's you. Think a shop has been naughty or nice? Tell Santa. Elves' votes sit next to the Santa Score and never change it. <span class="hole">Voting opens soon.</span></p></div>
+      <div><h3 class="elves"><svg class="elf" aria-hidden="true"><use href="#elf-nice"/></svg><svg class="elf" aria-hidden="true"><use href="#elf-naughty"/></svg>The elves' vote</h3><p>That's you. Think a shop has been naughty or nice? Tell Santa. Elves' votes sit next to the Santa Score and never change it. <span class="hole">Voting opens soon.</span></p></div>
     </div>
     <p class="note">Not enough evidence on a shop? We say so. That never means naughty.</p>
   </div>
@@ -232,7 +267,7 @@ footer b{display:block;font:24px var(--f-display);margin-bottom:4px}
     <p class="scrawl kicker">Straight from the North Pole.</p>
     <div class="faq">
       <details><summary>How do you decide who's naughty or nice?</summary><p>From public evidence about the company: B Corp certification, minimum-wage naming, regulator cases and more, each with a source and date. We don't show a verdict until our scoring rules are agreed, and it's always about the company, not a single product.</p></details>
-      <details><summary>Does my vote change the Santa Score?</summary><p>No. Santa decides from the evidence 🎅. Your vote is the elves' view 🧝, shown next to it so everyone can see what other shoppers think.</p></details>
+      <details><summary>Does my vote change the Santa Score?</summary><p>No. Santa decides from the evidence 🎅. Your vote is the elves' view, shown next to it so everyone can see what other shoppers think.</p></details>
       <details><summary>Is it watching me?</summary><p>No. It only runs on the shops on our list, and it only sends that shop's web address to look it up. No browsing history and no account. <a href="https://build40for40.com/privacy">Privacy notice</a>.</p></details>
       <details><summary>Think we've got a shop wrong?</summary><p>Email help@build40for40.com with a source and we'll check it twice.</p></details>
     </div>

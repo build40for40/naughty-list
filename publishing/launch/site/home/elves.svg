@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Nice elf: green-and-white hat on straight, rosy cheeks, happy smile -->
+    <symbol id="elf-nice" viewBox="0 -3 40 43">
+      <path d="M9.5 23 L2.5 17.5 L10.5 20 Z M30.5 23 L37.5 17.5 L29.5 20 Z" fill="#eab48d"/>
+      <circle cx="20" cy="25" r="11" fill="#f3c6a0"/>
+      <path d="M8 19 C9 10 15 4 25 2.5 C22.5 7 23.5 12 32 19 Z" fill="#1f6b3f"/>
+      <rect x="6.5" y="16.5" width="27" height="5.5" rx="2.75" fill="#fffaf2"/>
+      <circle cx="25.5" cy="3" r="3" fill="#fffaf2"/>
+      <circle cx="13" cy="28" r="2.3" fill="#f08a8a" opacity=".7"/>
+      <circle cx="27" cy="28" r="2.3" fill="#f08a8a" opacity=".7"/>
+      <circle cx="16" cy="25" r="1.5" fill="#2a1a14"/>
+      <circle cx="24" cy="25" r="1.5" fill="#2a1a14"/>
+      <path d="M15.5 29 Q20 33.5 24.5 29" fill="none" stroke="#2a1a14" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <!-- Naughty elf: red-and-white hat tipped sideways, a wink, a raised brow and a wry smile -->
+    <symbol id="elf-naughty" viewBox="0 -3 40 43">
+      <path d="M9.5 23 L2.5 17.5 L10.5 20 Z M30.5 23 L37.5 17.5 L29.5 20 Z" fill="#eab48d"/>
+      <circle cx="20" cy="25" r="11" fill="#f3c6a0"/>
+      <g transform="rotate(-14 20 18)">
+        <path d="M8 19 C9 10 15 4 25 2.5 C22.5 7 23.5 12 32 19 Z" fill="#d42a2a"/>
+        <rect x="6.5" y="16.5" width="27" height="5.5" rx="2.75" fill="#fffaf2"/>
+        <circle cx="25.5" cy="3" r="3" fill="#fffaf2"/>
+      </g>
+      <g transform="translate(0 1.5)"><path d="M13.8 25.3 Q16 23.6 18.2 25.3" fill="none" stroke="#2a1a14" stroke-width="1.6" stroke-linecap="round"/>
+      <circle cx="24" cy="25" r="1.5" fill="#2a1a14"/>
+      <path d="M21.8 21.6 L26.6 20.3" stroke="#2a1a14" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M15.5 30 Q20.5 31.5 25.5 27.5" fill="none" stroke="#2a1a14" stroke-width="1.6" stroke-linecap="round"/></g>
+    </symbol>
+  </defs>
+</svg>
