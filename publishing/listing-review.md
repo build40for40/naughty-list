@@ -55,3 +55,15 @@ The publisher opened the live H&M Slim Fit Supima cotton T-shirt page, allowing 
 - `screenshots/elf-cam-hm-case-file-chrome-1280x800.jpg`
 
 Both are real, visually inspected 1280×800 captures (DPR 1), with PNG originals retained. These supersede the earlier H&M capture blocker. Proposed gallery order: H&M badge, H&M case file, unknown-shop state, settings. Store upload remains pending idle Chrome access; Firefox is still held.
+
+## Approved verdict release — 0.0.4
+
+Ben approved v0.3 in the release chat, subject to validation, following Samira's card 157 sign-off. The reviewed API integration is deployed as Worker version 9e27ba37-fd31-41ee-b60b-fc3d383b71b6. Live exact-domain checks return FatFace Nice (+1) and River Island Naughty (−2), method santa-v0.3. Only validated records were published, not the whole draft 100-retailer dataset.
+
+The installed Chrome 0.0.4 extension was reloaded and exercised on both real shops. Four unedited viewport captures at 1280×800, DPR 1 are saved as elf-cam-nice-fatface, elf-cam-nice-case-file, elf-cam-naughty-river-island and elf-cam-naughty-case-file (all with -chrome-1280x800 suffix). PNG originals and store-ready JPEG conversions are included. They replace neutral screenshots in the proposed gallery. Buy buttons remained unobstructed and were never clicked.
+
+Nice source: https://www.bcorporation.net/en-us/find-a-b-corp/company/fat-face-limited/
+Naughty source: https://www.gov.uk/government/news/over-500-companies-named-for-not-paying-minimum-wage
+River Island is explicitly a shop assessment, not a rating of the displayed product or its brand. Its expanded case file preserves the historical publication date and repayment context.
+
+Chrome store package/gallery updates remain pending; Firefox remains held and unsubmitted.
