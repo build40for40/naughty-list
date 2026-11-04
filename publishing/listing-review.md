@@ -67,3 +67,11 @@ Naughty source: https://www.gov.uk/government/news/over-500-companies-named-for-
 River Island is explicitly a shop assessment, not a rating of the displayed product or its brand. Its expanded case file preserves the historical publication date and repayment context.
 
 Chrome store package/gallery updates remain pending; Firefox remains held and unsubmitted.
+
+## Final v0.4 captures and 0.0.5 package
+
+The latest main-based API is deployed as Worker version `815796e0-4e1e-4967-b506-cfb70064f30d`. The approved community migration check reported no outstanding migrations. Exact reviewed filing lookups were added for FatFace and River Island: FatFace is Nice at 0 (B Corp +1, pay-gap report −1, payment report 0); River Island is Naughty at −2 with a neutral report card. Community opinion remains separate.
+
+The four verdict images above have now been replaced with fresh captures against `santa-v0.4`, using installed Chrome extension 0.0.5. The primary screenshots show no insufficient-evidence heading. Expanded case files show official filing links and the River Island publication/repayment context. Tall case files scroll within the viewport. These are the current store-gallery assets, superseding the earlier v0.3 capture record.
+
+All 76 automated checks pass locally. Chrome draft package and gallery are being updated; Firefox submission remains explicitly held.
