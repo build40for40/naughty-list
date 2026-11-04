@@ -1,6 +1,9 @@
 // Elf Cam badge mode for single-brand stores. On the first visit to a store each
-// day, the page "goes on camera" for a few seconds, then the verdict shrinks into
-// a corner badge. Clicking the badge opens the case file with the evidence.
+// day, the page "goes on camera" for a few seconds, then the evidence shrinks into
+// a corner badge. Clicking the badge opens the case file. No Naughty or Nice
+// verdict is shown until the scoring method is agreed. Only Elf Cam's own
+// controls take clicks; the shop's purchase controls are never covered by the
+// intro panel, which sits at the top of the page.
 (function () {
   if (window.top !== window || document.documentElement.hasAttribute('data-naughty-list')) return;
   document.documentElement.setAttribute('data-naughty-list', '');
@@ -14,10 +17,11 @@
 :host{all:initial}
 *{box-sizing:border-box;margin:0;padding:0}
 [hidden]{display:none!important}
-.ec{--bg:#0a0e0b;--ph:#7dff9a;--rec:#ff3b30;--amber:#ffbf47;--soft:#9cc7a6;--c:var(--ph);
+.ec{--bg:#0a0e0b;--ph:#7dff9a;--rec:#ff3b30;--neutral:#d5ddd7;--soft:#9cc7a6;--c:var(--ph);
   font-family:"${FONT}",ui-monospace,Menlo,Consolas,monospace;text-transform:uppercase;line-height:1.05;
   color:var(--c);-webkit-font-smoothing:antialiased;letter-spacing:0}
-.ec.unknown{--c:var(--amber)}
+/* Unknown must look neutral, never like a warning. */
+.ec.unknown{--c:var(--neutral)}
 button,a{all:unset;cursor:pointer;font:inherit;color:inherit}
 button:focus-visible,a:focus-visible{outline:2px solid var(--c);outline-offset:3px}
 .blink{animation:blink 1.2s steps(2,start) infinite}
@@ -35,11 +39,11 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--c);outline-offset:3
 .hud{position:absolute;top:26px;left:76px;right:76px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:22px}
 .plate{background:var(--bg);color:var(--ph);padding:4px 10px}
 .rec{color:var(--rec)}
-.cross{position:absolute;left:50%;top:45%;width:44px;height:44px;transform:translate(-50%,-50%)}
+.cross{position:absolute;left:50%;top:60%;width:44px;height:44px;transform:translate(-50%,-50%)}
 .cross::before,.cross::after{content:"";position:absolute;background:var(--c);filter:drop-shadow(0 0 1px #000)}
 .cross::before{left:21px;top:0;bottom:0;width:2px}
 .cross::after{top:21px;left:0;right:0;height:2px}
-.verdict{position:absolute;left:50%;bottom:44px;transform:translateX(-50%);width:min(600px,calc(100vw - 48px));
+.verdict{position:absolute;left:50%;top:72px;transform:translateX(-50%);width:min(600px,calc(100vw - 48px));
   background:var(--bg);border:2px solid var(--c);padding:14px 18px;display:grid;gap:8px;pointer-events:auto;
   box-shadow:0 12px 32px rgba(0,0,0,.4)}
 .l1{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 12px;font-size:20px;color:var(--soft)}
@@ -49,7 +53,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--c);outline-offset:3
 
 .badge{position:fixed;right:20px;bottom:20px;display:flex;align-items:center;gap:10px;background:var(--bg);color:var(--c);
   border:2px solid var(--c);padding:6px 14px 6px 10px;font-size:24px;box-shadow:0 8px 20px rgba(0,0,0,.35)}
-.badge small{font-size:17px;color:var(--soft);max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.badge small{font-size:17px;color:var(--soft);max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .lens{position:relative;width:26px;height:26px;border-radius:50%;border:2px solid var(--c);flex:none;
   background:radial-gradient(circle at 35% 35%,#6a8 0 3px,#123 4px 8px,#000 9px)}
 .lens i{position:absolute;right:-4px;top:-4px;width:8px;height:8px;border-radius:50%;background:var(--rec)}
@@ -139,15 +143,16 @@ dd{text-transform:none;color:var(--c)}
     const closeFile = () => { file.hidden = true; badge.setAttribute('aria-expanded', 'false'); badge.focus(); };
     const file = h('section', { class: 'file', id: fileId, role: 'dialog', 'aria-label': `Case file: ${subjectName}`, hidden: true },
       h('div', { class: 'hd' }, h('span', null, h('span', { class: 'rec' }, '● '), `Case file · ${subjectName}`), h('span', null, 'Cam 01')),
-      h('p', { class: 'big' }, state.verdict === 'nice' ? 'Nice ✓ Cleared' : 'Unidentified'),
+      h('p', { class: 'big' }, state.verdict === 'certified' ? 'B Corp ✓ On file' : 'Unidentified'),
       h('dl', null,
         h('dt', null, 'Subject'), h('dd', null, state.subject ? `${state.subject} (the company behind this store)` : `${host} (not on the list)`),
         h('dt', null, 'Evidence'), h('dd', null, state.evidence),
+        h('dt', null, 'Verdict'), h('dd', null, "Pending. Santa hasn't agreed his rules yet"),
         state.sourceName && [h('dt', null, 'Source'), h('dd', null, state.sourceName)],
         state.checked && [h('dt', null, 'Checked'), h('dd', null, state.checked)],
         h('dt', null, 'Scope'), h('dd', null, 'The company, not individual products')),
-      h('p', { class: 'note' }, state.verdict === 'nice'
-        ? 'B Corp certification means the company was independently assessed on how it treats its workers, community and environment. No coal required.'
+      h('p', { class: 'note' }, state.verdict === 'certified'
+        ? 'B Corp certification means the company was independently assessed on how it treats its workers, community and environment. It is evidence for the list, not a Naughty or Nice verdict on its own.'
         : "Not being on the list isn't the same as being naughty. The elves just haven't vouched for this one yet."),
       h('div', { class: 'ft' },
         state.sourceUrl && h('a', { href: state.sourceUrl, target: '_blank', rel: 'noopener noreferrer' }, 'Source ↗'),
@@ -157,8 +162,8 @@ dd{text-transform:none;color:var(--c)}
     // Corner badge
     const badge = h('button', {
       type: 'button', class: 'badge', 'aria-expanded': 'false', 'aria-controls': fileId,
-      'aria-label': state.verdict === 'nice'
-        ? `The Naughty List: ${subjectName} is nice, ${state.evidence}. Open case file.`
+      'aria-label': state.verdict === 'certified'
+        ? `The Naughty List: ${subjectName} is a ${state.evidence}, verdict pending. Open case file.`
         : `The Naughty List: ${subjectName} is unidentified, no verdict. Open case file.`,
       hidden: showIntro,
       on: { click: () => {
@@ -167,7 +172,7 @@ dd{text-transform:none;color:var(--c)}
         badge.setAttribute('aria-expanded', String(opening));
         if (opening) file.querySelector('button, a')?.focus();
       } }
-    }, h('span', { class: 'lens' }, h('i', { class: 'blink' })), state.label, h('small', null, state.verdict === 'nice' ? subjectName : 'No verdict'));
+    }, h('span', { class: 'lens' }, h('i', { class: 'blink' })), state.label, h('small', null, state.verdict === 'certified' ? `${subjectName} · verdict pending` : 'No verdict'));
 
     ec.append(file, badge);
     document.documentElement.append(container);

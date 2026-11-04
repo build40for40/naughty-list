@@ -28,16 +28,17 @@ test('domain lookups report the store type', () => {
   assert.equal(assess({ brand: 'Patagonia' }).match.storeType, undefined);
 });
 
-test('a fresh certified B Corp on a single-brand store is nice, with its evidence', () => {
+test('a fresh certified B Corp on a single-brand store shows its evidence, with the verdict pending', () => {
   const state = badgeState(assess({ domain: 'www.patagonia.com' }, { now: fresh }));
-  assert.equal(state.verdict, 'nice');
+  assert.equal(state.verdict, 'certified');
+  assert.doesNotMatch(`${state.label} ${state.headline} ${state.line}`, /\b(nice|naughty)\b/i);
   assert.equal(state.subject, 'Patagonia');
   assert.equal(state.checked, '4 Nov 2026');
   assert.match(state.sourceUrl, /^https:\/\/www\.bcorporation\.net\//);
-  assert.equal(state.line, 'Certified B Corp · B Lab · checked 4 Nov 2026');
+  assert.equal(state.line, 'Verdict pending · B Lab · checked 4 Nov 2026');
 });
 
-test('missing, stale, unreachable and negative evidence are unidentified, never naughty', () => {
+test('missing, stale, unreachable and negative evidence are unidentified', () => {
   const stale = badgeState(assess({ domain: 'patagonia.com' }, { now: new Date('2026-12-04T00:00:00Z') }));
   assert.equal(stale.verdict, 'unknown');
   assert.equal(stale.reason, 'stale');

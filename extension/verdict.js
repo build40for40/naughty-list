@@ -1,6 +1,7 @@
 // Elf Cam badge mode: turns an assessment API response into what the badge shows.
-// This file never returns 'naughty'. That state waits for the scoring work, and
-// missing, ambiguous or stale evidence is always shown as unidentified.
+// It never shows a Naughty or Nice verdict: that waits for the scoring method
+// (card 157). Current B Corp evidence is shown as evidence with the verdict
+// pending; missing, ambiguous or stale evidence is always unidentified.
 (function (root) {
   const DATE = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
 
@@ -47,12 +48,12 @@
       const checked = formatDate(bCorp.checkedAt);
       const sourceName = bCorp.source?.name ?? 'B Lab';
       return {
-        verdict: 'nice',
+        verdict: 'certified',
         reason: null,
         subject: company.name,
-        label: 'Nice ✓',
-        headline: 'Nice ✓ Subject cleared',
-        line: ['Certified B Corp', sourceName, checked && `checked ${checked}`].filter(Boolean).join(' · '),
+        label: 'B Corp ✓',
+        headline: 'Certified B Corp',
+        line: ['Verdict pending', sourceName, checked && `checked ${checked}`].filter(Boolean).join(' · '),
         evidence: 'Certified B Corp',
         sourceName,
         sourceUrl: safeUrl(bCorp.source?.url),
