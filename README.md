@@ -27,6 +27,8 @@ jq -e '
 
 The check validates JSON syntax and basic required manifest fields. Chrome validates the full manifest when loading the extension.
 
+Publication preparation and current blockers are recorded in [publishing/README.md](publishing/README.md). Build draft Chrome/Firefox ZIPs with `npm run extension:package:chrome` / `npm run extension:package:firefox`. These archives currently contain only the scaffold and are not ready for store submission.
+
 ## Backend
 
 Deployed API: https://naughty-list-api.40for40.workers.dev
