@@ -22,6 +22,83 @@
     return node;
   };
   function remove() { host?.remove(); host = shadow = undefined; }
+
+  // Elf Cam look (card 158). The pixel font ships with the extension, so no
+  // font request leaves the browser; the monospace fallback still works.
+  const FONT = 'Naughty List VT323';
+  const fontReady = (async () => {
+    try {
+      const response = await fetch(api.runtime.getURL('fonts/vt323-latin-400.woff2'));
+      const face = new FontFace(FONT, await response.arrayBuffer());
+      await face.load();
+      document.fonts.add(face);
+    } catch { /* Fallback font. */ }
+  })();
+  const ELF_CSS = `:host{color-scheme:dark}*{box-sizing:border-box}
+section{--c:#d5ddd7;--ph:#7dff9a;--soft:#9cc7a6;--rec:#ff3b30;position:relative;font:19px/1.15 "${FONT}",ui-monospace,Menlo,Consolas,monospace;color:#e6efe8;background:#0a0e0b;border:2px solid var(--c);padding:10px 14px 12px;box-shadow:0 8px 24px #0006}
+section::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.28) 0 1px,transparent 1px 3px)}
+section[data-tone=nice]{--c:#7dff9a}section[data-tone=naughty]{--c:#ff3b30}
+header{display:flex;align-items:center;gap:8px;text-transform:uppercase;color:var(--ph);border-bottom:1px dashed var(--soft);padding-bottom:6px}
+strong{flex:1;font-weight:400;font-size:18px}
+.lens{width:22px;height:22px;border-radius:50%;border:2px solid var(--c);flex:none;background:radial-gradient(circle at 35% 35%,#6a8 0 3px,#123 4px 7px,#000 8px)}
+.rec{color:var(--rec)}.blink{animation:blink 1.2s steps(2,start) infinite}@keyframes blink{to{visibility:hidden}}
+h2{font-size:30px;line-height:.95;font-weight:400;text-transform:uppercase;margin:10px 0 4px;color:var(--c)}
+p{margin:6px 0}small{display:block;font-size:16px;color:var(--soft)}a{color:var(--ph);margin-right:10px}
+button{all:unset;cursor:pointer;border:1px solid currentColor;padding:1px 8px;text-transform:uppercase;color:var(--c)}
+header button{border:0;padding:0 4px;font-size:22px;color:var(--ph)}
+details{margin-top:8px}summary{cursor:pointer;text-transform:uppercase;color:var(--ph)}
+footer{display:flex;justify-content:space-between;gap:8px;margin-top:10px;border-top:1px dashed var(--soft);padding-top:8px}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--ph);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.blink{animation:none}}`;
+
+  // Once per shop per day, the page briefly "goes on camera": corner brackets
+  // and a REC readout, never taking clicks. Skipped if a purchase control sits
+  // where the readout would go.
+  let introChecked = false;
+  async function maybeIntro() {
+    if (introChecked) return;
+    introChecked = true;
+    const key = `elfCamIntro:${location.hostname}`;
+    const today = new Date().toDateString();
+    try {
+      const stored = await api.storage.local.get(key);
+      if (stored[key] === today) return;
+      await api.storage.local.set({ [key]: today });
+    } catch { return; }
+    const clash = lib.purchaseControls(document).some(node => {
+      const rect = node.getBoundingClientRect();
+      return rect.width > 0 && (rect.top < 90 || rect.bottom > innerHeight - 70);
+    });
+    if (clash || dismissed || !settings.enabled) return;
+    await fontReady;
+    const frame = document.createElement('div');
+    frame.style.cssText = 'all:initial!important;position:fixed!important;inset:0!important;z-index:2147482999!important;pointer-events:none!important;';
+    const root = frame.attachShadow({ mode: 'closed' });
+    const css = element('style', null, root);
+    css.textContent = `*{box-sizing:border-box}div{position:fixed;inset:0;pointer-events:none;font:22px/1 "${FONT}",ui-monospace,Menlo,monospace;text-transform:uppercase;transition:opacity .35s}
+.out{opacity:0}i{position:absolute;width:44px;height:44px;border:5px solid #7dff9a;filter:drop-shadow(0 0 1px #000) drop-shadow(0 0 1px #000)}
+.tl{top:16px;left:16px;border-right:0;border-bottom:0}.tr{top:16px;right:16px;border-left:0;border-bottom:0}.bl{bottom:16px;left:16px;border-right:0;border-top:0}.br{bottom:16px;right:16px;border-left:0;border-top:0}
+b{position:absolute;top:28px;font-weight:400;background:#0a0e0b;color:#7dff9a;padding:4px 10px}b.l{left:76px}b.r{right:76px}b span{color:#ff3b30}
+@media (prefers-reduced-motion:reduce){div{transition:none}}`;
+    const box = element('div', null, root);
+    box.setAttribute('aria-hidden', 'true');
+    for (const corner of ['tl', 'tr', 'bl', 'br']) element('i', null, box).className = corner;
+    const left = element('b', null, box); left.className = 'l';
+    element('span', '● ', left); left.append(`REC · Cam 01 · ${location.hostname}`);
+    const clock = element('b', null, box); clock.className = 'r';
+    const stamp = () => { const d = new Date(); clock.textContent = `${d.toLocaleDateString('en-GB')} ${d.toLocaleTimeString('en-GB')}`; };
+    stamp();
+    document.documentElement.append(frame);
+    const tick = setInterval(stamp, 1000);
+    const end = () => {
+      clearInterval(tick);
+      for (const type of ['scroll', 'keydown', 'pointerdown']) window.removeEventListener(type, end, true);
+      box.classList.add('out');
+      setTimeout(() => frame.remove(), 400);
+    };
+    for (const type of ['scroll', 'keydown', 'pointerdown']) window.addEventListener(type, end, { capture: true, passive: true, once: true });
+    setTimeout(end, 3500);
+  }
   function applyPosition(corner) {
     if (!host) return;
     for (const side of ['top', 'right', 'bottom', 'left']) host.style.setProperty(side, 'auto', 'important');
@@ -63,18 +140,23 @@
     position();
     shadow.replaceChildren();
     const style = element('style', null, shadow);
-    style.textContent = ':host{color-scheme:light}*{box-sizing:border-box}section{font:14px/1.5 system-ui,sans-serif;color:#173a2f;background:#fff8e9;border:2px solid #a51d2d;border-radius:14px;padding:16px;box-shadow:0 5px 24px #0003}header{display:flex;align-items:center;gap:10px}strong{flex:1;font-size:16px}h2{font-size:16px;margin:12px 0 6px}p{margin:6px 0}button,a{font:inherit}button{cursor:pointer;border:1px solid #6e756d;border-radius:6px;background:#fff;padding:4px 8px;color:#173a2f}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #397eac;outline-offset:2px}footer{display:flex;justify-content:space-between;gap:8px;margin-top:12px}details{margin-top:10px}summary{cursor:pointer}a{color:#8d1927}small{font-size:12px}section[data-tone=nice]{border-color:#28724f}section[data-tone=naughty]{border-color:#a51d2d}';
+    style.textContent = ELF_CSS;
     const section = element('section', null, shadow);
     section.setAttribute('aria-label', 'The Naughty List shopping information');
     const header = element('header', null, section);
-    element('strong', 'The Naughty List', header);
+    element('span', null, header).className = 'lens';
+    const name = element('strong', null, header);
+    const rec = element('span', '● ', name);
+    rec.className = 'rec blink';
+    rec.setAttribute('aria-hidden', 'true');
+    name.append('Elf Cam · The Naughty List');
     const close = element('button', '×', header);
     close.setAttribute('aria-label', 'Dismiss for this page');
     close.addEventListener('click', () => { dismissed = true; remove(); });
     const status = element('div', null, section);
     status.setAttribute('aria-live', 'polite');
-    const model = state === 'pending' ? { title: 'Checking the list…', message: 'Looking for reviewed business information.', tone: 'neutral' }
-      : state === 'error' ? { title: 'The list is taking a break', message: 'We could not check this website. Please try again.', tone: 'neutral' }
+    const model = state === 'pending' ? { title: 'Enhancing…', message: 'Checking the list for reviewed business information.', tone: 'neutral' }
+      : state === 'error' ? { title: 'Signal lost', message: 'We could not check this website. Please try again.', tone: 'neutral' }
       : lib.viewModel(assessment);
     section.dataset.tone = model.tone;
     element('h2', model.title, status);
@@ -82,7 +164,7 @@
     if (assessment?.company) {
       const detail = element('details', null, section);
       detail.addEventListener('toggle', position);
-      element('summary', 'Evidence and source', detail);
+      element('summary', 'Case file: evidence and source', detail);
       const certification = assessment.criteria?.bCorp;
       if (certification) {
         element('p', certification.certified === true ? 'B Corp certification recorded.' : certification.certified === false ? 'Source records no B Corp certification.' : 'Current B Corp certification is unknown.', detail);
@@ -126,7 +208,7 @@
       const result = await api.runtime.sendMessage({ type: 'assess-domain', domain: location.hostname });
       if (result?.error || !result?.assessment) throw new Error('Lookup failed');
       current = result.assessment; requestedAt = Date.now();
-      if (token === generation) render('ready', current);
+      if (token === generation) { render('ready', current); maybeIntro(); }
     } catch {
       retryAfter = Date.now() + 30000;
       if (token === generation) render('error');
