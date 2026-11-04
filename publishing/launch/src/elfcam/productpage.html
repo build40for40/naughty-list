@@ -1,8 +1,8 @@
 <!doctype html><html><head><meta charset="utf-8">
 <!-- Render harness: a plain H&M-style product page running the real launch stamp
      (extension/shared.js + content.js from the ref passed to render-elfcam.sh) with stubbed extension APIs.
-     The assessment is the live API response for www2.hm.com (hm-assessment.json, fetched 4 Nov 2026). -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Christmas jumper","offers":{"@type":"Offer","price":"24.99","priceCurrency":"GBP"}}</script>
+     The assessment is the live API response for the page hostname; ?shop=patagonia uses patagonia-assessment-nice.json (live response + the draft v0.3 verdict from card 159). -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Product","offers":{"@type":"Offer","price":"24.99","priceCurrency":"GBP"}}</script>
 <style>
 body{margin:0;background:#fff;color:#222;font-family:-apple-system,"Helvetica Neue",Arial,sans-serif}
 .bar{height:64px;border-bottom:1px solid #e8e8e8;display:flex;align-items:center;padding:0 32px;gap:28px;font-size:14px;color:#444}
@@ -26,9 +26,13 @@ h2{font-weight:500;font-size:24px;margin:0 0 8px}
   <div class="desc">[Product description]</div></div>
 </div>
 <script>
-const mode=new URLSearchParams(location.search).get('mode')||'intro';
+const q=new URLSearchParams(location.search), mode=q.get('mode')||'intro', shop=q.get('shop')||'hm';
+const SHOPS={hm:{brand:'H&amp;M',nav:'Women · Men · Kids · Home · Christmas gifts',crumb:'Men › Jumpers › Christmas',name:'Christmas jumper',price:'£24.99',img:'linear-gradient(160deg,#b8322c,#7c1d1a)',file:'/hm-assessment.json',label:'REAL LAUNCH STAMP + LIVE H&amp;M API RESULT ON A MOCK PAGE · RECAPTURE ON WWW2.HM.COM BEFORE UPLOAD'},
+ patagonia:{brand:'patagonia',nav:'Women · Men · Kids · Packs &amp; Gear · Gifts',crumb:'Men › Fleece › Gifts',name:'Retro Pile Fleece Jacket',price:'£150.00',img:'linear-gradient(160deg,#3d6b5a,#1e3a30)',file:'/patagonia-assessment-nice.json',label:'REAL LAUNCH STAMP · LIVE PATAGONIA RESULT + DRAFT v0.3 VERDICT · MOCK PAGE'}};
+const S=SHOPS[shop];
+addEventListener('DOMContentLoaded',()=>{document.querySelector('.bar').innerHTML='<b>'+S.brand+'</b> '+S.nav;document.querySelector('.crumb').innerHTML=S.crumb;document.querySelector('h2').textContent=S.name;document.querySelector('.price').textContent=S.price;document.querySelector('.img').style.background=S.img;document.querySelector('.label').innerHTML=S.label;});
 const today=new Date().toDateString();
-window.chrome={runtime:{getURL:p=>'/ext/'+p,sendMessage:async m=>m.type==='assess-domain'?{assessment:await (await fetch('/hm-assessment.json')).json()}:{}},
+window.chrome={runtime:{getURL:p=>'/ext/'+p,sendMessage:async m=>m.type==='assess-domain'?{assessment:await (await fetch(S.file)).json()}:{}},
   storage:{local:{get:async k=>(typeof k==='string'&&k.startsWith('elfCamIntro:')&&mode!=='intro')?{[k]:today}:{},set:async()=>{}},onChanged:{addListener(){}}}};
 </script>
 <script src="/ext/shared.js"></script>

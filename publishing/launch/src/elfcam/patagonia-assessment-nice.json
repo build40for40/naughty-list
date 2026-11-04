@@ -1,0 +1,209 @@
+{
+ "schemaVersion": "1",
+ "input": {
+  "domain": "www.patagonia.com"
+ },
+ "match": {
+  "status": "matched",
+  "method": "reviewed_domain",
+  "domain": "www.patagonia.com",
+  "evidence": {
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/company/patagonia-inc/",
+   "checkedAt": "2026-11-04"
+  }
+ },
+ "company": {
+  "id": "patagonia",
+  "name": "Patagonia",
+  "identifiers": [
+   {
+    "scheme": "b_lab",
+    "value": "patagonia-inc"
+   }
+  ]
+ },
+ "criteria": {
+  "bCorp": {
+   "status": "verified",
+   "certified": true,
+   "reason": null,
+   "source": {
+    "name": "B Lab",
+    "url": "https://www.bcorporation.net/en-us/find-a-b-corp/company/patagonia-inc/"
+   },
+   "checkedAt": "2026-11-04",
+   "validUntil": "2026-12-04"
+  },
+  "bCorpReports": []
+ },
+ "scoring": {
+  "status": "draft",
+  "method": "santa-v0.3-draft",
+  "total": 1,
+  "verdict": "nice"
+ },
+ "relevance": {
+  "category": "brand_shop",
+  "status": "reviewed",
+  "eligibleForVerdict": true,
+  "reason": "reviewed_brand_shop",
+  "evidence": {
+   "sourceUrl": "https://www.patagonia.com/home/",
+   "checkedAt": "2026-11-04"
+  }
+ },
+ "evidence": [
+  {
+   "id": "b-lab:patagonia",
+   "sourceId": "b-lab",
+   "sourceRecordId": "patagonia-inc",
+   "companyId": "patagonia",
+   "assessedEntity": "Patagonia",
+   "publicationStatus": "published",
+   "scope": "company",
+   "kind": "certification",
+   "outcome": "certified",
+   "dimensions": [
+    "certification"
+   ],
+   "title": "B Corp certification",
+   "summary": "Certification checked against the B Lab directory. This is not a product-level ethical judgment.",
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/company/patagonia-inc/",
+   "checkedAt": "2026-11-04",
+   "refreshDueAt": "2026-12-04T00:00:00Z",
+   "eventDate": null,
+   "publishedAt": null,
+   "facts": {
+    "certified": true
+   },
+   "freshness": "fresh"
+  }
+ ],
+ "sources": [
+  {
+   "id": "b-lab",
+   "name": "B Lab",
+   "status": "manual",
+   "coverage": "Two manually reviewed companies.",
+   "licence": "Reviewed factual certification records with links; no bulk B Lab data licence assumed.",
+   "attribution": "B Lab directory",
+   "publishedRecords": 2,
+   "lastSuccessfulImportAt": "2026-11-04T15:53:55.846Z",
+   "lastAttemptAt": "2026-11-04T15:53:55.846Z",
+   "refreshDueAt": "2026-12-04T15:53:55.846Z",
+   "freshness": "fresh",
+   "importStatus": "succeeded",
+   "limitation": "Not a complete directory; certification is not a product ethical verdict."
+  },
+  {
+   "id": "uk-cma",
+   "name": "Competition and Markets Authority",
+   "status": "automated",
+   "coverage": "Selected reviewed CMA cases and company associations.",
+   "licence": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0.",
+   "publishedRecords": 10,
+   "lastSuccessfulImportAt": "2026-11-04T14:54:17.298Z",
+   "lastAttemptAt": "2026-11-04T14:54:17.298Z",
+   "refreshDueAt": "2026-11-11T14:54:17.298Z",
+   "freshness": "fresh",
+   "importStatus": "succeeded",
+   "limitation": "An investigation or undertaking is not a conviction. Historical outcomes are not claims of current misconduct."
+  },
+  {
+   "id": "uk-environment-agency",
+   "name": "Environment Agency",
+   "status": "blocked",
+   "coverage": "Not imported.",
+   "licence": "Unresolved: dataset page lists OGL while API metadata lists a conditional licence.",
+   "attribution": "Environment Agency",
+   "publishedRecords": 0,
+   "lastSuccessfulImportAt": null,
+   "lastAttemptAt": null,
+   "refreshDueAt": null,
+   "freshness": "stale",
+   "importStatus": "not_imported",
+   "limitation": "Publication blocked pending confirmation of the specific dataset licence."
+  },
+  {
+   "id": "uk-hse",
+   "name": "Health and Safety Executive",
+   "status": "automated",
+   "coverage": "Selected reviewed HSE prosecution announcements in Great Britain.",
+   "licence": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+   "attribution": "Contains public sector information published by the Health and Safety Executive and licensed under the Open Government Licence.",
+   "publishedRecords": 2,
+   "lastSuccessfulImportAt": "2026-11-04T14:54:17.298Z",
+   "lastAttemptAt": "2026-11-04T14:54:17.298Z",
+   "refreshDueAt": "2026-11-11T14:54:17.298Z",
+   "freshness": "fresh",
+   "importStatus": "succeeded",
+   "limitation": "Not a complete conviction register. Cases may include several breaches of the same incident."
+  },
+  {
+   "id": "uk-minimum-wage",
+   "name": "UK minimum wage naming scheme",
+   "status": "automated",
+   "coverage": "Reviewed companies in selected naming rounds, not all UK employers.",
+   "licence": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0.",
+   "publishedRecords": 4,
+   "lastSuccessfulImportAt": "2026-11-04T14:54:17.298Z",
+   "lastAttemptAt": "2026-11-04T14:54:17.298Z",
+   "refreshDueAt": "2026-11-11T14:54:17.298Z",
+   "freshness": "fresh",
+   "importStatus": "succeeded",
+   "limitation": "Publication date is not the period of underpayment. No match does not establish compliance."
+  },
+  {
+   "id": "us-epa",
+   "name": "US Environmental Protection Agency",
+   "status": "manual",
+   "coverage": "Selected manually reviewed EPA enforcement announcements; no ECHO feed imported.",
+   "licence": "Authored factual summaries with primary-source links; no reproduction of third-party documents or images.",
+   "attribution": "US Environmental Protection Agency.",
+   "publishedRecords": 3,
+   "lastSuccessfulImportAt": "2026-11-04T14:24:54.032Z",
+   "lastAttemptAt": "2026-11-04T14:24:54.032Z",
+   "refreshDueAt": "2026-12-04T14:24:54.032Z",
+   "freshness": "fresh",
+   "importStatus": "succeeded",
+   "limitation": "US legal entities remain distinct from other regional companies and marketplace sellers. Historical orders do not establish current misconduct."
+  },
+  {
+   "id": "wba",
+   "name": "World Benchmarking Alliance",
+   "status": "blocked",
+   "coverage": "Not imported.",
+   "licence": "Specific download licence must be confirmed; official pages conflict.",
+   "attribution": "World Benchmarking Alliance",
+   "publishedRecords": 0,
+   "lastSuccessfulImportAt": null,
+   "lastAttemptAt": null,
+   "refreshDueAt": null,
+   "freshness": "stale",
+   "importStatus": "not_imported",
+   "limitation": "No API credentials or approved CSV snapshot configured."
+  },
+  {
+   "id": "wikirate-bcorp",
+   "name": "Wikirate B Corp certification reports",
+   "status": "automated",
+   "coverage": "2022 snapshot: 4,712 companies. One reviewed match in our registry: Tony's Chocolonely. Current import is limited to that reviewed provider ID.",
+   "licence": "https://creativecommons.org/licenses/by/4.0/",
+   "attribution": "Wikirate; metric designer: B Lab.",
+   "publishedRecords": 1,
+   "lastSuccessfulImportAt": "2026-11-04T14:54:17.298Z",
+   "lastAttemptAt": "2026-11-04T14:54:17.298Z",
+   "refreshDueAt": "2026-11-11T14:54:17.298Z",
+   "freshness": "fresh",
+   "importStatus": "succeeded",
+   "limitation": "Historical 2022 observations, not current certification checks. A fresh API fetch does not renew the observation year. Patagonia has no answer in this metric; missing records remain unknown."
+  }
+ ],
+ "coverage": {
+  "status": "partial",
+  "scope": "reviewed_entities_and_selected_records",
+  "noRecordsMeans": "unknown"
+ }
+}
