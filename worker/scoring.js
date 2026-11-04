@@ -1,7 +1,7 @@
-// Santa Score: DRAFT method from card 157 (see docs/scoring.md).
-// Not signed off. The public API must keep scoring.total and scoring.verdict
-// null until Samira and Ben agree the method on card 157, so nothing in
-// worker/index.js or worker/store.js imports this module yet.
+// Santa Score method from card 157 (see docs/scoring.md), signed off by
+// Lawrence on 4 November 2026. Nothing in worker/index.js or worker/store.js
+// imports this module yet, so the public API still keeps scoring.total and
+// scoring.verdict null until a reviewed API PR is merged and deployed.
 
 export const METHOD_VERSION = 'santa-v0.4-draft';
 export const WINDOW_YEARS = 3;
