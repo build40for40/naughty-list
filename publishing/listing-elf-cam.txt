@@ -8,11 +8,11 @@ What's in the sack:
 - Settings to choose a corner or turn automatic checks off.
 - Page dismissal and a retry when a lookup fails.
 
-We're starting small, with limited, reviewed website mappings. H&M is a reviewed business match, but its current B Corp certification is unknown. Other shops may also show unknown. A retailer or marketplace does not identify the maker of every product it sells.
+We're starting small, with limited, reviewed website mappings. FatFace has a Nice company assessment; River Island has a Naughty shop assessment under Santa Score v0.4. These describe the matched business, not the ethics of an individual product or a third-party brand. Shops without enough evidence remain unknown.
 
-Naughty-or-nice scoring is still being agreed. This release does not compute an ethical rating. B Corp certification concerns a company, not an individual product. Missing evidence never means naughty.
+Santa Score v0.4 awards one gift for current B Corp certification, one coal for a regulator warning and two coal for a proven offence. Repeat incidents increase coal. Minimum-wage naming totals below £1,000 do not earn coal. Statutory pay-gap and payment-practice filings also contribute a report card; its gifts never cancel a proven offence. Recent events use a three-year window; where the event date is unknown, the publication date is used and identified. A total of zero or more with counted evidence is Nice; minus two or lower is Naughty. Minus one is Watch list; no counted evidence stays unknown. Open the case file to see the evidence and dates. Missing evidence never means naughty.
 
-Shopping detection happens locally in your browser. On a likely shopping page, only the hostname is sent to our Cloudflare service to retrieve stored evidence. Product text, prices, page paths and HTML stay in your browser. Settings stay on this device. No account is needed.
+Shopping detection happens locally in your browser. On a likely shopping page, only the hostname is sent to our Cloudflare service to retrieve stored evidence. Product text, prices, page paths and HTML stay in your browser. Settings stay on this device. No account is needed for evidence checks. Optional community voting opens a separate sign-in page; votes do not change Santa Score.
 
 Made by 40 for 40. Learn more: https://build40for40.com/naughty-list
 Questions, corrections or letters to Santa: help@build40for40.com

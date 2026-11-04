@@ -35,7 +35,7 @@
     } catch { /* Fallback font. */ }
   })();
   const ELF_CSS = `:host{color-scheme:dark}*{box-sizing:border-box}
-section{--c:#d5ddd7;--ph:#7dff9a;--soft:#9cc7a6;--rec:#ff3b30;position:relative;font:19px/1.15 "${FONT}",ui-monospace,Menlo,Consolas,monospace;color:#e6efe8;background:#0a0e0b;border:2px solid var(--c);padding:10px 14px 12px;box-shadow:0 8px 24px #0006}
+section{max-height:calc(100vh - 32px);overflow:auto;--c:#d5ddd7;--ph:#7dff9a;--soft:#9cc7a6;--rec:#ff3b30;position:relative;font:19px/1.15 "${FONT}",ui-monospace,Menlo,Consolas,monospace;color:#e6efe8;background:#0a0e0b;border:2px solid var(--c);padding:10px 14px 12px;box-shadow:0 8px 24px #0006}
 section::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.28) 0 1px,transparent 1px 3px)}
 section[data-tone=nice]{--c:#7dff9a}section[data-tone=naughty]{--c:#ff3b30}
 header{display:flex;align-items:center;gap:8px;text-transform:uppercase;color:var(--ph);border-bottom:1px dashed var(--soft);padding-bottom:6px}
@@ -189,6 +189,11 @@ b{position:absolute;top:28px;font-weight:400;background:#0a0e0b;color:#7dff9a;pa
         if (evidence.summary) element('p', evidence.summary, detail);
         if (evidence.publishedAt) element('small', `Published ${evidence.publishedAt.slice(0, 10)}${!evidence.eventDate ? ' · publication date, not event date' : ''}.`, detail);
         addLink(detail, 'Source', evidence.sourceUrl);
+      }
+      for (const item of assessment.scoring?.reportCard ?? []) {
+        element('p', `${item.measure === 'pay_gap' ? 'Median hourly pay gap' : 'Invoices paid late'}: ${item.value}% (${item.points > 0 ? '+' : ''}${item.points} points).`, detail);
+        element('small', item.filing.snapshotYear ? `Snapshot ${item.filing.snapshotYear}.` : `Period ended ${item.filing.periodEnd}.`, detail);
+        addLink(detail, 'Official filing', item.filing.sourceUrl);
       }
       element('p', 'This describes the business, not the ethics of this individual product.', detail);
     }
