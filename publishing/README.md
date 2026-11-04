@@ -18,7 +18,7 @@ Version 0.0.2 implements local shopping detection, hostname-only backend lookup,
 | Icons | Festive PNG at 16, 32, 48 and 128 pixels | Editable source is `publishing/launch/src/icon-festive.svg` |
 | Chrome extension ID | Assigned by the Chrome Web Store | Not yet available; do not invent or change the signing identity |
 | Firefox add-on ID | `{c2591c57-0224-4d4a-bdb4-a3223e58c354}` | Generated stable UUID in the Firefox overlay; uniqueness checked by AMO on first signing |
-| Firefox minimum version | Desktop `140.0`, Android `142.0` | Declaration compatibility floors; Android support has not been selected or tested |
+| Firefox minimum version | Desktop `140.0` | Android is not declared or selected for this desktop release |
 | Firefox data collection | `required: ["browsingActivity"]` | Shopping hostname sent to the API; no page contents or signal flags transmitted |
 | Permissions / host permissions | `storage`; fixed API origin | Preferences and session cache; background API access |
 | Content scripts | HTTPS sites, top frame only | Product/offer, price and purchase signals evaluated locally |

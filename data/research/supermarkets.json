@@ -1,0 +1,265 @@
+[
+ {
+  "n": 22,
+  "retailer": "Tesco",
+  "domain": "tesco.com",
+  "entity": {
+   "legalName": "TESCO STORES LIMITED",
+   "companyNumber": "00519500",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00519500"
+  },
+  "owner": {
+   "name": "Tesco PLC (00445790) via Tesco Holdings Limited (00243011)",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00243011/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Tesco&sortBy=companies-production-en-us"
+  },
+  "cma": [
+   {
+    "path": "/government/publications/cma-letter-to-tesco-on-breaches-of-the-groceries-controlled-land-order",
+    "eventDate": "2020-02-14",
+    "outcome": "practice_changed",
+    "guard": "Tesco has voluntarily agreed to improve its practices to avoid further breaches of the above Order.",
+    "summary": "CMA letter: 23 breaches of the Groceries (Controlled Land) Order 2010 found in Tesco land agreements; Tesco acknowledged them and agreed to remedial steps. History only (pre 2023-11-04)."
+   }
+  ],
+  "hse": [],
+  "notes": "Tesco Stores Limited is also on the register as overseas entities NF003406/BR013993 (ignore). CMA merger cases (Tesco/Booker 2017) skipped. B Corp: no matching listing found in B Lab directory fuzzy name search run in a browser on 2026-11-04 (direct HTTP is blocked by Cloudflare 403); search is fuzzy so treat as 'not found', not proof. HSE: press.hse.gov.uk WP API holds only 255 posts (Jan 2021 onward), all fetched and grepped for supermarket names with no relevant match; pre-2021 and non-press convictions not covered, HSE convictions database not reachable. Local-authority prosecutions ignored."
+ },
+ {
+  "n": 23,
+  "retailer": "Sainsbury's",
+  "domain": "sainsburys.co.uk",
+  "entity": {
+   "legalName": "SAINSBURY'S SUPERMARKETS LTD",
+   "companyNumber": "03261722",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/03261722"
+  },
+  "owner": {
+   "name": "J Sainsbury plc (00185647) via Sainsbury's Holdings Limited (16565950, since Sep 2025)",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/03261722/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Sainsbury's&sortBy=companies-production-en-us"
+  },
+  "cma": [
+   {
+    "path": "/government/publications/open-letter-to-sainsburys-about-land-agreements-restricting-competition",
+    "eventDate": "2023-06-13",
+    "outcome": "practice_changed",
+    "guard": "Sainsbury’s has taken, and continues to take, steps to correct these breaches and the CMA has published a letter sent to Sainsbury’s following its investigation of these breaches.",
+    "summary": "CMA found 18 Sainsbury's land agreements breached the Groceries (Controlled Land) Order 2010; Sainsbury's correcting. History only.",
+    "note": "gov.uk /government/publications open letter under the Groceries (Controlled Land) Order 2010, not a /cma-cases/ page"
+   }
+  ],
+  "hse": [],
+  "notes": "CMA Sainsbury's/Asda merger blocked 2019 (merger, skipped). CMA loyalty pricing (Nov 2024) and unit pricing reviews wrote to supermarkets generally with no named company outcome (skipped). B Corp: no matching listing found in B Lab directory fuzzy name search run in a browser on 2026-11-04 (direct HTTP is blocked by Cloudflare 403); search is fuzzy so treat as 'not found', not proof. HSE: press.hse.gov.uk WP API holds only 255 posts (Jan 2021 onward), all fetched and grepped for supermarket names with no relevant match; pre-2021 and non-press convictions not covered, HSE convictions database not reachable. Local-authority prosecutions ignored."
+ },
+ {
+  "n": 24,
+  "retailer": "Asda",
+  "domain": "asda.com",
+  "entity": {
+   "legalName": "ASDA STORES LIMITED",
+   "companyNumber": "00464777",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00464777"
+  },
+  "owner": {
+   "name": "Bellis Acquisition Company Plc (12855280), immediate parent; Asda Group Limited (01396513) is the intermediate holding company. Ultimate owners not verified.",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/01396513/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Asda&sortBy=companies-production-en-us"
+  },
+  "cma": [
+   {
+    "path": "/government/publications/open-letter-to-asda-about-land-agreements-restricting-competition",
+    "eventDate": "2023-06-13",
+    "outcome": "practice_changed",
+    "guard": "Asda has taken steps to correct these breaches and the CMA has published a letter sent to Asda following its investigation of these breaches.",
+    "summary": "CMA found 14 Asda land agreements breached the Groceries (Controlled Land) Order 2010; Asda corrected. History only (pre 2023-11-04).",
+    "note": "gov.uk /government/publications open letter under the Groceries (Controlled Land) Order 2010, not a /cma-cases/ page"
+   }
+  ],
+  "hse": [],
+  "notes": "Green-claims undertaking (27 Mar 2024, George) already held, not re-recorded. Bellis/Asda merger inquiry skipped. Barnsley food safety fine is local authority, ignored. B Corp: no matching listing found in B Lab directory fuzzy name search run in a browser on 2026-11-04 (direct HTTP is blocked by Cloudflare 403); search is fuzzy so treat as 'not found', not proof. HSE: press.hse.gov.uk WP API holds only 255 posts (Jan 2021 onward), all fetched and grepped for supermarket names with no relevant match; pre-2021 and non-press convictions not covered, HSE convictions database not reachable. Local-authority prosecutions ignored."
+ },
+ {
+  "n": 25,
+  "retailer": "Morrisons",
+  "domain": "morrisons.com",
+  "entity": {
+   "legalName": "WM MORRISON SUPERMARKETS LIMITED",
+   "companyNumber": "00358949",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00358949"
+  },
+  "owner": {
+   "name": "Market Bidco Limited (13537474), immediate parent (CD&R-backed; see CMA CD&R/Morrisons case)",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00358949/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Morrisons&sortBy=companies-production-en-us"
+  },
+  "cma": [
+   {
+    "path": "/government/publications/open-letter-to-morrisons-about-land-agreements-restricting-competition",
+    "eventDate": "2023-12-06",
+    "outcome": "practice_changed",
+    "guard": "Morrisons has taken, and continues to take, steps to correct these breaches and the CMA has published a letter sent to Morrisons following its investigation of these breaches.",
+    "summary": "CMA found 55 Morrisons land agreements breached the Groceries (Controlled Land) Order 2010; Morrisons correcting.",
+    "note": "gov.uk /government/publications open letter under the Groceries (Controlled Land) Order 2010, not a /cma-cases/ page"
+   }
+  ],
+  "hse": [],
+  "notes": "Morrisons/McColl's merger undertakings review skipped (merger). The 2023 £3.5m Tewkesbury BC conviction was a council prosecution, ignored. B Corp: no matching listing found in B Lab directory fuzzy name search run in a browser on 2026-11-04 (direct HTTP is blocked by Cloudflare 403); search is fuzzy so treat as 'not found', not proof. HSE: press.hse.gov.uk WP API holds only 255 posts (Jan 2021 onward), all fetched and grepped for supermarket names with no relevant match; pre-2021 and non-press convictions not covered, HSE convictions database not reachable. Local-authority prosecutions ignored."
+ },
+ {
+  "n": 26,
+  "retailer": "Aldi",
+  "domain": "aldi.co.uk",
+  "entity": {
+   "legalName": "ALDI STORES LIMITED",
+   "companyNumber": "02321869",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/02321869"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Aldi&sortBy=companies-production-en-us"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "Companies House lists no PSC (statement that none known). Parent (Aldi Sud) not verified from a primary source. CMA /cma-cases/potential-designation-of-aldi-and-lidl-under-the-groceries-market-investigation-controlled-land-order-2010 (final decision 2026-10-22) designates Aldi Stores Limited a Large Grocery Retailer under the Controlled Land Order; this is a regulatory designation, not a finding of breach, so not recorded as an outcome. B Corp: no matching listing found in B Lab directory fuzzy name search run in a browser on 2026-11-04 (direct HTTP is blocked by Cloudflare 403); search is fuzzy so treat as 'not found', not proof. HSE: press.hse.gov.uk WP API holds only 255 posts (Jan 2021 onward), all fetched and grepped for supermarket names with no relevant match; pre-2021 and non-press convictions not covered, HSE convictions database not reachable. Local-authority prosecutions ignored."
+ },
+ {
+  "n": 27,
+  "retailer": "Lidl",
+  "domain": "lidl.co.uk",
+  "entity": {
+   "legalName": "LIDL GREAT BRITAIN LIMITED",
+   "companyNumber": "02816429",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/02816429"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Lidl&sortBy=companies-production-en-us"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "Companies House lists no PSC. Lidl Northern Ireland Limited is a separate entity (not checked). Same Controlled Land designation (22 Oct 2026) as Aldi, not an outcome. B Corp: no matching listing found in B Lab directory fuzzy name search run in a browser on 2026-11-04 (direct HTTP is blocked by Cloudflare 403); search is fuzzy so treat as 'not found', not proof. HSE: press.hse.gov.uk WP API holds only 255 posts (Jan 2021 onward), all fetched and grepped for supermarket names with no relevant match; pre-2021 and non-press convictions not covered, HSE convictions database not reachable. Local-authority prosecutions ignored."
+ },
+ {
+  "n": 28,
+  "retailer": "Waitrose",
+  "domain": "waitrose.com",
+  "entity": {
+   "legalName": "WAITROSE LIMITED",
+   "companyNumber": "00099405",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00099405"
+  },
+  "owner": {
+   "name": "John Lewis Partnership plc (00238937) via John Lewis plc (00233462)",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00233462/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Waitrose&sortBy=companies-production-en-us"
+  },
+  "cma": [
+   {
+    "path": "/government/publications/open-letter-to-waitrose-about-land-agreements-restricting-competition",
+    "eventDate": "2022-09-02",
+    "outcome": "practice_changed",
+    "guard": "Waitrose has taken steps to correct these breaches and the CMA has published a letter sent to Waitrose following the investigation of these breaches.",
+    "summary": "CMA found 7 Waitrose land agreements breached the Groceries (Controlled Land) Order 2010; Waitrose corrected. History only.",
+    "note": "gov.uk /government/publications open letter under the Groceries (Controlled Land) Order 2010, not a /cma-cases/ page"
+   }
+  ],
+  "hse": [],
+  "notes": "Owner chain from Companies House PSC pages only; owner's own brand page not fetched. B Corp: no matching listing found in B Lab directory fuzzy name search run in a browser on 2026-11-04 (direct HTTP is blocked by Cloudflare 403); search is fuzzy so treat as 'not found', not proof. HSE: press.hse.gov.uk WP API holds only 255 posts (Jan 2021 onward), all fetched and grepped for supermarket names with no relevant match; pre-2021 and non-press convictions not covered, HSE convictions database not reachable. Local-authority prosecutions ignored."
+ },
+ {
+  "n": 29,
+  "retailer": "Co-op",
+  "domain": "coop.co.uk",
+  "entity": {
+   "legalName": "CO-OPERATIVE GROUP LIMITED",
+   "companyNumber": "IP00525R",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/IP00525R"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Co-op&sortBy=companies-production-en-us"
+  },
+  "cma": [
+   {
+    "path": "/government/publications/open-letter-to-co-op-about-land-agreements-restricting-competition",
+    "eventDate": "2025-03-05",
+    "outcome": "practice_changed",
+    "guard": "Co-op has taken, and continues to take, steps to correct these breaches and the CMA has published a letter sent to Co-op following its investigation of these breaches.",
+    "summary": "CMA found Co-operative Group Limited's land agreements breached the Groceries (Controlled Land) Order 2010 on 107 occasions; Co-op correcting.",
+    "note": "gov.uk /government/publications open letter under the Groceries (Controlled Land) Order 2010, not a /cma-cases/ page"
+   }
+  ],
+  "hse": [],
+  "notes": "Registered society (industrial and provident), no PSC. coop.co.uk food retail may be operated through Co-operative Group Food Limited (IP26715R); not verified. GCA formal finding: 2019-03-25 Co-op breached the Groceries Supply Code of Practice on two counts (https://www.gov.uk/government/news/co-op-breached-code-finds-groceries-code-adjudicator); pre 2023-11-04 history. Merger case Co-op/Southern Co-operative (Oct 2026) skipped. Note independent co-operative societies (Central England, Southern etc.) are separate entities. B Corp: no matching listing found in B Lab directory fuzzy name search run in a browser on 2026-11-04 (direct HTTP is blocked by Cloudflare 403); search is fuzzy so treat as 'not found', not proof. HSE: press.hse.gov.uk WP API holds only 255 posts (Jan 2021 onward), all fetched and grepped for supermarket names with no relevant match; pre-2021 and non-press convictions not covered, HSE convictions database not reachable. Local-authority prosecutions ignored."
+ },
+ {
+  "n": 30,
+  "retailer": "Iceland",
+  "domain": "iceland.co.uk",
+  "entity": {
+   "legalName": "ICELAND FOODS LIMITED",
+   "companyNumber": "01107406",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/01107406"
+  },
+  "owner": {
+   "name": "WD FF Midco Limited, immediate parent; ultimate owner not verified",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/01107406/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Iceland&sortBy=companies-production-en-us"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "No CMA company-specific outcome found. Iceland only appears as a respondent to the Aldi/Lidl designation consultation. B Corp: no matching listing found in B Lab directory fuzzy name search run in a browser on 2026-11-04 (direct HTTP is blocked by Cloudflare 403); search is fuzzy so treat as 'not found', not proof. HSE: press.hse.gov.uk WP API holds only 255 posts (Jan 2021 onward), all fetched and grepped for supermarket names with no relevant match; pre-2021 and non-press convictions not covered, HSE convictions database not reachable. Local-authority prosecutions ignored."
+ },
+ {
+  "n": 31,
+  "retailer": "Ocado",
+  "domain": "ocado.com",
+  "entity": {
+   "legalName": "OCADO RETAIL LIMITED",
+   "companyNumber": "03875000",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/03875000"
+  },
+  "owner": {
+   "name": "Ocado Group plc (07098618) via Ocado Holdings Limited (07148670); Marks and Spencer Holdings Limited holds more than 25% but not more than 50%",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/03875000/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Ocado&sortBy=companies-production-en-us"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "Only Ocado CMA items are Groceries Supply Code designation notices (2019/2020), not findings. B Corp: no matching listing found in B Lab directory fuzzy name search run in a browser on 2026-11-04 (direct HTTP is blocked by Cloudflare 403); search is fuzzy so treat as 'not found', not proof. HSE: press.hse.gov.uk WP API holds only 255 posts (Jan 2021 onward), all fetched and grepped for supermarket names with no relevant match; pre-2021 and non-press convictions not covered, HSE convictions database not reachable. Local-authority prosecutions ignored."
+ }
+]

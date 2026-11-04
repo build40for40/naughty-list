@@ -126,3 +126,9 @@ Official references:
 - [EPA public developer services](https://echo.epa.gov/tools/web-services)
 - [Environment Agency register licences](https://environment.data.gov.uk/public-register/view/data-licence)
 - [WBA API access](https://www.worldbenchmarkingalliance.org/documentation/api-specification)
+
+## Approved scoring release, 4 November 2026
+
+Ben approved Santa Score v0.3 after Samira's card 157 sign-off, subject to validation. Scores use the matched company's published records only. FatFace is checked directly in B Lab; River Island Clothing Co. Limited is matched to its own website terms and the 20 February 2024 government naming entry (£57,841.14, 1,007 workers). Arrears were repaid; the naming date is not the underpayment period. The reviewed snapshot is `data/river-island-minimum-wage-reviewed.json`; round 20 is included in the existing scheduled importer.
+
+A reviewed retailer can show its own shop assessment with an explicit notice that it does not rate the product or its brand. Legacy product-brand verdict eligibility remains false for retailers. Marketplaces remain excluded. Exact host and company matching are required for the separate business badge. The 100-row launch dataset is not imported wholesale: only validated evidence and reviewed mappings enter D1.

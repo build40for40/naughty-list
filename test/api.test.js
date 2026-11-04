@@ -19,8 +19,8 @@ test('brand and stable B Lab ID resolve to the same company with provenance', as
   const fresh = assess({ brand: 'Patagonia' }, { now: new Date('2026-11-04T12:00:00Z') });
   assert.equal(fresh.criteria.bCorp.certified, true);
   assert.match(byBrand.criteria.bCorp.source.url, /^https:\/\/www.bcorporation.net\//);
-  assert.equal(byBrand.scoring.verdict, null);
-  assert.equal(byBrand.scoring.total, null);
+  assert.equal(byBrand.scoring.verdict, 'nice');
+  assert.equal(byBrand.scoring.total, 1);
 });
 
 test('unknown brands and unmapped DUNS are unknown, never false', async () => {

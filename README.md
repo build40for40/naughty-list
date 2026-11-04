@@ -37,6 +37,12 @@ The check validates JSON syntax and basic required manifest fields. Chrome valid
 
 Publication preparation and current blockers are recorded in [publishing/README.md](publishing/README.md). Build Chrome/Firefox ZIPs with `npm run extension:package:chrome` / `npm run extension:package:firefox`. Store submission and real browser compatibility testing remain separate release steps.
 
+## Community voting (local implementation)
+
+The overlay can show a separate community result and open `/community/` for viewing and voting. A percentage appears only after **20 active Nice/Naughty votes**. Not sure, expired and excluded votes do not count. Accounts use Joyo's WorkOS AuthKit pattern, with an additional server-side verified-email check. Votes never change our evidence verdict.
+
+See [community voting setup and moderation](docs/community-voting.md) for migrations, WorkOS settings, privacy and release checks. H&M still needs its reviewed identity before enrolment; the production enrolment list is intentionally empty. Live authentication and deployment remain pending.
+
 ## Backend
 
 Deployed API: https://naughty-list-api.40for40.workers.dev

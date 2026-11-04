@@ -1,0 +1,28 @@
+[
+  {
+    "id": "uk-minimum-wage:/government/news/over-500-companies-named-for-not-paying-minimum-wage:river island clothing co. limited:river-island",
+    "sourceId": "uk-minimum-wage",
+    "sourceRecordId": "/government/news/over-500-companies-named-for-not-paying-minimum-wage:river island clothing co. limited",
+    "companyId": "river-island",
+    "publicationStatus": "published",
+    "scope": "company",
+    "checkedAt": "2026-11-04T16:57:10.533Z",
+    "refreshDueAt": "2026-11-11T16:57:10.533Z",
+    "eventDate": null,
+    "publishedAt": "2024-02-20T13:44:07+00:00",
+    "facts": {
+      "underpaymentGBP": 57841.14,
+      "workersAffected": 1007,
+      "underpaymentPeriod": null
+    },
+    "kind": "wage_underpayment",
+    "outcome": "government_naming",
+    "dimensions": [
+      "staff"
+    ],
+    "title": "Named for minimum wage underpayment",
+    "sourceUrl": "https://www.gov.uk/government/news/over-500-companies-named-for-not-paying-minimum-wage",
+    "assessedEntity": "River Island Clothing Co. Limited",
+    "summary": "River Island Clothing Co. Limited was named by the government for underpaying 1,007 workers by £57,841.14. The naming publication states arrears were repaid; publication date is not the underpayment period."
+  }
+]

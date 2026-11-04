@@ -10,6 +10,16 @@ On a candidate page, the background script sends a JSON body containing only `{ 
 
 The extension stores enable/disable and corner-position preferences in `storage.local`, plus the date the Elf Cam intro last showed for each hostname where it appeared (`elfCamIntro:<hostname>`). The pixel font is bundled and web-accessible, so no font request leaves the browser. It stores up to 50 hostname assessment results in `storage.session`, with five-minute validity. These results are not synced to another device. Expired cache entries are ignored and removed during subsequent cache writes; browser-session storage is cleared when the browser session ends. There is no analytics SDK or extension-generated tracking identifier. Turning automatic checks off stops new lookups and removes the stamp; it cannot retract a request already sent.
 
+## Community voting addition (local implementation)
+
+The extension can open a dedicated `/community/` page on the API origin when the user chooses to view or cast a vote. The link includes a reviewed company ID, not a product, page path or account token. The extension does not authenticate accounts or store WorkOS tokens. Anonymous shopping lookups remain hostname-only.
+
+On the voting page, WorkOS AuthKit processes email and sign-in information. Its refresh token persists in that origin's local storage, following Joyo's existing integration. Protected voting requests send an access token to the Worker; the Worker verifies its signature/issuer/expiry and checks WorkOS's server-side email-verification flag. No email or name is stored in D1 or included in public results.
+
+Voting D1 tables contain WorkOS account IDs, current votes, optional reason tags, update/expiry dates, account rate-limit records and moderation markers/decisions. Public responses contain aggregates only; own-vote routes require authentication. A daily task deletes expired non-excluded votes and rate-limit records inactive for a day. Excluded-account markers and moderation records remain for reviewed removal/data requests. WorkOS and Cloudflare platform retention still need verification before the final notice is published.
+
+The voting page contains a voting-specific explanation and support contact. Add WorkOS and these processing purposes to the final public notice before opening voting. Review Chrome/Firefox store privacy answers for the linked account feature; no extra extension identity, tabs or WorkOS host permission is requested. The release remains blocked on the existing final-policy/Cloudflare retention checks and the new WorkOS configuration/live flow checks in `docs/community-voting.md`.
+
 ## Separate backend
 
 ### Configuration checked on 4 November 2026

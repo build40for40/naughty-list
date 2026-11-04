@@ -18,6 +18,8 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 
 - Node.js 22.13 or later. `npm ci`, then initialise the local database: `npm run wrangler -- d1 migrations apply naughty-list --local`, `npm run evidence -- seed`, `npm run evidence -- import us-epa data/epa-reviewed.json` and `npm run evidence -- sync`.
 - `npm run dev` (local Worker), `npm run check` (tests plus a Wrangler dry run) and `npm run deploy` (manual; CI never deploys). Remote migrations, seeding and imports come before deploying; see `docs/evidence.md`.
+- `npm run scorecard -- --pay-gap <csv> --payments <csv>` rebuilds the v0.4 report card from the gov.uk downloads.
+- `npm run scores` prints draft Santa Scores for the card 159 retailers from the deployed API (`-- --json`, `-- --api http://localhost:8787`, `-- --as-of YYYY-MM-DD`). Card 157 is signed off, but scores reach shoppers only through a reviewed API PR and a deploy, never from this script's output.
 - `npm run extension:package:chrome` / `npm run extension:package:firefox` build runtime-only ZIPs into `dist/` from an explicit allowlist. Update the allowlist in `scripts/package-extension.mjs` whenever the extension gains files.
 - Always run Wrangler as `npm run wrangler -- <args>`. It uses the `40for40` auth profile and unsets `CLOUDFLARE_API_KEY` and `CLOUDFLARE_EMAIL`. On a new machine, create the profile with `env -u CLOUDFLARE_API_KEY -u CLOUDFLARE_EMAIL npx wrangler auth create 40for40`.
 - Wikirate credentials live in the ignored `.dev.vars` locally and in Cloudflare secrets in production. Never commit them or paste them into chat.
@@ -34,8 +36,10 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 | 154 | Publish Firefox add-on | To do |
 | 155 | Scoring Sources | To do |
 | 156 | Launch kit: store assets + download page | Doing |
-| 157 | Scoring Algorithm and Criteria | To do |
+| 157 | Scoring Algorithm and Criteria | Done: v0.4 signed off by Lawrence (team leader), 4 November |
 | 158 | Extension UI and design (Lawrence) | Doing |
+| 159 | Top 100 UK retailers: score them for the Santa Score page | To do (draft scores for 15 posted) |
+| 162 | Community Naughty/Nice voting alongside the evidence score | Doing |
 
 ## Locked decisions: four Ws
 
@@ -82,7 +86,7 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 - Patagonia and Tony's Chocolonely are source-checked technical coverage examples, including explicitly reviewed Tony's UK/US hosts. They do not replace H&M as the first launch target. H&M has reviewed identity mappings for `hm.com`, `www.hm.com` and `www2.hm.com`; certification remains unknown without direct evidence. The website operator record is not proof of the brand of every item sold.
 - One fixed stamp prefers bottom right. Settings allow all four corners and disabling automatic checks; dismissal lasts for the current page. If purchase controls overlap, try another corner or hide until there is room. Never duplicate, move or cover purchase controls. Navigation, pending responses, retries and unknown evidence are handled.
 - Deduplicate hostname requests and cache assessments for five minutes in browser-session storage, with a maximum of 50 entries. Store preferences locally. Validate that messages come from the sending top-frame hostname.
-- Nice/naughty is rendered only when explicitly supplied by the backend for an eligible reviewed brand shop. Until card 157 agrees a rule, the current backend keeps total/verdict null and the stamp is neutral. B Corp never implies nice and missing evidence never implies naughty.
+- Nice/naughty is rendered only when explicitly supplied by the backend for an eligible reviewed brand shop. The approved v0.3 method converts fresh direct B Corp evidence to one gift; missing evidence never implies naughty. Reviewed retailers can show a separately labelled shop assessment, never a product or third-party brand rating.
 - HTTPS content-script access is required for local detection; background requests use only the fixed API host. Firefox declares required `browsingActivity` transmission. Chrome disclosures must also cover local page-content processing.
 - Deploy reviewed code with seeded domain selectors before release checks. Older backends without relevance information fail closed to a neutral unknown state.
 
@@ -100,7 +104,7 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 - Return B Corp certification evidence, provenance and check/refresh dates. Do not equate B Corp certification with a product-level ethical judgment.
 - Unmatched and ambiguous identities are unknown, never automatically uncertified or naughty. Stale certification becomes unknown; historical enforcement evidence remains visible with freshness and event dates. There is no complete B Lab feed or per-request research integration. `validUntil` is our evidence refresh deadline, not the certificate's expiry; never extend it without rechecking the source.
 - Never invent identifiers, DUNS numbers or ownership links. Record the source for every company and domain mapping.
-- Keep overall score and naughty/nice verdict unset until the scoring task is settled. No new scoring criteria are authorised by the backend work.
+- Use only the approved v0.3 scoring criteria. Do not invent additional weights, sources or thresholds.
 
 ## Locked decisions: evidence backend
 
@@ -121,9 +125,27 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 - **Commercial shortlist for later, subject to access and display licensing:** Good On You (brand ratings) and Provenance (specific claims). EcoVadis is a negotiated commercial fallback.
 - **Excluded for now:** Ethical Consumer, ClimateChoice, KindBuys, Climatiq, HowGood and TrusTrace.
 
+## Community voting (approved 4 November 2026)
+
+- Separate community opinion from the evidence assessment. Votes never change our scoring/verdict or certification fields.
+- One current Nice, Naughty or Not sure vote per email-verified WorkOS account per reviewed brand. Reuse Joyo's AuthKit pattern; the Worker additionally checks WorkOS's server-side email-verification flag. No email/name is stored in the voting database.
+- Show the percentage of Nice among Nice + Naughty only after **20 active eligible votes**. Not sure, expired and excluded votes do not count towards the minimum or percentage. The API returns null below the minimum; displays enforce the same floor. The minimum is a participation rule, not a statistical reliability claim.
+- Votes expire after 12 calendar months and can be changed or withdrawn. Optional reasons: staff, communities, environment. No public comments in v1.
+- H&M remains the first launch target. Enrolment is explicit and requires the reviewed identity/domain/category first. The migration starts with no enrolled brands. Tests use Patagonia only as technical coverage.
+- Code is implemented, not deployed, tracked on card 162. Joyo's matching local temporary WorkOS pair has been reused in ignored `.dev.vars` without displaying secret values; hosted sign-in opens. Real Staging and Production callback/CORS/Sign-out entries are now registered and read back, preserving Joyo's defaults and origins. Matching production secrets, the shared Initiate login routing decision, full account-flow checks, H&M review/enrolment, remote migration, public privacy and real extension checks remain release prerequisites. See `docs/community-voting.md`.
+
 ## Scoring (card 157)
 
-The v1 stamp depends on this card. Keep the overall score and naughty/nice verdict unset until card 157 agrees a method. No scoring criteria, weights or thresholds are agreed. Missing certification or missing records must never mean naughty or nice. Evidence about a seller or brand must not silently become a claim about an individual product.
+Santa Score `santa-v0.4` was signed off by Lawrence (team leader) and approved for release by Samira on card 157 (4 November 2026), superseding `santa-v0.3` (approved by Samira and Ben the same day). The API scores published records and the gov.uk report card (gender pay gap and payment practices filings, `data/santa-scorecard.json`) using `worker/scoring.js`; see `docs/scoring.md`. Minimum-wage namings under £1,000 are shown but not counted. Unknown stays unknown: too little evidence is "not enough evidence", never naughty.
+
+- **Values:** the three areas through Santa's eyes: kindness to the elves (staff), honesty and generosity (communities), caring for the North Pole (environment).
+- **Points:** a proven offence is 2 coal (minimum-wage namings under £1,000 earn none), a warning 1 coal and a current B Corp 1 gift. Repeats in the window double: the worst incident's coal times 2 for each further incident. Self-reported CSR, promises, allegations, open investigations, secondary reports and changed practices earn nothing.
+- **Window:** only events from the last 3 years count; older ones are shown as history.
+- **Report card (v0.4):** gender pay gap and late supplier invoices from gov.uk statutory filings (OGL), +1 for the best quarter of the 100 and −1 for the worst. Gifts balance warnings but never cancel a proven offence; missing or invalid filings are left out, never scored as bad. Data in `data/santa-scorecard.json` (rebuilt with `npm run scorecard`), entity matches in `data/santa-filings.js`.
+- **Verdict:** total = gifts − coal + report card. Nice is 0 or more with at least one counted record. Watch list is −1. Naughty is −2 or below. Not enough evidence means no counted records at all.
+- **Unknown stays unknown:** no records never means naughty or nice.
+- **Owner rule (draft):** brands count under the company that owns them, so George at Asda counts as Asda and PlayStation as Sony. A shop counts only as itself, never for the brands it sells. The rule lives only in `data/santa-retailers.js` lookups, each owner link needs a recorded source, and the API's evidence joins are unchanged. The backend rule that corporate relationships don't transfer evidence still governs the API; changing it needs its own decision.
+- **Retailer list:** `data/santa-retailers.js` holds the final 100 UK retailers from card 159. To score a new one, add a reviewed identity to the registry first, then list its exact brand names under `lookups`.
 
 ## The problem
 
