@@ -2,10 +2,22 @@ import companies from './companies.js';
 
 const normalize = (value) => value.normalize('NFKC').trim().replace(/\s+/g, ' ').toLowerCase();
 
+// Accept a hostname only. Do not infer ownership from suffixes or subdomains.
+export function normalizeDomain(value) {
+  if (typeof value !== 'string') return null;
+  const host = value.trim().toLowerCase().replace(/\.$/, '');
+  if (host.length > 253) return null;
+  const labels = host.split('.');
+  if (labels.length < 2 || !labels.every(label => /^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/.test(label))) return null;
+  if (/^[0-9]+$/.test(labels.at(-1))) return null;
+  return host;
+}
+
 export function validateInput(input) {
   if (!input || typeof input !== 'object' || Array.isArray(input)) return false;
   const keys = Object.keys(input);
   if (keys.length !== 1) return false;
+  if (keys[0] === 'domain') return normalizeDomain(input.domain) !== null;
   if (keys[0] === 'brand') {
     return typeof input.brand === 'string' && input.brand.trim().length > 0 && input.brand.length <= 200;
   }
@@ -18,7 +30,10 @@ export function validateInput(input) {
 }
 
 export function assess(input, { registry = companies, now = new Date() } = {}) {
-  const matches = registry.filter(company => input.brand !== undefined
+  const domain = input.domain !== undefined ? normalizeDomain(input.domain) : null;
+  const matches = registry.filter(company => domain !== null
+    ? (company.domains ?? []).includes(domain)
+    : input.brand !== undefined
     ? [company.name, ...company.aliases].some(name => normalize(name) === normalize(input.brand))
     : company.identifiers.some(identifier => identifier.scheme === input.identifier.scheme && identifier.value === input.identifier.value));
   const status = matches.length === 1 ? 'matched' : matches.length === 0 ? 'not_found' : 'ambiguous';
@@ -30,7 +45,11 @@ export function assess(input, { registry = companies, now = new Date() } = {}) {
   return {
     schemaVersion: '1',
     input,
-    match: { status },
+    match: {
+      status,
+      method: input.domain !== undefined ? 'reviewed_domain' : input.brand !== undefined ? 'brand_name' : 'identifier',
+      ...(input.domain !== undefined ? { domain, evidence: company?.domainEvidence ?? null } : {})
+    },
     company: company ? { id: company.id, name: company.name, identifiers: company.identifiers } : null,
     criteria: {
       bCorp: {

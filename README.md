@@ -48,6 +48,10 @@ npm run check
 `POST /v1/assessments` accepts JSON with exactly one of:
 
 ```json
+{ "domain": "patagonia.com" }
+```
+
+```json
 { "brand": "Patagonia" }
 ```
 
@@ -59,7 +63,11 @@ npm run check
 { "identifier": { "scheme": "duns", "value": "000000000" } }
 ```
 
-The DUNS example is a placeholder, not a real company mapping. Keep identifiers as strings to preserve leading zeroes. DUNS is an accepted format but no DUNS mappings or external resolver are configured yet. A name and identifier cannot be supplied together. Names match only reviewed exact names/aliases, ignoring case and extra whitespace; there is no fuzzy matching or inheritance from a parent company.
+The DUNS example is a placeholder, not a real company mapping. Keep identifiers as strings to preserve leading zeroes. DUNS is an accepted format but no DUNS mappings or external resolver are configured yet. Domain, brand and identifier selectors cannot be combined. Names match only reviewed exact names/aliases, ignoring case and extra whitespace; there is no fuzzy matching or inheritance from a parent company.
+
+Domain input is a hostname, such as the browser URL's `hostname`, rather than a full URL. It is lowercased and trimmed; a trailing DNS dot is removed. URLs, paths, ports, IP addresses and raw Unicode hostnames are rejected. Browser-normalised ASCII/punycode hostnames are accepted, but only exact reviewed entries match. No submitted domain is fetched by the backend.
+
+The starter mappings cover `patagonia.com`, `www.patagonia.com`, `tonyschocolonely.com` and `www.tonyschocolonely.com`. Subdomains and regional sites need their own reviewed entries: neither `shop.patagonia.com` nor `patagonia.com.example.org` inherits a match. Domain matches include `match.method: "reviewed_domain"`, the normalised `match.domain` and source/check dates in `match.evidence`. This identifies the website's company; a marketplace domain cannot identify the selected seller or product brand. Those still need separate extraction and lookups.
 
 Example request against the local Worker:
 
@@ -75,7 +83,7 @@ Example response while the evidence is fresh:
 {
   "schemaVersion": "1",
   "input": { "brand": "Patagonia" },
-  "match": { "status": "matched" },
+  "match": { "status": "matched", "method": "brand_name" },
   "company": {
     "id": "patagonia",
     "name": "Patagonia",
@@ -108,7 +116,7 @@ Errors use `{ "error": { "code": "...", "message": "..." } }`: `400` invalid inp
 
 `validUntil` is our evidence refresh deadline, not the certificate's expiry. At that date the API returns unknown with reason `stale_evidence` until the record is rechecked and updated. Do not extend this deadline without checking the source. Missing records must not be marked uncertified, and certification does not establish whether an individual product is ethical.
 
-To add coverage, review a primary source, add the company and confirmed aliases/identifiers with the source and dates, run checks, then redeploy. A supported B Lab feed or licensed provider can replace this registry later. Never invent DUNS numbers or infer corporate ownership from similar names.
+To add coverage, review a primary source, add the company and confirmed aliases/identifiers/domains with the source and dates, run checks, then redeploy. Record the source that links each domain to the company in `domainEvidence`; do not infer ownership from page text or a similar name. A supported B Lab feed or licensed provider can replace this registry later. Never invent DUNS numbers or infer corporate ownership from similar names.
 
 ### Cloudflare deployment
 

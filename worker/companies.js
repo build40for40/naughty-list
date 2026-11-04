@@ -5,6 +5,11 @@ export default [
     id: 'patagonia',
     name: 'Patagonia',
     aliases: ['Patagonia, Inc.', 'Patagonia Inc'],
+    domains: ['patagonia.com', 'www.patagonia.com'],
+    domainEvidence: {
+      sourceUrl: 'https://www.bcorporation.net/en-us/find-a-b-corp/company/patagonia-inc/',
+      checkedAt: '2026-11-04'
+    },
     identifiers: [{ scheme: 'b_lab', value: 'patagonia-inc' }],
     bCorp: {
       certified: true,
@@ -17,6 +22,11 @@ export default [
     id: 'tonys-chocolonely',
     name: "Tony's Chocolonely",
     aliases: ['Tonys Chocolonely', 'Tony’s Chocolonely'],
+    domains: ['tonyschocolonely.com', 'www.tonyschocolonely.com'],
+    domainEvidence: {
+      sourceUrl: 'https://www.bcorporation.net/en-us/find-a-b-corp/company/tonys-chocolonely/',
+      checkedAt: '2026-11-04'
+    },
     identifiers: [{ scheme: 'b_lab', value: 'tonys-chocolonely' }],
     bCorp: {
       certified: true,

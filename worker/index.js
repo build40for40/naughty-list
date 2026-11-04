@@ -55,7 +55,7 @@ export default {
       return error('invalid_json', 'Send a valid JSON body.', 400);
     }
     if (!validateInput(input)) {
-      return error('invalid_input', 'Provide exactly one of brand (1-200 characters) or identifier {scheme, value}. Schemes: duns (9 digits), b_lab (directory slug).', 400);
+      return error('invalid_input', 'Provide exactly one of domain (hostname only), brand (1-200 characters) or identifier {scheme, value}. Schemes: duns (9 digits), b_lab (directory slug).', 400);
     }
     return json(assess(input));
   }

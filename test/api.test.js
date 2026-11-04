@@ -30,6 +30,52 @@ test('unknown brands and unmapped DUNS are unknown, never false', async () => {
   }
 });
 
+test('reviewed domains resolve exactly with identity evidence', async () => {
+  for (const domain of ['patagonia.com', 'www.patagonia.com', '  PATAGONIA.COM.  ']) {
+    const response = await post({ domain });
+    assert.equal(response.status, 200);
+    const result = await response.json();
+    assert.equal(result.company.id, 'patagonia');
+    assert.equal(result.match.method, 'reviewed_domain');
+    assert.equal(result.match.domain, domain.trim().toLowerCase().replace(/\.$/, ''));
+    assert.equal(result.match.evidence.checkedAt, '2026-11-04');
+    assert.equal(result.match.evidence.sourceUrl, companies[0].domainEvidence.sourceUrl);
+  }
+  const tonys = await (await post({ domain: 'www.tonyschocolonely.com' })).json();
+  assert.equal(tonys.company.id, 'tonys-chocolonely');
+});
+
+test('lookalikes, unreviewed subdomains and marketplaces never inherit a brand match', async () => {
+  for (const domain of ['patagonia.com.example.org', 'fakepatagonia.com', 'shop.patagonia.com',
+    'patagonia.co.uk', 'amazon.co.uk', 'argos.co.uk', 'xn--patagonia-example.com']) {
+    const response = await post({ domain });
+    assert.equal(response.status, 200);
+    const result = await response.json();
+    assert.equal(result.match.status, 'not_found', domain);
+    assert.equal(result.company, null);
+    assert.equal(result.criteria.bCorp.certified, null);
+  }
+});
+
+test('conflicting domain mappings stay ambiguous', () => {
+  const registry = [companies[0], { ...companies[0], id: 'different-business' }];
+  const result = assess({ domain: 'patagonia.com' }, { registry });
+  assert.equal(result.match.status, 'ambiguous');
+  assert.equal(result.match.evidence, null);
+  assert.equal(result.criteria.bCorp.certified, null);
+});
+
+test('domain lookup rejects URLs, IPs, malformed names and mixed selectors', async () => {
+  for (const domain of ['', null, 42, 'localhost', '127.0.0.1', '[::1]', 'https://patagonia.com',
+    'patagonia.com/path', 'patagonia.com?x=1', 'patagonia.com#test', 'user@example.com',
+    'patagonia.com:443', '.patagonia.com', 'patagonia..com', '-patagonia.com',
+    `${'a'.repeat(64)}.com`, 'patagonia.com..', 'patagоnia.com']) {
+    assert.equal((await post({ domain })).status, 400, String(domain));
+  }
+  assert.equal((await post({ domain: 'patagonia.com', brand: 'Patagonia' })).status, 400);
+  assert.equal((await post({ domain: 'patagonia.com', identifier: { scheme: 'b_lab', value: 'patagonia-inc' } })).status, 400);
+});
+
 test('ambiguous names and partial matches do not assign certification', () => {
   const registry = [companies[0], { ...companies[0], id: 'different-business' }];
   assert.equal(assess({ brand: 'Patagonia' }, { registry }).match.status, 'ambiguous');

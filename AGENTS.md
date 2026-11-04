@@ -8,7 +8,8 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 ## Backend decisions
 
 - Deploy `naughty-list-api` to the shared `40for40` Cloudflare account. Always use `npm run wrangler -- <args>` with the named auth profile, as required by the shared context.
-- `POST /v1/assessments` accepts exactly one brand name or typed identifier (`b_lab` directory slug or nine-digit DUNS string). Identifier support does not imply an external DUNS resolution service; only verified registry mappings resolve.
+- `POST /v1/assessments` accepts exactly one domain hostname, brand name or typed identifier (`b_lab` directory slug or nine-digit DUNS string). Identifier support does not imply an external DUNS resolution service; only verified registry mappings resolve.
+- Domain lookup uses exact reviewed hostname mappings with source/check dates. Case and a trailing DNS dot are normalised; subdomains and regional domains require explicit mappings. A marketplace domain identifies the marketplace, not a product brand or selected seller. No seller extraction or automatic domain research is implemented.
 - Return B Corp certification evidence, provenance and check/refresh dates. Do not equate B Corp certification with a product-level ethical judgment.
 - Unmatched, ambiguous and stale records are unknown, never automatically uncertified or naughty. There is no complete B Lab feed or automatic research integration yet.
 - Keep overall score and naughty/nice verdict unset until the scoring task is settled. No new scoring criteria are authorised by the initial backend work.
