@@ -13,6 +13,7 @@
   let pending = false;
   let scheduled = false;
   let retryAfter = 0;
+  let placementScheduled = false;
 
   const element = (name, text, parent) => {
     const node = document.createElement(name);
@@ -21,17 +22,41 @@
     return node;
   };
   function remove() { host?.remove(); host = shadow = undefined; }
+  function applyPosition(corner) {
+    if (!host) return;
+    for (const side of ['top', 'right', 'bottom', 'left']) host.style.setProperty(side, 'auto', 'important');
+    for (const side of corner.split('-')) host.style.setProperty(side, '16px', 'important');
+  }
+  function queuePlacement() {
+    if (placementScheduled) return;
+    placementScheduled = true;
+    setTimeout(() => {
+      placementScheduled = false;
+      if (!host) return;
+      const controls = lib.purchaseControls(document).map(node => node.getBoundingClientRect()).filter(rect => rect.width > 0 && rect.height > 0);
+      for (const corner of [settings.position, ...lib.positions.filter(value => value !== settings.position)]) {
+        applyPosition(corner);
+        const rect = host.getBoundingClientRect();
+        const blocked = controls.some(button => rect.left < button.right + 8 && rect.right > button.left - 8 && rect.top < button.bottom + 8 && rect.bottom > button.top - 8);
+        if (!blocked) { host.style.setProperty('visibility', 'visible', 'important'); return; }
+      }
+      // Purchase controls take precedence if no corner is safe. Recheck on
+      // scroll, resize or a content change; never duplicate or move shop controls.
+      host.style.setProperty('visibility', 'hidden', 'important');
+    }, 100);
+  }
   function position() {
     if (!host) return;
-    for (const side of ['top', 'right', 'bottom', 'left']) host.style[side] = 'auto';
-    for (const side of settings.position.split('-')) host.style[side] = '16px';
+    host.style.setProperty('visibility', 'hidden', 'important');
+    applyPosition(settings.position);
+    queuePlacement();
   }
   function render(state, assessment) {
     if (dismissed || !settings.enabled) return;
     if (!host) {
       host = document.createElement('div');
       host.id = 'naughty-list-stamp';
-      host.style.cssText = 'all:initial;position:fixed;z-index:2147483000;display:block;width:300px;max-width:calc(100vw - 32px);';
+      host.style.cssText = 'all:initial!important;position:fixed!important;z-index:2147483000!important;display:block!important;width:300px!important;max-width:calc(100vw - 32px)!important;';
       shadow = host.attachShadow({ mode: 'open' });
       document.documentElement.append(host);
     }
@@ -56,6 +81,7 @@
     element('p', model.message, status);
     if (assessment?.company) {
       const detail = element('details', null, section);
+      detail.addEventListener('toggle', position);
       element('summary', 'Evidence and source', detail);
       const certification = assessment.criteria?.bCorp;
       if (certification) {
@@ -91,7 +117,7 @@
     if (!settings.enabled || dismissed) { generation++; remove(); return; }
     const signals = lib.shoppingSignals(document);
     if (!signals.candidate) { generation++; remove(); return; }
-    if (current && Date.now() - requestedAt < 300000) { if (!host) render('ready', current); return; }
+    if (current && Date.now() - requestedAt < 300000) { if (!host) render('ready', current); else queuePlacement(); return; }
     if (pending || Date.now() < retryAfter) return;
     const token = ++generation;
     pending = true;
@@ -116,6 +142,8 @@
     schedule();
     new MutationObserver(schedule).observe(document.documentElement, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['content', 'disabled', 'aria-label', 'aria-disabled'] });
     setInterval(() => { if (page !== location.href || (settings.enabled && !dismissed && current && Date.now() - requestedAt >= 300000)) schedule(); }, 1000);
+    window.addEventListener('scroll', queuePlacement, { passive: true });
+    window.addEventListener('resize', queuePlacement, { passive: true });
   }).catch(() => { /* No lookup if preferences cannot be read. */ });
   api.storage.onChanged.addListener((changes, area) => {
     if (area !== 'local' || !changes.settings) return;

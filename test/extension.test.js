@@ -147,6 +147,34 @@ test('a review page sends no request and renders no stamp', async () => {
   await window.happyDOM.abort();
 });
 
+test('stamp avoids purchase controls and hides when no corner is clear', async () => {
+  const window = page(product + cart);
+  let allBlocked = false;
+  window.HTMLElement.prototype.getBoundingClientRect = function () {
+    if (this.id === 'naughty-list-stamp') {
+      const left = this.style.left === '16px' ? 16 : 284;
+      const top = this.style.top === '16px' ? 16 : 284;
+      return { left, top, right: left + 200, bottom: top + 200, width: 200, height: 200 };
+    }
+    if (this.tagName === 'BUTTON' && this.textContent === 'Add to basket') {
+      return allBlocked ? { left: 0, top: 0, right: 500, bottom: 500, width: 500, height: 500 }
+        : { left: 400, top: 400, right: 480, bottom: 480, width: 80, height: 80 };
+    }
+    return { left: 0, top: 0, right: 0, bottom: 0, width: 0, height: 0 };
+  };
+  window.chrome = { storage: { local: { get: async () => ({}) }, onChanged: { addListener() {} } }, runtime: { sendMessage: async () => ({ assessment }) } };
+  window.eval(source('shared.js')); window.eval(source('content.js'));
+  await new Promise(resolve => setTimeout(resolve, 750));
+  const host = window.document.querySelector('#naughty-list-stamp');
+  assert.equal(host.style.left, '16px', 'bottom-left is clear when bottom-right covers Add to basket');
+  assert.equal(host.style.visibility, 'visible');
+  allBlocked = true;
+  window.dispatchEvent(new window.Event('resize'));
+  await new Promise(resolve => setTimeout(resolve, 150));
+  assert.equal(host.style.visibility, 'hidden');
+  await window.happyDOM.abort();
+});
+
 test('navigation removes a pending stamp and an old response cannot restore it on a review page', async () => {
   const window = page(product + cart);
   let finish;

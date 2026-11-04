@@ -15,7 +15,7 @@ No dependencies or build step are required. After changing extension files, clic
 
 For Firefox, build the Firefox ZIP below, extract it, and load its `manifest.json` through `about:debugging#/runtime/this-firefox` → **Load Temporary Add-on**. The source manifest uses Chrome's service worker; Firefox packaging replaces that with background scripts.
 
-The stamp defaults to the bottom right. Open the extension's **Options/Preferences**, or use **Settings** on the stamp, to move it to another corner or disable automatic lookups. Dismissal applies to the current page. Only candidate HTTPS pages trigger a lookup; a product review with Product metadata alone does not.
+The stamp prefers the bottom right. Open the extension's **Options/Preferences**, or use **Settings** on the stamp, to choose another corner or disable automatic lookups. It tries other corners if it would cover a purchase control, and stays hidden while none is clear. Dismissal applies to the current page. Only candidate HTTPS pages trigger a lookup; a product review with Product metadata alone does not.
 
 H&M is the first launch target, but there is no reviewed H&M identity/evidence entry yet, so it stays unknown. Patagonia and Tony's Chocolonely are the current technical coverage examples. These do not replace the agreed launch scope. No scoring rule has been inferred from certification.
 

@@ -10,6 +10,19 @@
       labels.every(label => /^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/.test(label)) ? host : null;
   };
 
+  function purchaseControls(document) {
+    return [...document.querySelectorAll('button, input[type="submit"], input[type="button"], [role="button"]')].slice(0, 400).filter(element => {
+      if (element.disabled || element.getAttribute('aria-disabled') === 'true' || element.closest('[hidden], [aria-hidden="true"]')) return false;
+      const label = `${element.getAttribute('aria-label') ?? ''} ${element.textContent ?? ''} ${element.value ?? ''}`.trim();
+      if (!/\b(add\s+to\s+(cart|basket|bag)|buy\s+(now|it\s+now)|pre[ -]?order|purchase\s+now)\b/i.test(label)) return false;
+      for (let node = element; node?.nodeType === 1; node = node.parentElement) {
+        const style = document.defaultView?.getComputedStyle(node);
+        if (style?.display === 'none' || style?.visibility === 'hidden') return false;
+      }
+      return !element.matches(':disabled');
+    });
+  }
+
   function shoppingSignals(document) {
     let product = false;
     let offer = false;
@@ -40,16 +53,7 @@
     for (const element of [...document.querySelectorAll('[itemprop="price"], meta[property="product:price:amount"], meta[property="og:price:amount"], [data-price], .price, [class*="product-price"]')].slice(0, 100)) {
       if (amount(element.getAttribute('content') ?? element.getAttribute('data-price') ?? element.textContent?.trim())) price = true;
     }
-    const purchaseControl = [...document.querySelectorAll('button, input[type="submit"], input[type="button"], [role="button"]')].slice(0, 400).some(element => {
-      if (element.disabled || element.getAttribute('aria-disabled') === 'true' || element.closest('[hidden], [aria-hidden="true"]')) return false;
-      const label = `${element.getAttribute('aria-label') ?? ''} ${element.textContent ?? ''} ${element.value ?? ''}`.trim();
-      if (!/\b(add\s+to\s+(cart|basket|bag)|buy\s+(now|it\s+now)|pre[ -]?order|purchase\s+now)\b/i.test(label)) return false;
-      for (let node = element; node?.nodeType === 1; node = node.parentElement) {
-        const style = document.defaultView?.getComputedStyle(node);
-        if (style?.display === 'none' || style?.visibility === 'hidden') return false;
-      }
-      return !element.matches(':disabled');
-    });
+    const purchaseControl = purchaseControls(document).length > 0;
     // Product markup appears in reviews/articles too. Require a priced offer and
     // an actionable purchase control; never transmit the extracted contents.
     return { product, offer, price, purchaseControl, candidate: purchaseControl && price && (product || offer) };
@@ -71,5 +75,5 @@
     return { tone: 'neutral', title: 'Not enough evidence', message: 'We could not safely match this website to a reviewed brand shop. Unknown does not mean naughty.' };
   }
 
-  globalThis.NaughtyList = { positions, normalizePosition, settings, hostname, shoppingSignals, viewModel };
+  globalThis.NaughtyList = { positions, normalizePosition, settings, hostname, purchaseControls, shoppingSignals, viewModel };
 })();

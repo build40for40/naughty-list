@@ -44,14 +44,15 @@ const outputDir = join(root, 'dist');
 mkdirSync(outputDir, { recursive: true });
 const output = join(outputDir, `naughty-list-${target}-${manifest.version}.zip`);
 const staging = mkdtempSync(join(tmpdir(), 'naughty-list-extension-'));
+const licenceFiles = existsSync(join(root, 'LICENSE')) ? ['LICENSE'] : [];
 try {
   writeFileSync(join(staging, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`);
   mkdirSync(join(staging, 'icons'));
-  cpSync(join(root, 'LICENSE'), join(staging, 'LICENSE'));
+  for (const file of licenceFiles) cpSync(join(root, file), join(staging, file));
   for (const file of runtimeFiles) cpSync(join(source, file), join(staging, file));
   // Remove only this generated archive before rebuilding, so zip cannot retain old entries.
   rmSync(output, { force: true });
-  execFileSync('zip', ['-q', '-r', '-X', output, 'manifest.json', 'LICENSE', ...runtimeFiles], { cwd: staging });
+  execFileSync('zip', ['-q', '-r', '-X', output, 'manifest.json', ...licenceFiles, ...runtimeFiles], { cwd: staging });
   console.log(`Prepared dist/naughty-list-${target}-${manifest.version}.zip. Review the publication checklist before store submission.`);
 } finally {
   rmSync(staging, { recursive: true, force: true });
