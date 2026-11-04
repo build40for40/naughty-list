@@ -4,7 +4,7 @@ Final draft, 4 Nov 15:45. About 42 seconds. It shows only what version 1 does: t
 
 **Record:** OBS, 1920×1080, 30fps, on a clean Chrome profile with only The Naughty List installed. Use the 16:9 cut for the download page and for YouTube (unlisted, as the Chrome store promo video). Then cut a 9:16 version for shorts.
 
-**Needs before filming:** Ben merges `hm-registry` (fixed so his new evidence store accepts it), and Lawrence's badge runs on www2.hm.com.
+**Needs before filming:** The installed badge passes a real H&M shopping-flow check and the filming script matches the current neutral evidence state. H&M identity is seeded; certification is unknown.
 
 ## 16:9 cut (≈42s)
 
@@ -12,8 +12,8 @@ Final draft, 4 Nov 15:45. About 42 seconds. It shows only what version 1 does: t
 | --- | --- | --- | --- | --- |
 | 1 | 0–4s | `cards/hook-1920x1080.png` for 1s, then the H&M homepage full of Christmas gifts, scrolling slowly | "Every brand's ads are merry and bright at Christmas." | Every brand looks merry and bright at Christmas… |
 | 2 | 4–9s | Click into a Christmas jumper product page | "But who's been naughty or nice?" | But who's been naughty or nice? |
-| 3 | 9–17s | The Naughty List badge appears beside the product. Hold on it. Slow push-in in the edit. | "The Naughty List checks the company behind the gift. H&M? Not a Certified B Corp." | H&M: not a Certified B Corp |
-| 4 | 17–24s | Click "Where's this from?". The badge expands to show the source and date. | "Here's where that came from, and when we checked. One fact, not a verdict." | Source: B Lab directory · checked 4 Nov 2026 |
+| 3 | 9–17s | The Naughty List badge appears beside the product. Hold on it. Slow push-in in the edit. | "The Naughty List checks the company behind the gift. H&M? Certification is unknown." | H&M: B Corp status unknown |
+| 4 | 17–24s | Click "Where's this from?". The badge expands to show the source and date. | "Here's where that came from, and when we checked. One fact, not a verdict." | Identity source: H&M Group · checked 4 Nov 2026 |
 | 5 | 24–31s | Back, open a second H&M product. Same badge. | "Same badge on every H&M page. More shops are coming down the chimney." | More shops coming soon 🎁 |
 | 6 | 31–36s | Twitch VOD: the team building it on stream, 2–3 quick cuts | "We built it live, in one day." | Built live on Twitch, in one day |
 | 7 | 36–42s | `cards/end-1920x1080.png` | "The Naughty List. Check it twice before you buy." | (on the card) |
@@ -28,7 +28,7 @@ Captions: `captions-16x9.srt`.
 | --- | --- | --- | --- |
 | 1 | 0–2s | `cards/shorts-hook-1080x1920.png` | Who's been naughty or nice? 🎄 |
 | 2 | 2–9s | Screen recording, cropped to the badge and product (the badge appearing) | We checked the company behind your Christmas jumper |
-| 3 | 9–15s | The badge, with "Not listed" visible | H&M: not a Certified B Corp |
+| 3 | 9–15s | The badge, with "Unknown" visible | H&M: B Corp status unknown |
 | 4 | 15–20s | The badge expanded to show the source and date | Source + date, every time. One fact, not a verdict. |
 | 5 | 20–25s | `cards/shorts-end-1080x1920.png` | Free for Chrome & Firefox · link in bio |
 

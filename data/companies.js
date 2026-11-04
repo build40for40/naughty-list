@@ -6,6 +6,12 @@ const company = (id, name, aliases, sourceUrl) => ({
 });
 export default [
   ...original,
+  {
+    id: 'hm', name: 'H&M', aliases: [], identifiers: [],
+    domains: ['hm.com', 'www.hm.com', 'www2.hm.com'],
+    identityEvidence: { sourceUrl: 'https://hmgroup.com/brands/hm/', checkedAt: '2026-11-04' },
+    domainEvidence: { sourceUrl: 'https://hmgroup.com/brands/hm/', checkedAt: '2026-11-04' }
+  },
   company('asos', 'ASOS', ['ASOS.com Limited'], 'https://www.gov.uk/cma-cases/asos-boohoo-and-asda-greenwashing-investigation'),
   company('boohoo', 'Boohoo', [], 'https://www.gov.uk/cma-cases/asos-boohoo-and-asda-greenwashing-investigation'),
   company('george-at-asda', 'George at Asda', [], 'https://www.gov.uk/cma-cases/asos-boohoo-and-asda-greenwashing-investigation'),

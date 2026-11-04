@@ -1,12 +1,12 @@
 # Browser release test matrix
 
-Prepared on 4 November 2026. Automated DOM, messaging, caching and API tests cover the implemented 0.0.2 flow. A headless Firefox temporary-profile smoke check installed the generated add-on successfully. Visual and shopping-flow browser tests below remain unrun. Automated DOM tests do not establish visual compatibility in a real shopping session.
+Prepared on 4 November 2026. Automated DOM, messaging, caching and API tests cover the implemented 0.0.2 flow. A headless Firefox temporary-profile smoke check installed the generated add-on successfully. See [the installed-browser report](browser-checks-20261104.md) for completed Chrome-for-Testing installation, settings, placement, dismissal and live API checks on a labelled fixture. Live H&M visual/end-to-end checks remain pending because H&M denied the automated browser access. Automated tests do not establish visual compatibility in a real shopping session.
 
 Record browser version, operating system, archive hash, date and result for each run. Use a clean test profile with fictional test inputs and no personal browsing data.
 
 | Check | Chrome | Firefox | Expected evidence |
 | --- | --- | --- | --- |
-| Load unpacked / temporary add-on | Not run | Headless temporary-profile installation passed | Browser accepts the target manifest without errors |
+| Load unpacked / temporary add-on | Chrome for Testing 156, fresh temporary profile passed | Headless temporary-profile installation passed | Browser accepts the target manifest without errors |
 | Name, icon and version | Not run | Not run | Correct metadata on the extensions page; icon readable in light/dark themes |
 | Permissions and installation notices | Not run | Not run | Only actual feature permissions; declarations match behaviour |
 | Supported shopping page / trigger | Not run | Not run | Intended overlay appears once, in the agreed location |

@@ -5,6 +5,10 @@ import { normalizeDomain } from './assessment.js';
 // by the extension; a category is not proof that every page sells something.
 export const reviewedDomains = [
   {
+    domains: ['hm.com', 'www.hm.com', 'www2.hm.com'], category: 'brand_shop', companyId: 'hm',
+    sourceUrl: 'https://hmgroup.com/brands/hm/', checkedAt: '2026-11-04'
+  },
+  {
     domains: ['patagonia.com', 'www.patagonia.com'], category: 'brand_shop', companyId: 'patagonia',
     sourceUrl: 'https://www.patagonia.com/home/', checkedAt: '2026-11-04'
   },
