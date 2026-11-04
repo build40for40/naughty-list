@@ -1,12 +1,13 @@
 import { validateInput } from './assessment.js';
 import { assessStored, sourceCoverage } from './store.js';
 import { syncSources } from './imports.js';
+import { communityApi } from './community-api.js';
 
 const headers = {
   'Content-Type': 'application/json; charset=utf-8',
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type',
+  'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
   'Cache-Control': 'no-store',
   'X-Content-Type-Options': 'nosniff'
 };
@@ -37,6 +38,10 @@ async function readBody(request) {
 
 export default {
   async scheduled(_controller, env, ctx) {
+    ctx.waitUntil(env.DB.batch([
+      env.DB.prepare('DELETE FROM community_votes WHERE excluded=0 AND expires_at<=?').bind(new Date().toISOString()),
+      env.DB.prepare('DELETE FROM community_rate_limits WHERE window_start<?').bind(Math.floor(Date.now() / 60000) - 1440)
+    ]));
     ctx.waitUntil(syncSources(env.DB, { credentials: env }).then(results => {
       console.log(JSON.stringify({ event: 'source_sync', results }));
       if (results.some(result => result.status === 'failed')) throw new Error('One or more source imports failed');
@@ -44,6 +49,22 @@ export default {
   },
   async fetch(request, env = {}) {
     const path = new URL(request.url).pathname;
+    if (path.startsWith('/community/') || path === '/community') {
+      if (!env.ASSETS) return error('not_found', 'Voting page has not been built.', 404);
+      const assetUrl = new URL(request.url);
+      if (['/community', '/community/', '/community/login'].includes(path)) assetUrl.pathname = '/community/index.html';
+      const response = await env.ASSETS.fetch(new Request(assetUrl, request));
+      const secured = new Response(response.body, response);
+      secured.headers.set('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https://api.workos.com; img-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
+      secured.headers.set('Referrer-Policy', 'no-referrer');
+      secured.headers.set('X-Content-Type-Options', 'nosniff');
+      secured.headers.set('Cache-Control', 'no-store');
+      return secured;
+    }
+    if (path.startsWith('/v1/community/')) {
+      try { return await communityApi(request, env, { json, error, readBody }); }
+      catch { return error('service_unavailable', 'Community voting is unavailable. Please try again.', 503); }
+    }
     if (!['/health', '/v1/assessments', '/v1/sources'].includes(path)) return error('not_found', 'Route not found.', 404);
     if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers });
     const isRead = path !== '/v1/assessments';

@@ -95,3 +95,21 @@ Incidents in `npm run scores` come only from the registry. The card 159 research
 - Whether Amazon's competition commitments should count the same as misleading shoppers.
 - Whether the window counts by exact day or calendar year.
 - Severity by fine size, appeals and a changelog are v1 limitations.
+
+## Draft results for all 100 (4 November 2026, `santa-v0.3-draft`)
+
+Hand-computed from `data/research/`. Not yet in the registry or API.
+
+| Verdict | Retailers |
+| --- | --- |
+| Nice | Patagonia, Tony's Chocolonely, FatFace (B Corp), Simba (B Corp +1 balances its CMA undertaking −1) |
+| Naughty | B&Q (named twice: −4); Wayfair (CMA £4.8m fine, Oct 2026); minimum-wage naming (−2): Currys, Morrisons (Wm Morrison Produce), GAME, River Island, Wickes, Harrods, Lidl, Halfords, The Range (CDS), Holland & Barrett, Iceland, B&M, Tesco |
+| Not enough evidence, warning shown | Wowcher, Asda (George), ASOS, Boohoo, Amazon UK (CMA undertakings from Amazon Europe Core SARL, Jun 2025) |
+| Not enough evidence | Everyone else |
+
+**Open before sign-off:**
+- **Severity:** Tesco (£227.84, 1 worker), Harrods (£775.04, 1 worker), B&M (£3,304.80, 1 worker) and Iceland (£1,709.93, 6 workers) count the same as B&Q's £456,934. A minimum amount or number of workers may be needed.
+- **Halfords:** two Halfords companies in the same round are counted as one incident.
+- **Not counted:** regional co-operative societies are not the Co-op Group. Land-agreement letters (Morrisons, Co-op, M&S) are "changed its ways".
+- **Unverified links:** owner links and some legal entities are unverified (see the notes in each JSON).
+- **Importer changes needed:** the minimum-wage importer must accept unnumbered lists and use `first_published_at` before these rounds can be imported.

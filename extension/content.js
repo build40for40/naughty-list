@@ -161,6 +161,15 @@ b{position:absolute;top:28px;font-weight:400;background:#0a0e0b;color:#7dff9a;pa
     section.dataset.tone = model.tone;
     element('h2', model.title, status);
     element('p', model.message, status);
+    const community = lib.communityModel(assessment);
+    if (state === 'ready' && community) {
+      element('p', `Community: ${community.text}`, section);
+      element('small', 'Community opinion. Claims have not been verified.', section);
+      const votes = element('button', 'View or cast a vote', section);
+      votes.addEventListener('click', () => {
+        api.runtime.sendMessage({ type: 'open-community', domain: location.hostname }).catch(() => {});
+      });
+    }
     if (assessment?.company) {
       const detail = element('details', null, section);
       detail.addEventListener('toggle', position);

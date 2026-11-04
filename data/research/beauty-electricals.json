@@ -1,0 +1,441 @@
+[
+ {
+  "n": 55,
+  "retailer": "Boots",
+  "domain": "boots.com",
+  "entity": {
+   "legalName": "Boots UK Limited",
+   "companyNumber": "00928555",
+   "sourceUrl": "https://www.boots.com/shopping/advantage-card/advantage-card-terms-and-conditions"
+  },
+  "owner": {
+   "name": "Sycamore Partners (via Walgreens Boots Alliance / The Boots Group)",
+   "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1618921/000119312525190603/d87240dex991.htm"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Boots"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp: directory search for 'Boots' (not a slug fetch) found no matching certified company, so certified=false. HSE: press.hse.gov.uk search 2019+ for the entity/brand/owner names returned no relevant prosecution (keyword hits were false positives such as 'boots'); not exhaustive. Entity from boots.com footer: 'Boots.com is a trading name of Boots UK Limited... company number 928555'. Companies House PSC of Boots UK Limited is Alliance Boots Holdings Limited (04452715). Owner link is from SEC filings on Sycamore's completed acquisition of WBA (28 Aug 2025); that Boots sits under WBA/The Boots Group is from search-result text, not re-verified on a primary page. Boots terms page was bot-blocked."
+ },
+ {
+  "n": 56,
+  "retailer": "Superdrug",
+  "domain": "superdrug.com",
+  "entity": {
+   "legalName": "Superdrug Stores plc",
+   "companyNumber": "00807043",
+   "sourceUrl": "https://www.superdrug.com/terms"
+  },
+  "owner": {
+   "name": "A.S. Watson (Health & Beauty UK) Limited (company 04051648)",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/00807043/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Superdrug"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp: directory search for 'Superdrug' (not a slug fetch) found no matching certified company, so certified=false. HSE: press.hse.gov.uk search 2019+ for the entity/brand/owner names returned no relevant prosecution (keyword hits were false positives such as 'boots'); not exhaustive. Terms: 'The Site is operated by Superdrug Stores plc... company number 00807043'. Companies House PSC is A S Watson (Health & Beauty UK) Limited. Ultimate parent (A.S. Watson Group / CK Hutchison) NOT verified from a primary page."
+ },
+ {
+  "n": 57,
+  "retailer": "Lookfantastic",
+  "domain": "lookfantastic.com",
+  "entity": {
+   "legalName": "THG Beauty Limited",
+   "companyNumber": "13400467",
+   "sourceUrl": "https://www.lookfantastic.com/info/terms-conditions.list"
+  },
+  "owner": {
+   "name": "THG plc",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/13400467/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Lookfantastic"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp: directory search for 'Lookfantastic' (not a slug fetch) found no matching certified company, so certified=false. HSE: press.hse.gov.uk search 2019+ for the entity/brand/owner names returned no relevant prosecution (keyword hits were false positives such as 'boots'); not exhaustive. Terms name THG Beauty Limited (trading as www.lookfantastic.com); promoter text gives company number 13400467 (matches Companies House). Terms also mention The Hut.com Limited (05016010) for social content use. Owner THG plc is as supplied by caller; Companies House PSC of THG Beauty Limited is THG Operations Holdings Limited (12242084), whose own PSCs include individuals, so I did NOT confirm the THG plc link. Site terms also state a Frasers Plus finance arrangement (introducer appointed representative of Frasers Group Financial Services), not ownership."
+ },
+ {
+  "n": 58,
+  "retailer": "Cult Beauty",
+  "domain": "cultbeauty.co.uk",
+  "entity": {
+   "legalName": "THG Beauty Limited",
+   "companyNumber": "13400467",
+   "sourceUrl": "https://www.cultbeauty.co.uk/info/terms-conditions.list"
+  },
+  "owner": {
+   "name": "THG plc",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/06195011/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Cult Beauty"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp: directory search for 'Cult Beauty' (not a slug fetch) found no matching certified company, so certified=false. HSE: press.hse.gov.uk search 2019+ for the entity/brand/owner names returned no relevant prosecution (keyword hits were false positives such as 'boots'); not exhaustive. Terms: 'THG Beauty Limited (trading as www.cultbeauty.co.uk)... company number 13400467'. Cult Beauty Limited (06195011) is a subsidiary of THG Beauty Limited per Companies House PSC. THG plc top link not independently confirmed (see Lookfantastic)."
+ },
+ {
+  "n": 59,
+  "retailer": "Space NK",
+  "domain": "spacenk.com",
+  "entity": {
+   "legalName": "Space NK Limited",
+   "companyNumber": "02773985",
+   "sourceUrl": "https://help.spacenk.com/hc/en-us/articles/360000930633-Terms-Conditions-for-Online-Sales"
+  },
+  "owner": {
+   "name": "Ulta Beauty, Inc.",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/16564147/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Space NK"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp: directory search for 'Space NK' (not a slug fetch) found no matching certified company, so certified=false. HSE: press.hse.gov.uk search 2019+ for the entity/brand/owner names returned no relevant prosecution (keyword hits were false positives such as 'boots'); not exhaustive. Terms: 'Welcome to the Space NK Limited website'; number from Companies House (terms page did not print it). Companies House: PSC of Space NK is Horizons Longacre UK, Limited (16564147, notified 10 Jul 2025), whose PSC is Ulta Beauty, Inc."
+ },
+ {
+  "n": 60,
+  "retailer": "The Body Shop",
+  "domain": "thebodyshop.com",
+  "entity": {
+   "legalName": "The Body Shop International Limited",
+   "companyNumber": "15859787",
+   "sourceUrl": "https://www.thebodyshop.com/en-gb/terms-and-conditions"
+  },
+  "owner": {
+   "name": "The Body Shop Holdings Limited (company 15856010; PSC Renu Sharma)",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/15859787/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=The Body Shop"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp: directory search for 'The Body Shop' (not a slug fetch) found no matching certified company, so certified=false. HSE: press.hse.gov.uk search 2019+ for the entity/brand/owner names returned no relevant prosecution (keyword hits were false positives such as 'boots'); not exhaustive. Site footer: 'The Body Shop International Limited... registered in England no. 15859787' (new entity incorporated 26 Jul 2024; the old company 01284170 is now TBSI Realisations Limited). Owner chain from Companies House PSC only; no primary page naming the ultimate owner found. B Corp: the brand was certified in the past; no current directory listing found."
+ },
+ {
+  "n": 61,
+  "retailer": "Lush",
+  "domain": "lush.com",
+  "entity": {
+   "legalName": "Lush Retail Ltd",
+   "companyNumber": "03084750",
+   "sourceUrl": "https://www.lush.com/uk/en/faq/terms-and-conditions"
+  },
+  "owner": {
+   "name": "Lush Cosmetics Limited (company 04162033)",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/02940032/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Lush"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp: directory search for 'Lush' (not a slug fetch) found no matching certified company, so certified=false. HSE: press.hse.gov.uk search 2019+ for the entity/brand/owner names returned no relevant prosecution (keyword hits were false positives such as 'boots'); not exhaustive. Lush terms: 'We are Lush Retail Ltd (company registration number 03084750)'. Chain via Companies House: Lush Retail Ltd <- Lush Ltd (02940032) <- Lush Cosmetics Limited (04162033) <- Mark Constantine (PSC, 25%+ band)."
+ },
+ {
+  "n": 62,
+  "retailer": "Holland & Barrett",
+  "domain": "hollandandbarrett.com",
+  "entity": {
+   "legalName": "Holland & Barrett Retail Limited",
+   "companyNumber": "02758955",
+   "sourceUrl": "https://www.hollandandbarrett.com/info/terms-and-conditions/"
+  },
+  "owner": {
+   "name": "Holland & Barrett Group Limited (company 03086306)",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/02758955/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Holland Barrett"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp: directory search for 'Holland Barrett' (not a slug fetch) found no matching certified company, so certified=false. HSE: press.hse.gov.uk search 2019+ for the entity/brand/owner names returned no relevant prosecution (keyword hits were false positives such as 'boots'); not exhaustive. Terms: 'We are Holland & Barrett Retail Limited; a company registered in England and Wales (company number 02758955)'. Chain via Companies House: Retail <- Holdings Limited (03262074) <- Group Limited (03086306). Ultimate owner not verified."
+ },
+ {
+  "n": 63,
+  "retailer": "Sephora UK",
+  "domain": "sephora.co.uk",
+  "entity": {
+   "legalName": "Feelunique International Limited",
+   "companyNumber": "07883226",
+   "sourceUrl": "https://www.sephora.co.uk/terms-and-conditions/"
+  },
+  "owner": {
+   "name": "LVMH Moet Hennessy Louis Vuitton",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/07883226/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Sephora"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp: directory search for 'Sephora' (not a slug fetch) found no matching certified company, so certified=false. HSE: press.hse.gov.uk search 2019+ for the entity/brand/owner names returned no relevant prosecution (keyword hits were false positives such as 'boots'); not exhaustive. Terms: 'Feelunique International Limited trading as Sephora UK'; number from Companies House (07883226); PSC is LVMH (notified 28 Sep 2021)."
+ },
+ {
+  "n": 64,
+  "retailer": "Charlotte Tilbury",
+  "domain": "charlottetilbury.com",
+  "entity": {
+   "legalName": "Charlotte Tilbury Beauty Limited",
+   "companyNumber": "08037372",
+   "sourceUrl": "https://www.charlottetilbury.com/uk"
+  },
+  "owner": {
+   "name": "Puig Brands, S.A.",
+   "sourceUrl": "https://uploads.puig.com/uploads/PUIG_BRANDS_2026_Half_Year_FFSS_ENG_70c01313c6.pdf"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Charlotte Tilbury"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp: directory search for 'Charlotte Tilbury' (not a slug fetch) found no matching certified company, so certified=false. HSE: press.hse.gov.uk search 2019+ for the entity/brand/owner names returned no relevant prosecution (keyword hits were false positives such as 'boots'); not exhaustive. UK footer reads 'Islestarr Holdings Ltd., trading as Charlotte Tilbury Beauty... Company number 08037372'; 08037372 is registered at Companies House as CHARLOTTE TILBURY BEAUTY LIMITED (Islestarr Holdings Limited is its PSC, 07712458). Chain to Puig: Companies House shows Charlotte Tilbury Limited (12618110) <- Prado Investments Limited (12617954). Puig link and stake (85% as of Apr 2026) came from a search extract of Puig's own filings, not re-read in full; treat stake figure as unverified."
+ },
+ {
+  "n": 65,
+  "retailer": "Currys",
+  "domain": "currys.co.uk",
+  "entity": {
+   "legalName": "Currys Retail Limited",
+   "companyNumber": "02142673",
+   "sourceUrl": "https://www.currys.co.uk/"
+  },
+  "owner": {
+   "name": "Currys plc (company 07105905)",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/02142673/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Currys"
+  },
+  "cma": [
+   {
+    "path": "/government/news/cma-secures-improvements-to-currys-sale-of-extended-warranties",
+    "eventDate": "2019-11-05",
+    "outcome": "practice_changed",
+    "guard": "The CMA has since been working with Currys to improve the way it sells this type of warranty.",
+    "summary": "CMA worked with Currys (Dixons Carphone) after mystery shopping found staff gave inaccurate extended-warranty information; Currys agreed to extra training, clearer posters/leaflets and monthly mystery shopping. No formal undertaking or fine. Only a news story and a letter exist; there is no /cma-cases page."
+   }
+  ],
+  "hse": [],
+  "notes": "B Corp: directory search for 'Currys' (not a slug fetch) found no matching certified company, so certified=false. HSE: press.hse.gov.uk search 2019+ for the entity/brand/owner names returned no relevant prosecution (keyword hits were false positives such as 'boots'); not exhaustive. Currys site footer: 'Currys Retail Limited registered in England & Wales No.2142673'. 2019 matter was under the Extended Warranties Order and concerned Dixons Carphone / Currys PC World. Nothing else found since 2019."
+ },
+ {
+  "n": 66,
+  "retailer": "AO",
+  "domain": "ao.com",
+  "entity": {
+   "legalName": "AO Retail Limited",
+   "companyNumber": "03914998",
+   "sourceUrl": "https://ao.com/"
+  },
+  "owner": {
+   "name": "AO World plc (company 05525751)",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/03914998/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=AO World"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp: directory search for 'AO World' (not a slug fetch) found no matching certified company, so certified=false. HSE: press.hse.gov.uk search 2019+ for the entity/brand/owner names returned no relevant prosecution (keyword hits were false positives such as 'boots'); not exhaustive. ao.com footer: 'ao.com is operated by AO Retail Limited, registered in England with company number 03914998'. Chain: AO Retail Limited <- AO Limited (06861978) <- AO World plc (05525751). No CMA hits."
+ },
+ {
+  "n": 67,
+  "retailer": "Apple",
+  "domain": "apple.com/uk",
+  "entity": {
+   "legalName": "Apple Retail UK Limited",
+   "companyNumber": "04996702",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/04996702"
+  },
+  "owner": {
+   "name": "Apple Inc.",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/04996702/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Apple"
+  },
+  "cma": [
+   {
+    "path": "/cma-cases/apple-iphones-consumer-protection-case",
+    "eventDate": "2019-05-22",
+    "outcome": "undertaking",
+    "guard": "To ensure compliance with consumer law Apple has formally agreed to improve the information it provides to people about the battery health of their phones and the impact performance management software may have on their phones.",
+    "summary": "Undertaking from Apple Inc on iPhone battery health and performance-management information (case closed 22 May 2019)."
+   },
+   {
+    "path": "/cma-cases/investigation-into-apple-appstore",
+    "eventDate": "2024-08-21",
+    "outcome": "closed_no_action",
+    "guard": "The CMA closed its Competition Act 1998 investigation into Apple’s conduct in relation to the distribution of apps on iOS and iPadOS devices in the UK on administrative priority grounds.",
+    "summary": "Competition Act investigation into Apple's iOS app distribution (opened March 2021) closed on administrative priorities; no infringement finding."
+   },
+   {
+    "path": "/cma-cases/apples-mobile-platform",
+    "eventDate": "2026-04-01",
+    "outcome": "commitments",
+    "guard": "The CMA has published final commitments given by Apple.",
+    "summary": "Under the DMCC digital markets regime, Apple gave voluntary commitments on app review, app ranking, use of data and interoperable access (not a finding of wrongdoing). Page also covers the SMS designation."
+   }
+  ],
+  "hse": [],
+  "notes": "B Corp: directory search for 'Apple' (not a slug fetch) found no matching certified company, so certified=false. HSE: press.hse.gov.uk search 2019+ for the entity/brand/owner names returned no relevant prosecution (keyword hits were false positives such as 'boots'); not exhaustive. Entity: Apple Retail UK Limited exists at Companies House, but Apple's UK sales-policies page does NOT name the selling entity, so whether it is the contracting entity for apple.com/uk is unverified. Apple Inc PSC shown at Companies House. DMCC: CMA designated Apple with strategic market status on 22 Oct 2025 (mobile platform) - notes only. Open consultations Jun-Oct 2026 on proposed steering and NFC conduct requirements (no outcome yet). The 2024 closure and 2026 commitments are borderline for 'outcomes'; caller to decide. Guard strings use a curly apostrophe as on the page."
+ },
+ {
+  "n": 68,
+  "retailer": "Samsung",
+  "domain": "samsung.com/uk",
+  "entity": {
+   "legalName": "Samsung Electronics (UK) Limited",
+   "companyNumber": "03086621",
+   "sourceUrl": "https://www.samsung.com/uk/estore/static/link-terms-and-conditions-of-sale/"
+  },
+  "owner": {
+   "name": "Samsung Electronics Co., Ltd.",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/03086621/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Samsung"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp: directory search for 'Samsung' (not a slug fetch) found no matching certified company, so certified=false. HSE: press.hse.gov.uk search 2019+ for the entity/brand/owner names returned no relevant prosecution (keyword hits were false positives such as 'boots'); not exhaustive. Terms of Sale: 'We are Samsung Electronics (UK) Limited, a company registered in England and Wales under company number 03086621'. No CMA outcomes found naming Samsung (only mention was the 2024 domestic appliances merger clearance, which is a merger and not counted)."
+ },
+ {
+  "n": 69,
+  "retailer": "GAME",
+  "domain": "game.co.uk",
+  "entity": {
+   "legalName": "Frasers Group Trading Limited (formerly Sportsdirect.com Retail Limited), trading as 'Game'",
+   "companyNumber": "03406347",
+   "sourceUrl": "https://www.game.co.uk/terms-and-conditions"
+  },
+  "owner": {
+   "name": "Frasers Group plc (company 06035106)",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/03406347/persons-with-significant-control"
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=GAME Digital"
+  },
+  "cma": [],
+  "hse": [],
+  "notes": "B Corp: directory search for 'GAME Digital' (not a slug fetch) found no matching certified company, so certified=false. HSE: press.hse.gov.uk search 2019+ for the entity/brand/owner names returned no relevant prosecution (keyword hits were false positives such as 'boots'); not exhaustive. Site footer: 'Frasers Group Trading Limited (FRN: 980401), trading as 'Game''; promotion terms call the promoter 'Sportsdirect.com Retail Limited trading as Game'. Companies House shows 03406347 as FRASERS GROUP TRADING LIMITED, previously named SPORTSDIRECT.COM RETAIL LIMITED, so the two are the same company. The old GAME Retail Limited (07837246) is in administration and is not the current operator. Also searched B Lab for Frasers: none."
+ },
+ {
+  "n": 70,
+  "retailer": "PlayStation Store",
+  "domain": "store.playstation.com",
+  "entity": {
+   "legalName": "Sony Interactive Entertainment Network Europe Limited",
+   "companyNumber": "06020283",
+   "sourceUrl": "https://www.playstation.com/en-gb/legal/terms-of-service/"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Sony"
+  },
+  "cma": [
+   {
+    "path": "/cma-cases/online-console-video-gaming",
+    "eventDate": "2022-04-13",
+    "outcome": "undertaking",
+    "guard": "The CMA has secured an undertaking from Sony to put in place measures to protect their PlayStation Plus customers who haven’t used their memberships for a long time but are still paying.",
+    "summary": "Sony undertaking on PlayStation Plus auto-renewing memberships (inactive members). Case closed 13 Apr 2022."
+   }
+  ],
+  "hse": [],
+  "notes": "B Corp: directory search for 'Sony' (not a slug fetch) found no matching certified company, so certified=false. HSE: press.hse.gov.uk search 2019+ for the entity/brand/owner names returned no relevant prosecution (keyword hits were false positives such as 'boots'); not exhaustive. PlayStation Terms of Service (UK): 'We are Sony Interactive Entertainment Network Europe Limited, company number 06020283'. Parent (Sony Group Corporation) NOT verified from a primary source. No other CMA or Sony UK matters found (Sony/AWAL merger clearance 2022 is a merger, skipped)."
+ },
+ {
+  "n": 71,
+  "retailer": "Nintendo",
+  "domain": "nintendo.com/en-gb",
+  "entity": {
+   "legalName": "Nintendo of Europe SE",
+   "companyNumber": "BR005889",
+   "sourceUrl": "https://find-and-update.company-information.service.gov.uk/company/BR005889"
+  },
+  "owner": {
+   "name": null,
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Nintendo"
+  },
+  "cma": [
+   {
+    "path": "/cma-cases/online-console-video-gaming",
+    "eventDate": "2022-04-13",
+    "outcome": "practice_changed",
+    "guard": "Nintendo changed its business practices during the course of the investigation so that Nintendo Switch Online Service is no longer sold with automatic renewal set as the default option.",
+    "summary": "Nintendo changed Switch Online sales so auto-renewal is no longer the default; no formal undertaking."
+   }
+  ],
+  "hse": [],
+  "notes": "B Corp: directory search for 'Nintendo' (not a slug fetch) found no matching certified company, so certified=false. HSE: press.hse.gov.uk search 2019+ for the entity/brand/owner names returned no relevant prosecution (keyword hits were false positives such as 'boots'); not exhaustive. Nintendo of Europe SE is a German SE; BR005889 is its UK establishment (Windsor) at Companies House. Nintendo's own legal pages I could load did not name the entity, so the contracting entity for nintendo.com/en-gb is unverified. Parent (Nintendo Co., Ltd.) not verified."
+ },
+ {
+  "n": 72,
+  "retailer": "Xbox",
+  "domain": "xbox.com",
+  "entity": {
+   "legalName": "Microsoft Ireland Operations Limited",
+   "companyNumber": null,
+   "sourceUrl": "https://www.microsoft.com/en-gb/servicesagreement"
+  },
+  "owner": {
+   "name": "Microsoft Corporation",
+   "sourceUrl": null
+  },
+  "bCorp": {
+   "certified": false,
+   "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/?query=Microsoft"
+  },
+  "cma": [
+   {
+    "path": "/cma-cases/online-console-video-gaming",
+    "eventDate": "2022-01-26",
+    "outcome": "undertakings",
+    "guard": "The CMA has secured undertakings from Microsoft Limited and Microsoft Ireland Operations Limited to make a series of improvements to their auto-renewing subscriptions for online gaming services.",
+    "summary": "Undertakings from Microsoft Limited and Microsoft Ireland Operations Limited on Xbox Live Gold / Game Pass auto-renewal."
+   },
+   {
+    "path": "/cma-cases/microsoft-consumer-protection-enforcement-case",
+    "eventDate": "2026-07-27",
+    "outcome": "investigation_open",
+    "guard": "The CMA has opened an investigation into suspected infringements of consumer protection law by Microsoft Ireland Operations Limited, trading as Microsoft.",
+    "summary": "Open consumer-protection investigation into how Microsoft 365 Personal and Family plan changes (Copilot) were communicated before renewal. Page says no finding has been made. It concerns Microsoft 365, not Xbox, but is the same UK/EU consumer entity."
+   }
+  ],
+  "hse": [],
+  "notes": "B Corp: directory search for 'Microsoft' (not a slug fetch) found no matching certified company, so certified=false. HSE: press.hse.gov.uk search 2019+ for the entity/brand/owner names returned no relevant prosecution (keyword hits were false positives such as 'boots'); not exhaustive. Microsoft Services Agreement section 10: UK consumers contract with Microsoft Ireland Operations Limited (Irish CRO number 256796, not a Companies House number, so companyNumber left null). UK company Microsoft Limited is 01624297 (named in the 2022 undertakings). Owner Microsoft Corporation is not stated on pages I read. The 2026 case page has a non-breaking space between 'by' and 'Microsoft'; the guard uses a normal space. Microsoft's strategic market status work (business software ecosystem, Oct 2026 proposed decision) is a DMCC process - notes only. Merger cases (Activision) skipped."
+ }
+]

@@ -227,3 +227,35 @@ test('error state offers an explicit retry and settings form persists validated 
   assert.match(options.document.querySelector('#status').textContent, /Settings saved/);
   await options.happyDOM.abort();
 });
+
+test('community result enforces the baseline independently and never changes the evidence tone', () => {
+  const withCommunity = community => ({ ...assessment, community });
+  for (const total of [0, 1, 19]) {
+    const value = withCommunity({ status: 'ready', total, minimumVotes: 1, nicePercentage: 100 });
+    assert.ok(!lib.communityModel(value).text.includes('%'));
+    assert.equal(lib.viewModel(value).tone, 'neutral');
+  }
+  const value = withCommunity({ status: 'ready', total: 20, minimumVotes: 20, nicePercentage: 95 });
+  assert.match(lib.communityModel(value).text, /95% voted Nice/);
+  for (const category of ['marketplace', 'retailer', 'unknown']) {
+    assert.equal(lib.communityModel({ ...value, relevance: { category, eligibleForVerdict: false } }), null);
+  }
+});
+
+test('background voting links use the resolved sender brand on a fixed origin', async () => {
+  let listener;
+  const opened = [];
+  const chrome = {
+    tabs: { create: async options => opened.push(options) },
+    storage: { local: { get: async () => ({}) } },
+    runtime: { onMessage: { addListener: value => { listener = value; } } }
+  };
+  const result = { ...assessment, community: { status: 'early', total: 0, minimumVotes: 20, nicePercentage: null } };
+  runInNewContext(source('background.js'), { URL, fetch, chrome, NaughtyList: { ...lib, createLookup: () => async () => result } });
+  const sender = { frameId: 0, url: 'https://patagonia.com/product?private=test' };
+  assert.equal(listener({ type: 'open-community', domain: 'other.test' }, sender, () => {}), false);
+  listener({ type: 'open-community', domain: 'patagonia.com', companyId: 'forged', url: 'https://evil.test/' }, sender, () => {});
+  await new Promise(resolve => setImmediate(resolve));
+  assert.equal(opened.length, 1);
+  assert.equal(opened[0].url, 'https://naughty-list-api.40for40.workers.dev/community/?brand=patagonia');
+});

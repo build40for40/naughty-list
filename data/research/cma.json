@@ -1,0 +1,51 @@
+{
+ "amz1": {
+  "path": "/cma-cases/online-reviews",
+  "eventDate": "2025-06-06",
+  "outcome": "undertakings",
+  "guard": "Amazon Europe Core SARL has signed undertakings committing to enhance its existing systems for tackling fake reviews and ‘catalogue abuse’.",
+  "summary": "Amazon Europe Core SARL signed undertakings (signed 8 May 2025, accepted 6 June 2025) to enhance systems for tackling fake reviews and catalogue abuse, with sanctions for sellers and users who post fake reviews."
+ },
+ "amz2": {
+  "path": "/cma-cases/investigation-into-amazons-marketplace",
+  "eventDate": "2023-11-03",
+  "outcome": "commitments",
+  "guard": "The CMA published a non-confidential version of its decision to accept commitments from Amazon in relation to certain practices on its Marketplace platform in the UK.",
+  "summary": "CMA accepted binding commitments from Amazon on third-party seller data use, Buy Box treatment and Prime delivery rate negotiation; investigation closed 3 Nov 2023 (already held)."
+ },
+ "ebay": {
+  "path": "/cma-cases/fake-and-misleading-online-reviews",
+  "eventDate": "2020-01-08",
+  "outcome": "practice_changed",
+  "guard": "In response to CMA concerns, Facebook and eBay have taken action to tackle the trade of fake and misleading reviews on their websites.",
+  "summary": "After CMA concerns about the trade in fake and misleading reviews, eBay removed identified content and agreed to put measures in place to prevent it recurring. Entity not named on page beyond \"eBay\"."
+ },
+ "wow": {
+  "path": "/cma-cases/wowcher-group-consumer-protection-case",
+  "eventDate": "2024-07-15",
+  "outcome": "undertakings",
+  "guard": "Wowcher Limited, LivingSocial Limited and Wowcher West Ltd (together, ‘Wowcher’) have signed undertakings to change their online selling practices.",
+  "summary": "Wowcher signed undertakings to change online selling practices (countdown timers, scarcity/popularity claims, pre-ticked VIP membership boxes with refunds). Already held."
+ },
+ "boo": {
+  "path": "/cma-cases/asos-boohoo-and-asda-greenwashing-investigation",
+  "eventDate": "2024-03-27",
+  "outcome": "undertakings",
+  "guard": "ASOS, Boohoo and George at Asda have signed formal agreements to use only accurate and clear green claims.",
+  "summary": "Undertakings from Boohoo (owner group of the Debenhams brand) to make only accurate and clear green claims. Names Boohoo, not Debenhams; counts for Debenhams only under the owner rule."
+ },
+ "mns": {
+  "path": "/government/publications/open-letter-to-ms-about-land-agreements-restricting-competition",
+  "eventDate": "2023-12-06",
+  "outcome": "practice_changed",
+  "guard": "M&S has taken, and continues to take, steps to correct these breaches and the CMA has published a letter sent to M&S following its investigation of these breaches.",
+  "summary": "CMA found 10 M&S land agreements breached the Groceries Market Investigation (Controlled Land) Order 2010; M&S correcting breaches; CMA published a letter to M&S. Competition remedy breach, not a /cma-cases/ page."
+ },
+ "argos": {
+  "path": "/government/news/cma-secures-over-500k-for-argos-extended-warranty-customers",
+  "eventDate": "2021-03-26",
+  "outcome": "practice_changed",
+  "guard": "Argos will provide over half a million pounds to customers who may have missed out on a cheaper extended warranty deal.",
+  "summary": "Argos breached its 2012 undertakings by not linking to the Compare Extended Warranties site; it will contact affected customers, pay over GBP 500k goodwill and reinstate the link (pre-2023 history)."
+ }
+}

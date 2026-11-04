@@ -10,6 +10,7 @@ export function database() {
   const sqlite = new DatabaseSync(':memory:');
   sqlite.exec(readFileSync(new URL('../migrations/0001_evidence.sql', import.meta.url), 'utf8'));
   sqlite.exec(readFileSync(new URL('../migrations/0002_history.sql', import.meta.url), 'utf8'));
+  sqlite.exec(readFileSync(new URL('../migrations/0003_community.sql', import.meta.url), 'utf8'));
   const db = {
     prepare(sql) {
       let values = [];

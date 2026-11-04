@@ -1,0 +1,18 @@
+[
+ {"n":65,"retailer":"Currys","legalName":"Currys Group Limited","page":"/government/news/over-500-companies-named-for-not-paying-minimum-wage","published":"2024-02-20","gbp":122801.34,"workers":4109},
+ {"n":25,"retailer":"Morrisons","legalName":"Wm Morrison Produce Limited","page":"/government/news/over-500-companies-named-for-not-paying-minimum-wage","published":"2024-02-20","gbp":59130.85,"workers":331,"note":"Morrisons subsidiary; owner link needs source"},
+ {"n":69,"retailer":"GAME","legalName":"Game Retail Limited","page":"/government/news/over-500-companies-named-for-not-paying-minimum-wage","published":"2024-02-20","gbp":58475.54,"workers":4979},
+ {"n":39,"retailer":"River Island","legalName":"River Island Clothing Co. Limited","page":"/government/news/over-500-companies-named-for-not-paying-minimum-wage","published":"2024-02-20","gbp":57841.14,"workers":1007},
+ {"n":87,"retailer":"B&Q","legalName":"B & Q PLC","page":"/government/news/over-500-companies-named-for-not-paying-minimum-wage","published":"2024-02-20","gbp":33887.41,"workers":77,"note":"Earlier legal form of B&Q; same Eastleigh SO53 address"},
+ {"n":88,"retailer":"Wickes","legalName":"Wickes Building Supplies Limited","page":"/government/news/over-500-companies-named-for-not-paying-minimum-wage","published":"2024-02-20","gbp":17186.64,"workers":1870},
+ {"n":16,"retailer":"Harrods","legalName":"Harrods Limited","page":"/government/news/over-500-companies-named-for-not-paying-minimum-wage","published":"2024-02-20","gbp":775.04,"workers":1},
+ {"n":27,"retailer":"Lidl","legalName":"Lidl Great Britain Limited","page":"/government/news/over-74-million-put-back-in-working-peoples-pockets-by-employers","published":"2025-05-29","gbp":286437.18,"workers":3423},
+ {"n":98,"retailer":"Halfords","legalName":"Halfords Ltd","page":"/government/news/over-74-million-put-back-in-working-peoples-pockets-by-employers","published":"2025-05-29","gbp":140829.79,"workers":4341},
+ {"n":98,"retailer":"Halfords","legalName":"Halfords Autocentres Limited","page":"/government/news/over-74-million-put-back-in-working-peoples-pockets-by-employers","published":"2025-05-29","gbp":38470.94,"workers":760,"note":"Same round as Halfords Ltd"},
+ {"n":92,"retailer":"The Range","legalName":"CDS (Superstores International) Limited","page":"/government/news/over-74-million-put-back-in-working-peoples-pockets-by-employers","published":"2025-05-29","gbp":89158.47,"workers":1648,"note":"Trading entity of The Range; needs source"},
+ {"n":62,"retailer":"Holland & Barrett","legalName":"Holland & Barrett Retail Ltd","page":"/government/news/6-million-repaid-to-workers-as-government-cracks-down-on-employers-underpaying-their-staff","published":"2025-10-17","gbp":153079.29,"workers":2551},
+ {"n":30,"retailer":"Iceland","legalName":"Iceland Foods Limited","page":"/government/news/6-million-repaid-to-workers-as-government-cracks-down-on-employers-underpaying-their-staff","published":"2025-10-17","gbp":1709.93,"workers":6},
+ {"n":93,"retailer":"B&M","legalName":"B & M Retail Limited","page":"/government/news/hundreds-of-employers-handed-penalties-for-illegally-underpaying-workers","published":"2026-03-19","gbp":3304.80,"workers":1},
+ {"n":87,"retailer":"B&Q","legalName":"B&Q LIMITED","page":"/government/news/short-changing-staff-isnt-a-shortcut-to-success-nearly-660-employers-announced-as-failing-to-pay-the-minimum-wage","published":"2026-09-03","gbp":456934.72,"workers":4530},
+ {"n":22,"retailer":"Tesco","legalName":"Tesco Stores Limited","page":"/government/news/short-changing-staff-isnt-a-shortcut-to-success-nearly-660-employers-announced-as-failing-to-pay-the-minimum-wage","published":"2026-09-03","gbp":227.84,"workers":1}
+]
