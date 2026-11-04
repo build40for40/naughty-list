@@ -1,0 +1,7 @@
+# Reuse a matching WorkOS key/client pair from Joyo's ignored local variables.
+# Its .env.local currently uses a temporary sandbox, unlike its deployed clients.
+# Never commit real API keys or use temporary credentials for production.
+WORKOS_CLIENT_ID=
+WORKOS_API_KEY=
+# Default matches Joyo. Override only to the issuer configured for this environment.
+WORKOS_ISSUER=

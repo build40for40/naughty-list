@@ -36,6 +36,7 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 | 156 | Launch kit: store assets + download page | Doing |
 | 157 | Scoring Algorithm and Criteria | To do |
 | 158 | Extension UI and design (Lawrence) | Doing |
+| 162 | Community Naughty/Nice voting alongside the evidence score | Doing |
 
 ## Locked decisions: four Ws
 
@@ -120,6 +121,15 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 - **Blocked pending licence:** Environment Agency and WBA.
 - **Commercial shortlist for later, subject to access and display licensing:** Good On You (brand ratings) and Provenance (specific claims). EcoVadis is a negotiated commercial fallback.
 - **Excluded for now:** Ethical Consumer, ClimateChoice, KindBuys, Climatiq, HowGood and TrusTrace.
+
+## Community voting (approved 4 November 2026)
+
+- Separate community opinion from the evidence assessment. Votes never change our scoring/verdict or certification fields.
+- One current Nice, Naughty or Not sure vote per email-verified WorkOS account per reviewed brand. Reuse Joyo's AuthKit pattern; the Worker additionally checks WorkOS's server-side email-verification flag. No email/name is stored in the voting database.
+- Show the percentage of Nice among Nice + Naughty only after **20 active eligible votes**. Not sure, expired and excluded votes do not count towards the minimum or percentage. The API returns null below the minimum; displays enforce the same floor. The minimum is a participation rule, not a statistical reliability claim.
+- Votes expire after 12 calendar months and can be changed or withdrawn. Optional reasons: staff, communities, environment. No public comments in v1.
+- H&M remains the first launch target. Enrolment is explicit and requires the reviewed identity/domain/category first. The migration starts with no enrolled brands. Tests use Patagonia only as technical coverage.
+- Code is implemented locally, not deployed, tracked on card 162. Joyo's matching local temporary WorkOS pair has been reused in ignored `.dev.vars` without displaying secret values; local callback/CORS are registered and hosted sign-in opens. Production credentials/URLs, Sign-out/Initiate login settings, full account-flow checks, H&M review/enrolment, remote migration, public privacy and real extension checks remain release prerequisites. See `docs/community-voting.md`.
 
 ## Scoring (card 157)
 

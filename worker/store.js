@@ -1,5 +1,6 @@
 import { assess, normalizeDomain, normalize } from './assessment.js';
 import { domainRelevance } from './relevance.js';
+import { communitySummary } from './community.js';
 
 export function selector(input) {
   if (input.domain !== undefined) return ['domain', normalizeDomain(input.domain)];
@@ -68,5 +69,6 @@ export async function assessStored(input, db, now = new Date()) {
   }
   return { ...assessment,
     ...(input.domain !== undefined ? { relevance: domainRelevance(input.domain, assessment) } : {}),
+    community: assessment.company ? await communitySummary(db, assessment.company.id, now) : null,
     evidence, sources, coverage: { status: 'partial', scope: 'reviewed_entities_and_selected_records', noRecordsMeans: 'unknown' } };
 }
