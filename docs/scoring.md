@@ -70,8 +70,8 @@ No records never means naughty or nice. A stale B Corp record is not a gift.
 | --- | --- | ---: | --- |
 | Patagonia, Tony's Chocolonely | B Corp | +1 | Nice |
 | B&Q | Minimum-wage naming, published 3 Sept 2026 | −2 | Naughty |
-| Boohoo, Asda (George), Wowcher, Simba | One CMA undertaking each; middling or no report card | −1 | Watch list, warning shown |
-| Amazon UK | CMA commitments one day outside the window; report card +2 | +2 | Nice (v0.4) |
+| Boohoo, Asda (George), Wowcher | One CMA undertaking each; middling report card | −1 | Watch list, warning shown |
+| Amazon UK | CMA undertakings (Jun 2025) −1; report card +2 | +1 | Nice, warning shown (v0.4) |
 | Lidl | Minimum-wage naming; report card +2 | −2 | Naughty: gifts never cancel a proven offence |
 | ASOS | One warning; pay gap 41%, 28% of invoices late | −3 | Naughty (v0.4) |
 | Argos | No incidents; middling report card | 0 | Nice (v0.4) |
@@ -83,7 +83,7 @@ No records never means naughty or nice. A stale B Corp record is not a gift.
 
 `npm run scorecard -- --pay-gap <gpg.csv> --payments <payments.csv> --as-of YYYY-MM-DD` rebuilds `data/santa-scorecard.json` from the two gov.uk downloads, validating every value and recomputing the thresholds. `npm run scores` reads published evidence from the deployed API for every retailer in `data/santa-retailers.js` and prints a markdown table. Use `-- --json` for machine-readable output, `-- --api http://localhost:8787` for a local Worker and `-- --as-of YYYY-MM-DD` to fix the date. To add a retailer, add a reviewed identity (source and check date) to the registry, seed it, then list its exact brand names under `lookups`.
 
-Incidents in `npm run scores` come only from the registry. The card 159 research for the other 85 retailers (Samira's v0.3 run on the `launch-assets` branch) is not in the registry yet, so those rows say "incidents not in registry" and their verdict can be too kind. The combined v0.4 draft is posted on card 157.
+Incidents in `npm run scores` come only from the registry. The card 159 research in `data/research/` is not in the registry yet, so those rows say "incidents not in registry" and their verdict can be too kind. The combined v0.4 draft is posted on card 157.
 
 ## Open before sign-off
 
