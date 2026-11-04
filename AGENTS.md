@@ -19,7 +19,7 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 - Node.js 22.13 or later. `npm ci`, then initialise the local database: `npm run wrangler -- d1 migrations apply naughty-list --local`, `npm run evidence -- seed`, `npm run evidence -- import us-epa data/epa-reviewed.json` and `npm run evidence -- sync`.
 - `npm run dev` (local Worker), `npm run check` (tests plus a Wrangler dry run) and `npm run deploy` (manual; CI never deploys). Remote migrations, seeding and imports come before deploying; see `docs/evidence.md`.
 - `npm run scorecard -- --pay-gap <csv> --payments <csv>` rebuilds the v0.4 report card from the gov.uk downloads.
-- `npm run scores` prints draft Santa Scores for the card 159 retailers from the deployed API (`-- --json`, `-- --api http://localhost:8787`, `-- --as-of YYYY-MM-DD`). Drafts only; never publish them before card 157 sign-off.
+- `npm run scores` prints draft Santa Scores for the card 159 retailers from the deployed API (`-- --json`, `-- --api http://localhost:8787`, `-- --as-of YYYY-MM-DD`). Card 157 is signed off, but scores reach shoppers only through a reviewed API PR and a deploy, never from this script's output.
 - `npm run extension:package:chrome` / `npm run extension:package:firefox` build runtime-only ZIPs into `dist/` from an explicit allowlist. Update the allowlist in `scripts/package-extension.mjs` whenever the extension gains files.
 - Always run Wrangler as `npm run wrangler -- <args>`. It uses the `40for40` auth profile and unsets `CLOUDFLARE_API_KEY` and `CLOUDFLARE_EMAIL`. On a new machine, create the profile with `env -u CLOUDFLARE_API_KEY -u CLOUDFLARE_EMAIL npx wrangler auth create 40for40`.
 - Wikirate credentials live in the ignored `.dev.vars` locally and in Cloudflare secrets in production. Never commit them or paste them into chat.
@@ -36,7 +36,7 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 | 154 | Publish Firefox add-on | To do |
 | 155 | Scoring Sources | To do |
 | 156 | Launch kit: store assets + download page | Doing |
-| 157 | Scoring Algorithm and Criteria | Draft v0.3 proposed, awaiting sign-off |
+| 157 | Scoring Algorithm and Criteria | Done: v0.4 signed off by Lawrence (team leader), 4 November |
 | 158 | Extension UI and design (Lawrence) | Doing |
 | 159 | Top 100 UK retailers: score them for the Santa Score page | To do (draft scores for 15 posted) |
 | 162 | Community Naughty/Nice voting alongside the evidence score | Doing |
@@ -136,7 +136,9 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 
 ## Scoring (card 157)
 
-The v1 stamp depends on this card. A **draft** method, the Santa Score `santa-v0.4-draft`, is in `worker/scoring.js`, with the rules in `docs/scoring.md`. Samira signed off v0.3; v0.4 adds a gov.uk report card and **is not signed off.** Until Samira and Ben sign off on card 157, the API keeps `scoring.total` and `scoring.verdict` null, nothing in the Worker imports `worker/scoring.js`, and draft scores (`npm run scores`) stay off the live API, the extension and the page.
+The v1 stamp depends on this card. The Santa Score method `santa-v0.4-draft` is in `worker/scoring.js`, with the rules in `docs/scoring.md`. **Lawrence signed it off on card 157 on 4 November 2026 as team leader, as it stands on `main` at commit 709556f.** Sign-off is the leader's call; it replaces the earlier rule that Samira and Ben both sign off. The method ID keeps its `-draft` suffix until the API PR renames it.
+
+Sign-off does not publish anything. The live API still returns null `scoring.total` and `scoring.verdict`, and nothing in the Worker imports `worker/scoring.js`. Scores reach shoppers only through a reviewed API PR, Ben's deploy (remote migrations, seed and imports first) and an extension release that shows verdicts. The Watch list verdict still needs a card 158 design before the stamp can show it.
 
 - **Values:** the three areas through Santa's eyes: kindness to the elves (staff), honesty and generosity (communities), caring for the North Pole (environment).
 - **Points:** a proven offence is 2 coal (minimum-wage namings under £1,000 earn none), a warning 1 coal and a current B Corp 1 gift. Repeats in the window double: the worst incident's coal times 2 for each further incident. Self-reported CSR, promises, allegations, open investigations, secondary reports and changed practices earn nothing.
@@ -144,7 +146,7 @@ The v1 stamp depends on this card. A **draft** method, the Santa Score `santa-v0
 - **Report card (v0.4):** gender pay gap and late supplier invoices from gov.uk statutory filings (OGL), +1 for the best quarter of the 100 and −1 for the worst. Gifts balance warnings but never cancel a proven offence; missing or invalid filings are left out, never scored as bad. Data in `data/santa-scorecard.json` (rebuilt with `npm run scorecard`), entity matches in `data/santa-filings.js`.
 - **Verdict:** total = gifts − coal + report card. Nice is 0 or more with at least one counted record. Watch list is −1. Naughty is −2 or below. Not enough evidence means no counted records at all.
 - **Unknown stays unknown:** no records never means naughty or nice.
-- **Owner rule (draft):** brands count under the company that owns them, so George at Asda counts as Asda and PlayStation as Sony. A shop counts only as itself, never for the brands it sells. The rule lives only in `data/santa-retailers.js` lookups, each owner link needs a recorded source, and the API's evidence joins are unchanged. The backend rule below still applies until sign-off.
+- **Owner rule (draft):** brands count under the company that owns them, so George at Asda counts as Asda and PlayStation as Sony. A shop counts only as itself, never for the brands it sells. The rule lives only in `data/santa-retailers.js` lookups, each owner link needs a recorded source, and the API's evidence joins are unchanged. The backend rule that corporate relationships don't transfer evidence still governs the API; changing it needs its own decision.
 - **Retailer list:** `data/santa-retailers.js` holds the final 100 UK retailers from card 159. To score a new one, add a reviewed identity to the registry first, then list its exact brand names under `lookups`.
 
 ## The problem
