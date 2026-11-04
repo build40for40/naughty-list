@@ -6,7 +6,11 @@
 // Draft output only: do not publish it until card 157 is signed off.
 import { parseArgs } from 'node:util';
 import retailers from '../data/santa-retailers.js';
+import { readFileSync } from 'node:fs';
 import { santaScore, METHOD_VERSION } from '../worker/scoring.js';
+
+// Report card data from `npm run scorecard` (gov.uk filings, frozen thresholds).
+const scorecard = JSON.parse(readFileSync(new URL('../data/santa-scorecard.json', import.meta.url), 'utf8'));
 
 const { values } = parseArgs({ options: {
   api: { type: 'string', default: 'https://naughty-list-api.40for40.workers.dev' },
@@ -23,7 +27,8 @@ async function lookup(brand) {
   return { matched: Boolean(body.company?.id), evidence: body.evidence ?? [] };
 }
 
-const LABEL = { nice: 'Nice', naughty: 'Naughty', not_enough_evidence: 'Not enough evidence' };
+const LABEL = { nice: 'Nice', naughty: 'Naughty', watch_list: 'Watch list', not_enough_evidence: 'Not enough evidence' };
+const MEASURE = { pay_gap: 'pay gap', late_invoices: 'invoices late' };
 const describe = ({ record, coal, gift }) =>
   `${record.sourceId} ${(record.eventDate ?? record.publishedAt ?? (gift ? `checked ${record.checkedAt ?? ''}` : '')).slice(0, 18)}: ${record.outcome} (${gift ? `gift ${gift}` : `coal ${coal}`})`;
 
@@ -36,7 +41,7 @@ for (const retailer of retailers) {
     if (!result.matched) unmatched.push(brand);
     evidence.push(...result.evidence);
   }
-  const score = santaScore(evidence, { asOf: values['as-of'] });
+  const score = santaScore(evidence, { asOf: values['as-of'], scorecard: scorecard.shops[retailer.n], thresholds: scorecard.thresholds });
   const reviewed = retailer.lookups.length > unmatched.length;
   rows.push({ ...retailer, reviewed, unmatched, ...score });
 }
@@ -46,14 +51,16 @@ if (values.json) {
 } else {
   const cell = text => String(text).replaceAll('|', '\\|');
   console.log(`DRAFT Santa Scores, method ${METHOD_VERSION}, as of ${values['as-of']}. Not signed off; do not publish.\n`);
-  console.log('| # | Retailer | Domain | Counted records | Total | Draft verdict | Note |');
-  console.log('| ---: | --- | --- | --- | ---: | --- | --- |');
+  console.log('Incidents come from the registry only. Retailers marked "incidents not in registry" have not had their card 159 research added yet, so their verdict can be too kind.\n');
+  console.log('| # | Retailer | Domain | Counted records | Report card | Total | Draft verdict | Note |');
+  console.log('| ---: | --- | --- | --- | --- | ---: | --- | --- |');
   for (const row of rows) {
-    const counted = [...row.giftRecords, ...row.counted].map(describe).join('; ') || (row.reviewed ? 'None in window' : 'Not reviewed yet');
+    const counted = [...row.giftRecords, ...row.counted].map(describe).join('; ') || (row.reviewed ? 'None in window' : 'Incidents not in registry');
+    const card = row.reportCard.map(item => `${MEASURE[item.measure]} ${item.value}% (${item.points >= 0 ? '+' : ''}${item.points})`).join('; ') || 'No filings';
     const verdict = LABEL[row.verdict] + (row.warningShown ? ' (warning shown)' : '');
     const note = [row.note, row.unmatched.length ? `No registry match: ${row.unmatched.join(', ')}` : ''].filter(Boolean).join(' ');
-    console.log(`| ${row.n} | ${cell(row.retailer)} | ${row.domain} | ${cell(counted)} | ${row.total ?? '–'} | ${verdict} | ${cell(note)} |`);
+    console.log(`| ${row.n} | ${cell(row.retailer)} | ${row.domain} | ${cell(counted)} | ${card} | ${row.total ?? '–'} | ${verdict} | ${cell(note)} |`);
   }
   const count = key => rows.filter(row => row.verdict === key).length;
-  console.log(`\n${count('nice')} Nice, ${count('naughty')} Naughty, ${count('not_enough_evidence')} not enough evidence (${rows.filter(row => row.warningShown).length} with a warning shown, ${rows.filter(row => !row.reviewed).length} not reviewed yet).`);
+  console.log(`\n${count('nice')} Nice, ${count('watch_list')} Watch list, ${count('naughty')} Naughty, ${count('not_enough_evidence')} not enough evidence (${rows.filter(row => row.warningShown).length} with a warning shown, ${rows.filter(row => !row.reviewed).length} with incidents not in the registry yet).`);
 }

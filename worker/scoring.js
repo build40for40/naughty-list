@@ -3,8 +3,11 @@
 // null until Samira and Ben agree the method on card 157, so nothing in
 // worker/index.js or worker/store.js imports this module yet.
 
-export const METHOD_VERSION = 'santa-v0.3-draft';
+export const METHOD_VERSION = 'santa-v0.4-draft';
 export const WINDOW_YEARS = 3;
+// Report card (v0.4): statutory gov.uk filings that every large UK employer makes.
+export const PAYMENTS_MAX_AGE_MONTHS = 18;
+export const PAY_GAP_MAX_AGE_YEARS = 2;
 
 // Proven wrongdoing: a court, regulator or government found it happened.
 const PROVEN = new Set(['government_naming', 'guilty_plea_and_fine', 'guilty_plea', 'conviction', 'fine', 'stop_sale_order', 'civil_settlement', 'order']);
@@ -32,12 +35,53 @@ function kindOf(record) {
   return null;
 }
 
+// Quartiles by the "exclusive" method (Python's statistics.quantiles default).
+function quartiles(values) {
+  const sorted = [...values].sort((a, b) => a - b);
+  const n = sorted.length;
+  if (n < 4) return null;
+  const at = p => {
+    const pos = p * (n + 1);
+    const lo = Math.min(Math.max(Math.floor(pos), 1), n - 1);
+    return sorted[lo - 1] + (pos - lo) * (sorted[lo] - sorted[lo - 1]);
+  };
+  const round = x => Math.round(x * 100) / 100;
+  return { best: round(at(0.25)), worst: round(at(0.75)) };
+}
+
+/**
+ * Report-card thresholds, frozen per publication from the retailers being
+ * scored: the best quarter earns a gift, the worst quarter one coal.
+ * Pay gap uses the size of the median hourly gap in either direction.
+ */
+export function scorecardThresholds(shops) {
+  const gaps = shops.map(s => s.payGap?.medianHourlyGapPercent).filter(Number.isFinite).map(Math.abs);
+  const late = shops.map(s => s.payments?.lateInvoicePercent).filter(Number.isFinite);
+  return { payGapAbsMedianPercent: quartiles(gaps), lateInvoicePercent: quartiles(late) };
+}
+
+function reportCard(scorecard, thresholds, asOf) {
+  const items = [];
+  const rate = (value, band) => (!band ? 0 : value <= band.best ? 1 : value >= band.worst ? -1 : 0);
+  const gap = scorecard?.payGap;
+  if (gap && Number.isFinite(gap.medianHourlyGapPercent) && gap.snapshotYear >= Number(asOf.slice(0, 4)) - PAY_GAP_MAX_AGE_YEARS) {
+    items.push({ measure: 'pay_gap', value: gap.medianHourlyGapPercent, points: rate(Math.abs(gap.medianHourlyGapPercent), thresholds?.payGapAbsMedianPercent), submittedLate: Boolean(gap.submittedLate), filing: gap });
+  }
+  const pay = scorecard?.payments;
+  const oldest = new Date(`${asOf}T00:00:00Z`);
+  oldest.setUTCMonth(oldest.getUTCMonth() - PAYMENTS_MAX_AGE_MONTHS);
+  if (pay && Number.isFinite(pay.lateInvoicePercent) && pay.lateInvoicePercent >= 0 && pay.lateInvoicePercent <= 100 && day(pay.periodEnd) >= oldest.toISOString().slice(0, 10)) {
+    items.push({ measure: 'late_invoices', value: pay.lateInvoicePercent, points: rate(pay.lateInvoicePercent, thresholds?.lateInvoicePercent), filing: pay });
+  }
+  return items;
+}
+
 /**
  * Score one company's published evidence records (the API's `evidence` array).
  * Records from several reviewed entities may be passed together when the
  * owner rule groups brands under one company; duplicates are counted once.
  */
-export function santaScore(evidence, { asOf }) {
+export function santaScore(evidence, { asOf, scorecard = null, thresholds = null }) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(asOf ?? '')) throw new Error('asOf must be YYYY-MM-DD');
   const start = windowStart(asOf);
   const seen = new Set();
@@ -60,13 +104,18 @@ export function santaScore(evidence, { asOf }) {
   // incident in the window (offences: 2, 4, 8, 16; warnings: 1, 2, 4).
   const worst = Math.max(0, ...counted.map(item => item.coal));
   const coal = counted.length ? worst * 2 ** (counted.length - 1) : 0;
-  const hasRecord = gifts.length > 0 || counted.length > 0;
-  const total = hasRecord ? gifts.length - coal : null;
-  const verdict = !hasRecord ? 'not_enough_evidence' : total >= 0 ? 'nice' : total <= -2 ? 'naughty' : 'not_enough_evidence';
+  const incidentTotal = gifts.length - coal;
+  const card = reportCard(scorecard, thresholds, asOf);
+  const cardPoints = card.reduce((sum, item) => sum + item.points, 0);
+  // Report-card gifts can balance warnings but never cancel a proven offence.
+  const hasProven = counted.some(item => item.kind === 'proven');
+  const hasRecord = gifts.length > 0 || counted.length > 0 || card.length > 0;
+  const total = !hasRecord ? null : hasProven ? Math.min(incidentTotal, incidentTotal + cardPoints) : incidentTotal + cardPoints;
+  const verdict = !hasRecord ? 'not_enough_evidence' : total >= 0 ? 'nice' : total <= -2 ? 'naughty' : 'watch_list';
   return {
     method: METHOD_VERSION, asOf, windowStart: start,
-    gifts: gifts.length, coal, total, verdict,
-    warningShown: verdict === 'not_enough_evidence' && counted.length > 0,
-    counted, giftRecords: gifts, history
+    gifts: gifts.length, coal, reportCardPoints: cardPoints, total, verdict,
+    warningShown: counted.some(item => item.kind === 'warning') && verdict !== 'naughty',
+    counted, giftRecords: gifts, reportCard: card, history
   };
 }
