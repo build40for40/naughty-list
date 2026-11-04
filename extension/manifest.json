@@ -3,7 +3,7 @@
   "name": "The Naughty List",
   "short_name": "Naughty List",
   "version": "0.0.1",
-  "description": "The Naughty List browser extension. Built for Black Friday and Christmas shopping.",
+  "description": "Elf Cam shows whether the company behind a store is on Santa's nice list. Built for Black Friday and Christmas shopping.",
   "author": "40 for 40",
   "homepage_url": "https://github.com/build40for40/naughty-list",
   "icons": {
@@ -11,5 +11,32 @@
     "32": "icons/icon-32.png",
     "48": "icons/icon-48.png",
     "128": "icons/icon-128.png"
-  }
+  },
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://patagonia.com/*",
+        "https://www.patagonia.com/*",
+        "https://tonyschocolonely.com/*",
+        "https://www.tonyschocolonely.com/*"
+      ],
+      "js": ["verdict.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["fonts/vt323-latin-400.woff2"],
+      "matches": [
+        "https://patagonia.com/*",
+        "https://www.patagonia.com/*",
+        "https://tonyschocolonely.com/*",
+        "https://www.tonyschocolonely.com/*"
+      ]
+    }
+  ]
 }

@@ -8,7 +8,9 @@ export default [
     domains: ['patagonia.com', 'www.patagonia.com'],
     domainEvidence: {
       sourceUrl: 'https://www.bcorporation.net/en-us/find-a-b-corp/company/patagonia-inc/',
-      checkedAt: '2026-11-04'
+      checkedAt: '2026-11-04',
+      // The site sells only this company's own brand, so one verdict covers the store.
+      storeType: 'single_brand'
     },
     identifiers: [{ scheme: 'b_lab', value: 'patagonia-inc' }],
     bCorp: {
@@ -25,7 +27,9 @@ export default [
     domains: ['tonyschocolonely.com', 'www.tonyschocolonely.com'],
     domainEvidence: {
       sourceUrl: 'https://www.bcorporation.net/en-us/find-a-b-corp/company/tonys-chocolonely/',
-      checkedAt: '2026-11-04'
+      checkedAt: '2026-11-04',
+      // The site sells only this company's own brand, so one verdict covers the store.
+      storeType: 'single_brand'
     },
     identifiers: [{ scheme: 'b_lab', value: 'tonys-chocolonely' }],
     bCorp: {

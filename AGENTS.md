@@ -3,7 +3,7 @@
 Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The problem is "Hard to know which brands are ethical", from Santa. Shared project context, services and rules live in `../AGENTS.md`.
 
 - **Form factor:** a Chrome extension.
-- **Status:** a bare Manifest V3 scaffold lives in `extension/`. The initial Cloudflare Worker backend lives in `worker/` and checks B Corp status against a small source-checked registry. Extension behaviour is not implemented. Full ethical scoring is deferred to the `scoring & criteria` card on the Superthread `day3` board.
+- **Status:** the Manifest V3 extension in `extension/` implements Elf Cam badge mode on reviewed single-brand stores. The Cloudflare Worker backend in `worker/` checks B Corp status against a small source-checked registry. Multi-brand sorting mode is designed but not built. Full ethical scoring is deferred to the `scoring & criteria` card on the Superthread `day3` board.
 
 ## Backend decisions
 
@@ -13,7 +13,16 @@ Day 3 of 40 for 40, built live on Twitch on Wednesday 4 November 2026. The probl
 - Return B Corp certification evidence, provenance and check/refresh dates. Do not equate B Corp certification with a product-level ethical judgment.
 - Unmatched, ambiguous and stale records are unknown, never automatically uncertified or naughty. There is no complete B Lab feed or automatic research integration yet.
 - Keep overall score and naughty/nice verdict unset until the scoring task is settled. No new scoring criteria are authorised by the initial backend work.
-- The extension's exact behaviour, supported sites and research pipeline remain undecided.
+- Each reviewed domain records `storeType` in `domainEvidence` (`single_brand` today), returned as `match.storeType` for domain lookups.
+
+## Extension decisions: Elf Cam
+
+- **Visual direction:** Elf Cam, a North Pole CCTV parody. Jokes target brands, never shoppers. Design reference: https://claude.ai/artifact/2wxJoMkbyGVb71Af4eRZ1d
+- **The store decides the mode.** Single-brand stores get **badge mode**: one brand-level verdict for the whole store. Multi-brand stores will get **sorting mode** (Cleared and Flagged for Coal feeds); not built yet, because it needs per-product brand extraction for each store.
+- **Badge mode:** on the first visit to a store each day, a viewfinder overlay shows the verdict for about four seconds, then collapses on timeout or any scroll, click or key into a corner badge. The badge opens a case file with evidence, source, check date and scope.
+- **Display rule:** the extension shows **Nice** only for current B Corp certification on a reviewed single-brand domain. Everything else (not listed, ambiguous, stale, uncertified, offline) is **Unidentified**. The extension never shows Naughty until the scoring work defines it. The backend verdict stays unset.
+- **Site access:** content scripts run only on reviewed single-brand domains, and `test/extension.test.js` keeps `manifest.json` in sync with the registry. Only the current tab's hostname is sent to the Worker. Adding a store means adding a reviewed registry entry and its manifest match.
+- Supported sites beyond the starter registry, sorting mode and the research pipeline remain undecided.
 
 ## Locked decisions: four Ws
 

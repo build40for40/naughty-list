@@ -2,7 +2,9 @@
 
 A Chrome extension for Day 3 of [40 for 40](https://build40for40.com).
 
-The extension is a bare scaffold with no behaviour yet. A separate Cloudflare Worker provides the initial company assessment API. Product decisions are recorded in [AGENTS.md](AGENTS.md).
+The extension runs **Elf Cam badge mode**: on a reviewed single-brand store (currently patagonia.com and tonyschocolonely.com), it briefly puts the page "on camera", shows whether the company behind the store is nice, then shrinks into a corner badge that opens a case file with the evidence. Companies without current B Corp evidence show as Unidentified, never Naughty. A separate Cloudflare Worker provides the company assessment API. Product decisions are recorded in [AGENTS.md](AGENTS.md).
+
+Extension files: `content.js` (overlay and badge), `verdict.js` (turns an API response into what the badge shows), `background.js` (API lookup), and `fonts/` (VT323, SIL Open Font License).
 
 ## Load locally
 
@@ -12,6 +14,8 @@ The extension is a bare scaffold with no behaviour yet. A separate Cloudflare Wo
 4. Click **Load unpacked** and select the repository's `extension/` folder.
 
 No dependencies or build step are required. After changing extension files, click **Reload** on its card in `chrome://extensions`.
+
+To see the intro again on a store the same day, clear the extension's storage or reload the extension.
 
 ## Check the manifest
 
@@ -69,7 +73,7 @@ The DUNS example is a placeholder, not a real company mapping. Keep identifiers 
 
 Domain input is a hostname, such as the browser URL's `hostname`, rather than a full URL. It is lowercased and trimmed; a trailing DNS dot is removed. URLs, paths, ports, IP addresses and raw Unicode hostnames are rejected. Browser-normalised ASCII/punycode hostnames are accepted, but only exact reviewed entries match. No submitted domain is fetched by the backend.
 
-The starter mappings cover `patagonia.com`, `www.patagonia.com`, `tonyschocolonely.com` and `www.tonyschocolonely.com`. Subdomains and regional sites need their own reviewed entries: neither `shop.patagonia.com` nor `patagonia.com.example.org` inherits a match. Domain matches include `match.method: "reviewed_domain"`, the normalised `match.domain` and source/check dates in `match.evidence`. This identifies the website's company; a marketplace domain cannot identify the selected seller or product brand. Those still need separate extraction and lookups.
+The starter mappings cover `patagonia.com`, `www.patagonia.com`, `tonyschocolonely.com` and `www.tonyschocolonely.com`. Subdomains and regional sites need their own reviewed entries: neither `shop.patagonia.com` nor `patagonia.com.example.org` inherits a match. Domain matches include `match.method: "reviewed_domain"`, the normalised `match.domain`, `match.storeType` (`single_brand` for every starter mapping; `null` when unmatched) and source/check dates in `match.evidence`. This identifies the website's company; a marketplace domain cannot identify the selected seller or product brand. Those still need separate extraction and lookups.
 
 Example request against the local Worker:
 

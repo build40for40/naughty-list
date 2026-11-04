@@ -2,7 +2,7 @@
 
 Prepared on 4 November 2026 for Superthread card #152, **Publish extension: common steps**.
 
-The current extension is a metadata-only scaffold. The backend is separate and is not called by the extension. These materials prepare publication; they do not establish that the extension is ready to submit.
+The extension now implements Elf Cam badge mode on two reviewed stores and calls the backend. These materials prepare publication; they do not establish that the extension is ready to submit.
 
 ## Manifest information
 
@@ -12,16 +12,16 @@ The current extension is a metadata-only scaffold. The backend is separate and i
 | Name | The Naughty List | Set |
 | Short name | Naughty List | Set |
 | Version | `0.0.1` | Current prerelease version |
-| Description | The Naughty List browser extension. Built for Black Friday and Christmas shopping. | Accurate scaffold copy; replace with implemented functionality before submission |
+| Description | The Naughty List browser extension. Built for Black Friday and Christmas shopping. | Updated to describe Elf Cam; review against store listing copy before submission |
 | Author | 40 for 40 | Project name, not a registered publisher identity |
 | Homepage | Repository URL | Existing project URL |
 | Icons | PNG at 16, 32, 48 and 128 pixels | Draft artwork included; editable source is `publishing/icon.svg` |
 | Chrome extension ID | Assigned by the Chrome Web Store | Not yet available; do not invent or change the signing identity |
 | Firefox add-on ID | `{c2591c57-0224-4d4a-bdb4-a3223e58c354}` | Generated stable UUID in the Firefox overlay; uniqueness checked by AMO on first signing |
 | Firefox minimum version | Desktop `140.0`, Android `142.0` | Declaration compatibility floors; Android support has not been selected or tested |
-| Firefox data collection | `required: ["none"]` | True only of this scaffold; must be reviewed before backend/page integration |
-| Permissions / host permissions | None | No functionality currently needs them |
-| Content scripts / background / action | Absent | Follow actual implementation; no speculative site access |
+| Firefox data collection | `required: ["none"]` | **Out of date.** The extension now sends the store hostname to the Worker; choose the correct category before submission |
+| Permissions / host permissions | `storage`; no host permissions | `storage` remembers which stores showed the intro today. The Worker allows CORS, so no API host permission is needed |
+| Content scripts / background / action | Content scripts on the four reviewed store hostnames; background service worker (Firefox: background script); no action | Test keeps matches in sync with the registry |
 | Update URL | Absent | Store-managed updates; revisit only if self-distribution is chosen |
 | Localisation | Not configured | No locale bundles; no `default_locale` claim |
 
@@ -43,7 +43,7 @@ Outputs:
 - `dist/naughty-list-chrome-0.0.1.zip`
 - `dist/naughty-list-firefox-0.0.1.zip`
 
-Both contain only `manifest.json` at the root and `icons/`. The packaging script copies an explicit runtime allowlist into a temporary staging directory and rejects unreviewed root files or symlinks. It does not include the backend, dependencies, environment files or publication drafts. Review the allowlist when extension functionality adds files. `dist/` is ignored by Git.
+Both contain `manifest.json` at the root, the three runtime scripts, `icons/` and `fonts/`. The packaging script copies an explicit runtime allowlist into a temporary staging directory and rejects unreviewed root files or symlinks. It does not include the backend, dependencies, environment files or publication drafts. Review the allowlist when extension functionality adds files. `dist/` is ignored by Git.
 
 Validate an archive before upload:
 

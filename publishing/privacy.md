@@ -4,13 +4,18 @@ Internal publication draft, 4 November 2026. This is an implementation inventory
 
 ## Verified current extension behaviour
 
-The packaged scaffold contains only a manifest and icons. It has no scripts, page access, storage permissions, account system, analytics, network calls or connection to the backend. The prepared Firefox package therefore declares no data collection for this scaffold only.
+Elf Cam badge mode, added 4 November 2026:
 
-This statement stops being sufficient as soon as extension functionality is added. Recheck the archive and the actual network/storage behaviour before making store declarations.
+- **Page access:** content scripts run only on `patagonia.com`, `www.patagonia.com`, `tonyschocolonely.com` and `www.tonyschocolonely.com`. They read no page content; they add an overlay and badge in a closed shadow root.
+- **Sent to the Worker:** the current tab's hostname only, as `{ "domain": "<hostname>" }`, without cookies. No URL path, query, title, product or account data. The lookup happens on each page load on those sites, cached in the background worker for up to an hour while it stays alive.
+- **Stored locally:** `chrome.storage.local` keeps `introSeen:<hostname>` with the date the intro was last shown. Nothing else.
+- **Not present:** analytics, accounts, remote code or third-party requests. The font is bundled.
+
+The Firefox `data_collection_permissions` declaration still says `none` and is now out of date: sending the visited store's hostname is likely to count as browsing activity under Mozilla's definitions. Decide the category before any Firefox submission. The Chrome Web Store privacy disclosures need the same review.
 
 ## Separate backend
 
-The backend is a public Cloudflare Worker at `naughty-list-api.40for40.workers.dev`. It receives company lookup inputs, compares them with a small manually maintained registry and returns evidence. At the time of this preparation, the extension does not call it.
+The backend is a public Cloudflare Worker at `naughty-list-api.40for40.workers.dev`. It receives company lookup inputs, compares them with a small manually maintained registry and returns evidence. The extension calls it as described above.
 
 The Worker code does not itself write requests to a database or call an external research provider. Do not infer from this that there are no server or network logs. Cloudflare may process connection information, and the account's observability, security and retention settings have not been audited for this release preparation. Those settings need to be checked before publishing retention, deletion, IP-address or third-party processing claims.
 

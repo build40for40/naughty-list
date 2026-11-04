@@ -1,10 +1,17 @@
 {
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
   "browser_specific_settings": {
     "gecko": {
       "id": "{c2591c57-0224-4d4a-bdb4-a3223e58c354}",
       "strict_min_version": "140.0",
       "data_collection_permissions": {
-        "required": ["none"]
+        "required": [
+          "none"
+        ]
       }
     },
     "gecko_android": {
