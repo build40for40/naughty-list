@@ -13,30 +13,28 @@ Drafted 4 November 2026 for Superthread card 156. For Samira to review. Nothing 
 
 Every `[square bracket]` is something the build still has to confirm before this goes live.
 
-**H&M result (from Ben's assessment code, 4 Nov 15:10).** H&M is now in the registry on branch `hm-registry` (commit 8aee2d1, waiting for Ben to review and merge). I searched the B Lab directory for "H&M", "H&M Group" and "Hennes & Mauritz" and found no H&M listing, so it's recorded as a hand-checked *not certified*. Ben's `assess()` returns, for `{brand: "H&M"}`, `www2.hm.com` and `www.hm.com`:
+**H&M result: live API, 4 Nov 16:15.** Ben's PR #8 added a reviewed H&M identity for hm.com, www.hm.com and www2.hm.com, and deployed it. The live `POST /v1/assessments {"domain":"www2.hm.com"}` returns:
 
-- match: **matched** (H&M)
-- B Corp: **status verified · certified: false**
-- source: B Lab directory search · checked 2026-11-04 · recheck by 2026-12-04
-- scoring: **deferred** (no total, no verdict) until card 157
+- match: **matched** (H&M), relevance **brand_shop**, eligible for a verdict
+- B Corp: **unknown** (`no_evidence`): no B Lab source, no check date
+- evidence records: none yet · scoring: **deferred** (no verdict)
 
-So the honest message today is: *H&M isn't a Certified B Corp, here's the source and date, and that's one fact, not a verdict.* Copy must never turn "not a B Corp" into "naughty" (most companies aren't B Corps).
+Ben's rule (PR #8): **missing directory evidence never becomes a negative claim.** So no copy says H&M "isn't a B Corp" or "isn't listed". My earlier `hm-registry` branch (hand-checked "not certified") is superseded and should not be merged.
 
-## What Elf Cam shows on H&M today (Lawrence's PR #6, rendered from his code)
+## What the launch stamp shows on H&M today
 
-Card 158: single-brand shops get a badge. Lawrence built it as **Elf Cam**, a North Pole CCTV parody (black, phosphor green, REC red, VT323). The strings below come from his `verdict.js` and `content.js`, fed with Ben's H&M result.
+The launch overlay is Ben's stamp restyled as **Elf Cam** by Lawrence (PR #6, merged; Ben confirmed it as the launch design). These strings come from `extension/content.js` and `shared.js` on `main`, fed with the live H&M result above.
 
-- **Intro (first visit each day, ~4s):** REC · CAM 01 · WWW2.HM.COM · SUBJECT: H&M (BRAND) · **SUBJECT UNIDENTIFIED** · "No current evidence either way. No verdict."
-- **Corner badge:** **UNIDENTIFIED** · No verdict
-- **Case file:** Subject: H&M (the company behind this store) · Evidence: "No current evidence either way. No verdict." · Verdict: "Pending. Santa hasn't agreed his rules yet" · Source: B Lab · Checked: 4 Nov 2026 · Scope: The company, not individual products · "Not being on the list isn't the same as being naughty. The elves just haven't vouched for this one yet."
-
-**⚠️ Wording flag for Lawrence:** `verdict.js` treats "checked, not certified" the same as "no evidence", so H&M's evidence line reads "No current evidence either way" while the same case file shows a B Lab source and a 4 Nov check date. We did check, and H&M isn't in the directory. Suggested evidence line for that case: *"Not in the B Lab directory of Certified B Corps."* It would stay grey and Unidentified, with no verdict. The script and captions avoid quoting the evidence line until this is settled.
+- **Intro (once per shop per day, ~3.5s):** corner brackets, "● REC · CAM 01 · WWW2.HM.COM" and a clock
+- **Stamp (corner):** ELF CAM · THE NAUGHTY LIST · **NOT ENOUGH EVIDENCE FOR A VERDICT** · "Reviewed business match: H&M. Naughty or nice scoring is still being agreed."
+- **Case file (expanded):** "Current B Corp certification is unknown." · "This describes the business, not the ethics of this individual product."
+- **Settings** button; × dismisses it for the page
 
 ## Voice
 
 Ben's steer (4 Nov): it's Santa's idea, so it should feel like Christmas, not a compliance report. Playful, warm, pun-happy, and no 40 for 40 branding beyond a small "made by" credit. The puns never change the facts: we still only show B Corp status, the source and the date, and never call a brand naughty.
 
-Pun bank (use freely): Elf Cam is rolling · caught on Elf Cam · the brands are on camera, not you · case file · subject unidentified · check it twice · sleigh informed · yule know before you buy · ho ho hold on · elf-explanatory · what's in the sack · coming down the chimney · no coal · Santa's little helper · under the tree · season's readings
+Pun bank (use freely): Elf Cam is rolling · caught on Elf Cam · the brands are on camera, not you · case file · check it twice · sleigh informed · yule know before you buy · ho ho hold on · elf-explanatory · what's in the sack · coming down the chimney · no coal · Santa's little helper · under the tree · season's readings
 
 ## Chrome Web Store: today's version
 

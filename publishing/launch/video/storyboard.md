@@ -1,10 +1,10 @@
 # Demo video: script and shot list
 
-Final draft, 4 Nov 15:45. About 42 seconds. It shows only what version 1 does: Lawrence's **Elf Cam** badge (card 158, PR #6). The page goes "on camera" for a few seconds, shrinks to a corner badge, and the badge opens a case file. On H&M today it reads **"Subject unidentified · No verdict"** with the B Lab source and check date (see the wording flag in copy.md). Never say or show a naughty/nice verdict.
+Final draft, 4 Nov 15:45. About 42 seconds. It shows only what version 1 does: the **Elf Cam** launch stamp (Ben's overlay, Lawrence's styling, PR #6). The page goes "on camera" for a few seconds and the stamp sits in the corner. On H&M today it reads **"Not enough evidence for a verdict · Reviewed business match: H&M"**, from the live API. Never say or show a naughty/nice verdict, and never say H&M isn't a B Corp.
 
 **Record:** OBS, 1920×1080, 30fps, on a clean Chrome profile with only The Naughty List installed. Use the 16:9 cut for the download page and for YouTube (unlisted, as the Chrome store promo video). Then cut a 9:16 version for shorts.
 
-**Needs before filming:** Ben merges `hm-registry` (fixed so his new evidence store accepts it), Lawrence's Elf Cam (PR #6) is merged with H&M added to the manifest matches and `storeType: 'single_brand'`, and the Worker is redeployed and D1 reseeded.
+**Needs before filming:** a real Chrome install on www2.hm.com (H&M blocked Ben's automated browser, so this has to be filmed by hand). The H&M mapping is already live (PR #8).
 
 ## 16:9 cut (≈42s)
 
@@ -12,9 +12,9 @@ Final draft, 4 Nov 15:45. About 42 seconds. It shows only what version 1 does: L
 | --- | --- | --- | --- | --- |
 | 1 | 0–4s | `cards/hook-1920x1080.png` for 1s, then the H&M homepage full of Christmas gifts, scrolling slowly | "Every brand's ads are merry and bright at Christmas." | Every brand looks merry and bright at Christmas… |
 | 2 | 4–9s | Click into a Christmas jumper. **Elf Cam goes live:** viewfinder corners, REC light, timestamp, the evidence panel at the top | "But who's been naughty or nice? Elf Cam is rolling." | Elf Cam is rolling 🔴 |
-| 3 | 9–15s | Hold on the panel: "SUBJECT: H&M (BRAND) · SUBJECT UNIDENTIFIED" | "Elf Cam checks the company behind the gift. For H&M: no verdict yet." | H&M: no verdict yet |
-| 4 | 15–19s | Scroll: the intro collapses into the corner badge, "UNIDENTIFIED · NO VERDICT" | "Then it gets out of your way." | Then it shrinks to a badge |
-| 5 | 19–28s | Click the badge. The case file opens: subject, evidence, verdict pending, source, check date, scope | "Open the case file for the evidence, the source and the date. Santa hasn't agreed his rules yet, so no naughty or nice." | Source: B Lab · checked 4 Nov 2026 |
+| 3 | 9–15s | Hold on the stamp: "NOT ENOUGH EVIDENCE FOR A VERDICT · Reviewed business match: H&M" | "Elf Cam checks the company behind the gift. For H&M: no verdict yet." | H&M: no verdict yet |
+| 4 | 15–19s | Scroll: the camera brackets fade, the stamp stays in the corner clear of the basket | "Then it gets out of your way." | It never covers the basket |
+| 5 | 19–28s | Open "Case file: evidence and source": "Current B Corp certification is unknown. This describes the business, not the ethics of this individual product." | "Open the case file to see what we know and where it came from. Santa hasn't agreed his rules yet, so no naughty or nice." | Evidence first. Verdicts later. |
 | 6 | 28–34s | Twitch VOD: the team building it on stream, 2–3 quick cuts | "We built it live, in one day." | Built live on Twitch, in one day |
 | 7 | 34–40s | `cards/end-1920x1080.png` | "The Naughty List. The brands are on camera. Not you." | (on the card) |
 
@@ -28,8 +28,8 @@ Captions: `captions-16x9.srt`.
 | --- | --- | --- | --- |
 | 1 | 0–2s | `cards/shorts-hook-1080x1920.png` | Who's been naughty or nice? |
 | 2 | 2–8s | Screen recording, cropped: Elf Cam going live on the jumper page | Elf Cam is rolling 🔴 |
-| 3 | 8–13s | The panel: "SUBJECT UNIDENTIFIED" | H&M: no verdict yet |
-| 4 | 13–20s | The case file open | Evidence, source + date. Verdicts wait for Santa's rules. |
+| 3 | 8–13s | The stamp: "NOT ENOUGH EVIDENCE FOR A VERDICT" | H&M: no verdict yet |
+| 4 | 13–20s | The case file open | Evidence first. Verdicts wait for Santa's rules. |
 | 5 | 20–25s | `cards/shorts-end-1080x1920.png` | Free for Chrome & Firefox · link in bio |
 
 Captions: `captions-9x16.srt`. File naming follows the content-cloud scheme: inputs in `Day 03/Inputs`, outputs in `Day 03/Outputs` as `Day03_demo_16x9_v1.mp4` and `Day03_short_v1.mp4`.
@@ -51,7 +51,7 @@ Once the badge works, set Chrome DevTools device mode to 1280×800, then use ⋮
 4. Optional: a second H&M product page
 5. Title card: already made, `store/screenshot-5-title-card-1280x800.png`
 
-Screenshots 1–3 in `store/` are Lawrence's real Elf Cam code rendered on a mock H&M page (`src/elfcam/render-elfcam.sh`). They're labelled and must be recaptured on www2.hm.com before upload.
+Screenshots 1–3 in `store/` are the real launch stamp from `main`, fed the live H&M API result, rendered on a mock H&M page (`src/elfcam/render-elfcam.sh origin/main store`). They're labelled and must be recaptured on www2.hm.com before upload.
 
 ## Never say
 

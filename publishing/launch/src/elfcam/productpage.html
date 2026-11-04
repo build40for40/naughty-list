@@ -1,7 +1,8 @@
 <!doctype html><html><head><meta charset="utf-8">
-<!-- Render harness: a plain H&M-style product page that runs Lawrence's real Elf Cam files
-     (extension/verdict.js + content.js from the ref passed to render-elfcam.sh) with stubbed extension APIs.
-     The assessment fed in is Ben's assess() output for H&M (hm-registry) plus storeType single_brand. -->
+<!-- Render harness: a plain H&M-style product page running the real launch stamp
+     (extension/shared.js + content.js from the ref passed to render-elfcam.sh) with stubbed extension APIs.
+     The assessment is the live API response for www2.hm.com (hm-assessment.json, fetched 4 Nov 2026). -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Christmas jumper","offers":{"@type":"Offer","price":"24.99","priceCurrency":"GBP"}}</script>
 <style>
 body{margin:0;background:#fff;color:#222;font-family:-apple-system,"Helvetica Neue",Arial,sans-serif}
 .bar{height:64px;border-bottom:1px solid #e8e8e8;display:flex;align-items:center;padding:0 32px;gap:28px;font-size:14px;color:#444}
@@ -12,30 +13,27 @@ body{margin:0;background:#fff;color:#222;font-family:-apple-system,"Helvetica Ne
 h2{font-weight:500;font-size:24px;margin:0 0 8px}
 .price{font-size:20px;margin:6px 0 22px}
 .sz{display:flex;gap:8px;margin-bottom:22px}.sz span{width:48px;height:40px;border:1px solid #ccc;display:grid;place-items:center;font-size:13px}
-.add{width:300px;height:50px;background:#222;color:#fff;display:grid;place-items:center;font-size:14px}
+.add{width:300px;height:50px;background:#222;color:#fff;border:0;font-size:14px}
 .desc{margin-top:26px;font-size:13px;color:#666;line-height:1.6;max-width:360px}
+.label{position:fixed;left:84px;bottom:24px;font:700 11px -apple-system,sans-serif;color:#fff;background:rgba(0,0,0,.5);padding:4px 9px;border-radius:5px;letter-spacing:.04em}
 </style></head><body>
-<div style="position:fixed;left:84px;bottom:24px;z-index:1;font:700 11px -apple-system,sans-serif;color:#fff;background:rgba(0,0,0,.5);padding:4px 9px;border-radius:5px;letter-spacing:.04em">REAL ELF CAM UI ON A MOCK PAGE · RECAPTURE ON WWW2.HM.COM BEFORE UPLOAD</div>
+<div class="label">REAL LAUNCH STAMP + LIVE H&amp;M API RESULT ON A MOCK PAGE · RECAPTURE ON WWW2.HM.COM BEFORE UPLOAD</div>
 <div class="bar"><b>H&amp;M</b> Women · Men · Kids · Home · Christmas gifts</div>
 <div class="page">
   <div class="img">Product photo</div>
-  <div><div class="crumb">Men › Jumpers › Christmas</div><h2>Christmas jumper</h2><div class="price">£[price]</div>
-  <div class="sz"><span>S</span><span>M</span><span>L</span><span>XL</span></div><div class="add">Add to bag</div>
+  <div><div class="crumb">Men › Jumpers › Christmas</div><h2>Christmas jumper</h2><div class="price" itemprop="price" content="24.99">£24.99</div>
+  <div class="sz"><span>S</span><span>M</span><span>L</span><span>XL</span></div><button class="add">Add to bag</button>
   <div class="desc">[Product description]</div></div>
 </div>
 <script>
-const q=new URLSearchParams(location.search), mode=q.get('mode')||'intro';
-const HM={schemaVersion:'1',input:{domain:location.hostname},
-  match:{status:'matched',method:'reviewed_domain',domain:location.hostname,storeType:'single_brand',evidence:{sourceUrl:'https://hmgroup.com/brands/',checkedAt:'2026-11-04'}},
-  company:{id:'hm',name:'H&M',identifiers:[]},
-  criteria:{bCorp:{status:'verified',certified:false,reason:null,source:{name:'B Lab',url:'https://www.bcorporation.net/en-us/find-a-b-corp/?query=H%26M'},checkedAt:'2026-11-04',validUntil:'2026-12-04'}},
-  scoring:{status:'deferred',total:null,verdict:null}};
-window.chrome={runtime:{lastError:null,getURL:p=>'/ext/'+p,sendMessage:(m,cb)=>setTimeout(()=>cb({ok:true,data:HM}),10)},
-  storage:{local:{get:async k=>mode==='intro'?{}:{[k]:(d=>`${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`)(new Date())},set:async()=>{}}}};
+const mode=new URLSearchParams(location.search).get('mode')||'intro';
+const today=new Date().toDateString();
+window.chrome={runtime:{getURL:p=>'/ext/'+p,sendMessage:async m=>m.type==='assess-domain'?{assessment:await (await fetch('/hm-assessment.json')).json()}:{}},
+  storage:{local:{get:async k=>(typeof k==='string'&&k.startsWith('elfCamIntro:')&&mode!=='intro')?{[k]:today}:{},set:async()=>{}},onChanged:{addListener(){}}}};
 </script>
-<script src="/ext/verdict.js"></script>
+<script src="/ext/shared.js"></script>
 <script src="/ext/content.render.js"></script>
 <script>
-if(mode==='file') setTimeout(()=>{const h=document.querySelector('naughty-list-elf-cam');h&&h.shadowRoot.querySelector('.badge').click()},600);
+if(mode==='file') setTimeout(()=>{const d=document.getElementById('naughty-list-stamp')?.shadowRoot?.querySelector('details');if(d)d.open=true},1600);
 </script>
 </body></html>
